@@ -1,0 +1,12 @@
+# requirements.txt
+# Runtime dependencies for the Flask API, Gunicorn server, PDF exporter, and optional Firebase integration.
+Flask>=3.0.0
+Werkzeug>=3.0.0
+gunicorn>=22.0.0
+firebase-admin>=6.0.0
+Pillow>=10.3.0
+pypdf>=4.2.0
+playwright>=1.44.0
+
+# Optional AES-256 support.
+cryptography>=41.0.0

@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Lora:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap');
+
+/* AiInterpretationGeminiView.css */
+/* Giao diện Standalone Luận Giải Lá Số AI Chuẩn Google Gemini & Tử Vi Hồng Ân */
+* {
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+/* 1. Hiệu ứng Quầng sáng thở Ambient Radial Halo */
+@keyframes gemini-ambient-halo {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+.gemini-ambient-halo {
+  display: none;
+}
+/* 2. Hiệu ứng Viền sáng chạy quanh thẻ (Border Beam Effect 4s) */
+@keyframes gemini-border-beam-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.gemini-border-beam-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 1.8px;
+  background: rgba(226, 232, 240, 0.65);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+}
+.gemini-border-beam-rotator {
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 200deg,
+    #c5a059 255deg,
+    #8b1d1d 315deg,
+    #fde68a 360deg
+  );
+  animation: gemini-border-beam-spin 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.gemini-border-beam-content {
+  position: relative;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+/* 3. Tia sáng lấp lánh trên nút CTA (Shimmer Sweep 3.5s) */
+@keyframes gemini-shimmer-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  28%, 100% {
+    transform: translateX(240%) skewX(-20deg);
+  }
+}
+.gemini-cta-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  animation: gemini-shimmer-sweep 3.5s infinite;
+  pointer-events: none;
+}
+
+/* 5. Mount Animations */
+.gemini-chart-mount {
+  animation: geminiChartMount 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes geminiChartMount {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.gemini-onboarding-mount {
+  animation: geminiOnboardingMount 700ms cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes geminiOnboardingMount {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 6. Chuyển cảnh từ Thẻ sang Khung Chat (500ms cubic-bezier(0.4, 0, 0.2, 1)) */
+.gemini-card-exit {
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0 !important;
+  transform: scale(0.95) translateY(12px) !important;
+  pointer-events: none !important;
+}
+.gemini-chat-enter {
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.gemini-pill-enter {
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+/* 7. Skeleton Loading Shimmer Effect */
+@keyframes gemini-skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gemini-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 0%,
+    #cbd5e1 20%,
+    #f8fafc 50%,
+    #cbd5e1 80%,
+    #e2e8f0 100%
+  );
+  background-size: 200% 100%;
+  animation: gemini-skeleton-shimmer 1.8s infinite linear;
+  border-radius: 6px;
+}
+/* 8. Quy chuẩn Khung & Bong bóng Chatbot (Nền trong suốt, không viền, không đổ bóng) */
+.gemini-ai-bubble {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* 9. Quy chuẩn Typography trong văn bản phản hồi của AI / Chatbot (Đồng bộ chuẩn 14px với tin nhắn người dùng, độ tương phản cao #000000) */
+/* ==================== 9. QUY CHUẨN TYPOGRAPHY WHAT YOU SEE IS WHAT YOU GOT (ĐỒNG BỘ 100% VỚI PDF) ==================== */
+.gemini-reading-body {
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  background: transparent !important;
+  contain: layout style;
+  min-height: 380px;
+}
+.gemini-reading-body.gemini-qa-body {
+  min-height: 0;
+}
+.gemini-reading-body.gemini-qa-body > :last-child {
+  margin-bottom: 0;
+}
+.gemini-reading-body * {
+  font-style: normal !important;
+}
+
+/* Heading 1 (Phần lớn I đến V hoặc MỤC LỤC): Font Lora có chân, Đỏ chu sa #8b1d1d, 24px (~22pt), CĂN GIỮA, chữ hoa */
+.gemini-reading-body h1,
+.gemini-reading-body .major-heading {
+  font-family: 'Lora', 'Noto Serif', Georgia, serif !important;
+  font-size: 1.55rem !important; /* ~24.8px */
+  font-weight: 800 !important;
+  color: #8b1d1d !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  margin-top: 2.2rem !important;
+  margin-bottom: 1.1rem !important;
+  padding-top: 10px !important;
+  padding-bottom: 4px !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.03em !important;
+  overflow: visible !important;
+}
+
+/* Heading 2 (Các mục chính: 1. Cung Mệnh, 2. Cung Tài Bạch...): Font Lora có chân, Đen mực #000000, 20px (~18pt), CĂN TRÁI */
+.gemini-reading-body h2 {
+  font-family: 'Lora', 'Noto Serif', Georgia, serif !important;
+  font-size: 1.28rem !important; /* ~20.5px - Tách biệt rõ ràng so với H3 */
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-top: 1.8rem !important;
+  margin-bottom: 0.8rem !important;
+  padding-top: 8px !important;
+  padding-bottom: 2px !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+/* Heading 3 (Tiểu mục: Chính tinh tọa thủ, Bộ sao...): Font Lora có chân, Đen than #1e293b, 17px (~15pt), CĂN TRÁI */
+.gemini-reading-body h3 {
+  font-family: 'Lora', 'Noto Serif', Georgia, serif !important;
+  font-size: 1.10rem !important; /* ~17.5px - Lớn hơn thân bài 15px */
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-top: 1.3rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-top: 6px !important;
+  padding-bottom: 2px !important;
+  line-height: 1.45 !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+/* Heading 4 & Năm...: Font Lora có chân, Đen than #1e293b, 16px (~14pt), CĂN TRÁI (Chuẩn hóa không dùng đỏ) */
+.gemini-reading-body h4,
+.gemini-reading-body .year-heading {
+  font-family: 'Lora', 'Noto Serif', Georgia, serif !important;
+  font-size: 1.05rem !important; /* ~16.8px */
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-top: 1.2rem !important;
+  margin-bottom: 0.45rem !important;
+  padding-top: 4px !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+/* Đoạn văn thường: Đen #000000, 15px (~14pt Word), CĂN ĐỀU HAI BÊN (justify) */
+.gemini-reading-body p {
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 0 !important;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+/* Lời thoại thương hiệu "Tử Vi Hồng Ân": Ngắt dòng rộng rãi 24px trên & dưới */
+.gemini-reading-body p.brand-dialogue {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  color: #000000 !important;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+.gemini-reading-body strong,
+.gemini-reading-body b {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+/* Vô hiệu hóa toàn diện in nghiêng trong toàn bộ nội dung luận giải */
+.gemini-reading-body em,
+.gemini-reading-body i,
+.gemini-reading-body cite,
+.gemini-reading-body .poem-quote {
+  color: #000000 !important;
+  font-style: normal !important;
+  font-weight: normal;
+}
+
+/* Danh sách gạch đầu dòng: Có bullet rõ ràng, thụt lề 24px, căn đều hai bên */
+.gemini-reading-body ul,
+.gemini-reading-body ol {
+  color: #000000 !important;
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  margin-top: 8px !important;
+  margin-bottom: 16px !important;
+  padding-left: 24px !important;
+  list-style-type: disc !important;
+}
+.gemini-reading-body li {
+  margin-bottom: 0.65rem !important;
+  line-height: 1.68 !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+.gemini-reading-body li::marker {
+  color: #8b1d1d !important; /* Dấu chấm bullet màu Đỏ chu sa thanh nhã */
+}
+
+/* Danh sách gạch đầu dòng ngắt dòng sau dấu hai chấm (:) - Căn lề ngay ngắn, thoáng đãng */
+.gemini-reading-body li.bullet-item-colon {
+  margin-bottom: 1.1rem !important;
+}
+.gemini-reading-body li .bullet-label {
+  display: block !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 4px !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+}
+.gemini-reading-body li .bullet-label strong,
+.gemini-reading-body li .bullet-label b {
+  font-weight: 700 !important;
+  color: #000000 !important;
+}
+.gemini-reading-body li .bullet-content {
+  display: block !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  margin-top: 3px !important;
+}
+
+/* ==================== MỤC LỤC HIỆN ĐẠI, THOÁNG ĐÃNG & PHÂN CẤP CHUẨN ==================== */
+.gemini-reading-body .toc-box {
+  margin: 24px 0 32px 0 !important;
+  padding: 22px 26px !important;
+  background-color: #FCFAF7 !important;
+  border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px -2px rgba(139, 29, 29, 0.04), 0 2px 8px -1px rgba(197, 160, 89, 0.08) !important;
+}
+.gemini-reading-body .toc-header {
+  font-family: 'Lora', 'Noto Serif', Georgia, serif !important;
+  font-size: 1.25rem !important; /* ~20px */
+  font-weight: 800 !important;
+  color: #8B1D1D !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 16px !important;
+  border-bottom: 1.5px solid rgba(197, 160, 89, 0.35) !important;
+  padding-bottom: 10px !important;
+}
+.gemini-reading-body .toc-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+.gemini-reading-body .toc-item {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  margin-bottom: 4px !important;
+  text-align: left !important;
+}
+.gemini-reading-body .toc-item a {
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+.gemini-reading-body .toc-item a:hover {
+  color: #8B1D1D !important;
+  text-decoration: underline !important;
+}
+.gemini-reading-body .toc-item.level-1 {
+  font-family: 'Lora', 'Noto Serif', Georgia, serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #8B1D1D !important;
+  margin-top: 14px !important;
+  margin-bottom: 5px !important;
+  padding-left: 0 !important;
+}
+.gemini-reading-body .toc-item.level-1:first-child {
+  margin-top: 4px !important;
+}
+.gemini-reading-body .toc-item.level-1 a {
+  color: #8B1D1D !important;
+}
+.gemini-reading-body .toc-item.level-1 a:hover {
+  color: #A12323 !important;
+}
+.gemini-reading-body .toc-item.level-2 {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+  padding-left: 22px !important;
+  color: #1E293B !important;
+  font-weight: 600 !important;
+  margin-top: 5px !important;
+  margin-bottom: 3px !important;
+}
+.gemini-reading-body .toc-item.level-2 a {
+  color: #1E293B !important;
+}
+.gemini-reading-body .toc-item.level-3 {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+  padding-left: 44px !important;
+  color: #57534E !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  margin-top: 3px !important;
+  margin-bottom: 2px !important;
+}
+.gemini-reading-body .toc-item.level-3 a {
+  color: #57534E !important;
+}
+
+.gemini-reading-body a {
+  color: #8b1d1d !important;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.gemini-reading-body a:hover {
+  color: #a12323 !important;
+  text-decoration: underline;
+}
+
+/* Khối câu thơ và câu Phú: CĂN GIỮA, ĐỒNG BỘ 15PX, CHỮ ĐỨNG 100%, LOẠI BỎ HOÀN TOÀN KHỐI NỀN VÀ VIỀN */
+.gemini-reading-body blockquote,
+.gemini-reading-body .poem-quote {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+  border: none !important;
+  border-left: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 22px auto !important;
+  font-style: normal !important; /* TUYỆT ĐỐI KHÔNG SỬ DỤNG ĐỊNH DẠNG IN NGHIÊNG */
+  font-weight: 400 !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  line-height: 1.72 !important;
+  text-align: center !important;
+}
+/* Typewriter cursor - Thở êm ái thay vì nhấp nháy bậc thang */
+.gemini-cursor {
+  display: inline-block;
+  width: 2.5px;
+  height: 1.18em;
+  background: #8b1d1d;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: gemini-cursor-breathe 0.85s infinite ease-in-out;
+}
+@keyframes gemini-cursor-breathe {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.15; transform: scaleY(0.85); }
+}
+/* 4. Popover Gợi Ý Yêu Cầu - Mượt Mà 60FPS với Spring Easing & Transform Origin chuẩn tâm nút tròn */
+.gemini-popover-animate,
+.gemini-popover-panel {
+  background-color: #ffffff !important;
+  transform-origin: 22px bottom;
+  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(226, 232, 240, 0.95) !important;
+  transition: opacity 220ms var(--ease-spring-snappy, cubic-bezier(0.34, 1.42, 0.64, 1)),
+              transform 220ms var(--ease-spring-snappy, cubic-bezier(0.34, 1.42, 0.64, 1)),
+              filter 140ms ease,
+              visibility 220ms var(--ease-spring-snappy, cubic-bezier(0.34, 1.42, 0.64, 1));
+  will-change: opacity, transform, filter;
+}
+.gemini-popover-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+  pointer-events: auto;
+}
+.gemini-popover-closed {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.94);
+  filter: blur(2px);
+  pointer-events: none;
+}
+/* Loại bỏ triệt để thanh cuộn dọc & ngang cho thẻ xác nhận thông tin */
+.gemini-no-scrollbar {
+  /* Ẩn thanh cuộn nhưng vẫn cho phép cuộn dọc */
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.gemini-no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+/* Loại bỏ thanh cuộn ngang trong giao diện trò chuyện & bài luận giải AI */
+/* Ẩn hoàn toàn thanh cuộn nhưng vẫn giữ khả năng cuộn tự nhiên mượt mà */
+.gemini-custom-scrollbar {
+  overflow-x: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+.gemini-custom-scrollbar::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0px !important;
+  height: 0px !important;
+}
+/* Đảm bảo bài luận Markdown & bảng biểu không gây thanh cuộn ngang */
+.gemini-reading-body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+.gemini-reading-body table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  word-break: break-word !important;
+  overflow-x: hidden !important;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.gemini-reading-body th,
+.gemini-reading-body td {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  padding: 8px 10px;
+}
+.gemini-reading-body pre,
+.gemini-reading-body code {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+/* 9. Hiệu ứng Fade-in mượt mà cho thanh nhập liệu khi AI hoàn tất luận giải */
+@keyframes ai-input-bar-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ai-input-bar-fade-in {
+  animation: ai-input-bar-fade-in 420ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* 10. Chuyển cảnh trang & component mượt mà 60fps (Seamless Page & Shared Transitions) */
+@keyframes gemini-page-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.992) translateY(8px);
+    filter: blur(3.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+.gemini-page-enter {
+  animation: gemini-page-enter 360ms var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  will-change: opacity, transform, filter;
+}
+.gemini-page-exit {
+  opacity: 0 !important;
+  transform: scale(0.99) translateY(4px) !important;
+  filter: blur(3px) !important;
+  transition: opacity 240ms var(--ease-exit-clean, cubic-bezier(0.4, 0, 0.2, 1)),
+              transform 240ms var(--ease-exit-clean, cubic-bezier(0.4, 0, 0.2, 1)),
+              filter 180ms ease;
+  will-change: opacity, transform, filter;
+  pointer-events: none;
+}
+/* Hiệu ứng trượt vào trực quan kết nối thị giác (Visual Continuity) */
+@keyframes ai-preview-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-16px) scale(0.985);
+    filter: blur(2.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0px);
+  }
+}
+.ai-preview-slide-in {
+  animation: ai-preview-slide-in 360ms var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  will-change: transform, opacity, filter;
+}
+@keyframes ai-card-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(16px) scale(0.985);
+    filter: blur(2.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0px);
+  }
+}
+.ai-card-slide-in {
+  animation: ai-card-slide-in 360ms var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  will-change: transform, opacity, filter;
+}
+/* Skeleton Shimmer Quét Ánh Sáng */
+@keyframes ai-shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.ai-skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: ai-shimmer-sweep 2.2s infinite ease-in-out;
+  pointer-events: none;
+}
+@keyframes gemini-chat-container-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+.gemini-chat-container-enter {
+  animation: gemini-chat-container-enter 320ms var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  will-change: opacity, transform, filter;
+}
+/* View Transition API Native Browser Optimization */
+::view-transition-old(root) {
+  animation: 260ms cubic-bezier(0.4, 0, 0.2, 1) both gemini-view-transition-fade-out;
+}
+::view-transition-new(root) {
+  animation: 380ms cubic-bezier(0.16, 1, 0.3, 1) both gemini-view-transition-fade-in;
+}
+::view-transition-group(tuvi-chart-sheet) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+::view-transition-group(tuvi-subject-panel) {
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes gemini-view-transition-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.995);
+    filter: blur(2px);
+  }
+}
+@keyframes gemini-view-transition-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.005);
+    filter: blur(2.5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+/* ==================== 11. DESKTOP UNIFORM ASPECT RATIO SCALING CONTAINER ==================== */
+/* Typography và Heading đã được đồng bộ 100% chuẩn mực theo triết lý WYSIWYG ở phần trên */
+/* Hỗ trợ bôi đen và sao chép nội dung luận giải AI và đoạn chat */
+.gemini-reading-body,
+.gemini-reading-body *,
+.gemini-chat-enter,
+.gemini-ai-bubble {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+.gemini-reading-body ::selection,
+.gemini-ai-bubble ::selection {
+  background-color: #fde68a !important;
+  color: #8b1d1d !important;
+}
+.gemini-reading-body ::-moz-selection,
+.gemini-ai-bubble ::-moz-selection {
+  background-color: #fde68a !important;
+  color: #8b1d1d !important;
+}
+
+/* ==================== 12. MOBILE SINGLE-LINE HEADINGS & TOC (<= 580px) ==================== */
+@media (max-width: 580px) {
+  .gemini-reading-body h1,
+  .gemini-reading-body .major-heading {
+    font-size: clamp(11px, 3.1vw, 18px) !important;
+    letter-spacing: 0.01em !important;
+    line-height: 1.45 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.8rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .gemini-reading-body h2 {
+    font-size: clamp(12px, 3.4vw, 17px) !important;
+    line-height: 1.4 !important;
+    margin-top: 1.35rem !important;
+    margin-bottom: 0.65rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .gemini-reading-body h3 {
+    font-size: clamp(11.5px, 3.2vw, 15.5px) !important;
+    line-height: 1.4 !important;
+    margin-top: 1.05rem !important;
+    margin-bottom: 0.45rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .gemini-reading-body h4,
+  .gemini-reading-body .year-heading {
+    font-size: clamp(11.5px, 3.2vw, 15px) !important;
+    line-height: 1.38 !important;
+    margin-top: 0.95rem !important;
+    margin-bottom: 0.4rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .gemini-reading-body .toc-box {
+    margin: 16px 0 22px 0 !important;
+    padding: 14px 14px !important;
+  }
+
+  .gemini-reading-body .toc-header {
+    font-size: clamp(14px, 4vw, 17px) !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  .gemini-reading-body .toc-item {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.5 !important;
+  }
+
+  .gemini-reading-body .toc-item.level-1 {
+    font-size: clamp(10.5px, 2.95vw, 14px) !important;
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .gemini-reading-body .toc-item.level-2 {
+    font-size: clamp(10.5px, 2.9vw, 13.5px) !important;
+    padding-left: 14px !important;
+  }
+
+  .gemini-reading-body .toc-item.level-3 {
+    font-size: clamp(10px, 2.75vw, 12.5px) !important;
+    padding-left: 26px !important;
+  }
+}

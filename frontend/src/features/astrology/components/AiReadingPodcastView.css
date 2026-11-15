@@ -1,0 +1,621 @@
+/* AiReadingPodcastView.css */
+/* Giao diện Bài Luận Văn Podcast & Read-Along Monologue Chuẩn Tử Vi Hồng Ân */
+
+.podcast-page-root {
+  min-height: 100vh;
+  background: #0d0d12;
+  color: #e6e3da;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* TOP STICKY BAR */
+.podcast-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 13, 18, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.podcast-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d4af37;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.podcast-back-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: #fff;
+  transform: translateX(-2px);
+}
+
+.podcast-back-btn:active {
+  transform: translateX(-2px) scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.podcast-brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #c9a44b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.podcast-nav-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  max-width: 550px;
+  scrollbar-width: none;
+}
+
+.podcast-nav-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.podcast-pill-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #b0ada5;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.podcast-pill-btn:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #f5eedc;
+}
+
+.podcast-pill-btn:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.podcast-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.podcast-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d6d3cb;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), background 0.2s ease, color 0.2s ease;
+}
+
+.podcast-action-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.podcast-action-btn:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* MAIN CONTENT CONTAINER */
+.podcast-main-container {
+  flex: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px 140px 24px;
+}
+
+/* HERO BANNER */
+.podcast-hero-header {
+  text-align: center;
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.podcast-eyebrow {
+  color: #d4af37;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.podcast-main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f7f3e8;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.podcast-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.podcast-tag {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #dfcca0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.82rem;
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-weight: 500;
+}
+
+/* READING ESSAY BODY */
+.podcast-essay-content {
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: #dedbd0;
+}
+
+.podcast-essay-content h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #e5b94c;
+  margin: 48px 0 20px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  line-height: 1.35;
+  scroll-margin-top: 80px;
+}
+
+.podcast-essay-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f0e6ce;
+  margin: 32px 0 14px 0;
+  line-height: 1.4;
+  scroll-margin-top: 80px;
+}
+
+.podcast-essay-content p {
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.podcast-essay-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.podcast-essay-content li {
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.8;
+}
+
+.podcast-essay-content li::before {
+  content: "•";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: #d4af37;
+  font-size: 1.3rem;
+}
+
+.podcast-essay-content li strong {
+  color: #f7eed7;
+  font-weight: 700;
+}
+
+.podcast-essay-content em {
+  font-style: italic;
+  color: #edd398;
+}
+
+.podcast-brand-quote {
+  font-style: italic;
+  color: #dfcca0;
+  background: rgba(212, 175, 55, 0.05);
+  border-left: 3px solid #d4af37;
+  padding: 12px 18px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+  display: block;
+}
+
+.podcast-essay-content blockquote {
+  background: rgba(212, 175, 55, 0.06);
+  border-left: 3px solid #d4af37;
+  margin: 24px 0;
+  padding: 16px 22px;
+  border-radius: 0 10px 10px 0;
+  color: #f5eedb;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.podcast-essay-content hr {
+  border: none;
+  height: 1px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0) 80%);
+  margin: 40px 0;
+}
+
+/* CTA CARD AT BOTTOM */
+.podcast-cta-card {
+  margin-top: 50px;
+  background: linear-gradient(135deg, rgba(30, 28, 35, 0.95), rgba(20, 20, 28, 0.95));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.podcast-cta-title {
+  font-size: 1.4rem;
+  color: #f7eed7;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.podcast-cta-desc {
+  font-size: 0.98rem;
+  color: #beb9ac;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.podcast-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.podcast-zalo-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  color: #121217;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+.podcast-zalo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.podcast-zalo-btn:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* DOCKED BOTTOM AUDIO PLAYER */
+.podcast-docked-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(18, 18, 25, 0.96);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.5);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.podcast-player-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 220px;
+}
+
+.podcast-play-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  border: none;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.podcast-play-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.podcast-play-btn:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.podcast-play-btn:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+.podcast-player-status {
+  display: flex;
+  flex-direction: column;
+}
+
+.podcast-status-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f0e6ce;
+}
+
+.podcast-status-sub {
+  font-size: 0.75rem;
+  color: #9c978b;
+}
+
+.podcast-player-center {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.podcast-progress-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  outline: none;
+  transition: height 0.15s ease, background-color 0.15s ease;
+}
+
+.podcast-progress-bar-bg:hover,
+.podcast-progress-bar-bg:focus-visible {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.podcast-progress-bar-bg:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+.podcast-progress-bar-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #b8860b, #e5b94c);
+  border-radius: 3px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  will-change: transform;
+}
+
+.podcast-progress-text {
+  font-size: 0.78rem;
+  color: #b0ada5;
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+}
+
+.podcast-player-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.podcast-speed-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #dfcca0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.podcast-speed-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #d4af37;
+  color: #fff;
+}
+
+.podcast-speed-btn:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.podcast-speed-btn:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+.podcast-stop-btn {
+  background: transparent;
+  border: none;
+  color: #9c978b;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), color 0.2s ease, background 0.2s ease;
+}
+
+.podcast-stop-btn:hover {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.podcast-stop-btn:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.podcast-stop-btn:focus-visible {
+  outline: 2px solid #f87171;
+  outline-offset: 2px;
+}
+
+/* LOADING & ERROR STATES */
+.podcast-loading-wrap,
+.podcast-error-wrap {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.podcast-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(212, 175, 55, 0.15);
+  border-top-color: #d4af37;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 24px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.podcast-loading-title {
+  font-size: 1.3rem;
+  color: #f7eed7;
+  margin-bottom: 8px;
+}
+
+.podcast-loading-desc {
+  font-size: 0.95rem;
+  color: #a8a497;
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.podcast-retry-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  color: #121217;
+  border: none;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease;
+}
+
+.podcast-retry-btn:hover {
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+}
+
+.podcast-retry-btn:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (max-width: 580px) {
+  .podcast-nav-pills {
+    display: none;
+  }
+  .podcast-player-center {
+    display: none;
+  }
+  .podcast-player-left {
+    min-width: auto;
+  }
+  .podcast-main-container {
+    padding: 24px 16px 130px 16px;
+  }
+  .podcast-main-title {
+    font-size: 1.7rem;
+  }
+}

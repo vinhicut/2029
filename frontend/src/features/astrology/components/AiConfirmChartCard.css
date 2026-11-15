@@ -1,0 +1,520 @@
+/* AiConfirmChartCard.css */
+/* Giao diện Thẻ Xác Nhận Thông Tin Đương Số Cố Định Cột Phải */
+/* Tối ưu viền sắc nét, bố cục 2 cột Năm/Tuổi, khoảng cách thông thoáng dễ đọc */
+
+/* 1. Container thẻ xác nhận thông tin - Viền tinh xảo, chống vỡ layout & giật lag */
+.ai-confirm-card-container {
+  view-transition-name: tuvi-subject-panel;
+  contain: layout style;
+  position: relative;
+  width: 100%;
+  max-width: 485px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid rgba(139, 29, 29, 0.22);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 12px 36px -6px rgba(139, 29, 29, 0.12),
+    0 4px 16px -2px rgba(15, 23, 42, 0.05);
+  padding: 22px 24px;
+  transition: opacity var(--dur-normal, 240ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-normal, 240ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              border-color var(--dur-fast, 180ms) ease,
+              box-shadow var(--dur-normal, 240ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1));
+  box-sizing: border-box;
+}
+
+.ai-confirm-card-container:hover {
+  border-color: rgba(139, 29, 29, 0.35);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 16px 42px -6px rgba(139, 29, 29, 0.16),
+    0 6px 20px -2px rgba(15, 23, 42, 0.06);
+}
+
+/* Hiệu ứng Fade-out khi bấm Xác nhận - Tích hợp Ultra-short Blur và Spring Easing */
+.ai-confirm-card-container.ai-card-fade-out {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  filter: blur(2.5px);
+  pointer-events: none;
+  transition: opacity var(--dur-fast, 180ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1)),
+              transform var(--dur-fast, 180ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1)),
+              filter var(--dur-fast, 180ms) ease;
+}
+
+/* 2. Header Thẻ Xác Nhận - Nổi bật, trang trọng, khoảng cách thoáng đãng */
+.ai-confirm-card-header {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.ai-confirm-card-header h2 {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ai-confirm-card-header p {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+}
+
+/* 3. Khối Form thông tin đương số - Khoảng cách thông thoáng, dễ đọc */
+.tuvi-form-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+/* Hàng trường dữ liệu */
+.tuvi-form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tuvi-form-label {
+  width: 102px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  flex-shrink: 0;
+}
+
+/* Khung hiển thị giá trị dạng ô nhập input - Đàn hồi lò xo & viền sắc nét */
+.tuvi-input-box {
+  flex: 1;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f172a;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: border-color var(--dur-fast, 180ms) ease,
+              box-shadow var(--dur-fast, 180ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-instant, 120ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1)),
+              background-color var(--dur-fast, 180ms) ease;
+  box-sizing: border-box;
+}
+
+.tuvi-input-box:hover {
+  border-color: #94a3b8;
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+/* Segmented Control (Đối xứng phẳng Nam/Nữ, Dương lịch/Âm lịch) & Shared Layout Sliding Pill Transition (F20 Part 1) */
+.tuvi-segmented-control {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 38px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+  box-sizing: border-box;
+}
+
+/* Viên thuốc trượt nền GPU Composite */
+.tuvi-segment-indicator {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 4.5px);
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(139, 29, 29, 0.12), 0 1px 2px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.tuvi-segment-indicator.pos-1 {
+  transform: translate3d(calc(100% + 3px), 0, 0);
+}
+
+.tuvi-segment-btn {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 6px;
+  background: transparent;
+  transition: color 180ms ease, font-weight 180ms ease, transform 120ms cubic-bezier(0.2, 0, 0, 1);
+  user-select: none;
+}
+
+.tuvi-segment-btn:active {
+  transform: scale(0.97);
+}
+
+.tuvi-segment-btn.active {
+  background: transparent;
+  color: #8b1d1d;
+  font-weight: 700;
+  box-shadow: none;
+  transform: none;
+}
+
+.tuvi-segment-btn.active:active {
+  transform: scale(0.97);
+}
+
+/* Nhóm ngày tháng năm và giờ phút sinh */
+.tuvi-date-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+}
+
+/* Ô hiển thị thông tin ngày / tháng / năm / giờ / phút: Căn giữa thanh lịch, sắc nét */
+.tuvi-select-box {
+  flex: 1;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f172a;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: border-color var(--dur-fast, 180ms) ease,
+              box-shadow var(--dur-fast, 180ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-instant, 120ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+  box-sizing: border-box;
+}
+
+.tuvi-select-box:hover {
+  border-color: #94a3b8;
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+.tuvi-badge-box {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #8b1d1d;
+  background: #fdf2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: border-color var(--dur-fast, 180ms) ease,
+              box-shadow var(--dur-fast, 180ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-instant, 120ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+  box-sizing: border-box;
+}
+
+.tuvi-badge-box:hover {
+  border-color: #fca5a5;
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 8px rgba(139, 29, 29, 0.1);
+}
+
+/* 4. TÁI CẤU TRÚC 2 CỘT RÕ RÀNG: Cột 1 (Năm) & Cột 2 (Tuổi) theo Yêu cầu 2 */
+.tuvi-year-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* Cột 1: Hiển thị Năm (Year) */
+.tuvi-year-col {
+  flex: 1.35;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  min-width: 0;
+  transition: border-color var(--dur-fast, 180ms) ease,
+              box-shadow var(--dur-fast, 180ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-instant, 120ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+  box-sizing: border-box;
+}
+
+.tuvi-year-col:hover {
+  border-color: #94a3b8;
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+/* Cột 2: Hiển thị Tuổi (Age) */
+.tuvi-age-col {
+  flex: 1;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #8b1d1d;
+  background: #fdf2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  min-width: 0;
+  transition: border-color var(--dur-fast, 180ms) ease,
+              box-shadow var(--dur-fast, 180ms) var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-instant, 120ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+  box-sizing: border-box;
+}
+
+.tuvi-age-col:hover {
+  border-color: #fca5a5;
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 8px rgba(139, 29, 29, 0.1);
+}
+
+/* 5. Nút hành động - Tương tác nảy lò xo & tia sáng quét qua */
+.ai-card-btn-change {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  transition: all var(--dur-normal, 240ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+  cursor: pointer;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+.ai-card-btn-change:hover:not(:disabled) {
+  background: #fdf2f2;
+  color: #8b1d1d;
+  border-color: rgba(139, 29, 29, 0.35);
+  transform: translateY(-1.5px) scale(1.015);
+  box-shadow: 0 4px 14px rgba(139, 29, 29, 0.1);
+}
+
+.ai-card-btn-change:active:not(:disabled) {
+  transform: scale(0.97);
+  background: #fae8e8;
+  box-shadow: 0 1px 2px rgba(139, 29, 29, 0.05);
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), background-color 120ms ease;
+}
+
+.ai-card-btn-change svg {
+  transition: transform var(--dur-fast, 180ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+}
+
+.ai-card-btn-change:hover:not(:disabled) svg {
+  transform: translateX(-3px);
+}
+
+.ai-card-btn-confirm {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b1d1d 0%, #a82424 100%);
+  border: 1px solid rgba(253, 230, 138, 0.45);
+  box-shadow: 
+    0 2px 4px rgba(139, 29, 29, 0.2),
+    0 8px 20px -2px rgba(139, 29, 29, 0.38);
+  transition: all var(--dur-normal, 240ms) var(--ease-spring-snappy, cubic-bezier(0.34, 1.3, 0.64, 1));
+  cursor: pointer;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+.ai-card-btn-confirm:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a12323 0%, #b82a2a 100%);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(253, 230, 138, 0.85);
+  box-shadow: 
+    0 4px 8px rgba(139, 29, 29, 0.25),
+    0 12px 28px -2px rgba(139, 29, 29, 0.48),
+    0 0 18px rgba(197, 160, 89, 0.4);
+}
+
+.ai-card-btn-confirm:active:not(:disabled) {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(139, 29, 29, 0.3);
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.ai-card-btn-confirm svg {
+  transition: transform var(--dur-normal, 240ms) var(--ease-spring-bouncy, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+
+.ai-card-btn-confirm:hover:not(:disabled) svg {
+  transform: scale(1.18) rotate(12deg);
+}
+
+/* Vệt sáng lấp lánh quét nhẹ qua nút Xác nhận khi hover */
+.ai-card-btn-confirm::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.ai-card-btn-confirm:hover:not(:disabled)::after {
+  left: 140%;
+  transition: left 0.75s ease-in-out;
+}
+
+.ai-card-btn-confirm:disabled {
+  background: #cbd5e1;
+  border-color: transparent;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Tối ưu hóa cảm ứng Mobile - Chống dính Hover */
+@media (hover: none) {
+  .ai-card-btn-change:hover:not(:disabled),
+  .ai-card-btn-confirm:hover:not(:disabled) {
+    transform: none;
+    box-shadow: initial;
+  }
+  .ai-card-btn-change:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+  .ai-card-btn-confirm:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}
+
+/* Hỗ trợ chế độ giảm chuyển động (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .ai-confirm-card-container,
+  .ai-confirm-card-container.ai-card-fade-out,
+  .ai-card-btn-change,
+  .ai-card-btn-confirm,
+  .tuvi-segment-btn {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* 6. Khối thông báo số lượt khả dụng tách dòng độc lập tạo điểm nhấn theo Yêu cầu 2 */
+.ai-quota-notice-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding-top: 6px;
+}
+
+.ai-quota-action-note {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.ai-quota-badge-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #334155;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  padding: 3.5px 14px;
+  border-radius: 9999px;
+  line-height: 1.3;
+}
+
+.ai-quota-badge-label {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.ai-quota-badge-value {
+  font-weight: 700;
+  color: #8b1d1d;
+}
+
+.ai-badge-credits {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #8b1d1d;
+}
+
+.ai-badge-unlimited {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #8b1d1d;
+  letter-spacing: 0.3px;
+  text-transform: lowercase;
+}

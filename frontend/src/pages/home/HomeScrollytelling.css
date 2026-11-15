@@ -1,0 +1,217 @@
+/* =========================================================================
+   HOME SCROLLYTELLING - TỬ VI HỒNG ÂN
+   5 Sắc Tố Cổ Điển (Solid Colors Only - No Gradients)
+   ========================================================================= */
+
+.scrolly-page {
+  --scrolly-vermilion: #8b1d1d;
+  --scrolly-ochre: #9a6b26;
+  --scrolly-pine: #1e5631;
+  --scrolly-paper: #fcfaf7;
+  --scrolly-ink: #1c1917;
+  overscroll-behavior-y: none;
+}
+
+/* Scroll Progress Hairline under Navbar (Solid Vermilion) */
+.scrolly-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  pointer-events: none;
+  background: transparent;
+}
+
+.scrolly-progress-bar {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  background-color: #8b1d1d;
+  will-change: transform;
+}
+
+/* Bidirectional Scroll Reveal & Exit Choreography (Slower, Gentle GPU-accelerated 60fps) */
+.scrolly-reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(0.988);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1050ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scrolly-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.scrolly-reveal.is-exit-top {
+  opacity: 0.94;
+  transform: translate3d(0, -8px, 0) scale(0.994);
+}
+
+.scrolly-reveal-delay-1 { transition-delay: 120ms; }
+.scrolly-reveal-delay-2 { transition-delay: 240ms; }
+.scrolly-reveal-delay-3 { transition-delay: 360ms; }
+.scrolly-reveal-delay-4 { transition-delay: 480ms; }
+
+/* Celestial Orbit Slow Spin */
+@keyframes scrollyOrbitSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scrollyOrbitReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.scrolly-orbit-cw {
+  animation: scrollyOrbitSlow 90s linear infinite;
+  will-change: transform;
+}
+
+.scrolly-orbit-ccw {
+  animation: scrollyOrbitReverse 65s linear infinite;
+  will-change: transform;
+}
+
+/* Floating Scroll Cue */
+@keyframes scrollyCueBounce {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.75; }
+  50% { transform: translate3d(0, 6px, 0); opacity: 1; }
+}
+
+.scrolly-cue-bounce {
+  animation: scrollyCueBounce 2.2s ease-in-out infinite;
+}
+
+/* SVG Vector Path Draw Animation for Thiên Bàn & Ngũ Hành (Slower & Softer) */
+.scrolly-svg-line {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  transition:
+    stroke-dashoffset 1250ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 600ms ease-in-out;
+}
+
+.scrolly-svg-line.is-drawn {
+  stroke-dashoffset: 0;
+}
+
+/* Normalized pathLength=100 draw animation for Ngũ Hành Circle & Star */
+.scrolly-svg-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition:
+    stroke-dashoffset 1450ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 600ms ease-in-out;
+}
+
+.scrolly-svg-path.is-drawn {
+  stroke-dashoffset: 0;
+}
+
+/* Authentic /la-so-tu-vi Palace Cell Highlight inside Sticky Thiên Bàn */
+.scrolly-house {
+  background-color: #ffffff;
+  transition:
+    background-color 550ms ease-in-out,
+    box-shadow 580ms ease-in-out,
+    opacity 550ms ease-in-out;
+}
+
+.scrolly-house.is-dimmed {
+  opacity: 0.44;
+}
+
+.scrolly-house.is-primary {
+  background-color: #fef2f2;
+  box-shadow: inset 0 0 0 2.5px #dc2626;
+  z-index: 15;
+}
+
+.scrolly-house.is-tamhop {
+  background-color: #fffbeb;
+  box-shadow: inset 0 0 0 2px #d97706;
+  z-index: 12;
+}
+
+.scrolly-house.is-xungchieu {
+  background-color: #f0fdf4;
+  box-shadow: inset 0 0 0 2px #16a34a;
+  z-index: 12;
+}
+
+/* Story Beat Card (Slower, Softer Transitions) */
+.scrolly-beat-card {
+  transition:
+    opacity 700ms ease-in-out,
+    transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 550ms ease-in-out,
+    box-shadow 650ms ease-in-out,
+    background-color 550ms ease-in-out;
+}
+
+.scrolly-beat-card.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  border-color: #8b1d1d;
+  box-shadow: 0 18px 40px -14px rgba(139, 29, 29, 0.14), 0 4px 14px -4px rgba(28, 25, 23, 0.06);
+}
+
+.scrolly-beat-card.is-inactive {
+  opacity: 0.56;
+  transform: translate3d(0, 6px, 0);
+}
+
+@media (max-width: 580px) {
+  .scrolly-beat-card.is-inactive {
+    opacity: 0.92;
+    transform: none;
+  }
+}
+
+/* Star Reveal Card (Tra cứu sao hạn) */
+@keyframes scrollyStarPop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.scrolly-star-reveal {
+  animation: scrollyStarPop 380ms var(--ease-spring-gentle, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scrolly-orbit-cw,
+  .scrolly-orbit-ccw,
+  .scrolly-cue-bounce {
+    animation: none !important;
+  }
+
+  .scrolly-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .scrolly-svg-line {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+
+  .scrolly-house,
+  .scrolly-beat-card {
+    transform: none !important;
+    transition: opacity 120ms ease, border-color 120ms ease, background-color 120ms ease !important;
+  }
+}

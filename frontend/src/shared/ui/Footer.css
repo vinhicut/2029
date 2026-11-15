@@ -1,0 +1,312 @@
+/* ========================================================================= */
+/* TỬ VI HỒNG ÂN - FOOTER COMPONENT DÙNG CHUNG TOÀN HỆ THỐNG                */
+/* Đảm bảo độc lập 100%, không bị ảnh hưởng bởi reset margin/padding của app */
+/* ========================================================================= */
+
+.site-footer {
+  background-color: #f4efe6 !important;
+  border-top: 1px solid rgba(251, 191, 36, 0.8) !important;
+  color: #57534e !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  padding: 48px 0 44px !important;
+  width: 100% !important;
+  margin-top: auto !important;
+  box-sizing: border-box !important;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif !important;
+}
+
+.site-footer-container {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 32px !important;
+  padding-bottom: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 580px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+.site-footer-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* Cột 1: Thương hiệu */
+.site-footer-brand-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.site-footer-logo-wrap {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 1px solid #fbbf24 !important;
+  background-color: #fffaf2 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  flex-shrink: 0 !important;
+}
+
+.site-footer-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.site-footer-brand-name {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #1c1917 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.site-footer-desc {
+  font-size: 12px !important;
+  color: #57534e !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.site-footer-web {
+  font-size: 12px !important;
+  color: #1c1917 !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.site-footer-web a {
+  color: #92400e !important;
+  text-decoration: underline !important;
+  font-weight: 700 !important;
+  transition: color 0.2s ease !important;
+}
+
+.site-footer-web a:hover {
+  color: #b91c1c !important;
+}
+
+/* Tiêu đề các cột */
+.site-footer-col-title {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #1c1917 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 0 4px 0 !important;
+}
+
+/* Danh sách link */
+.site-footer-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.site-footer-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-footer-btn {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #44403c !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: color 0.2s ease !important;
+  text-align: left !important;
+  font-family: inherit !important;
+  line-height: 1.4 !important;
+}
+
+.site-footer-btn:hover {
+  color: #b91c1c !important;
+}
+
+.site-footer-btn.highlight {
+  color: #b91c1c !important;
+  font-weight: 700 !important;
+}
+
+.site-footer-btn.highlight:hover {
+  color: #991b1b !important;
+}
+
+.site-footer-icon {
+  width: 14px !important;
+  height: 14px !important;
+  flex-shrink: 0 !important;
+  color: #b45309 !important;
+}
+
+/* Cột 4: Hotline Zalo */
+.site-footer-lead {
+  font-size: 11px !important;
+  color: #57534e !important;
+  margin: 0 0 4px 0 !important;
+  line-height: 1.5 !important;
+}
+
+.site-footer-hotlines {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.site-footer-hotline-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 12px !important;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #6ee7b7 !important;
+  color: #064e3b !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  transition: background-color 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer-hotline-card:hover {
+  background-color: #ecfdf5 !important;
+}
+
+.site-footer-phone-icon {
+  width: 14px !important;
+  height: 14px !important;
+  color: #047857 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Bản quyền chân trang */
+.site-footer-bottom {
+  padding-top: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer-copyright {
+  font-size: 11px !important;
+  color: #78716c !important;
+  margin: 0 !important;
+}
+
+/* Thông tin định danh chủ quản & khu vực gắn logo Bộ Công Thương */
+.site-footer-legal-bar {
+  margin-top: 28px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid #e5d8c0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+.site-footer-legal-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  font-size: 11.5px !important;
+  line-height: 1.5 !important;
+  color: #57534e !important;
+}
+
+.site-footer-legal-operator {
+  font-weight: 700 !important;
+  color: #292524 !important;
+  font-size: 12px !important;
+}
+
+.site-footer-legal-meta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+}
+
+.site-footer-bct-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 9px 14px !important;
+  border-radius: 10px !important;
+  background-color: #fffaf2 !important;
+  border: 1px solid #d97706 !important;
+  text-decoration: none !important;
+  color: #78350f !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.site-footer-bct-badge:hover {
+  background-color: #fef3c7 !important;
+}
+
+.site-footer-bct-icon {
+  width: 24px !important;
+  height: 24px !important;
+  color: #b91c1c !important;
+  flex-shrink: 0 !important;
+}
+
+.site-footer-bct-text {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.3 !important;
+}
+
+.site-footer-bct-label {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #7f1d1d !important;
+  text-transform: uppercase !important;
+}
+
+.site-footer-bct-sub {
+  font-size: 10.5px !important;
+  color: #57534e !important;
+}
+
+@media (max-width: 580px) {
+  .site-footer-legal-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .site-footer-bct-badge {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

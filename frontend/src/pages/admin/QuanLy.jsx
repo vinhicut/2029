@@ -1,0 +1,455 @@
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AlertCircle, Copy, RefreshCw, Search, ShieldCheck, UserRound, Eye, X, Trash2 } from 'lucide-react';
+import './QuanLy.css';
+import AdminChatPanel from './AdminChatPanel';
+import { getManagementRoleLabel, isAdminOrDeveloper, isCollaborator } from '../../shared/utils/authRoles';
+
+function formatBirth(input = {}) {
+  const date = [input.day, input.month, input.year].filter((part) => part !== undefined && part !== '').join('/');
+  const time = `${String(input.hour || 0).padStart(2, '0')}:${String(input.minute || 0).padStart(2, '0')}`;
+  const calendar = input.is_solar === false || input.isSolar === false ? 'Âm lịch' : 'Dương lịch';
+  return `${date} · ${time} · ${input.gender || ''} · ${calendar}`;
+}
+
+export default function QuanLy({ currentUser: guardedUser = null }) {
+  const [logs, setLogs] = useState([]);
+  const [accounts, setAccounts] = useState([]);
+  const [selectedLog, setSelectedLog] = useState(null);
+  const [selectedImage, setSelectedImage] = useState('');
+  const [imageError, setImageError] = useState('');
+  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [authorized, setAuthorized] = useState(false);
+  const [activeUser, setActiveUser] = useState(guardedUser);
+  const [adminLevel, setAdminLevel] = useState(null);
+  const [collaboratorProfile, setCollaboratorProfile] = useState(null);
+  const [collaboratorLogs, setCollaboratorLogs] = useState([]);
+  const [referralCopied, setReferralCopied] = useState(false);
+  const [deletingAccountId, setDeletingAccountId] = useState(null);
+  const [accountError, setAccountError] = useState('');
+  const [deletingLogId, setDeletingLogId] = useState(null);
+  const [logError, setLogError] = useState('');
+
+  const loadLogs = useCallback(async () => {
+    setLoading(true);
+    setError('');
+    const token = localStorage.getItem('tuvi_token');
+    if (!token) {
+      setAuthorized(false);
+      setError('Vui lòng đăng nhập bằng tài khoản được cấp quyền để truy cập trang Quản lý.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      let verifiedUser = guardedUser;
+      if (!verifiedUser) {
+        const authResponse = await fetch('/api/auth/me', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (!authResponse.ok) throw new Error('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
+        const authData = await authResponse.json();
+        verifiedUser = authData.user;
+      }
+
+      setActiveUser(verifiedUser);
+
+      if (isAdminOrDeveloper(verifiedUser)) {
+        setAuthorized(true);
+        const level = Number(
+          verifiedUser?.admin_level ||
+          (verifiedUser?.role === 'developer' || verifiedUser?.account_type === 'developer' ? 1 : 2)
+        );
+        setAdminLevel(level);
+        if (level !== 1) return;
+
+        const response = await fetch('/api/admin/customer-logs/charts?limit=100', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.message || 'Không tải được danh sách khách hàng.');
+        setLogs(result.data || []);
+
+        const accountsResponse = await fetch('/api/admin/customer-accounts?limit=100', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const accountsResult = await accountsResponse.json().catch(() => ({}));
+        setAccounts(accountsResponse.ok ? (accountsResult.data || []) : []);
+        return;
+      }
+
+      if (isCollaborator(verifiedUser)) {
+        setAuthorized(true);
+        setAdminLevel(0);
+        const [profileRes, logsRes] = await Promise.all([
+          fetch('/api/auth/profile/details', { headers: { Authorization: `Bearer ${token}` } }),
+          fetch('/api/auth/profile/referred-chart-logs', { headers: { Authorization: `Bearer ${token}` } }),
+        ]);
+        const profileJson = await profileRes.json().catch(() => ({}));
+        const logsJson = await logsRes.json().catch(() => ({}));
+        if (!profileRes.ok) throw new Error(profileJson.message || 'Không tải được hồ sơ cộng tác viên.');
+        setCollaboratorProfile(profileJson.data || null);
+        setCollaboratorLogs(logsRes.ok ? (logsJson.data || []) : []);
+        return;
+      }
+
+      setAuthorized(false);
+      throw new Error('Tài khoản hiện tại không có quyền truy cập trang Quản lý.');
+    } catch (loadError) {
+      setError(loadError.message || 'Không tải được dữ liệu quản lý.');
+    } finally {
+      setLoading(false);
+    }
+  }, [guardedUser]);
+
+  const deleteCustomerAccount = async (account) => {
+    const identity = account.display_name || account.email;
+    if (!window.confirm(`Bạn có chắc muốn xóa tài khoản khách hàng ${identity}?`)) return;
+
+    setDeletingAccountId(account.id);
+    setAccountError('');
+    try {
+      const response = await fetch(`/api/admin/customer-accounts/${account.id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${localStorage.getItem('tuvi_token') || ''}` },
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.message || 'Không thể xóa tài khoản khách hàng.');
+      setAccounts((current) => current.filter((item) => item.id !== account.id));
+    } catch (deleteError) {
+      setAccountError(deleteError.message || 'Không thể xóa tài khoản khách hàng.');
+    } finally {
+      setDeletingAccountId(null);
+    }
+  };
+
+  const deleteCustomerLog = async (log) => {
+    const customerName = log.customer_name || 'khách vãng lai';
+    if (!window.confirm(`Xóa lá số ${log.chart_code} của ${customerName}?`)) return;
+
+    setDeletingLogId(log.id);
+    setLogError('');
+    try {
+      const response = await fetch(`/api/admin/customer-logs/charts/${log.id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${localStorage.getItem('tuvi_token') || ''}` },
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.message || 'Không thể xóa lá số.');
+      setLogs((current) => current.filter((item) => item.id !== log.id));
+      if (selectedLog?.id === log.id) setSelectedLog(null);
+    } catch (deleteError) {
+      setLogError(deleteError.message || 'Không thể xóa lá số.');
+    } finally {
+      setDeletingLogId(null);
+    }
+  };
+
+  useEffect(() => { loadLogs(); }, [loadLogs]);
+
+  useEffect(() => {
+    if (!selectedLog) {
+      setSelectedImage('');
+      setImageError('');
+      return undefined;
+    }
+    let objectUrl = '';
+    const controller = new AbortController();
+    setSelectedImage('');
+    setImageError('');
+    fetch(`/api/admin/customer-logs/charts/${selectedLog.id}/image`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('tuvi_token') || ''}` },
+      signal: controller.signal,
+    }).then(async (response) => {
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        throw new Error(result.message || 'Bản ghi này chưa có ảnh lá số.');
+      }
+      return response.blob();
+    }).then((blob) => {
+      objectUrl = URL.createObjectURL(blob);
+      setSelectedImage(objectUrl);
+    }).catch((error) => {
+      if (error.name !== 'AbortError') setImageError(error.message || 'Không tải được ảnh lá số.');
+    });
+    return () => {
+      controller.abort();
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    };
+  }, [selectedLog]);
+
+  const filteredLogs = useMemo(() => {
+    const query = search.trim().toLocaleLowerCase('vi');
+    if (!query) return logs;
+    return logs.filter((log) => [log.customer_name, log.customer_email, log.chart_code]
+      .some((value) => String(value || '').toLocaleLowerCase('vi').includes(query)));
+  }, [logs, search]);
+
+  const isCollaboratorAccount = authorized && isCollaborator(activeUser) && !isAdminOrDeveloper(activeUser);
+  const roleLabel = getManagementRoleLabel(activeUser);
+
+  const copyReferralLink = async () => {
+    const code = collaboratorProfile?.referral_code || activeUser?.referral_code;
+    if (!code) return;
+    const link = `${window.location.origin}/?ref=${encodeURIComponent(code)}`;
+    try {
+      await navigator.clipboard.writeText(link);
+      setReferralCopied(true);
+      window.setTimeout(() => setReferralCopied(false), 2500);
+    } catch {
+      setError('Không thể sao chép liên kết. Vui lòng sao chép thủ công.');
+    }
+  };
+
+  if (!loading && isCollaboratorAccount) {
+    const referredAccounts = collaboratorProfile?.referred_accounts || [];
+    const referralCode = collaboratorProfile?.referral_code || activeUser?.referral_code || '';
+    const referralLink = referralCode ? `${window.location.origin}/?ref=${encodeURIComponent(referralCode)}` : '';
+    const query = search.trim().toLocaleLowerCase('vi');
+    const filteredCollabLogs = query
+      ? collaboratorLogs.filter((log) =>
+          [log.customer_name, log.customer_email, log.chart_code].some((v) =>
+            String(v || '').toLocaleLowerCase('vi').includes(query),
+          ),
+        )
+      : collaboratorLogs;
+
+    return (
+      <main className="customer-admin-page">
+        <header className="customer-admin-heading">
+          <div>
+            <span className="customer-admin-eyebrow">
+              <ShieldCheck size={15} /> KHU VỰC {roleLabel.toUpperCase()}
+            </span>
+            <h1>Quản lý giới thiệu &amp; khách hàng</h1>
+            <p>Theo dõi liên kết giới thiệu, tài khoản đã đăng ký và lịch sử lập lá số của khách hàng.</p>
+          </div>
+          <div className="customer-admin-heading-actions">
+            <button type="button" className="customer-admin-refresh" onClick={loadLogs} disabled={loading}>
+              <RefreshCw size={16} className={loading ? 'customer-admin-spinning' : ''} /> Làm mới
+            </button>
+          </div>
+        </header>
+
+        {error && (
+          <div className="customer-admin-alert" role="alert">
+            <AlertCircle size={18} />
+            <span>{error}</span>
+          </div>
+        )}
+
+        <section className="collaborator-summary-grid">
+          <div className="collaborator-stat-card">
+            <span>Mã cộng tác viên</span>
+            <strong>{referralCode || 'Chưa cấp'}</strong>
+          </div>
+          <div className="collaborator-stat-card">
+            <span>Khách hàng đã giới thiệu</span>
+            <strong>{referredAccounts.length}</strong>
+          </div>
+          <div className="collaborator-stat-card">
+            <span>Lượt lập lá số ghi nhận</span>
+            <strong>{collaboratorLogs.length}</strong>
+          </div>
+        </section>
+
+        {referralLink && (
+          <section className="collaborator-referral-box">
+            <div>
+              <span>LIÊN KẾT GIỚI THIỆU CỦA BẠN</span>
+              <a href={referralLink} target="_blank" rel="noreferrer">{referralLink}</a>
+            </div>
+            <button type="button" className="customer-admin-refresh" onClick={copyReferralLink}>
+              <Copy size={15} /> {referralCopied ? 'Đã sao chép' : 'Sao chép liên kết'}
+            </button>
+          </section>
+        )}
+
+        <section className="customer-admin-accounts">
+          <div className="customer-admin-section-heading">
+            <h2>Tài khoản được giới thiệu</h2>
+            <strong>{referredAccounts.length}</strong>
+          </div>
+          {referredAccounts.length === 0 ? (
+            <p>Chưa có tài khoản nào đăng ký qua liên kết giới thiệu của bạn.</p>
+          ) : (
+            <div className="customer-admin-account-list">
+              {referredAccounts.map((account) => (
+                <article className="customer-admin-account" key={account.id}>
+                  <span className="customer-admin-account-avatar">
+                    {String(account.name || account.email || '?').slice(0, 1).toUpperCase()}
+                  </span>
+                  <div>
+                    <strong>{account.name || 'Người dùng'}</strong>
+                    <span>{account.email}</span>
+                  </div>
+                  <div className="customer-admin-account-meta">
+                    <span>Đã lập {account.services?.length || 0} lá số</span>
+                    <span>
+                      Đăng nhập gần nhất:{' '}
+                      {account.last_login_at
+                        ? new Date(account.last_login_at).toLocaleString('vi-VN')
+                        : 'Chưa rõ'}
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <section className="customer-admin-toolbar">
+          <div className="customer-admin-count">
+            <UserRound size={18} />
+            <strong>{collaboratorLogs.length}</strong>
+            <span>lượt lập lá số từ khách giới thiệu</span>
+          </div>
+          <label className="customer-admin-search">
+            <Search size={17} />
+            <input
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              placeholder="Tìm tên, email hoặc mã lá số"
+            />
+          </label>
+        </section>
+
+        <section className="customer-admin-list">
+          {filteredCollabLogs.length === 0 ? (
+            <div className="customer-admin-empty">
+              {collaboratorLogs.length
+                ? 'Không tìm thấy bản ghi phù hợp.'
+                : 'Chưa có lượt lập lá số nào từ khách được giới thiệu.'}
+            </div>
+          ) : (
+            filteredCollabLogs.map((log) => {
+              const input = log.input_data || log.birth_input || {};
+              return (
+                <article className="customer-admin-card" key={log.id}>
+                  <div className="customer-admin-card-main">
+                    <div className="customer-admin-avatar"><UserRound size={20} /></div>
+                    <div className="customer-admin-card-copy">
+                      <div className="customer-admin-name-row">
+                        <h2>{log.customer_name || input.name || 'Khách hàng'}</h2>
+                        <code>{log.chart_code}</code>
+                      </div>
+                      <p>{log.customer_email || 'Chưa có email'}</p>
+                      <p className="customer-admin-birth">{formatBirth(input)}</p>
+                    </div>
+                    <div className="customer-admin-date">
+                      {new Date(log.created_at).toLocaleString('vi-VN')}
+                    </div>
+                  </div>
+                </article>
+              );
+            })
+          )}
+        </section>
+      </main>
+    );
+  }
+
+  if (!loading && authorized && adminLevel !== 1) {
+    return <main className="customer-admin-page"><header className="customer-admin-heading"><div><span className="customer-admin-eyebrow"><ShieldCheck size={15} /> KHU VỰC QUẢN TRỊ</span><h1>Quản trị nội dung và người dùng</h1><p>{roleLabel} (Cấp {adminLevel}) có quyền quản lý bài viết và tài khoản người dùng.</p></div><div className="customer-admin-heading-actions"><Link className="customer-admin-articles-link" to="/quan-ly/nguoi-dung">Quản lý người dùng</Link><Link className="customer-admin-articles-link" to="/quan-ly/bai-viet">Quản lý bài viết</Link><Link className="customer-admin-articles-link" to="/quan-ly/khoa-hoc">Viết bài khóa học</Link></div></header><AdminChatPanel /></main>;
+  }
+
+  return (
+    <div className="customer-admin-page">
+      <header className="customer-admin-heading">
+        <div>
+          <span className="customer-admin-eyebrow"><ShieldCheck size={15} /> KHU VỰC {roleLabel ? roleLabel.toUpperCase() : 'QUẢN TRỊ'}</span>
+          <h1>Khách hàng lập lá số</h1>
+          <p>Thông tin khách và lá số được gửi khi khách chủ động chọn lập lá số.</p>
+        </div>
+        <div className="customer-admin-heading-actions">
+          {authorized && <Link className="customer-admin-articles-link" to="/quan-ly/nguoi-dung">Quản lý người dùng</Link>}
+          {authorized && <Link className="customer-admin-articles-link" to="/quan-ly/bai-viet">Quản lý bài viết</Link>}
+          {authorized && <Link className="customer-admin-articles-link" to="/quan-ly/khoa-hoc">Viết bài khóa học</Link>}
+          <button type="button" className="customer-admin-refresh" onClick={loadLogs} disabled={loading}>
+            <RefreshCw size={16} className={loading ? 'customer-admin-spinning' : ''} /> Làm mới
+          </button>
+        </div>
+      </header>
+
+      <section className="customer-admin-toolbar">
+        <div className="customer-admin-count"><UserRound size={18} /><strong>{logs.length}</strong><span>lượt lập lá số gần nhất</span></div>
+        <label className="customer-admin-search">
+          <Search size={17} />
+          <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Tìm tên, email hoặc mã lá số" />
+        </label>
+      </section>
+
+      <section className="customer-admin-accounts">
+        <div className="customer-admin-section-heading"><h2>Tài khoản khách đã xác thực Google</h2><strong>{accounts.length}</strong></div>
+        {accountError && <p className="customer-admin-account-error" role="alert">{accountError}</p>}
+        {accounts.length === 0 ? <p>Chưa có khách đăng nhập Google.</p> : <div className="customer-admin-account-list">{accounts.map((account) => (
+          <article className="customer-admin-account" key={account.id}>
+            {account.avatar_url ? <img src={account.avatar_url} alt="" /> : <span className="customer-admin-account-avatar">{String(account.display_name || '?').slice(0, 1).toUpperCase()}</span>}
+            <div><strong>{account.display_name}</strong><span>{account.email}</span></div>
+            <div className="customer-admin-account-meta"><span>Đăng nhập {account.login_count} lần</span><span>Lần cuối: {new Date(account.last_login_at).toLocaleString('vi-VN')}</span></div>
+            <button type="button" className="customer-admin-delete-button" onClick={() => deleteCustomerAccount(account)} disabled={deletingAccountId === account.id} aria-label={`Xóa tài khoản ${account.display_name || account.email}`}>
+              <Trash2 size={15} /> {deletingAccountId === account.id ? 'Đang xóa…' : 'Xóa'}
+            </button>
+          </article>
+        ))}</div>}
+      </section>
+
+      {authorized && adminLevel === 1 && <AdminChatPanel />}
+
+      {error && <div className="customer-admin-alert" role="alert"><AlertCircle size={18} /><span>{error}</span></div>}
+
+      <section className="customer-admin-list">
+        {logError && <div className="customer-admin-alert" role="alert"><AlertCircle size={18} /><span>{logError}</span></div>}
+        {loading ? <div className="customer-admin-empty">Đang tải dữ liệu khách hàng…</div> : filteredLogs.length === 0 ? (
+          <div className="customer-admin-empty">{logs.length ? 'Không tìm thấy khách phù hợp.' : 'Chưa có khách nào lập lá số.'}</div>
+        ) : filteredLogs.map((log) => {
+          const input = log.input_data || log.birth_input || {};
+          return (
+            <article className="customer-admin-card" key={log.id}>
+              <div className="customer-admin-card-main">
+                <div className="customer-admin-avatar"><UserRound size={20} /></div>
+                <div className="customer-admin-card-copy">
+                  <div className="customer-admin-name-row">
+                    <h2>{log.customer_name || input.name || 'Khách vãng lai'}</h2>
+                    <code>{log.chart_code}</code>
+                  </div>
+                  <p>{log.customer_email || 'Khách chưa đăng nhập'}{log.customer_id ? ` · Tài khoản #${log.customer_id}` : ''}</p>
+                  <p className="customer-admin-birth">{formatBirth(input)}</p>
+                </div>
+                <div className="customer-admin-date">{new Date(log.created_at).toLocaleString('vi-VN')}</div>
+              </div>
+              <div className="customer-admin-card-actions">
+                <button type="button" className="customer-admin-detail-button" onClick={() => setSelectedLog(log)}>
+                  <Eye size={16} /> Xem thông tin lá số
+                </button>
+                <button type="button" className="customer-admin-log-delete-button" onClick={() => deleteCustomerLog(log)} disabled={deletingLogId === log.id}>
+                  <Trash2 size={15} /> {deletingLogId === log.id ? 'Đang xóa…' : 'Xóa'}
+                </button>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+
+      {selectedLog && (
+        <div className="customer-admin-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedLog(null); }}>
+          <section className="customer-admin-dialog" role="dialog" aria-modal="true" aria-labelledby="customer-chart-title">
+            <button type="button" className="customer-admin-close" onClick={() => setSelectedLog(null)} aria-label="Đóng"><X size={20} /></button>
+            <span className="customer-admin-eyebrow">CHI TIẾT KHÁCH HÀNG</span>
+            <h2 id="customer-chart-title">{selectedLog.customer_name || 'Khách vãng lai'}</h2>
+            <div className="customer-admin-detail-grid">
+              <div><span>Email</span><strong>{selectedLog.customer_email || 'Chưa có email'}</strong></div>
+              <div><span>Mã lá số</span><strong>{selectedLog.chart_code}</strong></div>
+              <div><span>Ngày giờ sinh</span><strong>{formatBirth(selectedLog.input_data || selectedLog.birth_input || {})}</strong></div>
+              <div><span>Thời điểm lập</span><strong>{new Date(selectedLog.created_at).toLocaleString('vi-VN')}</strong></div>
+            </div>
+            <h3>Ảnh lá số</h3>
+            {selectedImage ? <a className="customer-admin-chart-image-link" href={selectedImage} target="_blank" rel="noreferrer" title="Mở ảnh gốc để phóng to"><img className="customer-admin-chart-image" src={selectedImage} alt={`Lá số ${selectedLog.customer_name || ''}`} /><span>Nhấn vào ảnh để mở ảnh gốc và phóng to</span></a> : <p className="customer-admin-image-note">{imageError || 'Đang tải ảnh lá số…'}</p>}
+          </section>
+        </div>
+      )}
+    </div>
+  );
+}

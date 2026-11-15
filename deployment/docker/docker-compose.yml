@@ -1,0 +1,27 @@
+services:
+  tuvi-website:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile
+    container_name: tuvi_hongan_app
+    restart: unless-stopped
+    ports:
+      # Host port 2028 -> container port 2026.
+      - "127.0.0.1:2028:2026"
+    env_file:
+      - ../../backend/.env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=2026
+      - DATABASE_MODE=modular
+      - CORS_ORIGIN=https://tuvihongan.com,https://www.tuvihongan.com
+      - ALLOWED_ORIGINS=https://tuvihongan.com,https://www.tuvihongan.com
+    volumes:
+      - ../../backend/src/data:/app/backend/src/data
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "2.0"

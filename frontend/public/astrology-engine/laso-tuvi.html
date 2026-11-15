@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+
+
+
+<html lang="vi">
+
+
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="icon" type="image/png" href="/logo.png">
+
+
+
+    <title>Tử Vi Hồng Ân - Lá Số Tử Vi Đẩu Số</title>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+    <link
+
+
+
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cinzel:wght@600;700;800&family=Noto+Serif:wght@400;600;700;800&display=swap"
+
+
+
+        rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="css/theme.css?v=2455">
+
+
+
+    <link rel="stylesheet" href="css/board.css?v=2455">
+
+
+
+    <link rel="stylesheet" href="css/controls.css?v=2463">
+
+
+
+    <link rel="stylesheet" href="css/print.css?v=2443">
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- SÂN KHẤU VIEWPORT ĐỒNG NHẤT DESKTOP (TỶ LỆ BẢO TOÀN ASPECT RATIO) -->
+
+    <div class="tuvi-stage-viewport" id="tuviStageViewport">
+
+        <div class="tuvi-desktop-stage" id="tuviDesktopStage">
+
+        <!-- KHU VỰC HIỂN THỊ LÁ SỐ (CỘT TRÁI) -->
+
+
+
+    <div class="output-panel">
+
+
+
+        <div class="tuvi-board-wrapper">
+
+
+
+            <!-- LỚP PHỦ MỜ YÊU CẦU LẬP LÁ SỐ (STALE OVERLAY) -->
+
+
+
+            <div id="tuviStaleOverlay" class="tuvi-stale-overlay hidden" onclick="generateTuVi(true)" title="Bấm vào đây để lập lá số">
+
+
+
+                <div class="tuvi-stale-notice" onclick="generateTuVi(true)">
+
+
+
+                    <svg class="stale-play-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+
+
+
+                        <path d="M8 5v14l11-7z" />
+
+
+
+                    </svg>
+
+
+
+                    <span>BẤM NÚT LẬP LÁ SỐ ĐỂ XEM</span>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+                        <!-- LỚP PHỦ TẢI LÁ SỐ (LOADING OVERLAY) -->
+
+            <div id="tuviLoadingOverlay" class="tuvi-loading-overlay">
+
+                <div class="tuvi-spinner-box">
+
+                    <div class="tuvi-dual-ring">
+
+                        <div></div>
+
+                        <div></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="tuvi-board" id="tuviBoard">
+
+
+
+                <!-- THIÊN BÀN TRUNG TÂM -->
+
+
+
+                <div id="thien-ban">
+
+
+
+                    <!-- TAM GIÁC NÉT ĐỨT MỆNH TÀI QUAN -->
+
+
+
+                    <svg id="triangleMenhTaiQuan" class="menh-tai-quan-svg" viewBox="0 0 1000 1000"
+
+
+
+                        preserveAspectRatio="none">
+
+
+
+                        <polygon id="polyMenhTaiQuan" points="" />
+
+                    <g id="groupPalaceRelations"></g>
+
+
+
+                    </svg>
+
+
+
+<div class="tb-watermark-bg"></div>
+
+
+
+<div class="tb-header">
+
+
+
+                        <div class="tb-brand-title">TỬ VI HỒNG ÂN</div>
+
+
+
+                        <div class="tb-header-sub-highlight">Luận giải đầy đủ 199k tại</div>
+
+
+
+                        <div class="tb-header-domain">www.tuvihongan.com</div>
+
+
+
+                        <div class="tb-header-sub">Đặt lịch luận giải riêng với thầy qua Zalo</div>
+
+
+
+                        <div class="tb-header-phone" id="tb-phone">0924.616.199</div>
+
+
+
+                        <script>
+
+
+
+                            (function() {
+
+
+
+                                try {
+
+
+
+                                    var lastIdx = sessionStorage.getItem("tuvi_hotline_idx");
+
+
+
+                                    var nextIdx = (lastIdx === null || lastIdx === undefined) 
+
+
+
+                                        ? (Math.random() < 0.5 ? 0 : 1) 
+
+
+
+                                        : (parseInt(lastIdx, 10) === 0 ? 1 : 0);
+
+
+
+                                    sessionStorage.setItem("tuvi_hotline_idx", String(nextIdx));
+
+
+
+                                    var nums = ["0924.616.199", "0385.497.085"];
+
+
+
+                                    sessionStorage.setItem("tuvi_hotline", nums[nextIdx].replace(/\./g, ""));
+
+
+
+                                    var el = document.getElementById("tb-phone");
+
+
+
+                                    if (el) el.textContent = nums[nextIdx];
+
+
+
+                                } catch (_e) {}
+
+
+
+                            })();
+
+
+
+                        </script>
+
+
+
+                    </div>
+
+
+
+<!-- KHUNG THÔNG TIN THIÊN BÀN -->
+
+
+
+                    <div class="tb-info-container">
+
+
+
+                        <div class="tb-body-wrap tb-content">
+
+
+
+                            <!-- Họ tên -->
+
+
+
+                            <div class="tb-grid-name">
+
+
+
+                                <span class="tb-lbl">Họ tên</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-name tb-span-val" id="tb-name">Group FB Tử Vi Việt Nam</span>
+
+
+
+                            </div>
+
+
+
+<!-- Thời gian sinh -->
+
+
+
+                            <div class="tb-grid-birth">
+
+
+
+                                <span class="tb-lbl">Năm sinh</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-solar" id="tb-solar-year">2008</span>
+
+
+
+                                <div class="tb-lunar-cell">
+
+
+
+                                    <span class="tb-val-lunar" id="tb-lunar-year">Mậu Tí</span>
+
+
+
+                                    <span class="tb-cal-tag" id="tb-lunar-year-tag">(N.2008)</span>
+
+
+
+                                </div>
+
+
+
+<span class="tb-lbl">Tháng sinh</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-solar" id="tb-solar-month">08</span>
+
+
+
+                                <div class="tb-lunar-cell">
+
+
+
+                                    <span class="tb-val-lunar" id="tb-lunar-month">Canh Thân</span>
+
+
+
+                                    <span class="tb-cal-tag" id="tb-lunar-month-tag">(Th.7)</span>
+
+
+
+                                </div>
+
+
+
+<span class="tb-lbl">Ngày sinh</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-solar" id="tb-solar-day">08</span>
+
+
+
+                                <div class="tb-lunar-cell">
+
+
+
+                                    <span class="tb-val-lunar" id="tb-lunar-day">Canh Thìn</span>
+
+
+
+                                    <span class="tb-cal-tag" id="tb-lunar-day-tag">(Ng.8)</span>
+
+
+
+                                </div>
+
+
+
+<span class="tb-lbl">Giờ sinh</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-solar" id="tb-solar-hour">10:30</span>
+
+
+
+                                <div class="tb-lunar-cell">
+
+
+
+                                    <span class="tb-val-lunar" id="tb-lunar-hour">Tân Tỵ</span>
+
+
+
+                                    <span class="tb-cal-tag" id="tb-lunar-hour-tag">(G.10:30)</span>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+<!-- Năm xem hạn -->
+
+
+
+                            <div class="tb-grid-watch">
+
+
+
+                                <span class="tb-lbl">Năm xem</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-solar" id="tb-solar-watch">2026</span>
+
+
+
+                                <div class="tb-lunar-cell">
+
+
+
+                                    <span class="tb-val-lunar" id="tb-lunar-watch">Bính Ngọ</span>
+
+
+
+                                    <span class="tb-age-text" id="tb-tuoi-mu">19 tuổi</span>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+<!-- Bản mệnh & Cục -->
+
+
+
+                            <div class="tb-grid-meta">
+
+
+
+                                <span class="tb-lbl">Âm Dương</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-lunar tb-span-val" id="tb-am-duong">Dương Nam</span>
+
+
+
+                                <span class="tb-lbl">Bản Mệnh</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-lunar tb-span-val" id="tb-menh">Tích Lịch Hỏa</span>
+
+
+
+                                <span class="tb-lbl">Cục</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-lunar tb-span-val" id="tb-cuc">Thủy nhị cục</span>
+
+
+
+                                <span class="tb-lbl">Chủ Mệnh</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-lunar tb-span-val" id="tb-chu-menh">Văn Khúc</span>
+
+
+
+                                <span class="tb-lbl">Chủ Thân</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-val-lunar tb-span-val" id="tb-chu-than">Linh Tinh</span>
+
+
+
+                            </div>
+
+
+
+<!-- Mệnh lý -->
+
+
+
+                            <div class="tb-grid-menhly">
+
+
+
+                                <span class="tb-lbl">Mệnh lý</span><span class="tb-colon">:</span>
+
+
+
+                                <span class="tb-menhly-item tb-span-val" id="tb-am-duong-ly">Âm Dương nghịch lý</span>
+
+
+
+                                <span></span><span></span>
+
+
+
+                                <span class="tb-menhly-item tb-span-val" id="tb-cuc-menh-ly">Cục khắc Mệnh</span>
+
+
+
+                                <span></span><span></span>
+
+
+
+                                <span class="tb-menhly-item tb-span-val" id="tb-than-cu">Thân cư Thê</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+<!-- MÃ ĐỊNH DANH WATERMARK THIÊN BÀN -->
+
+
+
+                    <div id="tb-id-code" class="tb-id-watermark"></div>
+
+
+
+                </div>
+
+
+
+<!-- HUY HIỆU TUẦN VÀ TRIỆT -->
+
+
+
+                <div id="badgeTuan" class="badge-tuan-triet badge-tuan">Tuần</div>
+
+
+
+                <div id="badgeTriet" class="badge-tuan-triet badge-triet">Triệt</div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+            <!-- CỤM CHỨC NĂNG PHỤ TRỢ DƯỚI LÁ SỐ (LUẬN GIẢI & LƯU LÁ SỐ) TRÊN MOBILE -->
+            <div id="mobileAuxContainer" class="mobile-aux-section">
+                <div id="mobileActionPane" class="mobile-action-pane"></div>
+            </div>
+
+
+
+    </div>
+
+
+
+<!-- BẢNG ĐIỀU KHIỂN (CỘT PHẢI) -->
+
+
+
+    <div class="input-panel" id="mainInputPanel">
+
+
+
+        <!-- HỆ THỐNG 2 NÚT THAO TÁC DẠNG TAB CHUYỂN ĐỔI -->
+
+
+
+        <div class="tuvi-tab-header">
+
+
+
+            <div class="tuvi-tab-nav is-create" role="tablist">
+
+                <div class="tab-sliding-pill" id="tabSlidingPill"></div>
+
+
+
+                <button type="button" id="tabBtnCreate" class="tuvi-tab-btn active" role="tab" aria-selected="true" onclick="switchTuViTab('create')">
+
+
+
+                    <svg class="tab-btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+
+
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+
+
+
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+
+
+
+                    </svg>
+
+
+
+                    <span>Lập lá số</span>
+
+
+
+                </button>
+
+
+
+                <button type="button" id="tabBtnHistory" class="tuvi-tab-btn" role="tab" aria-selected="false" onclick="switchTuViTab('history')">
+
+
+
+                    <svg class="tab-btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+
+
+                        <circle cx="12" cy="12" r="10" />
+
+
+
+                        <polyline points="12 6 12 12 16 14" />
+
+
+
+                    </svg>
+
+
+
+                    <span>Lịch sử lá số & luận giải</span>
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+<!-- TAB 1: FORM LẬP LÁ SỐ (GIỮ NGUYÊN FORM NHẬP LIỆU) -->
+
+
+
+        <div id="tabContentCreate" class="tuvi-tab-pane active">
+
+            <!-- KHUNG CHỨA VIEW TRANSITION TỰ ĐỘNG ANIMATE CHIỀU CAO -->
+            <div id="createViewTransitionContainer" class="create-view-transition-container">
+                <!-- VIEW 1: FORM NHẬP THÔNG TIN (KÈM NÚT THAO TÁC TRÊN DESKTOP) -->
+                <div id="createFormViewPane" class="create-form-view-pane">
+
+
+
+            <div class="form-section">
+
+
+
+                <div class="section-title">Thông tin</div>
+
+
+
+                <div class="form-row">
+
+
+
+                    <label for="txtName">Họ tên</label>
+
+
+
+                    <div class="field-group">
+
+
+
+                        <input type="text" id="txtName" value="www.tuvihongan.com" placeholder="Họ và tên">
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+
+                    <label>Giới tính</label>
+
+
+
+                    <div class="field-group">
+
+
+
+                        <div class="segmented-control segmented-gender">
+
+
+
+                            <label class="segment-btn"><input type="radio" name="gender" value="Nam"
+
+
+
+                                    checked><span>Nam</span></label>
+
+
+
+                            <label class="segment-btn"><input type="radio" name="gender" value="Nữ"><span>Nữ</span></label>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+
+                    <label>Lịch</label>
+
+
+
+                    <div class="field-group">
+
+
+
+                        <div class="segmented-control segmented-calendar">
+
+
+
+                            <label class="segment-btn"><input type="radio" name="calendar" value="solar" checked
+
+
+
+                                    onchange="toggleCalendarType()"><span>Dương lịch</span></label>
+
+
+
+                            <label class="segment-btn"><input type="radio" name="calendar" value="lunar"
+
+
+
+                                    onchange="toggleCalendarType()"><span>Âm lịch</span></label>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="form-row" id="rowLeapMonth" style="display: none;">
+
+
+
+                    <label>Nhuận</label>
+
+
+
+                    <div class="field-group">
+
+
+
+                        <label class="check-label"><input type="checkbox" id="chkIsLeap"><span>Tháng nhuận</span></label>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+<div class="form-section">
+
+
+
+                <div class="section-title">Thời gian</div>
+
+
+
+                <div class="form-row">
+
+
+
+                    <label>Ngày sinh</label>
+
+
+
+                    <div class="date-row-group">
+
+
+
+                        <select id="txtDay" title="Ngày"></select>
+
+
+
+                        <select id="txtMonth" title="Tháng"></select>
+
+
+
+                        <select id="txtYear" title="Năm"></select>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+
+                    <label>Giờ sinh</label>
+
+
+
+                    <div class="time-row-group">
+
+
+
+                        <select id="txtHour" title="Giờ"></select>
+
+
+
+                        <select id="txtMinute" title="Phút"></select>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+
+                    <label for="txtLimitYear">Năm xem hạn</label>
+
+
+
+                    <div class="field-group">
+
+
+
+                        <select id="txtLimitYear" style="width: 100%;"></select>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+<!-- KHỐI HÀNH ĐỘNG ĐỘC LẬP: NẰM GIỮA KHỐI THỜI GIAN VÀ KHỐI LƯU LÁ SỐ -->
+
+
+
+            <div class="form-section action-section" id="actionSection" style="display: none;">
+
+
+
+                <!-- NÚT LẬP LÁ SỐ (HIỂN THỊ KHI NGƯỜI DÙNG CHỈNH SỬA DỮ LIỆU) -->
+
+
+
+                <button type="button" id="btnGenerateTuVi" class="btn-generate-tuvi" onclick="generateTuVi(true)" style="display: none;">
+
+
+
+                    <span class="btn-content-inner">
+
+
+
+                        <svg class="btn-play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+
+
+
+                            <path d="M8 5v14l11-7z" />
+
+
+
+                        </svg>
+
+
+
+                        <span>LẬP LÁ SỐ</span>
+
+
+
+                    </span>
+
+
+
+                </button>
+
+
+
+<!-- NÚT LUẬN GIẢI (HIỂN THỊ THAY THẾ CHÍNH XÁC VÀO VỊ TRÍ NÚT LẬP LÁ SỐ KHI LẬP THÀNH CÔNG) -->
+
+
+
+                <button type="button" id="btnAlreadyInterpreted" class="btn-already-interpreted" onclick="openCurrentInterpretedSession()" style="display: none;" title="Lá số này đã được luận giải — Bấm để xem lại bài luận giải">
+                    <span class="btn-content-inner">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>ĐÃ LUẬN GIẢI</span>
+                    </span>
+                </button>
+
+                <button type="button" id="btnOpenLuanGiai" class="btn-luan-giai-green" onclick="toggleLuanGiaiCollapse()" style="display: none;">
+
+                    <span class="btn-content-inner">
+
+                        
+
+                        <span>LUẬN GIẢI LÁ SỐ</span>
+
+                    </span>
+
+                </button>
+
+
+
+            </div>
+
+
+
+<!-- KHU VỰC LƯU LÁ SỐ DƯỚI DẠNG: (ẨN Ở PREVIEW & INPUT CHANGED, HIỆN KHI THÀNH CÔNG) -->
+
+
+
+            <div class="form-section export-section" id="exportSection" style="display: none;">
+
+                <div class="section-title">LƯU LÁ SỐ</div>
+
+                <div class="export-actions">
+
+                    <button type="button" class="btn-export btn-cmyk" id="btnExportCmyk" onclick="exportPdfCmyk(this)" title="Xuất PDF Màu (In ấn sắc nét)">
+
+                        <svg class="btn-export-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+
+                            <polyline points="14 2 14 8 20 8"></polyline>
+
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+
+                        </svg>
+
+                        <span>PDF Màu</span>
+
+                    </button>
+
+                    <button type="button" class="btn-export btn-bw" id="btnExportBw" onclick="exportPdfGrayscale(this)" title="Xuất PDF Đen Trắng">
+
+                        <svg class="btn-export-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+
+                            <rect x="6" y="14" width="12" height="8"></rect>
+
+                        </svg>
+
+                        <span>PDF Đen Trắng</span>
+
+                    </button>
+
+                    <button type="button" class="btn-export btn-img4k" id="btnExportImg" onclick="exportImage4K(this)" title="Xuất ảnh chất lượng cao 4K">
+
+                        <svg class="btn-export-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+
+                            <polyline points="21 15 16 10 5 21"></polyline>
+
+                        </svg>
+
+                        <span>Ảnh</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+</div>
+
+<!-- CÁC KHỐI LỰA CHỌN LUẬN GIẢI ĐỘC LẬP KHI THU GỌN -->
+
+
+
+            <div id="luanGiaiOptions" class="luan-giai-options-container create-options-view-pane" style="display: none;">
+
+
+
+                <!-- GÓI 1: LUẬN GIẢI AI -->
+                <div class="form-section luan-giai-card card-ai" onclick="selectLuanGiaiOption('ai')" role="button" tabindex="0" aria-label="Luận giải AI">
+                    <div class="card-badge-top">
+                        <span class="badge-tag badge-tag-ai">LUẬN GIẢI AI</span>
+                        <span class="card-price card-price-ai">199.000đ</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-desc-intro">
+                            Bài luận giải 7000-8000 từ
+                        </div>
+                        <ul class="card-feature-list">
+                            <li>
+                                <svg class="feature-icon feature-icon-ai" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>12 cung mệnh</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon feature-icon-ai" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>10 năm Đại vận &amp; 3 năm Tiểu vận</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon feature-icon-ai" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Trao đổi trực tiếp với AI</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon feature-icon-ai" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Tư vấn phong thủy</span>
+                            </li>
+                            <li>
+                                <svg class="feature-icon feature-icon-ai" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Hóa giải sao xấu</span>
+                            </li>
+                        </ul>
+                        <div class="card-scope-badge scope-badge-ai">
+                            <svg class="scope-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Áp dụng: <strong>01 Lá số / gói</strong></span>
+                        </div>
+                        <div class="card-action-btn btn-action-ai">
+                            <span>LUẬN GIẢI NGAY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GÓI 2: LUẬN GIẢI TRỰC TIẾP -->
+                <div class="form-section luan-giai-card card-master" onclick="selectLuanGiaiOption('master')" role="button" tabindex="0" aria-label="Luận giải trực tiếp">
+                    <div class="card-badge-top">
+                        <span class="badge-tag badge-tag-master">LUẬN GIẢI TRỰC TIẾP</span>
+                        <span class="card-price card-price-master">500.000đ</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-desc-intro" style="margin-bottom: 8px;">
+                            Trực tiếp đàm thoại cùng Thầy Tử Vi Hồng Ân.
+                        </div>
+                        <ul class="card-feature-list">
+                            <li>
+                                <svg class="feature-icon feature-icon-master" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Luận giải bản mệnh, đại vận, tiểu vận, phu thê, tử tức, phúc đức, định hướng sự nghiệp, v.v.</span>
+                            </li>
+                        </ul>
+                        <div class="card-scope-badge scope-badge-master">
+                            <svg class="scope-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Áp dụng: <strong>01 Lá số / gói</strong></span>
+                        </div>
+                        <div class="card-action-btn btn-action-master">
+                            <span>ĐẶT LỊCH NGAY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Khối 3: Nút quay lại độc lập -->
+
+
+
+                <div class="form-section luan-giai-back-box">
+
+
+
+                    <button type="button" class="btn-luan-giai-back" onclick="toggleLuanGiaiCollapse(false)">
+
+
+
+                        <svg class="btn-back-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+
+
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+
+
+
+                            <polyline points="12 19 5 12 12 5"></polyline>
+
+
+
+                        </svg>
+
+
+
+                        <span>Quay lại thông tin lá số</span>
+
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+</div>
+            <!-- KẾT THÚC KHUNG VIEW TRANSITION -->
+
+<div id="panelFooterNote" class="panel-footer-note">An sao theo Tử Vi Đẩu Số Tân Biên 1956</div>
+
+
+
+        </div>
+
+
+
+<!-- TAB 2: LỊCH SỬ LÁ SỐ & LUẬN GIẢI -->
+
+
+
+        <div id="tabContentHistory" class="tuvi-tab-pane" style="display: none;">
+
+
+
+            <!-- Khối thông báo khi chưa đăng nhập Google -->
+
+
+
+            <div id="historyAuthNotice" class="history-auth-notice" style="display: none;">
+
+
+
+                <div class="auth-notice-icon-box">
+
+
+
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#8b1d1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+
+
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+
+
+
+                        <circle cx="12" cy="7" r="4"></circle>
+
+
+
+                    </svg>
+
+
+
+                </div>
+
+
+
+                <div class="auth-notice-title">Đăng nhập tài khoản Google</div>
+
+
+
+                <div class="auth-notice-desc">Đăng nhập để lưu trữ và xem lại lịch sử lá số.</div>
+
+
+
+                <button type="button" class="btn-login-history" onclick="requestParentGoogleAuth()">
+
+
+
+                    <svg viewBox="0 0 24 24" width="16" height="16" class="google-svg-icon">
+
+
+
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+
+
+
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+
+
+
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+
+
+
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+
+
+
+                    </svg>
+
+
+
+                    <span>Đăng nhập với Google</span>
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+<!-- Giao diện chính lịch sử khi đã đăng nhập -->
+
+
+
+            <div id="historyMainView" class="history-main-view" style="display: none;">
+
+
+
+                <!-- Tiêu đề danh sách & số lượng -->
+
+
+
+                <div class="history-list-header">
+
+
+
+                    <span class="history-list-title">LÁ SỐ ĐÃ LẬP</span>
+
+
+
+                    <span id="historyCountBadge" class="history-count-badge">0 lá số</span>
+
+
+
+                </div>
+
+
+
+<!-- Danh sách các item lá số -->
+
+
+
+                <div id="historyListContainer" class="history-list-container">
+
+
+
+                    <div id="historyLoadingState" class="history-loading-state" style="display: none;">
+
+
+
+                        <div class="history-mini-spinner"></div>
+
+
+
+                        <span>Đang tải lịch sử lá số...</span>
+
+
+
+                    </div>
+
+
+
+                    <div id="historyEmptyState" class="history-empty-state" style="display: none;">
+
+
+
+                        Chưa có lá số nào được lưu trong tài khoản.
+
+
+
+                    </div>
+
+
+
+                    <div id="historyItemsWrapper" class="history-items-wrapper"></div>
+
+
+
+                </div>
+
+
+
+<!-- Ghi chú lưu ý hiển thị trên nền đỏ -->
+
+
+
+                <div class="history-dedup-notice">
+
+
+
+                    <div class="history-dedup-title">LƯU Ý:</div>
+
+
+
+                    <ul class="history-dedup-list">
+
+
+
+                        <li>Nếu có 2 lá số trùng nhau thì hệ thống sẽ gộp thành một.</li>
+
+
+
+                        <li>Xóa lá số sẽ xóa dữ liệu luận giải (nếu có).</li>
+
+
+
+                    </ul>
+
+
+
+                </div>
+
+
+
+<!-- KHỐI TÍNH NĂNG PHỤ: GIỮ NGUYÊN KHỐI NÚT LƯU LÁ SỐ DƯỚI DẠNG Ở CHÂN GIAO DIỆN -->
+
+
+
+                <div class="form-section export-section history-export-section" id="historyExportSection" style="display: none;">
+
+                    <div class="section-title">LƯU LÁ SỐ</div>
+
+                    <div class="export-actions">
+
+                        <button type="button" class="btn-export btn-cmyk" onclick="exportPdfCmyk(this)" title="Xuất PDF Màu (In ấn sắc nét)">
+
+                            <svg class="btn-export-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+
+                                <polyline points="14 2 14 8 20 8"></polyline>
+
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+
+                            </svg>
+
+                            <span>PDF Màu</span>
+
+                        </button>
+
+                        <button type="button" class="btn-export btn-bw" onclick="exportPdfGrayscale(this)" title="Xuất PDF Đen Trắng">
+
+                            <svg class="btn-export-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+
+                                <rect x="6" y="14" width="12" height="8"></rect>
+
+                            </svg>
+
+                            <span>PDF Đen Trắng</span>
+
+                        </button>
+
+                        <button type="button" class="btn-export btn-img4k" onclick="exportImage4K(this)" title="Xuất ảnh chất lượng cao 4K">
+
+                            <svg class="btn-export-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+
+                                <polyline points="21 15 16 10 5 21"></polyline>
+
+                            </svg>
+
+                            <span>Ảnh</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+        </div><!-- /.tuvi-desktop-stage -->
+
+    </div><!-- /.tuvi-stage-viewport -->
+
+
+
+    <!-- GIAO DIỆN CHUYÊN BIỆT CHO MOBILE (WIDTH <= HEIGHT) -->
+
+    <div id="mobileTuViView"></div>
+
+
+
+    <!-- MODAL CẢNH BÁO XÓA LÁ SỐ ĐẾM NGƯỢC 10 GIÂY -->
+
+
+
+    <div id="deleteConfirmModal" class="delete-confirm-modal hidden">
+
+
+
+        <div class="delete-modal-backdrop" onclick="closeDeleteConfirmModal()"></div>
+
+
+
+        <div class="delete-modal-dialog">
+
+
+
+            <div class="delete-modal-header">
+
+
+
+                <div class="delete-icon-circle">
+
+
+
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+
+
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+
+
+
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+
+
+
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+
+
+
+                    </svg>
+
+
+
+                </div>
+
+
+
+                <div class="delete-modal-title">CẢNH BÁO XÓA LÁ SỐ</div>
+
+
+
+            </div>
+
+
+
+            <div class="delete-modal-body">
+
+
+
+                <p class="delete-modal-alert-text">
+
+
+
+                    Toàn bộ dữ liệu của tờ lá số <strong id="deleteModalChartCode" class="delete-code-highlight"></strong> và lịch sử luận giải sẽ bị xóa bỏ hoàn toàn, không thể khôi phục.
+
+
+
+                </p>
+
+
+
+                <div class="delete-countdown-indicator">
+
+
+
+                    <span class="countdown-text">Mở nút xác nhận xóa sau:</span>
+
+
+
+                    <span id="deleteModalSeconds" class="countdown-seconds">10s</span>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="delete-modal-footer">
+
+
+
+                <button type="button" class="btn-cancel-delete" onclick="closeDeleteConfirmModal()">Hủy bỏ</button>
+
+
+
+                <button type="button" id="btnExecuteDelete" class="btn-confirm-delete is-locked" disabled onclick="executeConfirmedDelete()">
+
+
+
+                    Xóa bỏ hoàn toàn (10s)
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+<!-- CÁC MODULE JAVASCRIPT -->
+
+
+
+    <script src="js/dpop.js?v=2443"></script>
+
+
+
+    <script src="js/constants.js?v=2443"></script>
+
+
+
+    <script src="js/geometry.js?v=2445"></script>
+
+
+
+    <script src="js/board-renderer.js?v=2443"></script>
+
+
+
+    <script src="js/ui-controller.js?v=2469"></script>
+
+
+
+    <script src="js/export-engine.js?v=2461"></script>
+
+
+
+    <script src="js/app.js?v=2470"></script>
+
+
+
+</body>
+
+
+
+</html>
+
+
+

@@ -1,0 +1,991 @@
+{
+  "metadata": {
+    "total_verses": 93,
+    "categories": [
+      "phat_tai",
+      "khoa_bang_thang_quan",
+      "suy_bai",
+      "tat_ach",
+      "lao_ly_thi_phi",
+      "hy_su_cuoi_hoi",
+      "cau_tu_sinh_con",
+      "chia_ly_hon_nhan",
+      "nguy_nan_hiem_ngheo"
+    ],
+    "source": "ZX-01 VẬN HẠN PHÚ THƠ-COBRA.docx",
+    "version": "1.0"
+  },
+  "verses": [
+    {
+      "id": "phat_tai_001",
+      "category": "phat_tai",
+      "verse": "Vũ Khúc, Kiếp Sát Đào Hoa, vận đáo phát tài cùng hữu hỷ.",
+      "stars": [
+        "vu_khuc",
+        "dao_hoa",
+        "kiep_sat"
+      ],
+      "meaning": "Vũ Khúc đi vào vận có Đào Hoa, Kiếp Sát (đắc địa) hoặc các cát tinh đi kèm thì có hỷ sự (cưới hỏi, niềm vui) vừa phát tài nhanh chóng."
+    },
+    {
+      "id": "phat_tai_002",
+      "category": "phat_tai",
+      "verse": "Vũ Khúc, Thiên Phủ kinh thương phát đại phú.",
+      "stars": [
+        "vu_khuc",
+        "thien_phu"
+      ],
+      "meaning": "Đến đại vận gặp bộ sao Vũ Khúc, Thiên Phủ đồng cung hoặc hội chiếu, nếu làm kinh doanh, thương mại thì vận này tích lũy được tài sản cực lớn."
+    },
+    {
+      "id": "phat_tai_003",
+      "category": "phat_tai",
+      "verse": "Nguyệt lãng thiên môn, tiến bước công danh, tài lộc phong dinh.",
+      "stars": [
+        "thai_am"
+      ],
+      "meaning": "Vận đi đến cung Hợi có Thái Âm tọa thủ (Nguyệt lãng thiên môn - Trăng sáng cửa trời), chủ về mưu sự hanh thông, tiền tài tự đến, không cầu cũng được."
+    },
+    {
+      "id": "phat_tai_004",
+      "category": "phat_tai",
+      "verse": "Lộc Mã tối hiềm phùng Không Kiếp, Lộc Mã giao trì bôn ba phát tài.",
+      "stars": [
+        "hoa_loc",
+        "loc_ton",
+        "thien_ma",
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Đại vận gặp Hóa Lộc (hoặc Lộc Tồn) gặp Thiên Mã đồng cung hoặc xung chiếu gọi là Lộc Mã giao trì. Vận này chủ sự phải đi lại, bôn ba nhiều nhưng càng đi xa càng phát tài lớn (miễn là tránh được Địa Không, Địa Kiếp)."
+    },
+    {
+      "id": "phat_tai_005",
+      "category": "phat_tai",
+      "verse": "Thiên Mã ngộ Lộc Tồn, anh hùng đắc chí, tiền tài phong dinh.",
+      "stars": [
+        "loc_ton",
+        "thien_ma"
+      ],
+      "meaning": "Ngựa thồ tiền đi vào vận, ví như người đắc thời, làm ăn gặp may mắn liên tục, tiền bạc dồi dào."
+    },
+    {
+      "id": "phat_tai_006",
+      "category": "phat_tai",
+      "verse": "Tham Vũ đồng hành, vãn niên thân phát phì mãn, đại phát tài.",
+      "stars": [
+        "vu_khuc",
+        "tham_lang"
+      ],
+      "meaning": "Hạn đi đến bộ Tham Lang, Vũ Khúc (thường từ trung niên trở đi), chủ về kinh doanh, đầu tư thắng lớn."
+    },
+    {
+      "id": "phat_tai_007",
+      "category": "phat_tai",
+      "verse": "Tham Lang ngộ Hỏa Linh hào phú, Phá Quân phát đạt tiền khiên.",
+      "stars": [
+        "tham_lang",
+        "pha_quan",
+        "hoa_tinh",
+        "linh_tinh"
+      ],
+      "meaning": "Đại vận có Tham Lang gặp Hỏa Tinh hoặc Linh Tinh đắc địa (cách Tham Hỏa tương phùng), chủ về phát tài nhanh chóng như vũ bão, có những khoản tiền bất ngờ (trúng số, đất đai trúng đậm)."
+    },
+    {
+      "id": "phat_tai_008",
+      "category": "phat_tai",
+      "verse": "Sát Phá Tham ngộ Hỏa-Linh, hoạch phát hoạch phá.",
+      "stars": [
+        "that_sat",
+        "pha_quan",
+        "tham_lang",
+        "hoa_tinh",
+        "linh_tinh"
+      ],
+      "meaning": "Vận Sát Phá Tham gặp Hỏa Linh thì phát rất nhanh, giàu lên chóng mặt, nhưng cần biết điểm dừng vì cách này cũng dễ hoạch phá."
+    },
+    {
+      "id": "phat_tai_009",
+      "category": "phat_tai",
+      "verse": "Hóa Lộc hoàn vi hảo, đại vận hỷ tương phùng.",
+      "stars": [
+        "hoa_loc"
+      ],
+      "meaning": "Hóa Lộc là sao tối hỷ khi đi vào đại vận. Vận gặp Hóa Lộc thì dòng tiền hanh thông, cơ hội kiếm tiền mở ra liên tục."
+    },
+    {
+      "id": "phat_tai_010",
+      "category": "phat_tai",
+      "verse": "Tam kỳ gia hội, danh trấn chư bang, tài quan song mỹ.",
+      "stars": [
+        "hoa_loc",
+        "hoa_quyen",
+        "hoa_khoa",
+        "luu_hoa_loc",
+        "luu_hoa_quyen",
+        "luu_hoa_khoa"
+      ],
+      "meaning": "Đại vận hoặc tiểu vận hội đủ Khoa - Quyền - Lộc, vừa có danh tiếng, vừa có quyền lực, tiền tài theo đó mà đổ về không ngớt."
+    },
+    {
+      "id": "khoa_bang_thang_quan_011",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Khôi Việt trùng phùng đệ nhất bảng, Hóa Khoa liên tiếp bộ thanh vân.",
+      "stars": [
+        "hoa_khoa",
+        "thien_khoi",
+        "thien_viet",
+        "khoi_viet"
+      ],
+      "meaning": "Đại vận hoặc tiểu hạn gặp được Thiên Khôi, Thiên Việt (chủ về đứng đầu) và Hóa Khoa (chủ về khoa bảng), thi cử chắc chắn đỗ thủ khoa, á khoa, con đường công danh thăng tiến nhanh như bước lên mây."
+    },
+    {
+      "id": "khoa_bang_thang_quan_012",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Xương Khúc lâm hạn, long môn nhảy vọt.",
+      "stars": [
+        "van_xuong",
+        "van_khuc",
+        "xuong_khuc"
+      ],
+      "meaning": "Hạn đi đến bộ sao Văn Xương, Văn Khúc thì tư duy sáng suốt, văn hay chữ tốt, thi cử như cá chép hóa rồng (vượt long môn)."
+    },
+    {
+      "id": "khoa_bang_thang_quan_013",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Hóa Khoa cư vận hạn, danh chấn kinh kỳ.",
+      "stars": [
+        "hoa_khoa"
+      ],
+      "meaning": "Hóa Khoa (đệ nhất giải thần, đệ nhất danh tiếng) đi vào vận hạn, chủ về năm đó tiếng tăm vang dội, thi thố đạt kết quả cao nhất."
+    },
+    {
+      "id": "khoa_bang_thang_quan_014",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Thái Dương cư Ngọ hạn hành, đệ nhất khoa danh, thanh vân đắc lộ.",
+      "stars": [
+        "thai_duong"
+      ],
+      "meaning": "Vận đi đến cung Ngọ có Thái Dương tọa thủ (cách Nhật lệ trung thiên), ví như mặt trời đứng bóng sáng rực rỡ, chủ về học hành đỗ đạt cao nhất, công danh mở rộng."
+    },
+    {
+      "id": "khoa_bang_thang_quan_015",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Thanh Long phùng Hóa Kỵ; Long cư Long vị, bảng vàng đề tên.",
+      "stars": [
+        "hoa_ky",
+        "thanh_long"
+      ],
+      "meaning": "Thanh Long (rồng xanh) gặp Hóa Kỵ (được ví như mây ngũ sắc hoặc nước) tạo thành cách cục \"Long vân tế hội\" (Rồng gặp mây), hạn này thi cử lội ngược dòng, đỗ đạt ngoạn mục."
+    },
+    {
+      "id": "khoa_bang_thang_quan_016",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Cơ Lương đắc địa vận này, bảng vàng chói lọi, danh tài nức hương.",
+      "stars": [
+        "thien_co",
+        "thien_luong"
+      ],
+      "meaning": "Đại vận gặp bộ sao Thiên Cơ, Thiên Lương đắc địa, chủ về người có trí tuệ mẫn tiệp, mưu sự đại thành, học hàm học vị thăng tiến."
+    },
+    {
+      "id": "khoa_bang_thang_quan_017",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Phong Cáo- Đường Phù trùng phùng, phong hầu tiến chức rõ ràng một phen.",
+      "stars": [
+        "duong_phu",
+        "phong_cao"
+      ],
+      "meaning": "Hạn gặp bộ sao Phong Cáo, Đường Phù chủ về sắc phong, bằng khen, huy chương. Vận này đi thi thì được cấp bằng, đi làm thì được thăng chức, khen thưởng."
+    },
+    {
+      "id": "khoa_bang_thang_quan_018",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Tướng Quân, Quốc Ấn ban quyền, quan lộ đắc hanh thông.",
+      "stars": [
+        "thien_tuong",
+        "tuong_quan",
+        "quoc_an",
+        "phong_cao"
+      ],
+      "meaning": "Vận có Thiên Tướng, Quốc Ấn (hoặc Tướng Quân, Quốc Ấn) chủ về ấn tín, quyền hành. Người đi học thì làm cán bộ lớp, thủ lĩnh sinh viên; người đi làm thì được giao giữ chức vụ lớn."
+    },
+    {
+      "id": "khoa_bang_thang_quan_019",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Tả Phù Hữu Bật hạn lâm, chúng nhân kính phục, khoa danh lẫy lừng.",
+      "stars": [
+        "ta_phu",
+        "huu_bat"
+      ],
+      "meaning": "Vận gặp bộ sao trợ lực Tả Phù, Hữu Bật giúp tăng quần chúng ủng hộ, thi cử có giám khảo chấm thoáng, đi làm có đồng nghiệp giúp đỡ để đạt thành tích cao."
+    },
+    {
+      "id": "khoa_bang_thang_quan_020",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Đào Hoa-Hóa Khoa hỷ duyệt, thiếu niên đăng khoa bảng.",
+      "stars": [
+        "hoa_khoa",
+        "dao_hoa"
+      ],
+      "meaning": "Tuổi trẻ mà đi vào vận có Đào Hoa và Hóa Khoa phối chiếu thì thông minh xuất chúng, đỗ đạt từ khi còn rất sớm."
+    },
+    {
+      "id": "khoa_bang_thang_quan_021",
+      "category": "khoa_bang_thang_quan",
+      "verse": "Tam Thai-Bát Tọa hạn hành, thuận bước xe loan, tài danh rạng rỡ.",
+      "stars": [
+        "tam_thai",
+        "bat_toa",
+        "thai"
+      ],
+      "meaning": "Bộ sao Tam Thai, Bát Tọa đi vào vận hạn chủ về sự hanh thông, nâng đỡ vị thế, giúp việc thi cử hay thăng quan tiến chức diễn ra một cách thong dong, thuận lợi."
+    },
+    {
+      "id": "suy_bai_022",
+      "category": "suy_bai",
+      "verse": "Sinh xứ gặp Kiếp Không lạc hãm, tài suy nhân tản.",
+      "stars": [
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Đại vận đi đến cung vị gặp Địa Không, Địa Kiếp hãm địa, chủ về tiền bạc tiêu tán, người thân ly tán, làm ăn thất bại nặng nề."
+    },
+    {
+      "id": "suy_bai_023",
+      "category": "suy_bai",
+      "verse": "Song Hao đại tiểu trùng phùng, tiền tài như nước chảy xuôi dòng.",
+      "stars": [
+        "dai_hao",
+        "tieu_hao"
+      ],
+      "meaning": "Đại vận và lưu niên đại hạn cùng gặp Song Hao (đặc biệt là khi hãm địa), tiền bạc đổ ra như nước, đầu tư thua lỗ, không cách nào giữ được."
+    },
+    {
+      "id": "suy_bai_024",
+      "category": "suy_bai",
+      "verse": "Kiếp Không lâm vận, anh hùng nan triển cốt.",
+      "stars": [
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Đến vận Không Kiếp thì người tài giỏi, anh hùng đến mấy cũng bị bó tay bó chân, mưu sự bất thành, càng giãy giụa càng thua lỗ."
+    },
+    {
+      "id": "suy_bai_025",
+      "category": "suy_bai",
+      "verse": "Tham Hỏa phát dã như lôi, vận cùng Kiếp Sát/Thiên Hình/Không Kiếp, nhất thời trắng tay hiện tiền.",
+      "stars": [
+        "tham_lang",
+        "dia_khong_dia_kiep",
+        "hoa_tinh",
+        "thien_hinh",
+        "kiep_sat"
+      ],
+      "meaning": "Cách cục Tham Lang gặp Hỏa Tinh giúp phát lên nhanh như sấm truyền ở vận trước, nhưng nếu vận tiếp theo gặp Kiếp Sát, Thiên Hình hay Không Kiếp thì sẽ sụp đổ, trắng tay chỉ trong thời gian ngắn."
+    },
+    {
+      "id": "suy_bai_026",
+      "category": "suy_bai",
+      "verse": "Phá Quân hãm địa, vận đáo nghiệp tan, gia tài phá tán.",
+      "stars": [
+        "pha_quan"
+      ],
+      "meaning": "Đại vận đi vào cung có Phá Quân hãm địa (nhất là ở các cung Dần, Thân, Tỵ, Hợi), chủ về sự tiêu tán, gia sản hao hụt, công việc bấp bênh, dễ liều lĩnh dẫn đến phá sản."
+    },
+    {
+      "id": "suy_bai_027",
+      "category": "suy_bai",
+      "verse": "Thiên Hình Kình Dương tại vận, phòng quan phi khẩu thiệt, hình ngục nan đao.",
+      "stars": [
+        "kinh_duong",
+        "thien_hinh",
+        "hoa_ky"
+      ],
+      "meaning": "Đại vận hoặc tiểu vận gặp Thiên Hình, Kình Dương, Hóa Kỵ hội tụ, chủ về việc dễ vướng vào kiện tụng, tranh chấp pháp luật, khẩu thiệt thị phi."
+    },
+    {
+      "id": "suy_bai_028",
+      "category": "suy_bai",
+      "verse": "Kình Đà Linh Hỏa giao hoan, tật bệnh uế tạp, tai họa trùng trùng bủa vây.",
+      "stars": [
+        "kinh_duong",
+        "da_la",
+        "hoa_tinh",
+        "linh_tinh"
+      ],
+      "meaning": "Hạn gặp bốn đại sát tinh (Kình Dương, Đà La, Linh Tinh, Hỏa Tinh) đan xen, cơ thể dễ sinh bệnh tật hiểm nghèo, tai họa ập đến liên tiếp khiến tinh thần và thể xác đều kiệt quệ."
+    },
+    {
+      "id": "suy_bai_029",
+      "category": "suy_bai",
+      "verse": "Đà La Kiếp Sát nhập vận, sầu gia sầu, oán gia oán.",
+      "stars": [
+        "da_la",
+        "kiep_sat"
+      ],
+      "meaning": "Vận gặp Đà La chủ về sự trì trệ, ám muội, lại thêm Kiếp Sát thì dễ bị tiểu nhân hãm hại, tiền bạc bế tắc, cuộc sống u uất kéo dài."
+    },
+    {
+      "id": "suy_bai_030",
+      "category": "suy_bai",
+      "verse": "Vũ Khúc, Thiên Phủ hạn lâm Triệt lộ, thương gia bại nghiệp.",
+      "stars": [
+        "vu_khuc",
+        "thien_phu",
+        "tuan",
+        "triet"
+      ],
+      "meaning": "Bộ đôi tài tinh Vũ Khúc, Thiên Phủ rất sợ Tuần Triệt. Nếu đại vận gặp Triệt lộ án ngữ, người làm kinh doanh dễ đưa ra quyết định sai lầm dẫn đến phá sản, sập tiệm."
+    },
+    {
+      "id": "suy_bai_031",
+      "category": "suy_bai",
+      "verse": "Nhật Nguyệt phù vân, quan vận hanh thông hóa trệ.",
+      "stars": [
+        "thai_duong",
+        "thai_am",
+        "tuan",
+        "triet"
+      ],
+      "meaning": "Đại vận gặp Thái Dương, Thái Âm hãm địa (bị mây mờ che khuất) hoặc bị Tuần Triệt, khiến công danh sự nghiệp đang thăng tiến bỗng dưng bị khựng lại, mờ mịt không thấy lối ra."
+    },
+    {
+      "id": "tat_ach_032",
+      "category": "tat_ach",
+      "verse": "Kình Đà Linh Hỏa giao hoan, tật bệnh uế tạp, tai họa trùng trùng bủa vây.",
+      "stars": [
+        "kinh_duong",
+        "da_la",
+        "hoa_tinh",
+        "linh_tinh"
+      ],
+      "meaning": "Vận hạn hội tụ cùng lúc bộ tứ sát tinh (Kình Dương, Đà La, Hỏa Tinh, Linh Tinh) chủ về cơ thể suy kiệt, dễ mắc bệnh hiểm nghèo hoặc gặp tai nạn liên tiếp."
+    },
+    {
+      "id": "tat_ach_033",
+      "category": "tat_ach",
+      "verse": "Kiếp Không sát thấu, đa bệnh đa tai.",
+      "stars": [
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Địa Không, Địa Kiếp vây hãm trong đại vận hay tiểu hạn khiến sức đề kháng giảm sút, dễ phát bệnh lạ nguy hiểm hoặc bị ngộ độc, dị ứng nặng."
+    },
+    {
+      "id": "tat_ach_034",
+      "category": "tat_ach",
+      "verse": "Kình Dương trùng phùng Lưu Kình, huyết quang tai ương nan tránh.",
+      "stars": [
+        "kinh_duong"
+      ],
+      "meaning": "Đại vận đã có Kình Dương cố định, tiểu hạn năm đó lại có Lưu Kình Dương bay vào trùng phùng (gọi là Kình Dương gia Kình Dương), chủ về năm đó dễ phải đụng chạm dao kéo, phẫu thuật hoặc bị tai nạn đổ máu."
+    },
+    {
+      "id": "tat_ach_035",
+      "category": "tat_ach",
+      "verse": "Bạch Hổ hạn hành, nan phòng huyết quang chi tai.",
+      "stars": [
+        "bach_ho",
+        "tuan"
+      ],
+      "meaning": "Vận đi đến cung có sao Bạch Hổ hãm địa, nếu không bị thú dữ cắn (thời xưa) thì thời nay dễ bị tai nạn xe cộ, thương tích chảy máu, hoặc các bệnh liên quan đến hệ tuần hoàn, máu huyết."
+    },
+    {
+      "id": "tat_ach_036",
+      "category": "tat_ach",
+      "verse": "Bạch Hổ gặp Tấu Thư, mình mình đau nhức.",
+      "stars": [
+        "bach_ho",
+        "tau_thu"
+      ],
+      "meaning": "Bạch Hổ (Kim khắc mộc, chủ về va đập, đau đớn) gặp Tấu Thư (hệ thần kinh, màng cơ), nó gây ra chứng đau nhức toàn thân, đau dọc theo các dây thần kinh, cơ nhục mỏi mệt mà đôi khi không rõ nguyên nhân từ xương hay từ thịt."
+    },
+    {
+      "id": "tat_ach_037",
+      "category": "tat_ach",
+      "verse": "Bạch Hổ gặp Đường Phù, gân xương có tỳ vết.",
+      "stars": [
+        "bach_ho",
+        "duong_phu"
+      ],
+      "meaning": "Hạn có Bạch Hổ đi cùng Đường Phù hoặc các sao kìm kẹp, chủ về các bệnh về xương khớp, thoái hóa, gãy tay chân."
+    },
+    {
+      "id": "tat_ach_038",
+      "category": "tat_ach",
+      "verse": "Thiên Hình hãm địa hạn lâm, bất khả phong đao.",
+      "stars": [
+        "thien_hinh"
+      ],
+      "meaning": "Vận gặp Thiên Hình hãm địa hội sát tinh, chủ về cơ thể dễ bị mổ xẻ, thương tích do kim loại gây ra."
+    },
+    {
+      "id": "tat_ach_039",
+      "category": "tat_ach",
+      "verse": "Cự Môn Đà La hạn đáo, âm thư phế tật.",
+      "stars": [
+        "cu_mon",
+        "da_la"
+      ],
+      "meaning": "Cự Môn (ám tinh) gặp Đà La (trì trệ) ở vận xấu, chủ về các bệnh ung nhọt giấu kín bên trong cơ thể, hoặc các bệnh mãn tính về đường hô hấp (phổi), hệ tiêu hóa khó chữa dứt điểm."
+    },
+    {
+      "id": "tat_ach_040",
+      "category": "tat_ach",
+      "verse": "Hóa Kỵ, Linh Tinh hạn hiệp, nhiễm trùng, ung nhọt, phát ban có ngày.",
+      "stars": [
+        "hoa_ky",
+        "linh_tinh"
+      ],
+      "meaning": "Hóa Kỵ (nhiễm độc, máu bẩn) gặp Linh Tinh (lửa ngầm) chủ về các bệnh độc, phát ban dữ dội, dị ứng nặng hoặc cơ thể tích tụ độc tố sinh u nhọt."
+    },
+    {
+      "id": "tat_ach_041",
+      "category": "tat_ach",
+      "verse": "Nhật Nguyệt hãm địa ngộ Kỵ Đà, nhãn mục hôn ám.",
+      "stars": [
+        "thai_duong",
+        "thai_am",
+        "hoa_ky",
+        "da_la"
+      ],
+      "meaning": "Thái Dương, Thái Âm chủ về đôi mắt. Vận đi đến nơi Nhật Nguyệt hãm địa lại gặp Hóa Kỵ, Đà La thì thị lực suy giảm nghiêm trọng, dễ bị bệnh về mắt hoặc đau đầu, tiền đình nặng."
+    },
+    {
+      "id": "tat_ach_042",
+      "category": "tat_ach",
+      "verse": "Liêm Trinh mà gặp Hỏa Tinh, phổi đau huyết độc.",
+      "stars": [
+        "liem_trinh",
+        "hoa_tinh"
+      ],
+      "meaning": "Liêm Trinh thuộc Hỏa (nhưng mang tính chất âm hỏa/máu), gặp Hỏa Tinh thiêu đốt ở vận xấu, dễ dẫn đến các bệnh nóng trong người, tổn thương phổi hoặc ho ra máu."
+    },
+    {
+      "id": "tat_ach_043",
+      "category": "tat_ach",
+      "verse": "Thiên Đồng hãm địa ngộ Không Kiếp, vị quản đa đau.",
+      "stars": [
+        "thien_dong",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Thiên Đồng chủ về hệ tiêu hóa, đường ruột. Vận gặp Thiên Đồng hãm lại bị Không Kiếp phá hoại thì đau dạ dày dữ dội, ngộ độc thức ăn hoặc mắc các bệnh về đường ruột."
+    },
+    {
+      "id": "lao_ly_thi_phi_044",
+      "category": "lao_ly_thi_phi",
+      "verse": "Liêm Trinh Tật Ách cung sầu, hạn hành Kiếp Sát, Thiên Hình, Địa Kiếp phải phòng quan ngục hình.",
+      "stars": [
+        "liem_trinh",
+        "dia_kiep",
+        "thien_hinh",
+        "kiep_sat"
+      ],
+      "meaning": "Liêm Trinh vốn là sao \"Tù tinh\". Nếu vận hạn gặp Liêm Trinh hãm địa lại hội thêm Kiếp Sát, Thiên Hình, Địa Kiếp thì rất dễ phạm pháp mà vướng vào tù tội."
+    },
+    {
+      "id": "lao_ly_thi_phi_045",
+      "category": "lao_ly_thi_phi",
+      "verse": "Hình Kình hiệp hạn, ngục hình nan đao.",
+      "stars": [
+        "kinh_duong",
+        "thien_hinh"
+      ],
+      "meaning": "Đại vận hoặc tiểu hạn có Thiên Hình (luật pháp, dao kéo) gặp Kình Dương (hình phạt) đồng cung hoặc xung chiếu thì khó tránh khỏi tai họa kiện tụng lớn, thậm chí là chịu án tù."
+    },
+    {
+      "id": "lao_ly_thi_phi_046",
+      "category": "lao_ly_thi_phi",
+      "verse": "Quan Phù gặp Bạch Hổ, họa đáo tụng đình.",
+      "stars": [
+        "bach_ho",
+        "quan_phu"
+      ],
+      "meaning": "Bộ đôi Quan Phù, Bạch Hổ vào vận chủ về cửa quan, thưa kiện. Nếu có thêm sát tinh hãm địa hùa vào, đương số dễ phải hầu tòa, đứng trước vành móng ngựa."
+    },
+    {
+      "id": "lao_ly_thi_phi_047",
+      "category": "lao_ly_thi_phi",
+      "verse": "La Võng Khốc Hư Hình Kỵ hội, một đời lao ngục ngẩn ngơ sầu.",
+      "stars": [
+        "hoa_ky",
+        "thien_khoc",
+        "thien_hu",
+        "thien_hinh"
+      ],
+      "meaning": "Hạn đi vào đất Thiên La, Địa Võng (Thìn, Tuất) lại gặp thêm Thiên Khốc, Thiên Hư, Thiên Hình, Hóa Kỵ vây hãm thì tinh thần suy sụp vì tranh chấp, kiện cáo, dễ bị giam cầm, cô lập."
+    },
+    {
+      "id": "lao_ly_thi_phi_048",
+      "category": "lao_ly_thi_phi",
+      "verse": "Cự Môn Hóa Kỵ hạn hành, ruồi bu kiến đậu, thị phi trùng trùng.",
+      "stars": [
+        "cu_mon",
+        "hoa_ky"
+      ],
+      "meaning": "Cự Môn (miệng tiếng) gặp Hóa Kỵ (ám muội, đố kỵ) tạo thành cách cục \"Cự Kỵ\". Vận đi đến đây thì thở thôi cũng gặp tai tiếng, ngồi không cũng dính họa lời nói, bị người đời xuyên tạc, vu khống."
+    },
+    {
+      "id": "lao_ly_thi_phi_049",
+      "category": "lao_ly_thi_phi",
+      "verse": "Đà La Kiếp Sát vãng vận, ám muội tiểu nhân, oan gia ngõ hẹp.",
+      "stars": [
+        "da_la",
+        "kiep_sat"
+      ],
+      "meaning": "Đà La chủ về sự kéo dài, ngấm ngầm; Kiếp Sát chủ về sự tổn hại. Vận gặp bộ này dễ bị bạn bè, đồng nghiệp đâm sau lưng, đặt điều hãm hại mà không làm gì được."
+    },
+    {
+      "id": "lao_ly_thi_phi_050",
+      "category": "lao_ly_thi_phi",
+      "verse": "Thái Tuế hạn lâm, khẩu thiệt phi văn.",
+      "stars": [
+        "thai_tue"
+      ],
+      "meaning": "Tiểu hạn gặp sao Thái Tuế chủ về năm đó dễ xảy ra tranh biện, cãi vã, đôi co với người khác, cần uốn lưỡi bảy lần trước khi nói để tránh rước họa vào thân."
+    },
+    {
+      "id": "lao_ly_thi_phi_051",
+      "category": "lao_ly_thi_phi",
+      "verse": "Liêm Trinh, Tham Lang hãm địa, hạn đáo tà dâm, quan phi túc hạ.",
+      "stars": [
+        "liem_trinh",
+        "tham_lang"
+      ],
+      "meaning": "Hạn gặp Liêm Tham hãm ở Tỵ, Hợi (cách cục sa đọa) chủ về vận đó dễ dính vào ăn chơi, cờ bạc, sắc dục hoặc làm ăn khuất tất để rồi dẫn đến tai họa tù tội, thị phi dèm pha."
+    },
+    {
+      "id": "lao_ly_thi_phi_052",
+      "category": "lao_ly_thi_phi",
+      "verse": "Vũ Khúc gặp Kiếp Không thì tốn của, thêm hội Quan Phù hẳn ngục hình.",
+      "stars": [
+        "vu_khuc",
+        "dia_khong_dia_kiep",
+        "quan_phu"
+      ],
+      "meaning": "Vũ Khúc (tài tinh) đi vào vận gặp Không Kiếp thì làm ăn thua lỗ, nếu vì túng quẫn mà làm liều, lại có thêm Quan Phù chiếu thì tài sản vừa mất mà bản thân lại vướng vào lao lý."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_053",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Đào Hồng hỷ duyệt hạn hành, tơ hồng se khéo, kết duyên châu trần.",
+      "stars": [
+        "dao_hoa",
+        "hong_loan",
+        "thien_hy"
+      ],
+      "meaning": "Vận đi đến cung có Đào Hoa, Hồng Loan, Thiên Hỷ hội chiếu thì tình duyên nở rộ, đôi lứa thấu hiểu và dắt nhau vào lễ đường, cuộc sống ngập tràn niềm vui."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_054",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Hồng Loan ngộ Thiên Hỷ, định kỳ giai ngẫu.",
+      "stars": [
+        "hong_loan",
+        "thien_hy"
+      ],
+      "meaning": "Hồng Loan (sao tơ hồng) gặp Thiên Hỷ (niềm vui nhà trời) tại hạn năm nào, năm đó cầm chắc tấm thiệp hồng trên tay, tìm được người bạn đời như ý (giai ngẫu)."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_055",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Thiên Hỷ, Đường Phù hạn hiệp, xe loan lọng tía rước phượng về dinh.",
+      "stars": [
+        "thien_hy",
+        "duong_phu"
+      ],
+      "meaning": "Thiên Hỷ đem lại tin vui, Đường Phù chủ về nhà cửa khang trang, rạp cưới bề thế. Vận này chủ về việc xây dựng gia đình tổ ấm mới."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_056",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Long Trì, Phượng Các hạn hành, kiệu hoa rước phượng, phỉ nguyền sánh đôi.",
+      "stars": [
+        "long_tri",
+        "phuong_cac"
+      ],
+      "meaning": "Bộ sao Long Phượng chủ về sự cao quý, đẹp đẽ. Vận gặp Long Phượng thì đám cưới diễn ra rất suôn sẻ, được hai bên gia đình chúc phúc, tổ chức long trọng."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_057",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Tam Thai, Bát Tọa trùng phùng, thong dong võng lọng rước nàng về dinh.",
+      "stars": [
+        "tam_thai",
+        "bat_toa",
+        "thai"
+      ],
+      "meaning": "Thai Tọa đi vào vận hỷ chủ về sự hanh thông, xe cộ đưa đón rình rang, việc cưới xin không gặp bất kỳ cản trở nào."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_058",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Thái Âm cư vận sáng ngời, gặp Hồng quyến luyến, trọn đời kết đôi.",
+      "stars": [
+        "thai_am",
+        "hong_loan"
+      ],
+      "meaning": "Thái Âm đắc địa (chủ về nội trợ, người vợ) gặp Hồng Loan ở đại vận hoặc tiểu hạn, người nam dễ cưới được vợ hiền thục, nết na; người nữ dễ tìm được bến đỗ bình yên."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_059",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Thiên Đồng đắc địa hạn lai, duyên tình ấm áp, kết giao vợ chồng.",
+      "stars": [
+        "thien_dong"
+      ],
+      "meaning": "Thiên Đồng chủ về canh cải, đổi mới nhưng cũng chủ về hạnh phúc gia đình. Vận gặp Thiên Đồng đắc địa hội cát tinh thì chuyện cưới hỏi diễn ra tự nhiên, viên mãn."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_060",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Tham Lang đắc địa hội hỷ tinh, phong lưu mã thượng, đính tình thành hôn.",
+      "stars": [
+        "tham_lang",
+        "dao_hoa"
+      ],
+      "meaning": "Tham Lang (đào hoa tinh) khi đắc địa đi vào vận gặp sao hỷ, chủ về tình yêu bùng cháy nhanh chóng và đi đến đám cưới trong sự bất ngờ của mọi người."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_061",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Hồng Hỷ, Long Đức hội Thanh Long, sinh ra long phụng, rạng danh tông đường.",
+      "stars": [
+        "hong_loan",
+        "thien_hy",
+        "thanh_long"
+      ],
+      "meaning": "Vận gặp Hồng Loan đi cùng Long Đức (sao hiền lành) và Thanh Long, Thiên Hỷ thì vừa cưới hỏi xong đã dễ có tin vui về đường con cái, gia tộc có thêm người thêm của."
+    },
+    {
+      "id": "hy_su_cuoi_hoi_062",
+      "category": "hy_su_cuoi_hoi",
+      "verse": "Hỷ Thần hội ngộ Tràng Sinh, sinh phúc dạt dào, song hỷ lâm môn.",
+      "stars": [
+        "hy_than",
+        "trang_sinh"
+      ],
+      "meaning": "Sao Hỷ Thần gặp đất Tràng Sinh (nguồn năng lượng sinh sôi liên tục) tại hạn, chủ về gia đình liên tục đón nhận tin mừng, hết cưới hỏi lại đến sinh con đẻ cái."
+    },
+    {
+      "id": "cau_tu_sinh_con_063",
+      "category": "cau_tu_sinh_con",
+      "verse": "Tràng Sinh cung hạn bước vào, Thai tinh hội hợp, nghênh chào quý nhi.",
+      "stars": [
+        "trang_sinh",
+        "thai"
+      ],
+      "meaning": "Vận hạn đi đến đất Tràng Sinh, lại gặp sao Thai đồng cung hoặc chiếu về, chủ về dòng giống sinh sôi, việc thụ thai diễn ra vô cùng thuận lợi, dễ sinh con thông minh, khỏe mạnh."
+    },
+    {
+      "id": "cau_tu_sinh_con_064",
+      "category": "cau_tu_sinh_con",
+      "verse": "Thiên Hỷ/Hỷ Thần ngộ Thai tinh, niên kỳ sinh sản mới hay đó là.",
+      "stars": [
+        "thien_hy",
+        "hy_than",
+        "thai"
+      ],
+      "meaning": "Hạn có sao Thai gặp Thiên Hỷ (hoặc Hỷ Thần) hội chiếu, chủ về trong năm đó gia đình chắc chắn đón nhận tin vui có em bé, chuẩn bị tinh thần làm cha làm mẹ."
+    },
+    {
+      "id": "cau_tu_sinh_con_065",
+      "category": "cau_tu_sinh_con",
+      "verse": "Đào Hồng Hỷ duyệt hạn hành, sinh nam sinh nữ vẹn tình đôi bên.",
+      "stars": [
+        "dao_hoa",
+        "hong_loan",
+        "thien_hy"
+      ],
+      "meaning": "Bộ Đào Hoa, Hồng Loan, Thiên Hỷ khi đi vào vận thì chủ về cưới hỏi và chủ về sinh con thuận ý, gia đình trọn vẹn niềm vui."
+    },
+    {
+      "id": "cau_tu_sinh_con_066",
+      "category": "cau_tu_sinh_con",
+      "verse": "Long Trì, Phượng Các hạn lâm, sinh con tuấn tú, rạng danh tông đường.",
+      "stars": [
+        "long_tri",
+        "phuong_cac"
+      ],
+      "meaning": "Long Trì (mũi rồng/ao rồng), Phượng Các (gác phượng) thủ hạn chủ về sự sinh nở đẹp đẽ. Con sinh ra thường có diện mạo khôi ngô, thanh tú và mang lại may mắn cho cha mẹ."
+    },
+    {
+      "id": "cau_tu_sinh_con_067",
+      "category": "cau_tu_sinh_con",
+      "verse": "Tướng Quân hội cùng Phượng Các, sinh nhi dũng mãnh, hiển vinh sau này.",
+      "stars": [
+        "phuong_cac"
+      ],
+      "meaning": "Hạn có sao Tướng Quân hội cùng Phượng Các, chủ về sinh con trai thì mạnh mẽ, quyết đoán, sau này có chí hướng làm nên nghiệp lớn."
+    },
+    {
+      "id": "cau_tu_sinh_con_068",
+      "category": "cau_tu_sinh_con",
+      "verse": "Thiên Đồng đắc địa hạn lâm, sinh con bế ẵm, gia đình hỷ hoan.",
+      "stars": [
+        "thien_dong"
+      ],
+      "meaning": "Thiên Đồng đắc địa là phúc tinh, đi vào vận này chủ về sự gia tăng nhân khẩu một cách tự nhiên, mẹ tròn con vuông, em bé ngoan ngoãn dễ nuôi."
+    },
+    {
+      "id": "cau_tu_sinh_con_069",
+      "category": "cau_tu_sinh_con",
+      "verse": "Thái Âm thăng điện sáng ngời, mẫu nghi sinh dưỡng, trọn đời an vui.",
+      "stars": [
+        "thai_am",
+        "thai"
+      ],
+      "meaning": "Thái Âm đắc địa chủ về người mẹ, sự dịu dàng và che chở. Người nữ đi vào vận này rất dễ mang thai và sinh con gái xinh xắn, hiếu thảo."
+    },
+    {
+      "id": "cau_tu_sinh_con_070",
+      "category": "cau_tu_sinh_con",
+      "verse": "Thiên Phủ cung hạn phùng cát tú, kho đụn thêm người, của cải tăng.",
+      "stars": [
+        "thien_phu"
+      ],
+      "meaning": "Thiên Phủ là quả tài tinh và phúc tinh, vận gặp Thiên Phủ đắc địa hội các sao con cái thì sinh con ra đời cũng là lúc kinh tế gia đình phất lên mạnh mẽ."
+    },
+    {
+      "id": "cau_tu_sinh_con_071",
+      "category": "cau_tu_sinh_con",
+      "verse": "Bạch Hổ hội ngộ Kình Dương, sinh sản đề phòng huyết quang tai.",
+      "stars": [
+        "kinh_duong",
+        "bach_ho"
+      ],
+      "meaning": "Bạch Hổ (máu huyết) gặp Kình Dương (dao kéo) hãm địa, người mẹ khi sinh nở cần chọn bệnh viện lớn, đề phòng băng huyết hoặc phải sinh mổ cấp cứu."
+    },
+    {
+      "id": "cau_tu_sinh_con_072",
+      "category": "cau_tu_sinh_con",
+      "verse": "Không Kiếp hãm lâm vào cung sản dục, sinh con khó dưỡng, lệ tràn mi.",
+      "stars": [
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep",
+        "thai"
+      ],
+      "meaning": "Vận sinh con mà gặp Địa Không, Địa Kiếp hãm địa phá hoại thì thai kỳ dễ gặp bất trắc (động thai, sinh non), đòi hỏi người mẹ phải cực kỳ cẩn trọng trong việc đi đứng, ăn uống."
+    },
+    {
+      "id": "cau_tu_sinh_con_073",
+      "category": "cau_tu_sinh_con",
+      "verse": "Hóa Kỵ Linh Tinh hạn hiệp, sản dịch đa sầu.",
+      "stars": [
+        "hoa_ky",
+        "linh_tinh"
+      ],
+      "meaning": "Hóa Kỵ (nhiễm độc, trầm cảm) gặp Linh Tinh ở vận sinh nở, người mẹ dễ bị áp lực tâm lý, trầm cảm sau sinh hoặc em bé dễ bị dị ứng, sài đẹn."
+    },
+    {
+      "id": "chia_ly_hon_nhan_074",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Không Kiếp định hạn Phu Thê, phu ly thê tán bồ đề chia hai.",
+      "stars": [
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Vận gặp Địa Không, Địa Kiếp hội chiếu/túc trực tại cung Phu Thê, chủ về duyên vợ chồng bị cắt đứt, mỗi người một ngả, gia đình tan vỡ."
+    },
+    {
+      "id": "chia_ly_hon_nhan_075",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Tang Môn, Khốc Hư hạn hành, phu thê sầu não, lệ tình khôn nguôi.",
+      "stars": [
+        "tang_mon",
+        "thien_khoc",
+        "thien_hu"
+      ],
+      "meaning": "Vận gặp bộ sao sầu thảm Tang Môn, Thiên Khốc, Thiên Hư thì vợ chồng suốt ngày cãi vã, đồng sàng dị mộng, cuộc sống hôn nhân ngập trong nước mắt và dễ dẫn đến quyết định ly hôn."
+    },
+    {
+      "id": "chia_ly_hon_nhan_076",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Mã ngộ Không Vong, duyên tình đứt đoạn, phu thê ly hướng.",
+      "stars": [
+        "thien_ma",
+        "tuan",
+        "triet",
+        "thien_khong"
+      ],
+      "meaning": "Thiên Mã tượng trưng cho sự gắn kết, đi lại, hạnh phúc nương tựa nhau. Vận gặp Thiên Mã ngộ Tuần, Triệt hoặc Thiên Không (Mã ngộ Không Vong) thì như xe đứt xích, ngựa mất hướng, vợ chồng dễ ly thân, chia tay."
+    },
+    {
+      "id": "chia_ly_hon_nhan_077",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Cô Quả lâm hạn phu thê, gối chăn lạnh lẽo, đường về chia hai.",
+      "stars": [
+        "co_than",
+        "qua_tu"
+      ],
+      "meaning": "Đại vận hay tiểu hạn gặp bộ đôi Cô Thần, Quả Tú thì dù có đang ở chung một nhà, vợ chồng cũng xa cách lòng, dễ dẫn đến ly thân hoặc ly hôn để tìm lối thoát độc thân."
+    },
+    {
+      "id": "chia_ly_hon_nhan_078",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Phá Toái phùng Hóa Kỵ, duyên tình tan vỡ, tụng đình phân chia.",
+      "stars": [
+        "hoa_ky"
+      ],
+      "meaning": "Vận gặp Phá Toái (nát vụn) đèo bòng thêm Hóa Kỵ (oán hận, nghi ngờ), vợ chồng không thể đối thoại, dắt nhau ra tòa ly dị."
+    },
+    {
+      "id": "chia_ly_hon_nhan_079",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Vũ Khúc độc tọa hạn hành, phu thê hình khắc, một mình đơn côi.",
+      "stars": [
+        "vu_khuc"
+      ],
+      "meaning": "Vũ Khúc là cô tinh (sao cô độc), đồng thời là tài tinh. Đi vào vận này, vợ chồng dễ vì chuyện tiền bạc mà sinh lòng vị kỷ, lạnh nhạt rồi dẫn đến chia tay."
+    },
+    {
+      "id": "chia_ly_hon_nhan_080",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Phá Quân hãm địa hạn lâm, phu thê bất mục, gia đình tiêu hao.",
+      "stars": [
+        "pha_quan"
+      ],
+      "meaning": "Phá Quân chủ về sự hao tán, phu thê gặp Phá Quân hãm ở vận xấu thì dễ có sự thay đổi lớn trong hôn nhân (đập đi xây lại), thường là ly hôn để kết hôn với người khác."
+    },
+    {
+      "id": "chia_ly_hon_nhan_081",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Sát, Phá, Tham hãm ngộ Kình Đà, tơ duyên đứt đoạn, xót xa lòng này.",
+      "stars": [
+        "kinh_duong",
+        "da_la"
+      ],
+      "meaning": "Vận vào thế Sát Phá Tham lạc hãm lại bị Kình Dương, Đà La đâm cắt, hôn nhân nổ ra xung đột cực điểm, không thể cứu vãn."
+    },
+    {
+      "id": "chia_ly_hon_nhan_082",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Đào Hoa ngộ Kỵ, Không, Kiếp, tình duyên ngang trái, nửa đường đứt dây.",
+      "stars": [
+        "hoa_ky",
+        "dia_khong_dia_kiep",
+        "dao_hoa"
+      ],
+      "meaning": "Đào Hoa gặp Hóa Kỵ hoặc Không Kiếp ở vận hạn là cách \"Đào hoa phạm sát\". Chủ về vận này dễ dính vào các mối quan hệ ngoài luồng, ghen tuông mù quáng rồi dẫn đến tan nát gia đình chính thất."
+    },
+    {
+      "id": "chia_ly_hon_nhan_083",
+      "category": "chia_ly_hon_nhan",
+      "verse": "Tham Lang, Liêm Trinh hạn hiệp, tà dâm phong nhị, phụ nghĩa phu thê.",
+      "stars": [
+        "liem_trinh",
+        "tham_lang"
+      ],
+      "meaning": "Hạn gặp bộ đôi sa đọa Liêm Tham hãm địa, dễ vì ham mê thú vui bên ngoài, thay lòng đổi dạ mà phản bội người phối ngẫu, dẫn đến kết cục chia ly."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_084",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Khốc Hư Tang Mã trùng phùng, thiên địa nhân tà, hạn đáo tử quy.",
+      "stars": [
+        "thien_ma",
+        "tang_mon",
+        "thien_khoc",
+        "thien_hu"
+      ],
+      "meaning": "Vận hạn gặp cùng lúc Thiên Khốc, Thiên Hư (tiếng khóc), Tang Môn (tang tóc) và Thiên Mã (xe ngựa/xe tang), nếu bản mệnh đã suy yếu hoặc lớn tuổi thì đây là hạn quy tiên."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_085",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Hạn hành Tử Tuyệt trùng phùng, sinh cơ tẫn tuyệt, mệnh chung quy điền.",
+      "stars": [
+        "trang_sinh"
+      ],
+      "meaning": "Đại vận và tiểu hạn cùng rơi vào các đất suy vi trong vòng Tràng Sinh như cung Tử hoặc cung Tuyệt, lại gặp sát tinh vây hãm thì sinh khí bị dập tắt, dễ lâm vào đường cùng."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_086",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Cự Linh Hỏa táng lộ bàng thi.",
+      "stars": [
+        "cu_mon",
+        "hoa_tinh",
+        "linh_tinh"
+      ],
+      "meaning": "Cự Môn hãm địa gặp Linh Tinh, Hỏa Tinh ở cung hạn, chủ về tai nạn thảm khốc, chết bất đắc kỳ tử ở dọc đường (lộ bàng thi - xác chết bên đường)."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_087",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Kiếp Không hãm địa thấu xương gân, Mệnh vận trùng phùng định táng thân.",
+      "stars": [
+        "dia_khong",
+        "dia_kiep",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Địa Không, Địa Kiếp hãm địa vây chiếu cả Mệnh lẫn Hạn, lại có thêm hung tinh khác kết hợp thì rất khó giữ được mạng sống, chủ về táng thân vì tai họa bất ngờ."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_088",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Liêm Trinh hãm địa ngộ Kình Dương, thương đao nan tránh, mạng vong vong.",
+      "stars": [
+        "liem_trinh",
+        "kinh_duong"
+      ],
+      "meaning": "Sao Liêm Trinh (hỏa) gặp Kình Dương (kim) hãm địa tại hạn, tạo thế tương khắc kịch liệt, dễ chết vì ám sát, hình phạt, hoặc tai nạn đao kéo, xe cộ thảm khốc."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_089",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Thất Sát lâm hạn ngộ Hỏa Linh, chiến trận táng thân, bạo tử vô kỳ.",
+      "stars": [
+        "that_sat",
+        "hoa_tinh",
+        "linh_tinh"
+      ],
+      "meaning": "Thất Sát là sao chủ về quyền sinh sát, thanh kiếm. Khi đi vào hạn gặp Hỏa Tinh, Linh Tinh thiêu đốt, thời xưa chủ về chết trận, thời nay chủ về bạo bệnh bộc phát chết nhanh hoặc tai nạn cháy nổ, sập đổ."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_090",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Nhật Nguyệt ám hối ngộ Kỵ Đà, thọ nguyên tất tận.",
+      "stars": [
+        "thai_duong",
+        "thai_am",
+        "hoa_ky",
+        "da_la"
+      ],
+      "meaning": "Thái Dương, Thái Âm cùng hãm địa, lại bị Hóa Kỵ (mây đen) và Đà La (ám khí) bao vây không có lối thoát, sinh mệnh lực rơi vào bóng tối, chủ về thọ mến đã tận."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_091",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Thái Dương ngộ Kiếp Không tại Hợi, hạn hành dĩ tận, thọ số nan trường.",
+      "stars": [
+        "thai_duong",
+        "dia_khong_dia_kiep"
+      ],
+      "meaning": "Thái Dương (mặt trời) ở cung Hợi là giờ tí đêm, đã tối tăm lại gặp thêm Không Kiếp tàn phá thì như ngọn đèn cạn dầu trước gió, khó lòng kéo dài tuổi thọ."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_092",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Thìn Tuất La Võng hãm hung tinh, hạn đáo Thiên Không, mệnh tất chung.",
+      "stars": [
+        "thien_khong"
+      ],
+      "meaning": "Hạn đi vào đất Thiên La (Thìn) hoặc Địa Võng (Tuất) vốn đã là lưới bủa vây, lại gặp thêm sao Thiên Không (sự hư vô, xóa sạch) và hung tinh hãm địa, chủ về trắng tay hoàn toàn, mạng số kết thúc."
+    },
+    {
+      "id": "nguy_nan_hiem_ngheo_093",
+      "category": "nguy_nan_hiem_ngheo",
+      "verse": "Vận cùng, Mệnh tuyệt, Thần cứu bất kham.",
+      "stars": [],
+      "meaning": "Khi gốc Mệnh đã đến tuổi già sức yếu (hoặc Mệnh vô chính diệu bị sát tinh phá), đi vào đại vận gặp toàn sao tuyệt lộ thì dù có thần linh hay thầy giỏi cũng không thể cứu vãn."
+    }
+  ]
+}

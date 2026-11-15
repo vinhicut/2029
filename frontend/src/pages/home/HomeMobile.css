@@ -1,0 +1,75 @@
+/* =========================================================================
+   HOME MOBILE SCROLLYTELLING (<= 580px) - TỬ VI HỒNG ÂN
+   Thiết kế riêng cho thiết bị di động: Á Đông Cổ Điển (Solid Colors Only)
+   ========================================================================= */
+
+.home-mobile-page {
+  --hm-vermilion: #8b1d1d;
+  --hm-ochre: #9a6b26;
+  --hm-pine: #1e5631;
+  --hm-paper: #fcfaf7;
+  --hm-ink: #1c1917;
+  overscroll-behavior-y: none;
+  overflow-x: clip;
+}
+
+/* Mobile Scroll Reveal (nhanh gọn, mượt 60fps trên GPU) */
+.hm-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.hm-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.hm-reveal-delay-1 { transition-delay: 80ms; }
+.hm-reveal-delay-2 { transition-delay: 160ms; }
+.hm-reveal-delay-3 { transition-delay: 240ms; }
+
+/* Chuyển cảnh Story Beat trên Mobile khi chạm / vuốt đổi bước */
+@keyframes hmBeatEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hm-beat-enter {
+  animation: hmBeatEnter 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Tối ưu cảm giác chạm cho nút & thẻ trên di động */
+.hm-tap-card {
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1), border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.hm-tap-card:active {
+  transform: scale(0.985);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .hm-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hm-beat-enter {
+    animation: none !important;
+  }
+
+  .hm-tap-card:active {
+    transform: none !important;
+  }
+}

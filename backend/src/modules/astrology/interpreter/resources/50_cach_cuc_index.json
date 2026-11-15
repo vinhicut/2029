@@ -1,0 +1,870 @@
+{
+  "metadata": {
+    "title": "Tử Vi Hồng Ân 50 Cách Cục Index",
+    "version": "2.0.0",
+    "standard": "Zero-Waste Micro-Context & Atomic Schema",
+    "total_patterns": 50,
+    "target_model": "gemini-3.8-flash",
+    "token_budget_per_pattern": "~150 - 250 tokens",
+    "abbreviations_used": false
+  },
+  "taxonomy_subsystems": {
+    "I": "Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+    "II": "Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+    "III": "Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+    "IV": "Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp"
+  },
+  "patterns": {
+    "CACH_01": {
+      "id": 1,
+      "name": "Tử Phủ đồng cung",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Tử Vi, Thiên Phủ (kèm Lộc Tồn, Hóa Khoa, Hóa Quyền, Hóa Lộc, Tả Phù, Hữu Bật, Văn Xương, Văn Khúc, Thiên Khôi, Thiên Việt)",
+      "conditions": "Sao Tử Vi và Thiên Phủ cùng tọa thủ trấn Mệnh tại cung Dần hoặc cung Thân. Cung tam phương tứ chính có cát tinh gia hội, không bị Tứ Sát (Kình Dương, Đà La, Hỏa Tinh, Linh Tinh) và Không Kiếp xung phá.",
+      "can_chi": "Người sinh năm Giáp gặp hóa cát cực tốt (Lộc Tồn tại Dần); người sinh năm Đinh, Kỷ, Canh, Quý đều cát lợi.",
+      "advantages": "Đời sống vật chất sung túc đủ đầy, một đời hưởng phúc, giàu sang trọn vẹn, phúc lộc song toàn; nếu hội đủ cát tinh chủ về bậc đại phú đại quý, phúc thọ trường cửu, danh vọng hiển hách.",
+      "disadvantages": "Hai đế tinh đồng cung tạo thế 'lưỡng đế tranh quyền', về mặt tinh thần dễ xuất hiện cảm giác cô độc mang tính chu kỳ; chủ về muộn màng tình duyên, nên kết hôn muộn. Nếu gặp sao Kình Dương sẽ trở thành thương gia lớn nhưng tâm địa thường bất chính, buôn bán thủ đoạn gian xảo.",
+      "auspicious_variants": "Tử Phủ đồng cung tại Dần Thân hội Tả Phụ, Hữu Bật, Tam Hóa (Khoa Quyền Lộc), Khôi Việt: tài năng xuất chúng, nắm giữ trọng trách quốc gia, sự nghiệp vững như bàn thạch.",
+      "defeat_variants": "Bị Kình Đà Hỏa Linh, Địa Không, Địa Kiếp xung phá: giảm thọ, giảm phúc, mưu tính trắc trở, tâm trạng cô độc, dễ bị thị phi kiện tụng hoặc phá sản.",
+      "classical_aphorisms": [
+        "Tử Phủ Dần Thân đồng cung, chung thân phúc hậu.",
+        "Đồng cung Tử Phủ quý sinh nhân, hưởng lộc vạn chung."
+      ],
+      "transit_impact": "Hành hạn đến cung Dần Thân gặp Tử Phủ đồng cung, nếu gốc mệnh tốt và hạn không ngộ Không Kiếp Sát Kỵ sẽ có bước tiến nhảy vọt về tài chính, công danh thăng tiến, được quý nhân nâng đỡ; nếu gặp Sát tinh hung hiểm cần đề phòng nội bộ rạn nứt, chia rẽ tài sản."
+    },
+    "CACH_02": {
+      "id": 2,
+      "name": "Tử Phủ triều viên (Tử Phủ chầu mệnh)",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Tử Vi, Thiên Phủ (tại tam hợp hoặc xung chiếu Mệnh; hội Lộc Tồn, Hóa Khoa, Hóa Lộc, Hóa Quyền, Tả Phù, Hữu Bật, Văn Xương, Văn Khúc, Thiên Khôi, Thiên Việt)",
+      "conditions": "Sao Tử Vi hoặc Thiên Phủ miếu vượng trấn cung Mệnh, tại cung tam phương tứ chính có cát tinh gia hội chầu về. Gồm 4 trường hợp cụ thể: (1) Vũ Khúc, Thiên Tướng trấn Mệnh tại Dần hoặc Thân, tam hợp có Tử Vi, Thiên Phủ; (2) Liêm Trinh trấn Mệnh tại Dần hoặc Thân, tam hợp có Tử Vi, Thiên Phủ; (3) Liêm Trinh, Thiên Tướng trấn Mệnh tại Tý hoặc Ngọ, tam hợp có Tử Vi, Thiên Phủ; (4) Thiên Tướng trấn Mệnh tại Sửu hoặc Mùi, tam hợp có Thiên Phủ, cung đối diện có Tử Vi.",
+      "can_chi": "Người sinh năm Giáp, Đinh, Kỷ, Canh cát lợi; đặc biệt người sinh năm Giáp và Kỷ hưởng trọn vẹn Lộc Tồn và Tứ Hóa.",
+      "advantages": "Thanh cao, phúc thọ song toàn, đời sống vật chất đủ đầy, hưởng lộc dồi dào, sang trọng tột đỉnh, giàu có nức tiếng khắp chốn.",
+      "disadvantages": "Tùy thuộc vào chính tinh tọa thủ tại cung Mệnh; nếu Mệnh là Liêm Trinh hoặc Vũ Khúc cô độc thì tính tình quá cương nghị, duyên phận hôn nhân muộn màng, dễ gặp sóng gió tình cảm gia đình.",
+      "auspicious_variants": "Thiên Tướng cư Sửu Mùi đắc Tử Vi đối chiếu, Thiên Phủ tam hợp chầu về, hội thêm Tả Hữu Xương Khúc: làm quan to đầu triều, danh lưu thanh sử.",
+      "defeat_variants": "Gặp Tứ Sát (Kình Đà Hỏa Linh), Địa Không, Địa Kiếp, Hóa Kỵ: bị tước giảm phẩm cách, từ quan chuyển sang buôn bán, bôn ba vất vả mà danh bất hư truyền.",
+      "classical_aphorisms": [
+        "Tử Phủ triều viên, thực lộc vạn chung (Tử Phủ triều về cung mệnh, ăn lộc muôn hộc).",
+        "Mệnh ngộ Tử Phủ triều viên, chung thân phúc thọ khang ninh."
+      ],
+      "transit_impact": "Đại vận hoặc Lưu niên tiến vào cung hạn có cách Tử Phủ triều viên chủ về công thành danh toại, tài lộc dồi dào, thi cử đỗ đạt, mở rộng quy mô kinh doanh hoặc được bổ nhiệm giữ chức vụ lãnh đạo chủ chốt."
+    },
+    "CACH_03": {
+      "id": 3,
+      "name": "Thiên Phủ triều viên (Thiên Phủ chầu mệnh)",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Thiên Phủ, Liêm Trinh (kèm Tả Phù, Hữu Bật, Lộc Tồn, Hóa Khoa, Hóa Lộc, Hóa Quyền, Văn Xương, Văn Khúc, Thiên Khôi, Thiên Việt)",
+      "conditions": "Sao Thiên Phủ nhập miếu trấn Mệnh tại cung Thìn hoặc cung Tuất, đồng cung với Liêm Trinh, không bị sát tinh xung phá. Cung Tuất là vị trí quẻ Càn (ngôi vị của vua), Thiên Phủ là bề tôi hiền thần dốc lòng vì nước.",
+      "can_chi": "Tốt nhất cho người sinh năm Giáp, Kỷ; tiếp đến là người sinh năm Đinh.",
+      "advantages": "Quan cao chức trọng, phúc quý song toàn, đại phú đại quý; mệnh nữ đoan trang trung trinh hiền thục. Nếu có Tả Phù hoặc Hữu Bật đồng cung thì uy quyền chót vót, tôn quý tuyệt đỉnh.",
+      "disadvantages": "Bất lợi cho hôn nhân và tình duyên do Liêm Trinh là thứ đào hoa và Thiên Phủ thận trọng, nên kết hôn muộn để giữ gìn hạnh phúc bền vững.",
+      "auspicious_variants": "Thiên Phủ Liêm Trinh tại Tuất hội Tả Phù, Hữu Bật và Hóa Khoa/Hóa Lộc: trung thần ái quốc, đai vàng áo tía bái chầu cung điện.",
+      "defeat_variants": "Bị Kình Dương, Đà La, Hóa Kỵ xâm phạm: vướng vòng lao lý thị phi (do Liêm Trinh hóa khí là Tù), phá hao kho tàng tài sản (do Thiên Phủ ngộ sát).",
+      "classical_aphorisms": [
+        "Thiên Phủ tại Tuất có sao phò trợ, đai vàng áo tía.",
+        "Phụ Phủ đồng cung, tôn cư vạn thặng (Tả Phù, Thiên Phủ đồng cung, ngôi cao chót vót)."
+      ],
+      "transit_impact": "Vận trình đi qua cung Thìn Tuất có Thiên Phủ miếu vượng: tích lũy tài sản nhanh chóng, gia tăng điền sản đất đai, củng cố vị thế vững chắc trong tổ chức."
+    },
+    "CACH_04": {
+      "id": 4,
+      "name": "Quân thần khánh hội (Vua tôi quần tụ)",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Tử Vi cùng Tả Phù, Hữu Bật (hội tụ thêm Thiên Khôi, Thiên Việt, Văn Xương, Văn Khúc, Tam Hóa)",
+      "conditions": "Sao Tử Vi cùng Tả Phù, Hữu Bật đồng cung tại Mệnh; hoặc Tử Vi đóng tại cung Mệnh, Tả Phù và Hữu Bật nằm tại tam phương tứ chính hội chiếu, hoặc giáp hai bên cung Mệnh (tạo thành cách Phụ Bật củng chủ).",
+      "can_chi": "Hợp với mọi can chi năm sinh, đặc biệt đại cát với người sinh tháng 4, tháng 10 âm lịch (Tả Hữu đồng cung/đối chiếu) và sinh năm Giáp, Mậu, Canh.",
+      "advantages": "Có được sự phò trợ đắc lực từ cấp dưới, gặp nhiều quý nhân giúp đỡ, được quần chúng đồng lòng hưởng ứng, tài năng lãnh đạo kiệt xuất, phú quý trọn đời.",
+      "disadvantages": "Nếu Tử Vi đứng đơn độc mà không có Phụ Bật, hoặc Phụ Bật bị Không Kiếp phá hủy thì trở thành thế 'Cô quân vô trợ' (vua một mình không bầy tôi), tính tình độc đoán, kiêu ngạo, chí lớn nhưng khó thành.",
+      "auspicious_variants": "Tử Vi tại Ngọ hội đủ Phụ Bật, Khôi Việt, Xương Khúc: bậc đế vương minh quân, nguyên thủ quốc gia hoặc thủ lĩnh tập đoàn lớn.",
+      "defeat_variants": "Gặp Tuần Triệt, Không Kiếp, Hóa Kỵ: vua tôi ly tán, thuộc hạ phản trắc, bề tôi lấn át quyền bính.",
+      "classical_aphorisms": [
+        "Quân thần khánh hội, tài đức kiêm toàn, nhất hô bách nặc.",
+        "Tử Vi ngộ Tả Hữu, chấp chưởng đại quyền."
+      ],
+      "transit_impact": "Hành hạn gặp Quân thần khánh hội: mở rộng mạng lưới quan hệ, tìm được cộng sự đắc lực, dự án được đông đảo đối tác ủng hộ, đạt đỉnh cao uy tín cá nhân."
+    },
+    "CACH_05": {
+      "id": 5,
+      "name": "Phủ Tướng triều viên (Thiên Phủ, Thiên Tướng chầu mệnh)",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Thiên Phủ, Thiên Tướng (hội Lộc Tồn, Hóa Khoa, Hóa Quyền, Hóa Lộc, Tả Phù, Hữu Bật, Văn Xương, Văn Khúc, Thiên Khôi, Thiên Việt)",
+      "conditions": "Thiên Phủ (hoặc Thiên Tướng) tại cung Mệnh, Thiên Tướng (hoặc Thiên Phủ) tại cung Tài Bạch hoặc Quan Lộc hội chiếu, không bị sát tinh xung phá (sao Thiên Tướng cần miếu vượng và không bị Tuần Triệt trấn đóng). Gồm 3 trường hợp: (1) Cung Mệnh vô chính diệu tại Sửu/Mùi/Mão/Dậu được Phủ Tướng tam hợp chầu về; (2) Thiên Phủ trấn Mệnh tại Sửu/Mùi/Mão/Dậu/Tỵ/Hợi được Thiên Tướng chầu về; (3) Liêm Trinh trấn Mệnh tại Dần/Thân được Phủ Tướng tại Ngọ Tuất hoặc Tý Thìn chầu về.",
+      "can_chi": "Người sinh năm Giáp, Đinh, Kỷ, Canh, Quý đều cát lợi.",
+      "advantages": "Phú quý song toàn, hưởng lộc dồi dào, được người khác kính trọng, quan hệ xã hội tốt, trọng tình cảm sâu sắc với bạn bè và gia đình, được quý nhân phù trợ suốt đời.",
+      "disadvantages": "Cần thận trọng trong chuyện tình cảm và hôn nhân (do cung Phu Thê luôn có Phá Quân hoặc Tham Lang dễ biến động).",
+      "auspicious_variants": "Phủ Tướng hội thêm Lộc Tồn, Tam Hóa, Tả Hữu: làm quan văn võ song toàn, cả nhà ăn lộc triều đình, dòng dõi hiển đạt.",
+      "defeat_variants": "Gặp Tứ Sát (Kình Đà Hỏa Linh), Địa Không, Địa Kiếp, Hóa Kỵ xung phá: phá cách hoàn toàn, chủ về tán tài, gia đạo bất hòa, dễ gặp tai nạn sông nước hoặc thương tật.",
+      "classical_aphorisms": [
+        "Thiên Phủ, Thiên Tướng là thần tước lộc, xuất sĩ làm quan ắt là điềm hanh thông.",
+        "Phủ Tướng gặp gỡ tại cung mệnh, cả nhà ăn lộc.",
+        "Cung Dần gặp Phủ Tướng được làm quan nhất phẩm; nữ mệnh được Phủ Tướng triều viên, con cái hiển đạt chồng vinh hoa."
+      ],
+      "transit_impact": "Đại tiểu hạn gặp Phủ Tướng triều viên: công việc ổn định vững chắc, tài lộc dồi dào, thăng quan tiến chức thuận lợi, đón nhận nhiều tin vui về con cái và gia đạo."
+    },
+    "CACH_06": {
+      "id": 6,
+      "name": "Cơ Nguyệt Đồng Lương",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thiên Cơ, Thái Âm, Thiên Đồng, Thiên Lương (tập trung tại Mệnh, Thân và Tam phương tứ chính)",
+      "conditions": "Bốn sao Thiên Cơ, Thái Âm, Thiên Đồng, Thiên Lương hội tụ tại cung Mệnh, Thân hoặc tam phương tứ chính (Dần, Thân, Thìn, Tuất, Tý, Ngọ). Miếu vượng đắc địa và có cát tinh gia hội là thượng cách.",
+      "can_chi": "Hợp với người sinh năm Đinh, Bính, Tân, Nhâm, Ất.",
+      "advantages": "Tính cách ôn hòa, mưu trí mẫn tiệp, giỏi hoạch định chiến lược, quản lý hành chính, tham mưu cố vấn; một đời an lạc hưởng phúc, ổn định bền vững.",
+      "disadvantages": "Kém tính đột phá tiên phong, không thích hợp với kinh doanh mạo hiểm hay đấu tranh vũ lực khốc liệt; nếu gặp sát tinh dễ trở nên mưu mô, bất mãn, hay thay đổi.",
+      "auspicious_variants": "Cơ Nguyệt Đồng Lương hội tụ Văn Xương, Văn Khúc, Tả Hữu, Hóa Khoa: trở thành bậc đại học giả, quan chức ngoại giao, công chức mẫn cán tài hoa.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Dương, Đà La: tâm thần bất định, đa sầu đa cảm, dễ mắc bệnh về tiêu hóa hoặc thần kinh, tình cảm trắc trở.",
+      "classical_aphorisms": [
+        "Cơ Nguyệt Đồng Lương tác lại nhân (chuyên làm công chức, mưu sĩ, quan lại).",
+        "Dần Thân hội Cơ Nguyệt Đồng Lương, phúc lộc tự nhiên lai."
+      ],
+      "transit_impact": "Vận trình đi vào hạn Cơ Nguyệt Đồng Lương: sự nghiệp chuyên môn phát triển thuận lợi, có cơ hội thăng tiến trong hệ thống hành chính, học tập thi cử hanh thông."
+    },
+    "CACH_07": {
+      "id": 7,
+      "name": "Cơ Lương gia hội",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thiên Cơ, Thiên Lương (đồng cung tại Thìn hoặc Tuất)",
+      "conditions": "Hai sao Thiên Cơ và Thiên Lương cùng tọa thủ tại Thìn hoặc Tuất, cung tam phương tứ chính có cát tinh Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc hội tụ.",
+      "can_chi": "Người sinh năm Ất, Bính, Đinh cát lợi nhất; sinh năm Kỷ, Tân cũng tốt.",
+      "advantages": "Trí tuệ trác tuyệt, mưu lược cao sâu, giỏi phân tích suy luận, có tài năng nổi bật trong lĩnh vực kỹ thuật, cố vấn, triết học, tôn giáo và nghệ thuật.",
+      "disadvantages": "Tâm tính hay đa nghi, suy nghĩ quá nhiều dẫn đến hao tổn tinh thần, tính tình tự phụ, đôi khi thiếu quyết đoán trong thời khắc quyết định.",
+      "auspicious_variants": "Cơ Lương hội Khôi Việt, Xương Khúc, Hóa Khoa: văn chương cái thế, bậc quân sư lỗi lạc, chuyên gia cố vấn hàng đầu.",
+      "defeat_variants": "Gặp Kình Dương, Đà La, Không Kiếp: tâm tính giả dối, thích ngụy biện, mưu mẹo trục lợi nhưng chuốc lấy thất bại, cô độc lúc tuổi già.",
+      "classical_aphorisms": [
+        "Cơ Lương đồng cung, thiện đàm binh (giỏi bàn luận chiến lược).",
+        "Thiên Cơ Thiên Lương đồng châu xứ, mưu lược xuất chúng."
+      ],
+      "transit_impact": "Hành hạn ngộ Cơ Lương gia hội: đón nhận cơ hội phát huy trí tuệ, đề xuất các kế hoạch mới thành công, giải quyết các vướng mắc tồn đọng lâu năm."
+    },
+    "CACH_08": {
+      "id": 8,
+      "name": "Văn Lương chấn kỷ (Văn lương giữ kỷ cương)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Văn Xương, Thiên Lương (tọa thủ hoặc hội chiếu Mệnh)",
+      "conditions": "Thiên Lương nhập miếu tại Ngọ hoặc Dần, hội cùng Văn Xương hoặc Văn Khúc, cung tam hợp có cát tinh chầu về, không bị hung sát xâm phạm.",
+      "can_chi": "Người sinh năm Đinh, Kỷ, Tân, Ất hợp cách.",
+      "advantages": "Chính trực, thanh liêm, nghiêm minh giữ vững kỷ cương phép nước, có tài năng quản lý tư pháp, thanh tra, kiểm toán, giáo dục gương mẫu.",
+      "disadvantages": "Tính cách quá cứng nhắc, chấp pháp vô tình, dễ va chạm với đồng nghiệp và cấp dưới; đường tình cảm gia đình có phần cô đơn thanh đạm.",
+      "auspicious_variants": "Văn Lương chấn kỷ hội Hóa Khoa, Lộc Tồn: đảm nhiệm chức vụ viện trưởng, chánh án, đại biểu nhân dân uy tín tột bậc.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà: bị kẻ xấu gièm pha vu oan, vướng vào các tranh chấp pháp lý hoặc bị khiển trách kỷ luật.",
+      "classical_aphorisms": [
+        "Văn Lương chấn kỷ, chấp pháp công minh, triều đình kính nể.",
+        "Thiên Lương Văn Xương cư miếu vượng, vị chí công hầu."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Văn Lương chấn kỷ: thanh danh được tôn vinh, được giao quyền thanh tra, chấn chỉnh tổ chức, thi cử bằng cấp thành tích cao."
+    },
+    "CACH_09": {
+      "id": 9,
+      "name": "Cự Nhật đồng cung (Cự Môn, Thái Dương đồng cung)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Cự Môn, Thái Dương (đồng cung tại Dần hoặc Thân)",
+      "conditions": "Cự Môn và Thái Dương cùng tọa thủ tại cung Dần (rất tốt vì Thái Dương vượng địa) hoặc cung Thân (kém hơn vì mặt trời lặn). Tam phương tứ chính hội cát tinh.",
+      "can_chi": "Tốt nhất cho người sinh năm Giáp, Bính, Đinh, Canh, Tân.",
+      "advantages": "Khẩu tài xuất chúng, tài hùng biện lôi cuốn, có tầm nhìn xa trông rộng, danh tiếng vang xa ra nước ngoài, thích hợp với ngoại giao, thương thuyết, luật sư, truyền thông.",
+      "disadvantages": "Dễ vướng khẩu thiệt thị phi, bị người đố kỵ ghen ghét; tại Thân thì tuổi trẻ vất vả, làm nhiều hưởng ít, trước khó sau dễ.",
+      "auspicious_variants": "Cự Nhật tại Dần hội Hóa Lộc, Hóa Quyền, Tả Hữu, Xương Khúc: danh chấn hoa hạ, xuất ngoại thành công rực rỡ, tài lộc dồi dào.",
+      "defeat_variants": "Gặp Hóa Kỵ, Đà La, Không Kiếp: khẩu thiệt thị phi liên miên, dính líu kiện tụng, danh tiếng bị bôi nhọ, gia đạo bất hòa.",
+      "classical_aphorisms": [
+        "Cự Nhật Dần cung, lập hướng phong vân (thành tựu rực rỡ như rồng gặp mây).",
+        "Cự Môn Thái Dương đồng cung, tiền bần hậu phú."
+      ],
+      "transit_impact": "Hành hạn gặp Cự Nhật đồng cung: mở rộng quan hệ đối ngoại, ký kết hợp đồng thương mại lớn, nâng cao danh tiếng thương hiệu, cần cẩn trọng lời ăn tiếng nói tránh thị phi."
+    },
+    "CACH_10": {
+      "id": 10,
+      "name": "Kim sán quang huy (Ánh vàng chói lọi)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Dương (nhập miếu tại cung Ngọ)",
+      "conditions": "Thái Dương cư Mệnh tại Ngọ (còn gọi là Nhật lệ trung thiên - mặt trời giữa trời đứng bóng). Hội tụ Lộc Tồn, Hóa Khoa, Hóa Quyền, Hóa Lộc, Tả Phù, Hữu Bật, Văn Xương, Văn Khúc.",
+      "can_chi": "Người sinh năm Canh, Tân đại phú đại quý; tiếp đến là người sinh năm Giáp, Quý, Đinh, Kỷ.",
+      "advantages": "Một đời cực hiển quý, giàu sang phú quý tột bực, quang minh chính đại, hào sảng bác ái, nắm giữ quyền lực tối cao, rực rỡ huy hoàng.",
+      "disadvantages": "Mặt trời quá chói chang dễ gây tổn thương cho mắt hoặc hệ tim mạch; tính tình quá ngay thẳng nóng nảy, chi tiêu rộng rãi khó tích lũy nếu thiếu Lộc Tồn phò tá.",
+      "auspicious_variants": "Thái Dương cư Ngọ hội Hóa Lộc, Hóa Quyền, Khôi Việt: làm đến nguyên thủ quốc gia, lãnh đạo tối cao, tài đức bao trùm thiên hạ.",
+      "defeat_variants": "Gặp Kình Đà Không Kiếp, Hóa Kỵ: 'Nhật trầm bão táp', dễ bị thương tật ở mắt, danh vọng tiêu tan nhanh chóng, hậu vận sa sút.",
+      "classical_aphorisms": [
+        "Thái Dương tại Ngọ là Nhật lệ trung thiên, phú quý địch quốc.",
+        "Quang huy kim sán, bách thần triều củng."
+      ],
+      "transit_impact": "Đại hạn hoặc tiểu hạn đến cung Ngọ có Thái Dương miếu vượng: sự nghiệp thăng hoa tột đỉnh, danh tiếng vang dội, ký kết dự án trọng điểm, đón nhận tài lộc dồi dào."
+    },
+    "CACH_11": {
+      "id": 11,
+      "name": "Nhật chiếu lôi môn (Mặt trời chiếu cửa sấm)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Dương, Thiên Lương (đồng cung tại Mão)",
+      "conditions": "Sinh ban ngày, Thái Dương và Thiên Lương cùng tọa Mệnh tại cung Mão (Mão thuộc quẻ Chấn, là sấm, phương Đông mặt trời mọc nên gọi là Nhật xuất phù tang). Hội Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc.",
+      "can_chi": "Tốt nhất cho người sinh năm Ất; tiếp đến là người sinh năm Tân, Nhâm.",
+      "advantages": "Thẳng thắn, lãnh đạo nổi trội, giàu lòng nghĩa hiệp, tài giao tiếp xuất sắc; sớm thành đạt nổi tiếng, xuất thân cao quý hoặc tuổi trẻ đỗ đạt cao.",
+      "disadvantages": "Không thuận lợi cho nữ mệnh vì tính cách trượng phu lấn át chồng, dễ lận đận duyên tình nếu không biết nhún nhường.",
+      "auspicious_variants": "Nhật Lương tại Mão hội Văn Xương, Lộc Tồn (tạo thế Dương Lương Xương Lộc): thi cử thủ khoa, đỗ đầu bảng vàng, giữ chức vụ bộ trưởng, cố vấn cao cấp.",
+      "defeat_variants": "Bị sát tinh xung phá: phá cách, chủ về bị tiểu nhân gièm pha hãm hại, làm nhiều hưởng ít, phong lưu lãng tử nhưng hao tài.",
+      "classical_aphorisms": [
+        "Thái Dương chiếu cổng sấm, phú quý vinh hoa.",
+        "Nhật xuất phù tang, thiếu niên đăng đệ."
+      ],
+      "transit_impact": "Hành hạn gặp Nhật chiếu lôi môn: thời vận mở ra trang mới tươi sáng, học hành thi cử đại cát, công việc được cất nhắc vượt cấp, tài lộc dồi dào."
+    },
+    "CACH_12": {
+      "id": 12,
+      "name": "Dương Lương Xương Lộc",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Dương, Thiên Lương, Văn Xương, Lộc Tồn (hoặc Hóa Lộc)",
+      "conditions": "Thái Dương và Thiên Lương trấn Mệnh tại Mão (hoặc tam hợp chầu về), đồng thời có sự xuất hiện của Văn Xương và Lộc Tồn/Hóa Lộc trong tam phương tứ chính.",
+      "can_chi": "Đặc biệt chuẩn cách và tối cát với người sinh năm Ất (Lộc Tồn tại Mão, Thiên Cơ hóa Lộc, Thiên Lương hóa Quyền).",
+      "advantages": "Sự nghiệp học hành cực kỳ xuất sắc, thi cử đỗ đạt vị trí thủ khoa, đảm nhiệm các chức vụ trọng yếu của quốc gia, nhân vật lẫy lừng trong giới chính trị và học thuật.",
+      "disadvantages": "Quá chú trọng đến danh dự và thanh danh nên đôi khi bảo thủ, khó hòa hợp với môi trường thực dụng nếu thiếu sao biến hóa linh hoạt.",
+      "auspicious_variants": "Hội tụ thêm Thiên Khôi, Thiên Việt, Tả Hữu: bậc tể phụ triều đình, danh tiếng lưu truyền sử sách muôn đời.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà: thi cử lận đận lúc đầu, vướng vào tranh đoạt chức vị hoặc thị phi bằng cấp.",
+      "classical_aphorisms": [
+        "Lương, Dương, Xương, Lộc tề tựu, thi cử đỗ đầu bảng.",
+        "Dương Lương Xương Lộc, định tác giáp đệ chi khách."
+      ],
+      "transit_impact": "Vận trình gặp Dương Lương Xương Lộc: thời kỳ hoàng kim của thi cử, bảo vệ luận án, thăng cấp hàm, trúng cử đại biểu hoặc ký kết các hợp đồng pháp lý lớn."
+    },
+    "CACH_13": {
+      "id": 13,
+      "name": "Minh châu xuất hải (Ngọc quý rời mặt biển)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Mệnh Vô Chính Diệu tại Mùi; Thái Dương Thiên Lương tại Mão, Thái Âm miếu vượng tại Hợi",
+      "conditions": "Cung Mệnh an tại Mùi không có chủ tinh; cung Mão có Thái Dương Thiên Lương, cung Hợi có Thái Âm miếu vượng hợp chiếu Mệnh; tam phương tứ chính có Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc, Khôi Việt gia hội.",
+      "can_chi": "Thượng cách với người sinh năm Ất, Bính, Tân, Nhâm.",
+      "advantages": "Sôi nổi, nhiệt huyết, tài hoa cái thế, xử thế quang minh lỗi lạc, đường công danh rộng mở thênh thang, danh tiếng lẫy lừng; nữ mệnh tài đức vẹn toàn.",
+      "disadvantages": "Nếu cung Mệnh thiếu vắng các sao Tả Hữu Xương Khúc mà lại gặp Kình Đà Hóa Kỵ xung phá thì trở thành 'ngọc chìm đáy biển', chỉ có hư danh mà không có thực tài.",
+      "auspicious_variants": "Được Khoa Quyền Lộc và Xương Khúc hội tụ: tuổi trẻ bẻ quế cung trăng, danh tiếng vang dội, giàu sang phúc thọ song toàn.",
+      "defeat_variants": "Bị Tứ Sát, Địa Không, Địa Kiếp xâm phạm: tài năng bị vùi dập, trắc trở đường đời, dễ sinh tâm lý chán đời tiêu cực.",
+      "classical_aphorisms": [
+        "Tam hợp minh châu sinh cung vượng, rộng bước cung quế.",
+        "Nhật tại Mão, Nguyệt tại Hợi, mệnh tại Mùi thênh thang bẻ quế cung trăng."
+      ],
+      "transit_impact": "Hành hạn đến cung Mùi gặp Minh châu xuất hải: tài năng được phát hiện và tôn vinh, thoát khỏi giai đoạn tăm tối, đón nhận danh vị và tài chính bội thu."
+    },
+    "CACH_14": {
+      "id": 14,
+      "name": "Nguyệt lãng thiên môn (Trăng sáng cổng trời)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Âm (nhập miếu tại cung Hợi)",
+      "conditions": "Thái Âm miếu vượng tọa thủ tại cung Hợi (cung Hợi là thiên môn - cổng trời, Thái Âm tại đây là vầng trăng rằm sáng vằng vặc). Cung tam phương tứ chính có Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc hội tụ.",
+      "can_chi": "Đại cát cho người sinh năm Ất, Bính, Đinh, Canh, Tân.",
+      "advantages": "Học vấn uyên bác, cử chỉ nho nhã thanh cao, tài hoa nghệ thuật xuất chúng, hưởng trọn thanh phúc, tài lộc dồi dào tự nhiên, giàu sang bậc nhất; nữ mệnh xinh đẹp quý phái.",
+      "disadvantages": "Tâm hồn quá lãng mạn nhạy cảm, dễ bi lụy vì tình cảm; nếu gặp sát tinh thì phong lưu thái quá, hao tổn tiền bạc vì thú vui xa hoa.",
+      "auspicious_variants": "Thái Âm cư Hợi hội Hóa Lộc, Hóa Khoa, Văn Xương: bậc danh sĩ quốc gia, tài phiệt kinh doanh thanh lịch, giàu có tột bậc.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà, Hỏa Linh: trăng mờ mây phủ, dễ mắc bệnh về mắt, thần kinh hoặc suy sụp vì tình duyên trắc trở.",
+      "classical_aphorisms": [
+        "Nguyệt lãng thiên môn, tiến tước phong hầu.",
+        "Nguyệt diệu thiên môn, phú quý xuất chúng."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Nguyệt lãng thiên môn: tài vận hanh thông bất ngờ, đời sống tinh thần viên mãn, gia đạo êm ấm, sinh quý tử hoặc mở rộng quy mô kinh doanh tài chính."
+    },
+    "CACH_15": {
+      "id": 15,
+      "name": "Nhật nguyệt tịnh minh (Mặt trăng, mặt trời đều sáng)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Dương tại Tỵ, Thái Âm tại Dậu",
+      "conditions": "Thái Dương miếu vượng tại cung Tỵ, Thái Âm miếu vượng tại cung Dậu; Mệnh đóng tại Sửu hội chiếu cả hai sao, hoặc Mệnh đóng tại Tỵ/Dậu. Cung tam phương tứ chính không bị sát kỵ xâm phạm.",
+      "can_chi": "Người sinh năm Ất, Tân, Canh, Bính rất cát lợi; đặc biệt người sinh năm Tân có Cự Môn hóa Lộc hỗ trợ.",
+      "advantages": "Trí tuệ thông minh xuất chúng, tư duy sáng suốt, tiền đồ xán lạn, công danh tài lộc rạng rỡ từ thuở thanh xuân, một đời vinh hiển không gặp đại nạn.",
+      "disadvantages": "Nếu bị Kình Dương, Đà La hoặc Hóa Kỵ xung phá thì ánh sáng bị che mờ, công danh lúc được lúc mất, dễ mắc bệnh khúc xạ mắt hoặc áp lực gia tộc.",
+      "auspicious_variants": "Nhật Nguyệt tịnh minh hội Khoa Quyền Lộc, Tả Hữu: làm quan đến thượng thư, đại sứ ngoại giao hoặc học giả hàng đầu.",
+      "defeat_variants": "Gặp Tuần Triệt, Không Kiếp, Hóa Kỵ: 'Nhật Nguyệt giao thực', mây mù che khuất, cuộc đời chìm nổi, lao tâm khổ tứ.",
+      "classical_aphorisms": [
+        "Nhật Nguyệt tịnh minh, bộ cửu trùng thê (bước lên chín bậc thềm rồng).",
+        "Nhật xuất Phù Tang, Nguyệt sinh Thương hải, tịnh minh chi cách."
+      ],
+      "transit_impact": "Hành hạn gặp Nhật nguyệt tịnh minh: vạn sự như ý, tháo gỡ mọi bế tắc, uy tín và tiếng tăm tăng vọt, kinh doanh đầu tư sinh lời lớn."
+    },
+    "CACH_16": {
+      "id": 16,
+      "name": "Nguyệt Sinh Thương hải (Trăng mọc biển xanh)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thiên Đồng, Thái Âm (đồng cung tại Tý)",
+      "conditions": "(1) Sao Thiên Đồng và Thái Âm cùng trấn Mệnh tại cung Tý; hoặc (2) Thiên Đồng Thái Âm cùng trấn cung Điền Trạch tại cung Tý; hội tụ cát tinh Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc, Khôi Việt.",
+      "can_chi": "Rất hợp với người sinh năm Bính, Đinh, Quý.",
+      "advantages": "Tướng mạo thanh tú nho nhã, lịch thiệp khiêm nhường, học vấn cao siêu, có sức hút lớn với người khác giới; danh vọng tài lộc dồi dào, đảm nhiệm chức vụ quan trọng, đại phú đại quý.",
+      "disadvantages": "Không thuận lợi cho nữ mệnh về đường tình duyên, chủ về tình cảm lận đận trắc trở, nội tâm nhạy cảm đa đoan, nên kết hôn muộn.",
+      "auspicious_variants": "Đồng Âm tại Tý hội Khôi Việt, Hóa Khoa: làm quan trung trực thanh liêm, học vấn lỗi lạc, điền sản mênh mông.",
+      "defeat_variants": "Gặp Kình Dương tại Tý (tạo thế Kình Dương cư Tý mã đầu đới tiễn biến thể) hoặc Hóa Kỵ: tình duyên trắc trở, thị phi tình ái, hao tài tán của.",
+      "classical_aphorisms": [
+        "Thái Âm tại Tý gọi là Thủy trừng quế ngạc (cành quế nước trong), chức cao mà thanh liêm.",
+        "Thái Âm tại Tý, nếu sinh năm Bính Đinh giàu sang trung lương."
+      ],
+      "transit_impact": "Vận trình đến cung Tý gặp Nguyệt Sinh Thương hải: tài lộc bất ngờ tăng tiến, tích lũy thêm bất động sản nhà cửa, đón nhận sự hỗ trợ đắc lực từ quý nhân phái nữ."
+    },
+    "CACH_17": {
+      "id": 17,
+      "name": "Thọ Tinh nhập miếu",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thiên Lương (nhập miếu tại Ngọ hoặc Thìn, Tuất)",
+      "conditions": "Thiên Lương nhập miếu trấn Mệnh tại cung Ngọ (hoặc Thìn, Tuất), tam phương tứ chính hội tụ Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc, Khôi Việt, không bị sát tinh xung phá.",
+      "can_chi": "Người sinh năm Đinh, Kỷ, Quý rất hợp cách; sinh năm Đinh gặp Lộc Tồn tại Ngọ đồng cung là tuyệt hảo.",
+      "advantages": "Phúc thọ song toàn, tính tình độ lượng từ bi, có khả năng hóa giải tai ách hiểm nghèo, giữ chức vụ lãnh đạo mẫu mực, được mọi người kính trọng suy tôn.",
+      "disadvantages": "Thường phải trải qua khó khăn hiểm nguy trước rồi mới được giải cứu thành công (đặc tính của sao Thiên Lương: gặp nạn mới hóa giải); tính tình thích can thiệp vào chuyện người khác.",
+      "auspicious_variants": "Thiên Lương cư Ngọ hội Hóa Lộc, Hóa Quyền, Tả Hữu: làm quan đầu triều, bậc trưởng lão uy tín, sống trường thọ bách niên.",
+      "defeat_variants": "Gặp Hóa Kỵ, Đà La, Không Kiếp: biến thành người khoác lác, mượn danh nghĩa từ thiện trục lợi, gia đạo bất hòa.",
+      "classical_aphorisms": [
+        "Thiên Lương cư Ngọ, quan tư thanh hiển.",
+        "Lương phùng Xương Khúc, ngự sử thanh danh."
+      ],
+      "transit_impact": "Hành hạn gặp Thọ Tinh nhập miếu: ốm đau bệnh tật nhanh chóng bình phục, gặp nạn có quý nhân ứng cứu kịp thời, mở mang danh tiếng thiện nguyện, gia tăng uy tín xã hội."
+    },
+    "CACH_18": {
+      "id": 18,
+      "name": "Anh tinh nhập miếu",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Phá Quân (nhập miếu tại Tý hoặc Ngọ)",
+      "conditions": "Sao Phá Quân miếu vượng trấn Mệnh tại cung Tý hoặc cung Ngọ, có cát tinh Lộc Tồn, Hóa Lộc, Hóa Quyền, Tả Phù, Hữu Bật, Khôi Việt hội tụ, không bị Tứ Sát Không Kiếp xung phá.",
+      "can_chi": "Người sinh năm Giáp, Quý hợp cách thượng thừa (sinh năm Quý thì Phá Quân hóa Lộc, sinh năm Giáp thì Phá Quân hóa Quyền).",
+      "advantages": "Dũng cảm kiên cường, quả cảm quyết đoán, có tài năng khai phá đột phá thiên bẩm, theo nghiệp quân sự, chính trị hoặc kinh doanh quy mô lớn đều lập kỳ tích vang dội.",
+      "disadvantages": "Tính cách hiếu thắng, mạo hiểm, đời sống tình cảm gia đình dễ biến động rạn nứt, tuổi trẻ trải qua nhiều sóng gió trắc trở trước khi đạt đỉnh cao.",
+      "auspicious_variants": "Phá Quân tại Tý Ngọ hội Hóa Lộc, Tả Hữu: bậc khai quốc công thần, tổng tư lệnh, chủ tịch tập đoàn tiên phong mở rộng thị trường quốc tế.",
+      "defeat_variants": "Gặp Kình Đà, Hỏa Linh, Địa Kiếp, Hóa Kỵ: liều lĩnh mù quáng, phá sản sạch gia nghiệp, vướng thương tật hoặc tai nạn lao lý hiểm nghèo.",
+      "classical_aphorisms": [
+        "Phá Quân Tý Ngọ, gia quan tiến tước.",
+        "Anh tinh nhập miếu, chấn uy biên cương."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Anh tinh nhập miếu: bước ngoặt mang tính cách mạng, dám thay đổi hoàn toàn cục diện cũ để lập kỳ tích mới, tài lộc bùng nổ mạnh mẽ sau giai đoạn tái cấu trúc."
+    },
+    "CACH_19": {
+      "id": 19,
+      "name": "Thạch trung ẩn ngọc (Ngọc ẩn trong đá)",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Cự Môn (vượng địa tại Tý hoặc Ngọ)",
+      "conditions": "Cự Môn tọa Mệnh tại Tý hoặc Ngọ, có Hóa Lộc, Hóa Quyền hoặc Lộc Tồn đồng cung hoặc hội chiếu, không bị sát tinh xung phá (Cự Môn là đá, Tứ Hóa và Lộc là ngọc ẩn bên trong).",
+      "can_chi": "Người sinh năm Tân (Cự Môn hóa Lộc), năm Quý (Cự Môn hóa Quyền), năm Canh rất cát lợi.",
+      "advantages": "Tài trí thông minh uyên bác, mưu sâu kế hiểm, tài hùng biện sắc bén, tuổi trẻ ẩn nhẫn rèn luyện, trung niên mài giũa phát lộ tài năng trở thành cự phú hoặc quan chức quyền uy.",
+      "disadvantages": "Không nên lộ liễu kiêu ngạo quá sớm; nếu cố tranh giành ngôi vị số một sớm sẽ gặp tai họa (ngọc lộ ra ngoài đá sẽ bị đập vỡ); tính tình đa nghi, lời nói dễ châm chọc.",
+      "auspicious_variants": "Cự Môn tại Tý/Ngọ hội Hóa Lộc, Hóa Quyền, Tả Hữu, Xương Khúc: bậc mưu sĩ tối cao, luật sư tài ba, thương nhân cự phách kín tiếng.",
+      "defeat_variants": "Gặp Kình Đà Hỏa Linh Không Kiếp, Hóa Kỵ: 'ngọc nát đá tan', vướng thị phi lao lý, kiện tụng triền miên, tài sản tiêu tán.",
+      "classical_aphorisms": [
+        "Thạch trung ẩn ngọc, tài lộc dồi dào, chung thân hiển quý.",
+        "Cự Môn Tý Ngọ, Khoa Quyền Lộc củng, phúc lộc song toàn."
+      ],
+      "transit_impact": "Hành hạn ngộ Thạch trung ẩn ngọc: thời cơ chín muồi sau nhiều năm tích lũy, các dự án ấp ủ bấy lâu được công bố và gặt hái thành công vang dội, tài lộc đổ về dồi dào."
+    },
+    "CACH_20": {
+      "id": 20,
+      "name": "Thất sát triều đẩu",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Thất Sát (nhập miếu tại Dần, Thân, Tý, Ngọ)",
+      "conditions": "Thất Sát độc tọa trấn Mệnh tại Dần hoặc Thân (ngưỡng đẩu) hoặc tại Tý, Ngọ (triều đẩu), cung tam phương tứ chính hội tụ Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc, Khôi Việt, không bị tứ sát xung phá.",
+      "can_chi": "Người sinh năm Giáp, Đinh, Kỷ, Canh rất hợp cách.",
+      "advantages": "Tài năng lãnh đạo quân sự và quản trị tuyệt đỉnh, khí phách anh hùng hiên ngang, dũng cảm vô song, nắm giữ đại quyền sinh sát, sự nghiệp hiển hách phi phàm.",
+      "disadvantages": "Tính cách quá cô độc quyết liệt, dễ làm tổn thương người thân, duyên nợ vợ chồng muộn màng, đời sống nhiều biến cố thăng trầm dữ dội.",
+      "auspicious_variants": "Thất Sát tại Dần Thân hội Hóa Quyền, Lộc Tồn, Tả Hữu: bậc đại tướng quân, bộ trưởng quốc phòng, lãnh đạo tập đoàn công nghiệp nặng lẫy lừng.",
+      "defeat_variants": "Gặp Kình Đà Hỏa Linh, Không Kiếp: 'Trầm ngâm chiến địa', dễ gặp thương tật đao kiếm súng đạn, phá sản trắng tay hoặc đoản thọ.",
+      "classical_aphorisms": [
+        "Thất Sát triều đẩu, tước lộc vinh xương.",
+        "Thất Sát Dần Thân, nhất sinh hiển vinh."
+      ],
+      "transit_impact": "Hành hạn đến Thất Sát triều đẩu: đón nhận quyết định bổ nhiệm vào vị trí chỉ huy then chốt, giải quyết dứt điểm các khủng hoảng phức tạp, quyền lực gia tăng mạnh mẽ."
+    },
+    "CACH_21": {
+      "id": 21,
+      "name": "Mã đầu đới tiễn (Đầu ngựa mang tên)",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Kình Dương (tại Ngọ), hội Thiên Đồng Thái Âm hoặc Tham Lang",
+      "conditions": "Cung Ngọ là Ngựa (Mã), Kình Dương là Tên (Tiễn). Kình Dương trấn Mệnh tại Ngọ, đồng cung với Thiên Đồng Thái Âm hoặc Tham Lang; cung tam phương tứ chính có cát tinh cát hóa nâng đỡ.",
+      "can_chi": "Chỉ hợp với người sinh năm Bính, Mậu (người sinh năm khác gặp cách này là đại hung).",
+      "advantages": "Chủ về hiển phát võ nghiệp, thống lĩnh quân đội, trấn giữ nơi biên cương hiểm yếu; thời nay thích hợp với kinh doanh mạo hiểm, mở công ty lớn ở nơi xa quê, trung niên phát đạt phi thường.",
+      "disadvantages": "Bôn ba xa xứ, tuổi trẻ cực kỳ gian nan vất vả, nếm mật nằm gai, gặp vô vàn nguy hiểm suýt mất mạng trước khi thành đại nghiệp.",
+      "auspicious_variants": "Sinh năm Bính/Mậu có Tham Lang Kình Dương cư Ngọ hội Hỏa Linh: bạo phát tài phú cự vạn, quyền uy lừng lẫy khắp cõi.",
+      "defeat_variants": "Không sinh năm Bính Mậu mà gặp cách này, hoặc bị Không Kiếp Hóa Kỵ xung phá: 'Mã đầu đới tiễn trận vong', chết non ngoài đường, tai nạn gươm súng đẫm máu.",
+      "classical_aphorisms": [
+        "Mã đầu đới tiễn, trấn ngự biên cương.",
+        "Tham Lang Kình Dương cư Ngọ, sinh niên Bính Mậu trấn biên thùy."
+      ],
+      "transit_impact": "Vận trình gặp Mã đầu đới tiễn (nếu đúng can Bính Mậu): trải qua một phen thử thách sinh tử hoặc biến động cực lớn về công việc, sau đó chuyển bại thành thắng, bạo phát tài lộc ngoài dự kiến."
+    },
+    "CACH_22": {
+      "id": 22,
+      "name": "Cự Cơ đồng lâm (Cự Môn, Thiên Cơ cùng cung)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Cự Môn, Thiên Cơ (đồng cung tại Mão hoặc Dậu)",
+      "conditions": "Cự Môn và Thiên Cơ cùng trấn Mệnh tại cung Mão (tốt hơn, gọi là Cự Cơ hóa Mão) hoặc cung Dậu (kém hơn vì Mộc suy Kim vượng). Cung tam phương tứ chính hội tụ cát tinh Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc.",
+      "can_chi": "Người sinh năm Ất, Bính, Tân rất hợp cách.",
+      "advantages": "Tư duy nhạy bén, mưu trí linh hoạt, tài ăn nói lưu loát, giỏi thích ứng với hoàn cảnh thay đổi; thành công rực rỡ trong thương nghiệp, thiết kế, công nghệ thông tin, ngoại giao.",
+      "disadvantages": "Tính cách thiếu kiên nhẫn, hay thay đổi lập trường 'đứng núi này trông núi nọ', dễ nảy sinh bất mãn gia đình; tại Dậu thì tuổi trẻ gian nan, gia đạo trắc trở.",
+      "auspicious_variants": "Cự Cơ tại Mão hội Hóa Lộc, Hóa Quyền, Văn Xương: cự phú kinh thương, sáng lập các ngành công nghệ mới, tài lộc dồi dào.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà, Hỏa Linh: khẩu nghiệp thị phi, phản phúc lừa lọc, tiền tài tụ tán thất thường, tình duyên đứt gánh.",
+      "classical_aphorisms": [
+        "Cự Cơ đồng cung, công danh tất toại.",
+        "Cự Cơ Mão Dậu, tất biến phùng thời."
+      ],
+      "transit_impact": "Hành hạn đến Cự Cơ đồng lâm: thay đổi môi trường làm việc hoặc đổi mới công nghệ, có nhiều chuyến công tác xa, thu được nguồn tài chính từ dịch vụ và truyền thông."
+    },
+    "CACH_23": {
+      "id": 23,
+      "name": "Thiên Ất củng mệnh (Tọa quý, hướng quý)",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thiên Khôi, Thiên Việt (tọa Mệnh hoặc củng chiếu tam phương tứ chính)",
+      "conditions": "(1) Thiên Khôi tọa Mệnh, Thiên Việt đối chiếu tại Thiên Di; hoặc (2) Thiên Việt tọa Mệnh, Thiên Khôi đối chiếu; hoặc Khôi Việt tam hợp chầu về Mệnh, không bị sát tinh làm ô uế.",
+      "can_chi": "Rất hợp với các can năm: Giáp Mậu (Khôi Sửu Việt Mùi), Ất Kỷ (Khôi Tý Việt Thân), Bính Đinh (Khôi Hợi Việt Dậu), Canh Tân (Khôi Ngọ Việt Dần), Nhâm Quý (Khôi Mão Việt Tỵ).",
+      "advantages": "Cả đời luôn có quý nhân cấp cao nâng đỡ, gặp dữ hóa lành, phong thái đĩnh đạc cao quý, thi cử dễ đỗ đạt xuất sắc, nắm giữ chức vụ chỉ huy thanh cao.",
+      "disadvantages": "Dễ ỷ lại vào sự giúp đỡ của quý nhân nếu bản thân thiếu ý chí tự lực cánh sinh; nếu gặp sát tinh thì quý nhân biến thành tiểu nhân cạnh tranh.",
+      "auspicious_variants": "Khôi Việt hội tụ thêm Hóa Khoa, Tả Hữu, Xương Khúc: bậc đệ nhất tài danh, thi cử đỗ đầu, giữ chức vụ viện trưởng, bộ trưởng.",
+      "defeat_variants": "Bị Kình Đà Hỏa Linh Không Kiếp xung phá: quý nhân bất lực, cơ hội vụt mất trong gang tấc, bản thân tự chuốc lấy thất vọng.",
+      "classical_aphorisms": [
+        "Tọa quý hướng quý, phùng hung hóa cát.",
+        "Khôi Việt đồng cung, thiếu niên đăng đệ."
+      ],
+      "transit_impact": "Đại tiểu hạn gặp Thiên Ất củng mệnh: gặp được quý nhân chỉ lối đưa đường, hồ sơ xét duyệt thuận lợi, thi cử vượt qua dễ dàng, mở ra mối quan hệ chiến lược mới."
+    },
+    "CACH_24": {
+      "id": 24,
+      "name": "Tam kỳ gia hội",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Hóa Lộc, Hóa Quyền, Hóa Khoa (tam phương tứ chính hội tụ về Mệnh)",
+      "conditions": "Ba sao Hóa Lộc, Hóa Quyền, Hóa Khoa hội tụ đầy đủ tại cung Mệnh, Tài Bạch, Quan Lộc hoặc Thiên Di. Không bị Hóa Kỵ và Tứ Sát Không Kiếp trực xung phá cách.",
+      "can_chi": "(1) Sinh năm Giáp: Vũ Khúc Hóa Khoa, Phá Quân Hóa Quyền, Liêm Trinh Hóa Lộc; (2) Sinh năm Đinh: Thái Âm Hóa Lộc, Thiên Đồng Hóa Quyền, Thiên Cơ Hóa Khoa; (3) Sinh năm Bính, Tân (không cố định do Xương Khúc); Các năm khác không hình thành cách này.",
+      "advantages": "Danh tiếng lẫy lừng, phú quý song toàn, hưởng trọn phúc ấm tổ tiên, gặp nạn có quý nhân phò trợ tức thì; văn võ toàn tài, sự nghiệp vĩ đại.",
+      "disadvantages": "Tuổi trẻ trải qua nhiều gian nan vất vả (thường do đại hạn thứ 2 hoặc thứ 3 gặp các hung tinh chuyển tiếp), từ trung niên trở đi mới vững như bàn thạch.",
+      "auspicious_variants": "Tam Kỳ gia hội thêm Tả Hữu, Khôi Việt: bậc tể tướng kinh bang tế thế, nguyên thủ quốc gia, lãnh tụ tài đức song toàn.",
+      "defeat_variants": "Bị Hóa Kỵ xâm nhập tạo thế Tam Kỳ ngộ Kỵ, hoặc ngộ Không Kiếp: công danh chìm nổi, thành công đi liền với thị phi, dễ ngã ngựa giữa đường vinh quang.",
+      "classical_aphorisms": [
+        "Khoa Quyền Lộc củng, danh dự chiêu chương (công danh hiển hách).",
+        "Khoa Quyền Lộc hợp, định tác tam công cự phách."
+      ],
+      "transit_impact": "Hành hạn hội tụ đủ Tam Kỳ: vận hội phát triển rực rỡ nhất trong đời, danh tiếng tài chính quyền lực cùng lúc thăng hoa, đạt đỉnh cao vinh quang sự nghiệp."
+    },
+    "CACH_25": {
+      "id": 25,
+      "name": "Quyền Lộc tuần phùng (Quyền Lộc gặp gỡ)",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Hóa Quyền, Hóa Lộc (đồng cung hoặc hội chiếu tại tam phương tứ chính Mệnh)",
+      "conditions": "Hóa Quyền và Hóa Lộc cùng đóng tại Mệnh, hoặc một sao đóng tại Mệnh, một sao hội chiếu từ Tài Bạch, Quan Lộc, Thiên Di; không bị sát kỵ xung phá.",
+      "can_chi": "Hợp với người sinh năm Giáp, Ất, Bính, Đinh, Mậu, Kỷ, Canh, Tân, Nhâm, Quý có cặp Hóa Quyền và Hóa Lộc tương ứng.",
+      "advantages": "Chức vị và tài lộc song toàn, một đời yên ổn, xuất thân phú quý, nắm giữ thực quyền và kiểm soát nguồn tài chính dồi dào, lời nói có trọng lượng.",
+      "disadvantages": "Nếu bị Hung tinh, Sát tinh, Kỵ tinh xung phá sẽ có khiếm khuyết, buồn phiền trở ngại, quyền lực bị tranh chấp, tài lộc dễ bị dòm ngó.",
+      "auspicious_variants": "Quyền Lộc hội tụ thêm Tả Hữu, Khôi Việt: bậc lãnh đạo kinh tế, quan chức quản lý ngân khố, tài chính hùng mạnh.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà: biến thành người tham quyền trục lợi, dễ vướng sai phạm kinh tế hoặc tranh đoạt quyền lực bị giáng chức.",
+      "classical_aphorisms": [
+        "Quyền Lộc tuần phùng, sát tinh bất kiến, định chủ phú quý.",
+        "Hóa Quyền ngộ Hóa Lộc, danh lợi song thu."
+      ],
+      "transit_impact": "Hành hạn gặp Quyền Lộc tuần phùng: được trao thêm quyền hạn mới, tài chính gia tăng vượt trội, kinh doanh thu lợi nhuận lớn, uy tín cá nhân lên cao."
+    },
+    "CACH_26": {
+      "id": 26,
+      "name": "Khoa Quyền Lộc giáp (Khoa, Quyền, Lộc kèm mệnh)",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Hóa Khoa, Hóa Quyền, Hóa Lộc (kẹp hai bên cung Mệnh)",
+      "conditions": "Cung Mệnh được hai trong ba sao Hóa Khoa, Hóa Quyền, Hóa Lộc kẹp ở hai cung liền kề (Phụ Mẫu và Huynh Đệ); cung tam phương tứ chính có cát tinh gia hội, không bị sát tinh kẹp chung.",
+      "can_chi": "Tùy thuộc vào can năm sinh và vị trí an Tứ Hóa; ví dụ sinh năm Giáp, Ất, Đinh, Canh, Tân.",
+      "advantages": "Chức vị và tài lộc đều vinh hiển, xuất thân từ gia đình quyền quý hoặc được anh em, cha mẹ nâng đỡ hết lòng; một đời an nhàn, có chỗ dựa vững chắc phía sau.",
+      "disadvantages": "Tùy thuộc vào tổ hợp kẹp; nếu bản thân cung Mệnh vô chính diệu hoặc gặp hung sát tinh thì tự thân năng lực có hạn, dễ sinh tâm lý ỷ lại vào gia tộc, thiếu tính độc lập tự chủ.",
+      "auspicious_variants": "Khoa Quyền giáp Mệnh hoặc Quyền Lộc giáp Mệnh, bản Mệnh có chính tinh miếu vượng: quan lộ hanh thông, thừa hưởng cơ nghiệp huy hoàng.",
+      "defeat_variants": "Bị Kình Đà xen vào kẹp chung (Dương Đà giáp Kỵ hoặc giáp Sát): phá cách nặng nề, phúc biến thành họa, tranh chấp gia sản với anh em cha mẹ.",
+      "classical_aphorisms": [
+        "Khoa Quyền Lộc giáp, danh lợi lưỡng toàn.",
+        "Giáp Lộc giáp Quyền, nhất sinh phong túc."
+      ],
+      "transit_impact": "Hành hạn đi vào cung vị được Khoa Quyền Lộc giáp: được cấp trên và đối tác ưu ái che chở, dễ dàng tiếp cận nguồn vốn lớn hoặc cơ hội thăng tiến mà không tốn nhiều công sức."
+    },
+    "CACH_27": {
+      "id": 27,
+      "name": "Song Lộc giáp mệnh (Hai Lộc kèm mệnh)",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Lộc Tồn và Hóa Lộc (kẹp hai bên cung Mệnh)",
+      "conditions": "Lộc Tồn và Hóa Lộc nằm tại hai cung bên cạnh (cung Phụ Mẫu và cung Huynh Đệ) kẹp lấy cung Mệnh ở giữa. Cung Mệnh có chính tinh miếu vượng, không bị sát tinh xung phá.",
+      "can_chi": "Người sinh năm Giáp, Ất, Canh, Tân có các vị trí kẹp tương ứng rất đẹp.",
+      "advantages": "Cực kỳ giàu có, tài nguyên cuồn cuộn đổ về, kinh doanh buôn bán thu lợi lớn, tài lộc dồi dào suốt đời, được ví như ngồi trên đống vàng.",
+      "disadvantages": "Khi Lộc Tồn kẹp một bên thì ắt có Kình Dương hoặc Đà La kẹp sát bên cạnh (Kình Đà giáp Lộc Tồn); do đó nếu không cẩn thận dễ vướng tranh chấp tiền bạc, bị tiểu nhân ganh ghét dòm ngó tài sản.",
+      "auspicious_variants": "Song Lộc giáp Mệnh hội Tả Hữu, Thiên Phủ, Vũ Khúc: cự phú thiên hạ, kho tàng đầy ắp, tiền của lưu thông bất tận.",
+      "defeat_variants": "Bị Hóa Kỵ đồng cung Mệnh (tạo thế Dương Đà hiệp Kỵ do Lộc Tồn kéo theo): phá sản thê thảm, tù tội vì tham lam tiền của.",
+      "classical_aphorisms": [
+        "Song Lộc giáp mệnh, phú quý nan lường.",
+        "Hóa Lộc Lộc Tồn giáp cung mệnh, chủ về phú quý tột bực."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Song Lộc giáp: tài vận bùng nổ mạnh mẽ, dòng tiền lưu chuyển dồi dào, mở rộng kinh doanh đầu tư sinh lời vượt ngoài dự tính."
+    },
+    "CACH_28": {
+      "id": 28,
+      "name": "Tả Hữu đồng cung",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Tả Phù, Hữu Bật (đồng cung tại Sửu hoặc Mùi)",
+      "conditions": "Cung Mệnh hoặc cung Thân an tại Sửu hoặc Mùi có Tả Phù và Hữu Bật đồng cung, lại có thêm các cát tinh khác đồng cung hoặc gia hội, không bị tứ sát xung phá.",
+      "can_chi": "Đặc biệt ứng nghiệm với người sinh tháng 4 hoặc tháng 10 âm lịch (khi Tả Hữu đồng cung tại Sửu Mùi).",
+      "advantages": "Đoan trang cao quý, khoan hậu bao dung, thích giúp đỡ mọi người, tài hoạch định chiến lược xuất chúng, gặp hung hóa cát, giải trừ tai ương, đạt thành công lớn và giữ chức vị cao.",
+      "disadvantages": "Nếu tại cung tam phương tứ chính ít cát tinh mà nhiều hung sát tinh, hoặc các chính tinh bị lạc hãm thì trở thành mệnh bình thường, trước thành sau bại, trước vinh sau suy.",
+      "auspicious_variants": "Tả Hữu đồng cung hội Tử Phủ, Vũ Tướng, Xương Khúc: làm tướng soái, thủ tướng chính phủ hoặc lãnh đạo tối cao.",
+      "defeat_variants": "Gặp Kình Đà Không Kiếp, Hóa Kỵ: nhiệt tình giúp người nhưng bị mang oán, làm ơn mắc oán, công danh dang dở.",
+      "classical_aphorisms": [
+        "Tả Phù Hữu Bật, tính tình rộng rãi khoan hậu.",
+        "Mộ phùng Tả Hữu, chức vị cao quý; Tả Hữu đồng cung, quần là áo tía."
+      ],
+      "transit_impact": "Hành hạn gặp Tả Hữu đồng cung: nhận được sự tương trợ mạnh mẽ từ nhiều phía, bạn bè đối tác đồng lòng phò tá, giải quyết khó khăn dễ dàng."
+    },
+    "CACH_29": {
+      "id": 29,
+      "name": "Văn Quế, Văn Hoa",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Văn Xương, Văn Khúc (đồng cung tại Sửu hoặc Mùi)",
+      "conditions": "Cung Mệnh đóng tại Sửu hoặc Mùi có Văn Xương và Văn Khúc đồng cung (hoặc Mệnh tại Sửu/Mùi được Xương Khúc tại Mùi/Sửu chiếu); cung tam phương tứ chính có cát tinh gia hội.",
+      "can_chi": "Ứng với người sinh giờ Tý, giờ Ngọ (Xương Khúc tại Sửu Mùi), sinh năm Bính, Tân, Ất, Đinh.",
+      "advantages": "Tác phong lịch thiệp thanh nhã, thông minh hiếu học, đa tài đa nghệ; có thành tựu kiệt xuất trong văn nghệ, học thuật, chính trị, ngoại giao; nếu gặp thêm Nhật Nguyệt thì vinh hoa tột đỉnh.",
+      "disadvantages": "Mệnh nữ gặp cách này tuy thông minh phú quý nhưng tâm hồn quá đa tình lãng mạn, dễ vướng vào sóng gió tình duyên nếu thiếu sao đoan chính chế ngự.",
+      "auspicious_variants": "Xương Khúc đồng cung hội Thái Dương, Thái Âm, Hóa Khoa: đỗ đạt thủ khoa, bậc đại tài tử vang danh thiên hạ, làm quan cận thần bên cạnh vua.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà, Không Kiếp: thi cử lận đận, tài hoa bạc mệnh, phiêu bạt giang hồ, kiếm sống bằng nghề kỹ nghệ đặc thù.",
+      "classical_aphorisms": [
+        "Văn quế văn hoa, phò tá đế vương nơi điện ngọc.",
+        "Văn Xương Văn Khúc là người bác học đa tài; nữ mệnh ngộ Xương Khúc thông minh nhưng đa tình."
+      ],
+      "transit_impact": "Vận trình gặp Văn Quế Văn Hoa: phát triển rực rỡ về văn bằng, ấn phẩm, sáng tác nghệ thuật, truyền thông báo chí, ký kết hợp đồng xuất bản giáo dục."
+    },
+    "CACH_30": {
+      "id": 30,
+      "name": "Tham, Vũ đồng hành",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Vũ Khúc, Tham Lang (tại bốn cung Mộ: Thìn, Tuất, Sửu, Mùi)",
+      "conditions": "(1) Mệnh và Thân đóng tại Sửu, Mùi có Vũ Khúc Tham Lang đồng cung; hoặc (2) Vũ Khúc Tham Lang tại Thìn Tuất đối chiếu nhau; tam phương tứ chính có cát tinh Lộc Tồn, Phụ Bật, Xương Khúc, Khôi Việt, Hỏa Tinh, Linh Tinh gia hội.",
+      "can_chi": "Người sinh năm Giáp, Kỷ, Mậu, Canh rất cát lợi.",
+      "advantages": "Văn võ song toàn: theo nghiệp văn làm quan lớn, theo nghiệp võ nắm giữ binh quyền, theo kinh doanh thương trường trở thành cự phú; sức sống dẻo dai phi thường.",
+      "disadvantages": "Tiền bần hậu phú (nghèo trước giàu sau): tuổi trẻ gian nan vất vả chìm nổi, phải sau 30 tuổi hoặc trung niên mới bộc phát tài danh; tuổi trẻ chớ vội nản lòng.",
+      "auspicious_variants": "Tham Vũ đồng hành hội Hỏa Tinh hoặc Linh Tinh (Tham Hỏa/Tham Linh): bạo phát cự phú, danh chấn biên cương, uy phong lẫm liệt.",
+      "defeat_variants": "Gặp Kình Đà Không Kiếp, Hóa Kỵ: tham lam lam lũ, ăn chơi trác táng phá sản, dễ vướng lao lý vì tửu sắc tiền bạc.",
+      "classical_aphorisms": [
+        "Tham Vũ đồng hành, uy danh lừng lẫy biên cương.",
+        "Tham Vũ mộ cung, tam thập dĩ hậu phát phúc; tiền bần hậu phú."
+      ],
+      "transit_impact": "Đại hạn tuổi trẻ gặp Tham Vũ thì gian nan thử thách; đại hạn từ 30 tuổi trở đi gặp Tham Vũ thì chuyển vận ngoạn mục, tài lộc bùng nổ, sự nghiệp bước lên đỉnh cao."
+    },
+    "CACH_31": {
+      "id": 31,
+      "name": "Tam hợp Hỏa Linh (Tham Hỏa tương phùng)",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Tham Lang cùng Hỏa Tinh (hoặc Linh Tinh)",
+      "conditions": "Tham Lang trấn Mệnh tại Thìn, Tuất, Sửu, Mùi gặp Hỏa Tinh đồng cung (tốt nhất) hoặc tại tam hợp hội chiếu; có thêm Lộc Tồn, Tam Hóa, Tả Hữu, Khôi Việt gia hội.",
+      "can_chi": "Hợp với người sinh năm Mậu, Kỷ, Giáp, Đinh.",
+      "advantages": "Bạo phát tài phú nhanh như sấm sét, phát triển thần tốc; theo nghiệp võ lập đại công nơi biên ải, theo kinh doanh thương trường chớp thời cơ thành đại gia cự phú.",
+      "disadvantages": "Tính cách nóng vội liều lĩnh; tiền tài đến nhanh thì cũng dễ tiêu tán nhanh nếu không có Lộc Tồn giữ kho hoặc nếu tâm tính kiêu ngạo buông thả.",
+      "auspicious_variants": "Tham Lang Hỏa Tinh tại Thìn Tuất hội Hóa Lộc: phú ông cự vạn, nắm giữ tập đoàn tài chính đa quốc gia, uy danh lừng lẫy.",
+      "defeat_variants": "Gặp Địa Không, Địa Kiếp, Hóa Kỵ: 'bạo phát bạo tàn', phát nhanh rồi sụp đổ nhanh chóng, tán gia bại sản trong chớp mắt.",
+      "classical_aphorisms": [
+        "Tham Lang ngộ Hỏa Tinh, anh hùng lập đại công.",
+        "Hỏa Tinh dữ Tham Lang đồng cung, định tác hầu bá."
+      ],
+      "transit_impact": "Hành hạn gặp Tham Hỏa tương phùng: cơ hội bứt phá thần tốc trong kinh doanh, trúng thầu dự án lớn bất ngờ, tài lộc nhảy vọt, cần quản trị rủi ro chặt chẽ."
+    },
+    "CACH_32": {
+      "id": 32,
+      "name": "Tham Linh triều viên (Tham Linh tương phùng)",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Tham Lang cùng Linh Tinh",
+      "conditions": "Tham Lang tọa Mệnh tại Thìn, Tuất, Sửu, Mùi gặp Linh Tinh đồng cung hoặc tam hợp hội chiếu; có cát tinh Lộc Tồn, Tam Hóa, Tả Hữu chầu về, không bị Kình Đà Không Kiếp quấy nhiễu.",
+      "can_chi": "Hợp với người sinh năm Mậu, Kỷ, Đinh, Giáp.",
+      "advantages": "Trầm tĩnh mưu lược hơn cách Tham Hỏa, bền bỉ mưu toan đại nghiệp; bạo phát tài phú vững vàng, quyền biến linh hoạt, chỉ huy thao lược tài tình.",
+      "disadvantages": "Tâm cơ thâm trầm, khó lường; nếu lòng dạ bất chính dễ dùng thủ đoạn ngầm để đạt mục đích, về già dễ sinh cô độc.",
+      "auspicious_variants": "Tham Linh tại Thìn Tuất hội Lộc Tồn, Hóa Quyền: bậc quân sư tài ba, nhà tư bản công nghiệp uy quyền bền vững.",
+      "defeat_variants": "Bị Hóa Kỵ, Kình Đà xung phá: mưu sự thất bại, tiền tài hao tán, vướng vào vòng lao lý vì các kế hoạch ngầm.",
+      "classical_aphorisms": [
+        "Tham Linh tịnh thủ, tướng tướng chi tài.",
+        "Linh Tinh dữ Tham Lang đồng xử, danh chấn chư di."
+      ],
+      "transit_impact": "Đại tiểu hạn gặp Tham Linh tương phùng: các chiến lược đầu tư dài hạn phát huy hiệu quả mạnh mẽ, thu hoạch thành quả tài chính lớn, vị thế được củng cố vững chắc."
+    },
+    "CACH_33": {
+      "id": 33,
+      "name": "Quý tinh giáp mệnh",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Các cặp quý tinh: Tử Vi Thiên Phủ, Thái Dương Thái Âm, Tả Phù Hữu Bật, Văn Xương Văn Khúc (kẹp hai bên cung Mệnh)",
+      "conditions": "Cung Mệnh được cặp quý tinh kẹp ở hai cung Phụ Mẫu và Huynh Đệ. Gồm 4 phân dạng chính: (1) Tử Vi giáp mệnh (tại Dần Thân); (2) Nhật Nguyệt giáp mệnh (tại Sửu Mùi, còn gọi là Nhật Nguyệt giáp tài khi Mệnh có Phủ hoặc Vũ Tham); (3) Tả Hữu giáp mệnh (tại Sửu Mùi); (4) Xương Khúc giáp mệnh (tại Sửu Mùi, gọi là Văn tinh ám củng). Cung tam phương cần có cát tinh miếu vượng.",
+      "can_chi": "Phù hợp với nhiều can năm; đặc biệt đại cát khi can năm kích hoạt Tứ Hóa đồng điệu.",
+      "advantages": "Được quý nhân cấp cao kẹp hộ trì, hưởng phúc lộc tự nhiên; Nhật Nguyệt giáp tài thì một đời giàu sang có của ăn của để; Xương Khúc giáp thì văn chương hiển đạt, làm chính trị học thuật có thành tựu lớn.",
+      "disadvantages": "Nếu cung Mệnh thiếu cát tinh thì chỉ là mệnh bình thường; Nhật Nguyệt giáp Tham Vũ thì tính cách quá cương cường, phải xa quê lập nghiệp và phát đạt muộn; nữ mệnh ngộ Xương Khúc giáp thì dễ đa tình lãng mạn.",
+      "auspicious_variants": "Cung Mệnh có chính tinh đắc cách lại được Nhật Nguyệt hoặc Tả Hữu kẹp: làm quan to đầu triều, phú quý tự nhiên lai.",
+      "defeat_variants": "Bị hung sát tinh xen lẫn vào các cung kẹp: kẹp biến thành giam hãm, bị áp bức từ gia đình hoặc tiểu nhân hãm hại.",
+      "classical_aphorisms": [
+        "Thái Dương Thái Âm, Văn Xương Văn Khúc kèm hai bên chủ sang hiển.",
+        "Hữu lục giáp vi cát (Tử Phủ, Nhật Nguyệt, Tả Hữu, Xương Khúc, Khoa Quyền Lộc, Khôi Việt giáp mệnh); Xương Khúc giáp mệnh thị vi kỳ."
+      ],
+      "transit_impact": "Hành hạn gặp Quý tinh giáp mệnh: được cấp trên và đối tác hết lòng ủng hộ, che chở vượt qua sóng gió, tài chính ổn định và nâng cao thanh danh."
+    },
+    "CACH_34": {
+      "id": 34,
+      "name": "Liêm Trinh Văn Vũ",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Liêm Trinh, Văn Xương, Vũ Khúc",
+      "conditions": "Liêm Trinh nhập miếu tại Dần hoặc Thân, có Văn Xương và Vũ Khúc hội chiếu (tam hợp hoặc đối cung); tam phương tứ chính có cát tinh gia hội.",
+      "can_chi": "Hợp với người sinh năm Giáp, Kỷ, Canh, Bính.",
+      "advantages": "Văn võ song toàn, tài đức vẹn toàn; văn chương thi cử sớm đỗ đạt, võ lược kinh doanh thao lược định giang sơn, phúc khí tròn đầy.",
+      "disadvantages": "Đường tình duyên thường trắc trở do Liêm Trinh là thứ đào hoa kết hợp với tính cương trực của Vũ Khúc, dễ xảy ra bất hòa trong hôn nhân.",
+      "auspicious_variants": "Liêm Trinh Văn Vũ hội Hóa Lộc, Hóa Quyền: làm quan lớn văn võ song toàn, nhà quản lý doanh nghiệp đa năng xuất chúng.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Đà: vướng vào rắc rối tình ái và pháp luật, dễ gặp kiện tụng tranh chấp tài sản.",
+      "classical_aphorisms": [
+        "Liêm Trinh ngộ Văn Xương, hảo lễ nhạc.",
+        "Liêm Trinh Văn Vũ, văn võ kiêm tu."
+      ],
+      "transit_impact": "Hành hạn gặp Liêm Trinh Văn Vũ: thi cử đỗ đạt, xử lý thành công cả công việc văn bản lẫn thương thảo quyết liệt ngoài thương trường, tài chính tăng tiến."
+    },
+    "CACH_35": {
+      "id": 35,
+      "name": "Phụ củng Văn tinh",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Văn Xương tại Mệnh, Tả Phù củng chiếu",
+      "conditions": "Văn Xương tọa thủ tại cung Mệnh, được Tả Phù củng chiếu từ tam hợp hoặc đối cung; có cát tinh gia hội, không bị sát tinh xung phá.",
+      "can_chi": "Hợp với người sinh năm Giáp, Ất, Đinh, Canh, Tân.",
+      "advantages": "Mẫn tiệp thông minh tài hoa tột bực, cử chỉ phong nhã, giữ chức vụ cao trong chính quyền hoặc viện nghiên cứu, được mọi người kính trọng suy tôn.",
+      "disadvantages": "Nếu gặp nhiều sát tinh thì tài hoa không gặp thời, trở thành mệnh bình thường, làm nhiều việc phụng sự mà ít được ghi nhận.",
+      "auspicious_variants": "Phụ củng Văn tinh hội Hóa Khoa, Thiên Khôi: làm quan đại thần, mưu sĩ cao cấp bên cạnh nguyên thủ quốc gia.",
+      "defeat_variants": "Bị Kình Đà Hỏa Linh xâm phạm: văn tài dang dở, thi cử lận đận, kiếm sống bằng nghề thủ công viết lách tầm thường.",
+      "classical_aphorisms": [
+        "Phụ củng Văn tinh, tài hoa tuyệt thế.",
+        "Tả Phù củng Xương, thiếu niên đăng đệ."
+      ],
+      "transit_impact": "Đại tiểu hạn gặp Phụ củng Văn tinh: tài năng học thuật được công nhận, được giao phụ trách các đề án văn hóa giáo dục lớn, danh tiếng tăng cao."
+    },
+    "CACH_36": {
+      "id": 36,
+      "name": "Quyền tinh triều viên (Hay Hùng tú triều viên)",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Liêm Trinh (nhập miếu tại Thân hoặc Mùi)",
+      "conditions": "Sao Liêm Trinh miếu vượng trấn Mệnh tại cung Thân hoặc cung Mùi, không gặp sát tinh xung phá (tại Mùi có Thất Sát đồng cung nhưng vẫn được coi là cát cách nếu miếu vượng).",
+      "can_chi": "Người sinh năm Giáp, Mậu, Kỷ, Canh rất hợp cách.",
+      "advantages": "Tuổi trẻ đã làm nên sự nghiệp vang dội, phát tài nhanh chóng, danh tiếng lẫy lừng; tính cách kiên nghị, quyết đoán, mưu dũng hơn người.",
+      "disadvantages": "Nếu gặp Tứ Sát (Kình Đà Hỏa Linh) quấy nhiễu thì phá cách, biến thành mệnh bình thường, dễ vướng lao lý hoặc tai nạn thương tật.",
+      "auspicious_variants": "Liêm Trinh tại Thân hội Hóa Lộc, Văn Xương: cự thương giàu có nức tiếng, thanh danh hiển đạt phong vân tế hội.",
+      "defeat_variants": "Gặp Hóa Kỵ, Kình Dương: 'Liêm Kình tương phùng', dễ vướng án tích lao ngục, thương tật do tai nạn rủi ro.",
+      "classical_aphorisms": [
+        "Liêm Trinh trấn mệnh tại Thân Mùi, không gặp tứ sát sẽ giàu sang, danh tiếng lừng lẫy.",
+        "Hùng tú triều viên, danh dương tứ hải."
+      ],
+      "transit_impact": "Hành hạn gặp Quyền tinh triều viên: công danh thăng tiến vượt bậc, tuổi trẻ lập công lớn, tài chính dồi dào, thong dong trong cảnh giàu sang phú quý."
+    },
+    "CACH_37": {
+      "id": 37,
+      "name": "Quyền Sát hóa Lộc",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Kình Dương/Đà La/Hỏa/Linh miếu vượng trấn Mệnh, hội Thất Sát, Hóa Quyền, Hóa Lộc",
+      "conditions": "Sát tinh (Kình, Đà, Hỏa, Linh) miếu vượng trấn Mệnh, được Thất Sát, Hóa Quyền, Hóa Lộc miếu vượng tại tam phương tứ chính hội chiếu phò trợ; biến sát thành quyền.",
+      "can_chi": "Tùy thuộc can năm kích hoạt Hóa Quyền và Hóa Lộc phù hợp (ví dụ: năm Giáp, Canh, Mậu).",
+      "advantages": "Tính cách cương liệt dũng mãnh, khí phách anh hùng cái thế; tuy nhiều phen nếm trải nguy hiểm kinh hoàng nhưng uy quyền lẫm liệt, thành công rực rỡ nơi sa trường hoặc thương trường mạo hiểm.",
+      "disadvantages": "Cuộc đời nhiều phen vào sinh ra tử, trải qua bao sóng gió nguy hiểm; nếu đức mỏng dễ chuốc lấy kết cục thăng trầm khốc liệt.",
+      "auspicious_variants": "Hỏa Tinh miếu vượng hội Thất Sát Hóa Lộc Hóa Quyền: bậc thống soái quân sự, nhà tài phiệt mạo hiểm giàu có và uy quyền lẫm liệt.",
+      "defeat_variants": "Gặp thêm Hóa Kỵ, Địa Kiếp: sát khí quá nặng không hóa giải nổi, chủ về tai nạn tàn tật hoặc bại trận thảm khốc.",
+      "classical_aphorisms": [
+        "Kình Dương nhập miếu ngộ cát tinh, phú quý dương danh.",
+        "Sát ngộ Hóa Lộc Hóa Quyền, chuyển hung vi cát, uy chấn biên cương."
+      ],
+      "transit_impact": "Đại tiểu hạn gặp Quyền Sát hóa Lộc: bước vào giai đoạn quyết liệt mang tính sinh tử, vượt qua các thách thức khổng lồ để giành thắng lợi vĩ đại và nắm quyền lực tối thượng."
+    },
+    "CACH_38": {
+      "id": 38,
+      "name": "Lộc hợp uyên ương",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Lộc Tồn và Hóa Lộc (đồng cung trấn Mệnh)",
+      "conditions": "Lộc Tồn và Hóa Lộc cùng tọa thủ tại cung Mệnh; không bị Không Kiếp, Hóa Kỵ hoặc sát tinh xung phá.",
+      "can_chi": "Hợp với người sinh năm có Hóa Lộc đồng cung với Lộc Tồn tại bản mệnh (ví dụ: người sinh năm Giáp, Ất, Canh...).",
+      "advantages": "Chủ giàu sang phú quý tột bực, quan tước tiền tài song toàn, được mọi người kính trọng ngưỡng mộ; một đời tài vận hanh thông viên mãn, kho vàng kho bạc dồi dào.",
+      "disadvantages": "Nếu hai sao Lộc trấn Mệnh mà gặp sao Thiên Đồng chủ về lười biếng ham hưởng thụ; gặp Thiên Lương chủ về khoác lác kiêu căng; rất kỵ gặp Địa Không, Địa Kiếp làm tiêu tán tài sản.",
+      "auspicious_variants": "Lộc hợp uyên ương hội Tử Phủ, Vũ Khúc, Tả Hữu: bậc phú hào cự vạn, tiền tài đai vàng áo tía, chức quyền hiển hách.",
+      "defeat_variants": "Gặp Địa Không, Địa Kiếp, Hóa Kỵ: 'Lộc phùng Xung Phá', tiền vào tay này ra tay khác, phá sản bất thình lình, vướng tội tham nhũng.",
+      "classical_aphorisms": [
+        "Hai Lộc gặp nhau một đời phú quý.",
+        "Lộc hợp uyên ương, thế gian hiếm gặp, phú quý tuyệt luân."
+      ],
+      "transit_impact": "Hành hạn gặp Lộc hợp uyên ương: giai đoạn tiền tài dồi dào nhất trong đời, thu nhập tăng vọt từ nhiều nguồn, kinh doanh buôn bán thu lợi nhuận khổng lồ."
+    },
+    "CACH_39": {
+      "id": 39,
+      "name": "Song Lộc triều viên",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Lộc Tồn và Hóa Lộc (tại tam phương tứ chính hội chiếu về Mệnh)",
+      "conditions": "Lộc Tồn và Hóa Lộc phân bố tại các cung Mệnh, Tài Bạch, Quan Lộc, Thiên Di hội chiếu lẫn nhau; hoặc đóng tại cung Phu Thê hội chiếu Mệnh.",
+      "can_chi": "Áp dụng cho nhiều can năm có sự phối hợp vị trí Lộc Tồn và Hóa Lộc tam hợp.",
+      "advantages": "Tài quan song mỹ, đức độ được thiên hạ kính trọng, giàu sang chất ngất hiếm ai sánh kịp; nếu Lộc Tồn Hóa Lộc đóng tại cung Phu Thê thì chồng giàu nhờ vợ, vợ sang nhờ chồng.",
+      "disadvantages": "Kỵ nhất gặp Không Vong (Tuần, Triệt, Thiên Không, Địa Không, Địa Kiếp) làm giảm sút phẩm cách; nếu có sát tinh thì tài lộc tụ tán bất thường.",
+      "auspicious_variants": "Song Lộc triều viên hội Tả Hữu, Khôi Việt, Thiên Mã: phát tài ở quy mô lớn, thương gia quốc tế, của cải lưu thông vô tận.",
+      "defeat_variants": "Bị Kiếp Hao Không Kỵ xung phá: tiền tài kiếm được nhiều nhưng thất thoát lớn, hao tổn vì đầu tư sai lầm hoặc bị lừa gạt.",
+      "classical_aphorisms": [
+        "Song Lộc triều viên, vạn sự hanh thông.",
+        "Lộc Tồn Hóa Lộc chiếu mệnh, cự phú chi gia."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Song Lộc triều viên: dòng tiền đổ về tới tấp, các hợp đồng tài chính mang lại lợi nhuận cao, nâng tầm quy mô doanh nghiệp."
+    },
+    "CACH_40": {
+      "id": 40,
+      "name": "Lộc Mã bội ấn",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Lộc Tồn (hoặc Hóa Lộc), Thiên Mã, Thiên Tướng (cùng miếu vượng)",
+      "conditions": "Sao Lộc Tồn (hoặc Hóa Lộc) cùng Thiên Mã và Thiên Tướng (hóa khí là Ấn) cùng miếu vượng trấn Mệnh, Tài, Thiên Di hoặc Điền Trạch, không bị hung sát tinh xung phá.",
+      "can_chi": "Hợp với người sinh năm có Thiên Mã đồng cung hoặc tam hợp với Lộc Tồn và Thiên Tướng miếu địa.",
+      "advantages": "Càng hoạt động bôn ba càng có nhiều tiền của; sự thay đổi hoàn cảnh và môi trường sẽ mang lại bước phát triển vượt bậc, nắm giữ quyền lực và ấn tín tài chính lớn, đại phú đại quý.",
+      "disadvantages": "Có tính chuyên quyền độc đoán, ham kiểm soát toàn bộ quyền lực; cuộc sống luôn bận rộn di chuyển, ít khi được an nhàn tĩnh tại.",
+      "auspicious_variants": "Lộc Mã bội ấn hội Tả Hữu, Hóa Quyền: làm tổng tài tập đoàn vận tải ngoại thương lớn, thống soái quân lương, tài quyền nắm trọn.",
+      "defeat_variants": "Gặp Kình Đà Không Kiếp, Hóa Kỵ: ngựa què rụng ấn (Mã lạc không vong), bôn ba vất vả mà trắng tay, dễ mất chức quyền.",
+      "classical_aphorisms": [
+        "Lộc Mã bội ấn, chuyên quyền phú quý.",
+        "Thiên Tướng ngộ Lộc Mã, xuất ngoại thành đại nghiệp."
+      ],
+      "transit_impact": "Hành hạn gặp Lộc Mã bội ấn: có những chuyến đi công tác xa đem lại thành công lớn, được giao nắm giữ con dấu quản lý tài chính, thăng chức vụ lãnh đạo điều hành."
+    },
+    "CACH_41": {
+      "id": 41,
+      "name": "Lộc Mã giao trì",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Lộc Tồn (hoặc Hóa Lộc) cùng Thiên Mã (hội tụ tại tam phương tứ chính)",
+      "conditions": "Tại cung vị tam phương tứ chính của cung Mệnh có Lộc Tồn (hoặc Hóa Lộc) lại có Thiên Mã gia hội, tạo thế ngựa chở bao tiền đi muôn phương.",
+      "can_chi": "Áp dụng cho mọi can năm sinh có Lộc Tồn hoặc Hóa Lộc hội cùng Thiên Mã (tại Dần, Thân, Tỵ, Hợi).",
+      "advantages": "Thường phát tài nơi xứ người hoặc kiếm được tiền của từ nơi xa đưa tới; môi trường sống có nhiều thay đổi lớn, kinh doanh xuất nhập khẩu, du lịch, logistics đều thành cự phú.",
+      "disadvantages": "Cuộc đời nhiều bôn ba vất vả, phải di chuyển liên tục, xa quê hương bản quán, khó an cư một chỗ nếu không biết cân bằng cuộc sống gia đình.",
+      "auspicious_variants": "Lộc Mã giao trì hội tụ thêm Khôi Việt, Tả Hữu, Tam Hóa: bậc thương nhân quốc tế lừng danh, tài phú xuyên biên giới, xe cộ tiền tài dồi dào.",
+      "defeat_variants": "Gặp Triệt, Tuần, Địa Không, Địa Kiếp: 'Mã lạc Không Vong, Lộc suy Mã khốn', bôn ba tha phương cầu thực mà thất bại, tán gia bại sản nơi đất khách.",
+      "classical_aphorisms": [
+        "Lộc Mã thích được song hành.",
+        "Thiên Lộc Thiên Mã, thi cử thành tích lẫy lừng, phát tài viễn xứ."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Lộc Mã giao trì: cơ hội xuất ngoại, mở rộng thị trường ra tỉnh ngoài hoặc nước ngoài gặt hái doanh thu lớn, đón nhận nhiều tài lộc từ xa đưa về."
+    },
+    "CACH_42": {
+      "id": 42,
+      "name": "Nhị diệu đồng lâm",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Dương, Thái Âm (đồng cung tại Sửu hoặc Mùi)",
+      "conditions": "Cung Mệnh đóng tại Sửu có Thái Dương Thái Âm tại Mùi chiếu; hoặc Mệnh đóng tại Mùi có Thái Dương Thái Âm tại Sửu chiếu (đối chiếu tốt hơn đồng cung tọa thủ). Tam phương có Lộc Tồn, Khoa, Quyền, Lộc, Tả Hữu, Xương Khúc.",
+      "can_chi": "Rất có lợi cho người sinh năm Bính, Mậu (đóng tại Sửu), sinh năm Bính, Tân (đóng tại Mùi).",
+      "advantages": "Có trí tuệ hơn người, phúc lộc song toàn; mệnh đóng tại cung Sửu tốt hơn đóng tại Mùi; đi theo nghiệp võ lập công lớn, theo nghiệp văn thăng tiến đến hàng tam công.",
+      "disadvantages": "Không nên có Lục Sát (Kình Đà Hỏa Linh Không Kiếp) và Hóa Kỵ xung phá, nếu bị phá sẽ làm việc gì cũng 'có đầu không có đuôi', tính khí thất thường, sớm nắng chiều mưa.",
+      "auspicious_variants": "Nhật Nguyệt tại Sửu Mùi hội Hóa Khoa, Hóa Quyền, Tả Hữu: làm quan lớn văn võ song toàn, chức vị công hầu.",
+      "defeat_variants": "Gặp Hóa Kỵ đồng cung: 'Nhật Nguyệt tranh huy', thị phi tranh chấp liên miên, bệnh tật ở mắt, gia đạo trắc trở.",
+      "classical_aphorisms": [
+        "Mệnh đóng tại Sửu được Thái Dương Thái Âm chầu về sinh năm Bính Mậu nhiều phúc lộc.",
+        "Nhật Nguyệt Khoa Lộc tại Sửu Mùi, ắt làm đến công hầu."
+      ],
+      "transit_impact": "Hành hạn gặp Nhị diệu đồng lâm: có sự chuyển biến quan trọng về cả hai phương diện công danh và tài lộc, cần kiên trì theo đuổi mục tiêu đến cùng để tránh bỏ dở giữa chừng."
+    },
+    "CACH_43": {
+      "id": 43,
+      "name": "Đan trì quế trì",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thái Dương (tại Thìn hoặc Tỵ - Đan trì), Thái Âm (tại Dậu hoặc Tuất - Quế trì)",
+      "conditions": "Thái Dương trấn Mệnh tại Thìn hoặc Tỵ (thềm son - đan trì), hoặc Thái Âm trấn Mệnh tại Dậu hoặc Tuất (thềm quế - quế trì), cả hai sao đều ở cung vượng địa; tam phương tứ chính có cát tinh gia hội.",
+      "can_chi": "Hợp với người sinh năm Giáp, Ất, Bính, Đinh, Canh, Tân.",
+      "advantages": "Sớm có được thành công từ khi còn rất trẻ: đỗ đại học danh tiếng, thừa kế di sản lớn, du học nước ngoài, làm việc trong các tổ chức danh giá, sớm được bổ nhiệm làm lãnh đạo kế cận, kinh doanh phát đạt.",
+      "disadvantages": "Rất kỵ gặp Sát tinh và Hóa Kỵ; nếu gặp phải thì tuổi trẻ dễ sinh kiêu căng ngạo mạn, bỏ lỡ thời cơ quý báu.",
+      "auspicious_variants": "Hội tụ Khoa Quyền Lộc, Xương Khúc: cá chép vượt sóng hóa rồng, thiếu niên đăng khoa, sự nghiệp rực rỡ huy hoàng.",
+      "defeat_variants": "Bị Kình Đà Không Kiếp xâm phạm: 'Đan quế gãy cành', thi cử trắc trở, sớm thành nhưng cũng sớm thoái trào nếu thiếu tu dưỡng.",
+      "classical_aphorisms": [
+        "Hóa Khoa tại mệnh, Hóa Quyền đến chầu, thi cử đỗ đạt.",
+        "Khoa Quyền đối diện, cá chép vượt sóng hóa rồng."
+      ],
+      "transit_impact": "Đại hạn tuổi trẻ gặp Đan trì quế trì: thời cơ vàng để thi cử, tuyển dụng, nhận học bổng quốc tế, khẳng định tên tuổi và bước lên bệ phóng danh vọng."
+    },
+    "CACH_44": {
+      "id": 44,
+      "name": "Cực hướng Ly minh",
+      "category": "Nhóm I: Hệ Tử Phủ Triều Viên & Đế Tinh - Phủ Tướng",
+      "stars": "Tử Vi (Bắc Cực - nhập miếu tại cung Ngọ - quẻ Ly)",
+      "conditions": "Sao Tử Vi trấn Mệnh tại cung Ngọ (ngôi vị cửu ngũ chí tôn, mặt trời đỉnh đầu chiếu rọi); cung tam phương tứ chính không bị sát tinh xung phá.",
+      "can_chi": "Đặc biệt đại cát cho người sinh năm Giáp, Đinh, Kỷ (sinh năm Giáp có Lộc Tồn tại Dần chiếu, sinh năm Kỷ có Lộc Tồn tại Ngọ đồng cung).",
+      "advantages": "Dù không có cát tinh phò trợ cũng chủ về phú quý; nếu gặp thêm cát tinh thì hiển đạt làm quan lớn đầu triều hoặc trở thành bậc cự phú hàng đầu; lý tưởng cao xa, uy phong lẫm liệt.",
+      "disadvantages": "Dễ nảy sinh tâm lý kiêu ngạo, cô độc trên đỉnh cao quyền lực; tính tình độc đoán nếu không có phụ tá hiền thần kiềm chế; rất kỵ gặp sát tinh.",
+      "auspicious_variants": "Tử Vi tại Ngọ hội đủ Tả Hữu, Xương Khúc, Khôi Việt, Tam Hóa: bậc đế vương minh quân, nguyên thủ quốc gia, lãnh tụ tối cao muôn người cúi đầu.",
+      "defeat_variants": "Gặp Kình Đà Không Kiếp, Hóa Kỵ: 'Hôn quân bạo chúa' hoặc ngôi vua bị phế truất, mưu đại sự bất thành, chuốc lấy cô độc bi kịch.",
+      "classical_aphorisms": [
+        "Tử Vi đóng tại cung Ngọ, không gặp sát tinh, làm quan đến công khanh.",
+        "Tử Vi tại Ngọ, vô Kình Đà, Giáp Đinh Kỷ sinh nhân vị chí công khanh."
+      ],
+      "transit_impact": "Vận trình đi vào cung Ngọ gặp Cực hướng Ly minh: cơ hội bước lên vị trí đứng đầu cơ quan tổ chức, danh tiếng bao trùm, đón nhận bổng lộc và quyền hạn cao nhất."
+    },
+    "CACH_45": {
+      "id": 45,
+      "name": "Hóa tinh phản quý",
+      "category": "Nhóm II: Hệ Cơ Nguyệt Đồng Lương, Văn Tinh & Nhật Nguyệt Quang Huy",
+      "stars": "Thiên Đồng tại Tuất (sinh năm Đinh); Cự Môn tại Thìn (sinh năm Tân)",
+      "conditions": "(1) Thiên Đồng tại Tuất là cung bình hãm, nhưng người sinh năm Đinh có Thiên Đồng hóa Quyền tại Mệnh, Thái Âm hóa Lộc tại Dần, Thiên Cơ hóa Khoa tại Dần, Cự Môn hóa Lộc tại Thìn chiếu; (2) Cự Môn tại Thìn là cung hãm, nhưng người sinh năm Tân có Cự Môn hóa Lộc, ám hợp với Lộc Tồn tại Dậu, Thái Âm hóa Quyền tại Tý chiếu.",
+      "can_chi": "Chỉ áp dụng duy nhất cho người sinh năm Đinh (đối với Thiên Đồng cư Tuất) và người sinh năm Tân (đối với Cự Môn cư Thìn).",
+      "advantages": "Biến hung thành đại cát, nghịch chuyển càn khôn thành tựu phi thường; tuổi trẻ gian nan thử thách nhưng trung niên thành bậc đại phú đại quý, uy danh hiển hách trước thềm rồng.",
+      "disadvantages": "Rất kỵ gặp thêm Hỏa Linh Không Kiếp xung phá vì sẽ phá vỡ thế cát hóa phản quý, trở lại bản chất hung hãm ban đầu; người không đúng can năm sinh thì không hợp cách.",
+      "auspicious_variants": "Gặp thêm Văn Xương hóa Kỵ (với người sinh năm Tân) vẫn chủ về phú quý kỳ lạ, mưu lược cái thế, chức vị cao trong triều đình.",
+      "defeat_variants": "Bị Hỏa Tinh, Linh Tinh, Địa Kiếp xâm nhập: phá cách hoàn toàn, cuộc đời chìm trong tăm tối thị phi, cùng khốn thất bại.",
+      "classical_aphorisms": [
+        "Thiên Đồng tại Tuất là phản bội, sinh năm Đinh hóa cát chủ về hiển quý.",
+        "Cự Môn tại Thìn Tuất là cung hãm, người sinh năm Tân hóa cát phúc lộc dồi dào."
+      ],
+      "transit_impact": "Hành hạn gặp Hóa tinh phản quý (đúng can Đinh/Tân): nghịch cảnh bất ngờ biến thành cơ hội vàng, vượt qua khủng hoảng ngoạn mục để bước lên đài vinh quang."
+    },
+    "CACH_46": {
+      "id": 46,
+      "name": "Tướng tinh đắc địa",
+      "category": "Nhóm III: Hệ Sát Phá Tham & Võ Cách Cương Liệt",
+      "stars": "Vũ Khúc (nhập miếu tại Thìn, Tuất, Sửu, Mùi)",
+      "conditions": "Sao Vũ Khúc miếu vượng trấn Mệnh, có Lộc Tồn, Hóa Khoa, Hóa Quyền, Hóa Lộc, Tả Phù, Hữu Bật, Văn Xương, Văn Khúc gia hội; không bị Tứ Sát Không Kiếp xung phá.",
+      "can_chi": "Hợp với người sinh năm Kỷ, Canh, Giáp, Quý.",
+      "advantages": "Dũng cảm quyết đoán, tài mưu lược quân sự và tài chính kiệt xuất, sự nghiệp thành công lẫy lừng; chức trọng quyền cao, cướp đất hạ thành nhiều mưu kế, uy phong lẫm liệt trấn biên cương.",
+      "disadvantages": "Tính cách quá cứng rắn, cô độc, thiếu sự mềm dẻo trong quan hệ nhân sự; rất kỵ Tứ Sát và Địa Kiếp Địa Không làm tổn thương tài sản và tính mạng.",
+      "auspicious_variants": "Vũ Khúc miếu vượng hội Văn Xương, Hóa Lộc: văn võ kiêm toàn, đại phú hào kiêm danh tướng quốc gia.",
+      "defeat_variants": "Bị Kình Đà Không Kiếp Hóa Kỵ xâm phạm: cô độc bần hàn, vướng vào tai nạn vũ khí hoặc tán gia bại sản vì đầu tư liều lĩnh.",
+      "classical_aphorisms": [
+        "Vũ Khúc miếu vượng, uy danh hiển hách.",
+        "Vũ Khúc nhập miếu đồng cung với Văn Xương, văn võ kiêm toàn."
+      ],
+      "transit_impact": "Đại tiểu hạn gặp Tướng tinh đắc địa: nắm quyền chỉ huy các chiến dịch quyết định, tài chính tăng trưởng mạnh mẽ, giải quyết dứt điểm các tranh chấp phức tạp."
+    },
+    "CACH_47": {
+      "id": 47,
+      "name": "Nhật Nguyệt chiếu bích (Mặt trăng, mặt trời chiếu vách)",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Thái Âm, Thái Dương tại Sửu Mùi (đóng tại cung Điền Trạch); Mệnh có Phá Quân tại Thìn Tuất",
+      "conditions": "Thái Âm và Thái Dương tại Sửu hoặc Mùi đóng tại cung Điền Trạch (khi đó cung Mệnh sẽ có Phá Quân tại Thìn hoặc Tuất); đồng cung hoặc hội chiếu Lộc Tồn, Tam Hóa, Tả Hữu, Xương Khúc, Khôi Việt.",
+      "can_chi": "Hợp với người sinh năm Ất, Bính, Tân, Nhâm, Đinh.",
+      "advantages": "Sở hữu điền sản đất đai mênh mông, nhà cửa biệt thự nguy nga, kế thừa gia sản tổ tiên để lại vô cùng đồ sộ, là bậc đại phú hào về bất động sản.",
+      "disadvantages": "Cung Thìn không nên có Hỏa Tinh, Linh Tinh; cung Tuất không nên có Văn Xương, Văn Khúc (đề phòng đào hoa rắc rối); nếu Mệnh gặp hung sát tinh thì bản thân tiêu xài phá tán cơ nghiệp.",
+      "auspicious_variants": "Điền Trạch có Nhật Nguyệt hội Lộc Tồn, Hóa Quyền, Tả Hữu: trùm bất động sản, tích lũy đất đai nhà xưởng khắp nơi, con cháu giàu sang truyền đời.",
+      "defeat_variants": "Bị Địa Không, Địa Kiếp, Hóa Kỵ chiếu Điền Trạch: tranh chấp đất đai với dòng họ, tài sản thừa kế bị tiêu tán sạch sành sanh.",
+      "classical_aphorisms": [
+        "Nhật Nguyệt chiếu bích, cự phú điền trang.",
+        "Âm Dương cư Điền trạch, tổ nghiệp hưng long."
+      ],
+      "transit_impact": "Hành hạn gặp Nhật Nguyệt chiếu bích: thời vận mua bán đất đai bất động sản đại thắng, xây dựng nhà cửa khang trang, đón nhận tài sản thừa kế lớn từ gia đình."
+    },
+    "CACH_48": {
+      "id": 48,
+      "name": "Tài Lộc giáp Mã",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Thiên Mã tại Mệnh, giáp Vũ Khúc và Hóa Lộc (hoặc Lộc Tồn)",
+      "conditions": "Sao Thiên Mã đóng tại cung Mệnh (tại Tỵ hoặc Hợi), ở hai cung bên cạnh có Vũ Khúc (Tài tinh) và Hóa Lộc/Lộc Tồn kẹp lấy cung Mệnh. Cung Mệnh đóng tại Trường Sinh hoặc Đế Vượng là thượng cách. Gồm 2 trường hợp: (1) Thái Dương Thiên Mã cư Tỵ/Hợi sinh năm Quý; (2) Thiên Đồng Thiên Mã cư Tỵ/Hợi sinh năm Quý.",
+      "can_chi": "Đặc biệt ứng nghiệm với người sinh năm Quý (Phá Quân hóa Lộc, Vũ Khúc kẹp bên).",
+      "advantages": "Tiền của dồi dào, càng bôn ba di chuyển càng phát tài lớn, dám mạo hiểm đầu tư, không ngại gian khó; chủ về nghèo trước sướng sau, trở thành bậc cự phú kinh thương.",
+      "disadvantages": "Ít được sang hiển về chức tước quý phái mà chủ về phát tài buôn bán; nếu Lộc Tồn kẹp bên Mệnh thì có Kình Đà trấn Mệnh, dễ gặp tiểu nhân hoặc hình thương thương tật (nếu có Thái Dương thì đề phòng tật ở mắt).",
+      "auspicious_variants": "Mệnh tại Trường Sinh Đế Vượng hội Tả Hữu Xương Khúc: bậc cự phú thương nhân, xe cộ tiền tài dồi dào khắp thiên hạ.",
+      "defeat_variants": "Bị Không Kiếp Kỵ xung phá: ngựa ngã gãy chân, bôn ba vất vả nơi đất khách mà bị cướp bóc lừa đảo trắng tay.",
+      "classical_aphorisms": [
+        "Tài Lộc giáp Mã, động tắc sinh tài.",
+        "Thiên Mã phùng Lộc kẹp, cự phú kinh thương."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Tài Lộc giáp Mã: mở rộng thị trường ngoại tỉnh hoặc xuất nhập khẩu, doanh thu bứt phá ngoạn mục sau chuỗi ngày lăn lộn trên thương trường."
+    },
+    "CACH_49": {
+      "id": 49,
+      "name": "Minh Lộc ám Lộc",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Hóa Lộc (hoặc Lộc Tồn) tại Mệnh; Lộc Tồn (hoặc Hóa Lộc) tại cung Ám Hợp",
+      "conditions": "Cung Mệnh có Hóa Lộc (hoặc Lộc Tồn), tại cung Nhị Hợp (Ám hợp) với cung Mệnh có Lộc Tồn (hoặc Hóa Lộc). Gồm 10 trường hợp theo can chi năm sinh (Giáp tại Dần-Hợi; Ất tại Tuất-Mão; Bính tại Thân-Tỵ; Đinh tại Mùi-Ngọ; Mậu tại Thân-Tỵ; Kỷ tại Mùi-Ngọ; Canh tại Tỵ-Thân; Tân tại Thìn-Dậu; Nhâm tại Dần-Hợi; Quý tại Sửu-Tý).",
+      "can_chi": "Áp dụng cho cả 10 Thiên can năm sinh khi thỏa mãn điều kiện cung an Mệnh và cung Ám Hợp.",
+      "advantages": "Tài lộc song toàn, tiền vào như nước vừa hiển lộ công khai vừa có nguồn thu nhập ngầm dồi dào kín đáo; ví như 'gấm lại thêm hoa', phú quý bền vững.",
+      "disadvantages": "Rất kỵ gặp Không Vong (Tuần, Triệt, Thiên Không, Địa Không) tại một trong hai cung vì sẽ làm tiêu tán nguồn lộc ngầm; tránh lòng tham vô đáy dẫn đến sai phạm pháp lý.",
+      "auspicious_variants": "Hóa Lộc tại Mệnh, Lộc Tồn tại Điền Trạch ám hợp: giàu có tột bực, có quỹ đen và tài sản ngầm khổng lồ, một đời không lo thiếu thốn.",
+      "defeat_variants": "Gặp Hóa Kỵ hoặc Kiếp Sát tại cung ám hợp: nguồn thu nhập ngầm bị phát giác, vướng vào tranh tụng thuế khóa hoặc bị tống tiền.",
+      "classical_aphorisms": [
+        "Minh Lộc ám Lộc, như gấm thêm hoa.",
+        "Minh Lộc ám Lộc, phú quý song toàn, chung thân sung túc."
+      ],
+      "transit_impact": "Hành hạn gặp Minh Lộc ám Lộc: ngoài thu nhập chính thức còn đón nhận các khoản thưởng, hoa hồng, tài sản thừa kế hoặc lợi nhuận đầu tư ngầm rất lớn."
+    },
+    "CACH_50": {
+      "id": 50,
+      "name": "Khoa minh Lộc ám (Hay Minh châu ám Lộc)",
+      "category": "Nhóm IV: Hệ Tứ Hóa, Lộc Mã, Ám Hợp & Quý Tinh Tạp Hợp",
+      "stars": "Hóa Khoa trấn Mệnh; Lộc Tồn đóng tại cung Ám Hợp của Mệnh",
+      "conditions": "Sao Hóa Khoa trấn Mệnh, sao Lộc Tồn đóng tại cung nhị hợp (ám hợp) của cung Mệnh. Gồm 10 trường hợp: Giáp (Vũ Khúc Hóa Khoa tại Hợi, Lộc Tồn Dần); Ất (Tử Vi Hóa Khoa tại Tuất, Lộc Tồn Mão); Bính (Văn Xương Hóa Khoa tại Thân, Lộc Tồn Tỵ); Đinh (Thiên Cơ Hóa Khoa tại Mùi, Lộc Tồn Ngọ); Mậu (Hữu Bật Hóa Khoa tại Thân, Lộc Tồn Tỵ); Kỷ (Thiên Lương Hóa Khoa tại Mùi, Lộc Tồn Ngọ); Canh (Thiên Đồng Hóa Khoa tại Tỵ, Lộc Tồn Thân); Tân (Văn Xương Hóa Khoa tại Thìn, Lộc Tồn Dậu); Nhâm (Tả Phù Hóa Khoa tại Dần, Lộc Tồn Hợi); Quý (Thái Dương Hóa Khoa tại Sửu, Lộc Tồn Tý).",
+      "can_chi": "Áp dụng cho đầy đủ 10 Thiên can năm sinh khi thỏa mãn điều kiện vị trí Hóa Khoa và Lộc Tồn ám hợp.",
+      "advantages": "Khoa Lộc song toàn, danh tiếng và tiền tài đều viên mãn; vừa có học vấn uyên bác, chức vị thanh cao, được xã hội kính trọng (Khoa minh), vừa có nguồn tài chính hùng hậu ngầm ủng hộ (Lộc ám); làm quan đến bậc Tam Đài quyền cao chức trọng.",
+      "disadvantages": "Rất kỵ gặp Không Vong (Tuần Triệt, Thiên Không, Địa Không) làm ô danh hoặc hao tổn tài lộc; cần giữ gìn sự trong sạch thanh liêm để danh tiếng không bị hoen ố.",
+      "auspicious_variants": "Khoa minh Lộc ám hội Khôi Việt, Tả Hữu: làm đến bộ trưởng, viện sĩ hàn lâm, giáo sư cố vấn quốc gia, danh lợi vẹn toàn.",
+      "defeat_variants": "Bị Hóa Kỵ, Kình Đà xung phá: danh dự bị hoen ố, học vị bị nghi vấn, nguồn tài chính ngầm bị phong tỏa hoặc truy thu.",
+      "classical_aphorisms": [
+        "Khoa minh Lộc ám, làm đến Tam Đài (quyền cao chức trọng).",
+        "Mệnh ngộ Khoa minh Lộc ám, danh lợi song thu, hiển vinh thế gia."
+      ],
+      "transit_impact": "Đại hạn hoặc lưu niên gặp Khoa minh Lộc ám: bảo vệ thành công học hàm học vị cao, thăng quan tiến chức danh giá, đón nhận các hợp đồng tư vấn tài chính béo bở."
+    }
+  }
+}

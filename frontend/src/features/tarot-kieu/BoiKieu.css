@@ -1,0 +1,939 @@
+/* ==========================================================================
+   TỬ VI HỒNG ÂN - GIAO DIỆN BÓI QUẺ KIỀU (TAROT KIỀU)
+   Đồng bộ phông chữ Be Vietnam Pro và bảng màu thương hiệu
+   ========================================================================== */
+
+:root {
+  --bk-gold: #c9a227;
+  --bk-gold-light: #fef08a;
+  --bk-gold-glow: rgba(201, 162, 39, 0.45);
+  --bk-red-primary: #8b1d1d;
+  --bk-red-dark: #701414;
+  --bk-red-hover: #a12323;
+  --bk-cream: #f8fafc;
+}
+
+/* 1. CONTAINER CHÍNH: 3 LỀ TRẮNG ĐỒNG BỘ TRANG LÁ SỐ (max-width: 1220px) */
+.boikieu-page {
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 10px 12px 30px;
+}
+
+/* 2. KHỐI CHỌN VIỆC XIN QUẺ ĐẨY LÊN ĐẦU TRANG - DẠNG XỔ DANH SÁCH (DROPDOWN) */
+.boikieu-top-selector-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e6d7b8;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 18px rgba(201, 162, 39, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 30;
+}
+
+.top-selector-header {
+  display: flex;
+  align-items: center;
+}
+
+.top-selector-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--bk-red-primary, #8b1d1d);
+  letter-spacing: 0.4px;
+}
+
+.boikieu-dropdown-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* NÚT TRIGGER XỔ DANH SÁCH */
+.boikieu-dropdown-trigger {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #faf6ed;
+  border: 1.5px solid #c5a059;
+  border-radius: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.boikieu-dropdown-trigger:hover,
+.boikieu-dropdown-trigger.active {
+  background: #fdf2f2;
+  border-color: #8b1d1d;
+  box-shadow: 0 0 0 3px rgba(139, 29, 29, 0.12);
+}
+
+.dropdown-trigger-content {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.dropdown-trigger-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #8b1d1d;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.dropdown-trigger-sep {
+  color: #c5a059;
+  font-weight: 600;
+  user-select: none;
+}
+
+.dropdown-trigger-role {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.dropdown-trigger-chevron {
+  font-size: 1.1rem;
+  color: #c5a059;
+  transition: transform 0.22s ease;
+  flex-shrink: 0;
+}
+
+.dropdown-trigger-chevron.open {
+  transform: rotate(180deg);
+  color: #8b1d1d;
+}
+
+/* PANEL XỔ DANH SÁCH */
+.boikieu-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1.5px solid #c5a059;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+  animation: dropdownFadeIn 0.2s ease;
+  max-height: 72vh;
+  overflow-y: auto;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dropdown-section-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #78350f;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0 4px 6px;
+  border-bottom: 1.5px solid #f1f5f9;
+}
+
+.dropdown-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+}
+
+.dropdown-section-divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 2px 0;
+}
+
+.dropdown-item-btn {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dropdown-item-btn:hover {
+  background: #fdf2f2;
+  border-color: #fde68a;
+  transform: translateX(2px);
+}
+
+.dropdown-item-btn.selected {
+  background: #8b1d1d;
+  border-color: #8b1d1d;
+  box-shadow: 0 2px 8px rgba(139, 29, 29, 0.25);
+}
+
+.dropdown-item-btn .item-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+  flex: 0 0 152px;
+  width: 152px;
+}
+
+.dropdown-item-btn .item-sep {
+  color: #c5a059;
+  font-size: 0.8rem;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.dropdown-item-btn .item-role {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-item-btn:hover .item-title {
+  color: #8b1d1d;
+}
+
+.dropdown-item-btn:hover .item-role {
+  color: #78350f;
+}
+
+.dropdown-item-btn.selected .item-title {
+  color: #ffffff;
+}
+
+.dropdown-item-btn.selected .item-sep {
+  color: rgba(254, 240, 138, 0.8);
+}
+
+.dropdown-item-btn.selected .item-role {
+  color: #fef08a;
+}
+
+/* 3. BÀN QUAY BÓI QUẺ: NỀN TRANH NGUYÊN BẢN (KHÔNG LỚP PHỦ ĐEN MỜ) */
+.boikieu-stage-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1672 / 941;
+  background-image: url('/tarot-kieu/nen-tarot-kieu.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  user-select: none;
+}
+
+/* 3. VÒNG QUAY QUẺ: TĂNG KÍCH THƯỚC LỚN HƠN & NÂNG CAO LÊN TẠO SỰ CÂN ĐỐI */
+.wheel-wrapper {
+  position: absolute;
+  top: 51.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(365px, 40%);
+  height: min(365px, 40%);
+  aspect-ratio: 1 / 1;
+  z-index: 5;
+}
+
+.pointer {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 26px solid var(--bk-gold);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: drop-shadow(0 0 22px var(--bk-gold-glow));
+}
+
+.wheel-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* NÚT XIN QUẺ: HIỆU ỨNG THỞ (BREATHING/PULSING) VÀ VIỀN GRADIENT ĐỘNG */
+.stage-controls {
+  position: absolute;
+  top: calc(51.5% + min(182.5px, 20%) + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 6;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.spin-btn {
+  position: relative;
+  padding: 2.5px; /* Chiều dày của viền gradient chuyển màu */
+  border-radius: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+  animation: btnPulse 2.4s infinite ease-in-out;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+/* Viền chuyển màu gradient xoay quanh nút */
+.spin-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #ffd700,
+    #fff3a8,
+    #c5a059,
+    #8b1d1d,
+    #d4af37,
+    #fff9c4,
+    #ffd700
+  );
+  animation: rotateBorder 3s linear infinite;
+  z-index: 1;
+}
+
+.spin-btn-inner {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 30px;
+  border-radius: 38px;
+  background: linear-gradient(145deg, #d4af37, #a07d1a);
+  color: #1a0f0a;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, color 0.2s ease;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes btnPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(201, 162, 39, 0.35);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 7px 22px rgba(201, 162, 39, 0.7), 0 0 12px rgba(254, 240, 138, 0.45);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(201, 162, 39, 0.35);
+  }
+}
+
+.spin-btn:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.8), 0 0 16px rgba(254, 240, 138, 0.6);
+}
+
+.spin-btn:hover:not(:disabled) .spin-btn-inner {
+  background: linear-gradient(145deg, #e5c158, #b88f24);
+}
+
+.spin-btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+.spin-btn:disabled {
+  animation: none;
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.spin-btn:disabled::before {
+  animation: none;
+}
+
+.result-number {
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+  color: var(--bk-gold-light);
+  min-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* 4. BẢNG LIỆT KÊ CÁC QUẺ KIỀU (Cuộn vô hạn, theo thứ tự) */
+.boikieu-cards-section {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px 60px;
+  border: 1px solid var(--border-light, #e2e8f0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cards-section-header {
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cards-main-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  font-weight: 700;
+  color: var(--bk-red-primary);
+  letter-spacing: 1.2px;
+  margin-bottom: 4px;
+}
+
+.title-text-desktop,
+.sub-text-desktop {
+  display: inline;
+}
+
+.title-text-mobile,
+.sub-text-mobile {
+  display: none;
+}
+
+.cards-sub-title {
+  font-size: 0.88rem;
+  color: #64748b;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.title-divider {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5a059, transparent);
+  margin: 0 auto;
+}
+
+/* GRID HIỂN THỊ CÁC THẺ QUẺ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+@media (max-width: 580px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .boikieu-cards-section {
+    padding: 20px 12px 40px;
+  }
+  .hint-click {
+    display: none !important;
+  }
+  .pointer {
+    top: -12px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 18px solid var(--bk-gold);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.65));
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .stage-controls {
+    top: calc(51.5% + min(182.5px, 20%) + 4px);
+    gap: 2px;
+  }
+  .pointer {
+    top: -8px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid var(--bk-gold);
+    filter: drop-shadow(0 1.5px 3px rgba(0, 0, 0, 0.6));
+  }
+  .spin-btn-inner {
+    padding: 5px 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+  }
+  .boikieu-deck-selector-wrap {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 12px;
+  }
+  .deck-selector-select {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}
+
+/* THIẾT KẾ CARD: BẢO VỆ GÓC BO CONG, KHÔNG VỠ BỐ CỤC KHI HOVER */
+.card {
+  width: 100%;
+  max-width: 270px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  transform: translateZ(0); /* Fix Chrome border-radius clipping bug */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bk-red-primary);
+  box-shadow: 0 10px 24px rgba(139, 29, 29, 0.2);
+}
+
+.card.main-card {
+  border: 2px solid #c5a059;
+  box-shadow: 0 0 18px rgba(197, 160, 89, 0.5);
+  animation: glowMain 2s infinite alternate ease-in-out;
+}
+
+@keyframes glowMain {
+  0% { box-shadow: 0 0 8px rgba(197, 160, 89, 0.35); }
+  100% { box-shadow: 0 0 22px rgba(197, 160, 89, 0.7); }
+}
+
+/* Khung ảnh: Chuẩn tỉ lệ 9:16 FHD, bo góc chuẩn, triệt để không tràn viền */
+.card-img-wrap {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #18110b;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px 11px 0 0;
+  transform: translateZ(0);
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 5. KHỐI THÔNG TIN NỀN MÀU ĐỎ CHỦ ĐẠO (PRIMARY RED) CỦA WEBSITE */
+.card-caption {
+  padding: 10px 8px 12px;
+  background: linear-gradient(145deg, #8b1d1d, #701414);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.card-number-label {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fef08a;
+  letter-spacing: 0.6px;
+}
+
+.card-footer-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.badge-main {
+  background: #c5a059;
+  color: #1e130c;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.badge-sub {
+  background: rgba(0, 0, 0, 0.28);
+  color: #fef3c7;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid rgba(254, 243, 199, 0.35);
+}
+
+.hint-click {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.72rem;
+}
+
+/* KÍCH HOẠT CUỘN VÔ HẠN */
+.infinite-scroll-sentinel {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+.sentinel-spinner {
+  display: inline-block;
+  color: #94a3b8;
+  font-style: normal;
+  font-size: 0.88rem;
+  letter-spacing: 0.6px;
+}
+
+/* 6. MODAL XEM CHI TIẾT: TỶ LỆ HÀI HÒA THEO CHIỀU DỌC, VỪA VẶN MÀN HÌNH */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  backdrop-filter: blur(6px);
+  animation: modalFadeIn 0.22s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  max-width: min(390px, 92vw);
+  max-height: 86vh;
+  height: auto;
+  background: #140d09;
+  border-radius: 14px;
+  border: 2px solid #c5a059;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modalScaleIn 0.25s ease;
+}
+
+@keyframes modalScaleIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1.5px solid #c5a059;
+  color: #fef08a;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--bk-red-primary);
+  color: #fff;
+  border-color: #fff;
+}
+
+.modal-img-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: calc(86vh - 65px);
+  background: #0d0907;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: calc(86vh - 65px);
+  object-fit: contain;
+  display: block;
+}
+
+.modal-info {
+  flex: 0 0 auto;
+  padding: 8px 12px 10px;
+  text-align: center;
+  background: linear-gradient(180deg, #24160f, #140d09);
+  border-top: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+.modal-info h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #fef08a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.modal-subtitle {
+  font-size: 0.78rem;
+  color: rgba(248, 241, 227, 0.8);
+  font-style: normal;
+}
+
+/* 7. MODAL KHẤN XIN QUẺ TRANG NGHIÊM */
+.prayer-modal-content {
+  position: relative;
+  width: min(650px, 94vw);
+  padding: 30px 28px 24px;
+  background: linear-gradient(145deg, #fffbf2, #f5ebd0);
+  color: #5b1919;
+  border: 3px solid #c5a059;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: modalScaleIn 0.25s ease;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.prayer-modal-content h3 {
+  margin-bottom: 16px;
+  color: var(--bk-red-primary);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.prayer-modal-content p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  font-weight: 500;
+  color: #4a1515;
+  margin-bottom: 8px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.prayer-modal-content p.prayer-salute {
+  text-align: center;
+  font-weight: 700;
+  color: var(--bk-red-primary);
+}
+
+.prayer-modal-content p.prayer-body {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.prayer-confirm-btn {
+  margin-top: 20px;
+  padding: 11px 32px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #a12323, #701414);
+  color: #fff8e8;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(139, 29, 29, 0.35);
+  transition: all 0.2s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prayer-confirm-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #b52b2b, #801818);
+  box-shadow: 0 7px 20px rgba(139, 29, 29, 0.5);
+}
+
+/* 8. THIẾT KẾ ĐÁP ỨNG (RESPONSIVE) CHO KHỐI CHỌN ĐẦU TRANG & TIÊU ĐỀ 1 DÒNG */
+@media (max-width: 580px) {
+  .title-text-desktop,
+  .sub-text-desktop {
+    display: none;
+  }
+
+  .title-text-mobile,
+  .sub-text-mobile {
+    display: inline;
+  }
+
+  .cards-main-title {
+    font-size: clamp(0.92rem, 4.4vw, 1.15rem);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .cards-sub-title {
+    font-size: clamp(0.72rem, 3.3vw, 0.82rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .dropdown-trigger-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .dropdown-trigger-sep {
+    display: none;
+  }
+  .dropdown-section-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .dropdown-item-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .dropdown-item-btn .item-title {
+    flex: none;
+    width: auto;
+  }
+  .dropdown-item-btn .item-sep {
+    display: none;
+  }
+  .dropdown-item-btn .item-role {
+    white-space: normal;
+  }
+  .boikieu-dropdown-panel {
+    gap: 12px;
+    padding: 12px;
+    max-height: 65vh;
+  }
+}

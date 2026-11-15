@@ -1,0 +1,987 @@
+TỔNG HỢP DANH MỤC NHẬT KÝ PHIÊN LÀM VIỆC (.agent/walkthroughs)
+Số lượng: 149 tệp (sắp xếp theo trình tự thời gian từ 08/10/2026 đến 13/11/2026)
+================================================================================
+
+1. Tên tệp: walkthroughs/08_10_2026_W1.md
+2. Phân loại chỉnh sửa: Backend, Frontend, API, AI/Prompting, UI/UX, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai), backend/src/modules/astrology/ai_interpreter/*, backend/src/server.py, frontend/src/features/astrology/AiReadingModal.jsx, frontend/src/features/astrology/LaSoTuVi.jsx, .agents/skills/tu-vi-interpretation/*, AGENTS.md, GEMINI.md
+4. Nội dung chỉnh sửa: Tích hợp toàn diện hệ thống AI Luận giải Tử Vi Đẩu Số chuẩn Hàm Lâm sử dụng mô hình gemini-3.8-flash (trần 4096 tokens, dải 2.000-2.300 từ), chỉ tiếp nhận đầu vào markdown_ai. Xây dựng module ai_interpreter (kèm Mock Mode, benchmark, validator danh xưng 1:1) với endpoint GET /api/ai/status, POST /api/ai/interpret-chart và giao diện AiReadingModal bắt sự kiện TUVI_MARKDOWN_GENERATED.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_10_2026_W1.md
+2. Phân loại chỉnh sửa: AI/Prompting, Backend, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), backend/src/modules/astrology/ai_interpreter/prompt_compiler.py, MockTuViInterpreterService, .agents/skills/tu-vi-interpretation/resources/destiny_Interpretation.md, .agents/skills/tu-vi-interpretation/examples/template_01_full.md, validate_reading.py
+4. Nội dung chỉnh sửa: Nâng cấp văn phong bài luận AI sang tư vấn 1-1 dạng Markdown Bullet-Point, loại bỏ mã &emsp;&emsp;, dùng blockquote cho ca quyết và in nghiêng lời dẫn/CTA. Chuẩn hóa cấu trúc 5 đề mục La Mã bao phủ cả 11 cung phụ và tối ưu PromptCompiler trích xuất vi mô 3 câu Trung Cung giúp giảm >80% input tokens (~1.300-1.500 tokens).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/11_10_2026_W1.md
+2. Phân loại chỉnh sửa: AI/Prompting, Backend, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), .env, backend/.env, endpoint GET /api/ai/status, validate_reading.py
+4. Nội dung chỉnh sửa: Kích hoạt API Free tier cho mô hình gemini-3.8-flash với THINKING_LEVEL = "medium", tăng trần MAX_OUTPUT_TOKENS = 9500 để chống cắt cụt bài viết và đặt mục tiêu 2.000-2.800 từ (tối đa 3.500 từ). Bổ sung cơ chế auto-retry khi quá tải (503/429) kèm fallback an toàn sang Mock Engine và kiểm định đạt chuẩn qua validate_reading.py.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_10_2026_W1.md
+2. Phân loại chỉnh sửa: Frontend, Backend, AI/Prompting, Engine Tử Vi, DevSecOps, Testing
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai), backend/src/modules/astrology/engine/context_pruner.py, backend/src/modules/astrology/interpreter/*, frontend/src/features/astrology/components/*, frontend/src/features/astrology/services/*, endpoint POST /api/ai/interpret-chart
+4. Nội dung chỉnh sửa: Chuyển giao diện luận giải sang dạng bài luận văn Podcast hoàn chỉnh (AiReadingPodcastView.jsx, loại bỏ AiReadingChatView.jsx), thiết lập MAX_OUTPUT_TOKENS = 5000 và THINKING_LEVEL = low. Bổ sung context_pruner.py giảm 35-40% input tokens nhưng vẫn bảo toàn 13 sao lưu 3 năm, tái cấu trúc modular Frontend/Backend và áp dụng Zero-Key Client kèm Rate Limiting.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/18_10_2026_W1.md
+2. Phân loại chỉnh sửa: Backend, Frontend, Database, API, DevSecOps, Engine Tử Vi, AI/Prompting, Testing
+3. Trang/Thành phần ảnh hưởng: Toàn bộ hệ thống (Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai), Phật Pháp (/phat-phap), Phong Thủy (/la-kinh-phong-thuy), Kỳ Môn (/ky-mon-don-giap), Quản trị (/admin)), backend/src/modules/* (14 blueprints), backend/src/server.py, frontend/src/app/App.jsx, frontend/src/shared/ui/Navbar.jsx, backend/src/data/tuvi.db
+4. Nội dung chỉnh sửa: Kiểm toán và tái cấu trúc modular 14 blueprint backend cùng frontend/src/features/*, dọn 15 tệp vá/trùng lặp, sửa lỗi regex multiline bleed trong prompt_compiler.py và cập nhật biểu giá Gemini 3.8 Flash trong benchmark.py. Gia cố bảo mật 2FA quản trị (chuyển từ ghi file plaintext admin_2fa.txt sang SQLite admin_2fa_codes), chuyển đổi Thần Số Học thành phân hệ Phật Pháp (/phat-phap), gộp booking vào contact và thêm phân hệ thanh toán SePay (billing).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/19_10_2026_W1.md
+2. Phân loại chỉnh sửa: Frontend, Backend, Database, API, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai), backend/src/core/db.py, backend/src/core/firebase_db.py, backend/src/modules/astrology/api/routes_charts.py, frontend/public/astrology-engine/*, frontend/src/features/astrology/LaSoTuViContainer.jsx, chartEventBridge.js
+4. Nội dung chỉnh sửa: Nâng cấp bảng điều khiển thành 2 Tab ("Lập lá số" và "Lịch sử lá số & luận giải") nằm trên cùng một dòng, dựng lại động tờ lá số từ input_data kèm mã lá số gốc và điều hướng mở lại phiên AI tương ứng. Bổ sung cơ chế tự động gộp lá số trùng lặp (save_user_chart), modal xóa đếm ngược 10 giây (DELETE /api/user/charts/<id>) và loại bỏ khối lịch sử lỗi đè chữ cũ.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/19_10_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, Backend, UI/UX, AI/Prompting, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), interpret_chart, saveAiSession, popover gợi ý câu hỏi trong trang Luận giải
+4. Nội dung chỉnh sửa: Tinh gọn menu gợi ý câu hỏi bằng cách bỏ dòng tiêu đề/hướng dẫn Esc và bỏ đánh số thứ tự, thay hiệu ứng Gaussian blur làm mờ nền bằng lớp phủ trong suốt bg-slate-900/[0.03] và hạ sáng opacity-85. Đồng thời động hóa 100% việc tạo 6-8 câu hỏi gợi ý theo dữ liệu thực tế từng lá số (Thân cư, Tam hợp, Tài Bạch, Quan Lộc, Đại/Tiểu vận) và đồng bộ lưu trữ Backend/Frontend.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/22_10_2026_W1.md
+2. Phân loại chỉnh sửa: AI/Prompting, Backend, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), backend/src/modules/astrology/interpreter/* (prompt_compiler.py, benchmark.py, service.py), backend/src/modules/astrology/engine/* (markdown_exporter.py, context_pruner.py)
+4. Nội dung chỉnh sửa: Sửa lỗi nhận diện cách cục sai (xác định đúng Cơ Cự Đồng kèm thơ phú 4 câu), chuẩn hóa 4 nhãn phân tích in đậm cho Tiểu vận 3 năm và ghép cặp 9 cung phụ với dải tuổi Đại vận theo cấu trúc 4 tầng. Tích hợp bộ lọc Anti-Slop loại bỏ >35 cụm văn mẫu AI (audit_anti_slop) và nâng cấp service.py sang generate_content_stream() để tránh lỗi timeout 504 DEADLINE_EXCEEDED khi sinh bài dài (~5.700 từ với gemini-4-argon).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/24_10_2026_W1.md
+2. Phân loại chỉnh sửa: AI/Prompting, Backend, Engine Tử Vi, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), backend/src/modules/astrology/interpreter/resources/van_han_phu_index.json, prompt_compiler.py, markdown_exporter.py, context_pruner.py
+4. Nội dung chỉnh sửa: Bổ sung bảng ánh xạ tên sao tiếng Việt có dấu _STAR_VI_MAP cùng hàm get_tam_hop_palace_aphorisms() và cập nhật mảng "stars" trong van_han_phu_index.json để trích xuất đúng ca quyết Phần II và III. Tinh chỉnh cấu trúc/văn phong luận giải (bắt buộc đoạn gia đạo trong Đại vận, đan cài câu phú) và phân tầng Phần IV: các cung Đại vận >= 85 tuổi (Tử Tức, Phu Thê, Huynh Đệ) chỉ luận 2 tầng, bỏ mục Đại vận và Công danh sự nghiệp.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/24_10_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, Backend, DevSecOps, API, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Thẻ đăng nhập (AuthModal.jsx, AuthModal.css), Quản trị (/admin), Khóa học (/khoa-hoc), Luận giải AI (/luan-giai-ai), Navbar.jsx, TopBar.jsx, ServiceConsultationModal.jsx, backend/src/modules/auth/*, routes_ai.py, courses/routes.py
+4. Nội dung chỉnh sửa: Chuyển đổi hoàn toàn xác thực người dùng sang Google Sign-In (gỡ ô nhập email và backdoor "Bugcat-Capoo"), thiết kế lại bố cục dọc thẻ AuthModal. Xây dựng Chế độ Nhà phát triển (developer_auth.py) xác thực qua security/developer_mode.txt kèm rate limiting và hmac.compare_digest (kích hoạt bằng Ctrl+Shift+Y, Alt+Shift+G hoặc nhấn 5 lần logo Google), cấp token dev_* mở khóa miễn phí AI, khóa học và quyền /admin.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/01_11_2026_W1.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend, Backend, API, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Modal thanh toán SePay (billing), Webhook POST /api/billing/webhook
+4. Nội dung chỉnh sửa: Chuẩn hóa duy nhất 2 gói dịch vụ (Luận giải AI 199.000 VNĐ và Luận giải trực tiếp 1-1 500.000 VNĐ) và tinh giản giao diện QR thanh toán (viền đen, bỏ nút Đóng/Quay lại/sao chép, căn giữa số tài khoản 8857159999 và nội dung chuyển khoản). Bổ sung cơ chế bảo vệ khi chuyển khoản dưới 3 phút hoặc hết 15 phút đếm ngược (gia hạn polling thêm 5 phút, không hủy đơn) và kiểm thử webhook SePay chống cộng trùng, thiếu tiền hay sai cú pháp.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/01_11_2026_W2.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Toàn website (trọng tâm Lá số Tử Vi (/la-so-tu-vi) và Luận giải AI (/luan-giai-ai)), frontend/index.html, frontend/src/app/index.css, App.css, AiInterpretationGeminiView.css, frontend/src/shared/utils/tuviEngine.js
+4. Nội dung chỉnh sửa: Triệt tiêu 100% thanh cuộn ngang/dọc toàn cục bằng CSS (scrollbar-width: none, ::-webkit-scrollbar ẩn hoàn toàn và class gemini-no-scrollbar). Tinh chỉnh tỷ lệ tờ lá số (max-h-[calc(100vh-120px)], max-w-[42vw]) cân đối khung hình và đồng bộ màu sắc Ngũ Hành (Kim, Mộc, Thủy, Hỏa, Thổ) cho 14 chính tinh và >110 phụ tinh trong tuviEngine.js.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W1.md
+2. Phân loại chỉnh sửa: Backend, DevSecOps, Database, API
+3. Trang/Thành phần ảnh hưởng: Quản trị (/admin), backend/src/modules/admin/scheduler.py (đã xóa), backend/src/server.py, admin_db.py, backend/src/core/db.py, backend/src/modules/auth/admin_auth.py, backend/src/data/tuvi.db
+4. Nội dung chỉnh sửa: Xóa bỏ hoàn toàn hệ thống Admin 2FA phát mã qua email/console cũ (scheduler.py, hàm get_current_2fa_code/save_2fa_code và bảng admin_2fa_codes trong tuvi.db). Vô hiệu hóa endpoint đăng nhập 2FA cũ bằng HTTP 410 Gone, chuyển toàn bộ quyền Quản trị sang Developer Mode trong khi vẫn giữ tương thích các token admin_ và dev_.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W2.md
+2. Phân loại chỉnh sửa: AI/Prompting, Backend, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), .env, backend/.env, backend/.env.example, backend/src/modules/astrology/interpreter/config.py, benchmark.py, endpoint /api/ai/status
+4. Nội dung chỉnh sửa: Chuyển đổi cấu hình mô hình AI luận giải từ gemini-4-argon (THINKING_LEVEL=LOW) sang gemini-3.8-flash với mức suy luận cao nhất THINKING_LEVEL=HIGH trong các tệp .env, config.py và benchmark.py. Xác thực tương thích Google GenAI SDK (ThinkingConfig), timeout 600s và telemetry chuẩn tại /api/ai/status.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W3.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, geometry.js
+4. Nội dung chỉnh sửa: Chuẩn hóa viền đen bao ngoài 2px và rãnh phân cách 1px đồng nhất (gap: 1px), khép kín 4 cạnh cung active và chuẩn hóa tọa độ SVG tĩnh (getHouseContactPoint) cùng z-index: 15 cho đường nối chiếu/tam hợp không bị đứt đoạn hay che khuất. Khôi phục khối TUẦN/TRIỆT nền đen 36x18px chữ nhỏ 8.5px, hoàn trả kiến trúc .house-header gốc và định vị độc lập nhãn .palace-rel-tag.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W4.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css
+4. Nội dung chỉnh sửa: Thiết kế hiệu ứng sáng viền sắc nét và quầng hào quang tỏa sáng nhẹ với màu trội riêng cho từng vai trò cung (Bản Cung đỏ #8b1d1d, Tam Hợp nâu son #9a3412, Xung Chiếu xanh #15803d, Nhị Hợp chàm #4338ca) đồng bộ với badge và đường nối vector. Bảo toàn nền trắng #ffffff cho các cung không liên quan và chỉ làm dịu chữ bên trong (opacity: 0.35).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W5.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, laso-tuvi.html, laso-tuvi.bundle.html, js/ui-controller.js
+4. Nội dung chỉnh sửa: Loại bỏ hoàn toàn hiệu ứng hào quang/glow, thay bằng viền màu sáng đặc dày 3.5px-4.5px (z-index: 25) che phủ hoàn toàn rãnh viền đen 1px giữa các cung. Khôi phục nền trắng trơn 100% (ẩn watermark .tb-watermark-bg, xóa phớt màu), đồng thời nâng cấp Loading Screen Thiên Bàn kèm sửa lỗi đóng thẻ </div> sớm và đặt MIN_LOADING_TIME = 350ms.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W6.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/laso-tuvi.html, css/controls.css
+4. Nội dung chỉnh sửa: Tái cấu trúc khu vực lưu lá số thành lưới 3 cột ngang (PDF Màu, PDF Đen Trắng, Ảnh) kèm icon SVG và nâng cấp nút LUẬN GIẢI LÁ SỐ với viền hoàng kim và biểu tượng sao. Bổ sung hệ thống chuyển cảnh/micro-interactions (tabPaneSlideIn, focus viền son) và đồng bộ bo góc mềm mại 8px-12px cho cột điều khiển bên phải.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W7.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/laso-tuvi.html, laso-tuvi.bundle.html, css/controls.css
+4. Nội dung chỉnh sửa: Đổi nhãn khu vực xuất tệp thành "LƯU LÁ SỐ" in hoa giãn chữ (letter-spacing: 1.5px) và triển khai chuyển động mượt mà theo hàm điều tốc cubic-bezier(0.4, 0, 0.2, 1). Bổ sung sliding pill indicator cho bộ chọn Dương/Âm lịch, phản hồi nhấn scale(0.96) cho Nam/Nữ, staggered fade-in cho danh sách lịch sử và hiệu ứng nổi khối cho thẻ gói dịch vụ luận giải.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W8.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js
+4. Nội dung chỉnh sửa: Nâng cấp bộ chọn Giới tính (Nam/Nữ) sang sliding pill indicator trượt ngang bằng GPU translateX và thêm khối trượt đỏ Chu Sa .tab-sliding-pill cho 2 Tab ("Lập lá số" / "Lịch sử lá số & luận giải"). Bổ sung updateTabSlidingIndicator(tabKey) trong ui-controller.js để tự động tính vị trí và co giãn chiều rộng pill theo DOM thực tế.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W9.md
+2. Phân loại chỉnh sửa: Deployment, DevSecOps
+3. Trang/Thành phần ảnh hưởng: Hệ thống khởi chạy phát triển (deployment/scripts/start.py, start.bat, start_lan.bat)
+4. Nội dung chỉnh sửa: Tái cấu trúc start.py thành kiến trúc chạy đồng thời không cần menu console, tự động bật 5 tính năng gồm Local Dev (Flask 8080 + Vite 5173), LAN HTTPS Server (cổng 8443 kèm SSL tự ký), ADB Reverse cho Android, quét IP LAN sao chép clipboard và mở cổng Windows Firewall. Loại bỏ bước biên dịch npm run build khỏi luồng khởi chạy theo quy chuẩn dự án.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W10.md
+2. Phân loại chỉnh sửa: UI/UX, Frontend
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/laso-tuvi.html, laso-tuvi.bundle.html, css/board.css, css/controls.css, js/ui-controller.js
+4. Nội dung chỉnh sửa: Khôi phục màn hình loading Dual Ring Spinner xoay ngược chiều nguyên bản (sửa thẻ </div> dư thừa) và bo tròn dạng pill cho nút thông báo "BẤM NÚT LẬP LÁ SỐ ĐỂ XEM". Loại bỏ nền đỏ mặc định của nút PDF Màu để đồng bộ cả 3 nút lưu lá số và chuẩn hóa bố cục phân cấp 2 dòng (tabular-nums) cho danh sách lịch sử lá số.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/06_11_2026_W11.md
+2. Phân loại chỉnh sửa: Deployment, Frontend, DevSecOps
+3. Trang/Thành phần ảnh hưởng: Hệ thống khởi chạy Vite Dev Server (deployment/scripts/start.py), các route SPA như Lá số Tử Vi (/la-so-tu-vi) trên localhost:5173
+4. Nội dung chỉnh sửa: Khắc phục lỗi 404 - File not found khi truy cập đường dẫn SPA /la-so-tu-vi do tiến trình cũ python.exe -m http.server 5173 chiếm cổng không có SPA fallback. Nâng cấp free_port(port) trong start.py để dọn triệt để tiến trình chiếm cổng trên Windows và trỏ trực tiếp node.exe chạy vite.js --host.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W1.md
+2. Phân loại chỉnh sửa: AI/Prompting, Backend, Frontend, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), .env, backend/src/modules/astrology/interpreter/* (config.py, service.py, prompt_compiler.py, benchmark.py), frontend/src/features/astrology/services/aiReadingClient.js, endpoint /api/ai/status
+4. Nội dung chỉnh sửa: Kiểm toán toàn diện phân hệ AI Luận giải sau nâng cấp lên gemini-3.8-flash (Thinking: HIGH), xác nhận kết nối trực tiếp (is_mock_mode: false, has_api_key: true) và đồng bộ timeout 600.000 ms (10 phút) ở cả Backend và Frontend. Xác minh cơ chế generate_content_stream kèm retry exponential backoff và các bộ lọc hậu kiểm (sanitize_vietnamese_text, strip_markdown_italics, audit_anti_slop) hoạt động ổn định.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W2.md
+2. Phân loại chỉnh sửa: Backend, AI/Prompting, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), .env, backend/.env, backend/.env.example, backend/src/modules/astrology/interpreter/config.py, bộ script/báo cáo stress test (scratch/run_stress_test.py, scratch/stress_test_report.json, scratch/sample_reading_result.md)
+4. Nội dung chỉnh sửa: Chạy Stress Test End-to-End cho hệ thống AI Luận Giải với mô hình Gemini 3.8 Flash (Thinking: HIGH) trên lá số kiểm thử thực tế và phiên đối đáp Q&A. Phát hiện giới hạn MAX_OUTPUT_TOKENS = 12000 gây ngắt bài giữa chừng do chuỗi suy luận tiêu thụ 6.000-8.200 tokens, nên đã nâng trần lên 24.000 tokens để hoàn tất trọn vẹn 5 phần và 9 cung phụ.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W3.md
+2. Phân loại chỉnh sửa: AI/Prompting, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), cấu hình mô hình AI (gemini-3.8-flash và gemini-4-argon)
+4. Nội dung chỉnh sửa: Phân tích và đối chiếu biểu giá Google Cloud, mức tiêu thụ token và hiệu năng thực tế giữa gemini-3.8-flash (Thinking: HIGH) và gemini-4-argon (Thinking: LOW). Kết luận chuyển sang 3.8 Flash High giúp tăng gấp 6 lần dung lượng suy luận sâu, giảm 46%-73% chi phí API và tăng tốc phản hồi streaming 30%-40%.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, Backend, API, UI/UX, AI/Prompting
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), .env, backend/.env, backend/.env.example, backend/src/modules/astrology/interpreter/config.py, service.py, routes_ai.py (/api/ai/interpret-chart, /api/ai/stream-interpret-chart), aiReadingClient.js, AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Bổ sung nút vòng xoay (RotateCw) icon-only ở cuối bài luận giải cho phép luận giải lại với hạn mức mở rộng (EXTENDED_MAX_OUTPUT_TOKENS = 32768, EXTENDED_REQUEST_TIMEOUT_MS = 900000). Cập nhật cờ extended_quota xuyên suốt từ cấu hình backend, API routes đến client AbortController và UI kèm trạng thái khóa/xoay khi đang xử lý.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/js/ui-controller.js, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Loại bỏ hiển thị chuỗi mã lá số (chart.chart_code) và dấu chấm phân cách ở hàng thứ hai trong các ô thuộc tab Lịch sử lá số & luận giải, chỉ giữ lại thời gian lập/cập nhật. Giữ nguyên chart_code trong logic ngầm để thao tác chọn/xóa/tải lại lá số và nâng cache buster lên v=2416.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W6.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/laso-tuvi.html, frontend/public/astrology-engine/js/ui-controller.js, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Gắn id="panelFooterNote" và cập nhật động dòng ghi chú dưới chân bảng điều khiển sang "Nhấp chọn ô cung để hiển thị các mối tương quan trong lá số." sau khi lập hoặc tải lá số từ lịch sử thành công. Trả về nội dung mặc định "An sao theo Tử Vi Đẩu Số Tân Biên 1956" khi chưa lập hoặc đang chỉnh sửa form, đồng thời nâng cache buster lên v=2417.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W7.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, frontend/public/astrology-engine/js/board-renderer.js, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Khắc phục hiện tượng khuất viền và bo góc bằng pseudo-element .house::after (box-shadow: inset), phân cấp z-index và kế thừa bo góc 8px tại 4 cung góc. Thiết kế hệ thống Footer Động 2 lớp với bảng màu chuẩn cho Đang Xem, Tam Hợp, Xung Chiếu, Nhị Hợp, làm mờ các cung không liên quan (opacity: 0.45) và nâng cache buster lên v=2418.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W8.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, frontend/public/astrology-engine/js/board-renderer.js, frontend/public/astrology-engine/js/ui-controller.js, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Triển khai hàm adjustPalaceHeaderLayout() sử dụng DOM Range API và getBoundingClientRect (chuẩn hóa theo boardScale) để phát hiện tên cung đa từ gần nhãn "Thân"/"Thìn" bị dính chữ (distance < 95px). Kích hoạt lớp .is-crowded tái phân bổ đều 3 thành phần trên header qua Flexbox và nâng cache buster lên v=2419.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W9.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Xóa bỏ các quy tắc nén dòng sớm :nth-child(8) và :nth-child(10) khiến ô cung có <= 10 phụ tinh bị dính sát chữ, trả về giãn cách mặc định thoáng đãng. Tái cấu trúc Zero-Overflow Density Engine thành 3 tầng riêng biệt cho 11, 12 và >= 13 sao kèm tối ưu padding phụ trợ, đồng thời nâng cache buster lên v=2420.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W10.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, frontend/public/astrology-engine/js/board-renderer.js, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Gỡ bỏ các rule ép font 11px của .is-crowded, đồng bộ chiều cao header (24px) và cỡ chữ Địa Chi/Tên cung/Đại hạn trên toàn bộ 12 ô cung. Chuyển thuật toán board-renderer.js sang Cân Bằng Thị Giác (Visual Balanced Centering) giữ tên cung ở chính giữa khi khoảng hở >= 6.5px hoặc chỉ dịch chuyển vi mô tối thiểu, và nâng cache buster lên v=2421.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W11.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/board.css, frontend/public/astrology-engine/js/board-renderer.js, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Nâng cấp toàn diện hiệu ứng tương tác lá số từ phân tích video thực tế: sửa lỗi đè chữ footer bằng cơ chế lớp trượt chéo (Sliding Cross-fade), thêm animation dòng chảy khí vận và node nở rộ cho đường nối SVG Thiên Bàn. Bổ sung phản hồi nhấn lún .house:active, hào quang nội cung, hover khám phá cung mờ, con trỏ gợi ý ở Thiên Bàn và nâng cache buster lên v=2421.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W12.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Lá số Tử Vi (/la-so-tu-vi), AiInterpretationGeminiView.jsx, AiInterpretationGeminiView.css, super_tree.md (đồng thời xóa components/mobile/ và hooks/useViewportEngine.js)
+4. Nội dung chỉnh sửa: Khôi phục giao diện Split View 2 cột ổn định cho trang Luận giải AI mà vẫn bảo toàn cơ chế Data Bridge (IndexedDB, URL Hash), SSE streaming và REST fallback, đồng thời kiểm thử QA/QC đạt 19/19 tests. Dọn dẹp mã thử nghiệm, sửa lỗi UI popover gợi ý câu hỏi (tách lên trên thanh chat, nền trắng đục) và chuẩn hóa căn giữa/chiều cao thanh nhập liệu capsule dòng đơn 28px.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W13.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/controls.css, frontend/public/astrology-engine/laso-tuvi.html, frontend/public/astrology-engine/js/ui-controller.js
+4. Nội dung chỉnh sửa: Sửa lỗi khuyết góc tab navigation selector và chuẩn hóa quy tắc bo góc đồng tâm (Concentric Corner Radius) cho toàn bộ card, badge và nút bấm tại bảng điều khiển cột phải. Khắc phục lỗi font chữ tiếng Việt có dấu bằng Be Vietnam Pro, xóa các icon thừa và tinh gọn nhãn/nội dung thẻ lịch sử luận giải.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W14.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/laso-tuvi.html, frontend/public/astrology-engine/js/ui-controller.js, frontend/public/astrology-engine/css/controls.css
+4. Nội dung chỉnh sửa: Đổi dấu chấm phẩy thành dấu chấm ở câu lưu ý xóa lá số và gộp khối bản luận giải AI (#historyAiActionCard) vào trực tiếp bên trong từng ô lá số lịch sử có AI (.history-item-ai-section). Đổi tên nút CTA thành "Xem bài luận giải" và bổ sung tham số chartIndex vào handleOpenAiFromHistory để đồng bộ đúng lá số tương ứng.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W15.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Tách nút gợi ý yêu cầu ra khỏi thanh nhập liệu capsule thành nút tròn độc lập với biểu tượng Sparkles nằm bên trái thanh chat, hỗ trợ đầy đủ trạng thái mặc định, đang mở và khóa khi hết hạn mức token. Rút gọn thanh capsule chỉ còn ô textarea cùng nút Gửi (Send) và tự động đóng popover sau khi chọn câu hỏi gợi ý.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W16.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx, frontend/src/features/astrology/AiInterpretationGeminiView.css
+4. Nội dung chỉnh sửa: Loại bỏ phần tiêu đề và mô tả phụ trên đầu bảng gợi ý câu hỏi, đồng thời thu gọn chiều rộng tối đa trên Desktop xuống 440px (Mobile tự thích ứng calc(100vw-32px)). Nâng cấp hiệu ứng đóng/mở popover 2 chiều mượt mà (Spring Easing 220ms) bung nở từ tâm nút tròn gợi ý (transform-origin: 22px bottom).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W17.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Đẩy các thành phần điều hướng trên Header sang trái trên Desktop, đồng thời nới rộng diện tích tối đa cho vùng bài đọc (850px lên 1280px) và thanh nhập liệu capsule (750px lên 1120px) theo các breakpoint màn hình lớn. Tăng chiều rộng bảng gợi ý câu hỏi lên 560px-580px để loại bỏ tình trạng rớt từ đơn lẻ xuống dòng.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W18.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Giới hạn chiều rộng <header> trên Desktop theo cột trái (w-[42vw] / 44vw, tự co gọn khi ẩn lá số) thay vì trải toàn màn hình, xóa bỏ dải trắng và đường viền ngang chắn phía trên cột trò chuyện. Bỏ padding trên của <main> trên Desktop (md:pt-0) để nội dung bài luận giải tràn sát lên đỉnh màn hình.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W19.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Cắt gọn <header> trên Desktop bằng md:w-auto md:max-w-max để chỉ vừa khít cụm nút điều hướng và tiêu đề (bo góc dưới phải md:rounded-br-2xl), đồng thời chuyển nền Header sang Đỏ Chu Sa #8b1d1d với chữ và icon trắng. Căn chỉnh lề trên vùng cuộn trò chuyện (pt-3.5 md:pt-4) để tiêu đề đầu tiên không bị cấn mép màn hình.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W20.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Di chuyển nút đóng/mở cột xem lá số sang ngay cạnh nút quay lại kèm hiệu ứng xoay 180 độ và nhún nén vật lý trên Header đỏ. Bổ sung hiệu ứng trượt và co giãn 60FPS cho cột lá số (<aside>) khi ẩn/hiện, đồng thời thu gọn thanh nhập liệu chat capsule về độ rộng chuẩn tối đa 750px.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W21.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Bọc vạch phân cách và tiêu đề LUẬN GIẢI AI - TỬ VI HỒNG ÂN vào container co giãn động để tự động ẩn mượt mà khi tắt cột lá số (isSidebarOpen === false). Cập nhật <header> tự co chiều rộng (w-auto max-w-max) chỉ vừa khít cụm 2 nút hành động ở góc trên bên trái.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/07_11_2026_W22.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Gom 2 nút điều hướng vào cụm flex riêng và đặt gap-0 cùng padding đối xứng khi ẩn lá số để thu gọn Header từ 116px xuống 86-90px, loại bỏ phần đệm đỏ thừa. Đưa container bài luận giải và hỏi đáp về chuẩn max-w-[850px] kèm tăng padding ngang cho <main> (md:px-8) khi ẩn lá số để hết lỗi văn bản bị Header che lẹm.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W1.md
+2. Phân loại chỉnh sửa: Deployment, Backend
+3. Trang/Thành phần ảnh hưởng: Hệ thống khởi chạy máy chủ (deployment/scripts/start.py, backend/src/server.py)
+4. Nội dung chỉnh sửa: Khắc phục lỗi ImportError: cannot import name 'start_scheduler' from 'server' khiến script khởi động deployment/scripts/start.py bị sập ngay khi bật. Chuyển sang import an toàn bằng getattr(server, "start_scheduler", None) và kiểm tra callable(start_scheduler), giúp các máy chủ Vite, Flask API và LAN HTTPS chạy ổn định.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, API
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), frontend/src/features/astrology/services/aiReadingClient.js
+4. Nội dung chỉnh sửa: Sửa lỗi JavaScript ReferenceError: Bearer is not defined do mất dấu nháy template string khi gán header Authorization trong streamAiInterpretation và fetchAiInterpretation. Khôi phục cú pháp chuẩn `Bearer ${token}` cho cả hai kênh SSE streaming và REST fallback.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W3.md
+2. Phân loại chỉnh sửa: Backend, Frontend, Database, API, DevSecOps
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su), Bài viết (/chuyen-muc), Kỳ Môn (/ky-mon-don-giap), Phật Pháp (/phat-phap), Phong Thủy (/la-kinh-phong-thuy), Khóa học (/khoa-hoc), Quản trị (/admin, /quan-ly), backend-node/, backend/src/modules/booking/, backend/src/modules/chat/, backend/src/core/ (config.py, db.py, firebase_db.py, node_api_proxy.py), routes_admin.py, auth.py, routes_auth.py, server.py, ChatWidget.jsx, GoogleAvatar.jsx, App.jsx, Navbar.jsx, TopBar.jsx, starArticlesData.js (loại trừ hoàn toàn /la-so-tu-vi và /luan-giai-ai)
+4. Nội dung chỉnh sửa: Đồng bộ và commit 834 tệp (commit 83c48d5) từ upstream vinhicut/2028 vào Monorepo, tích hợp server Realtime Chat (backend-node/), module booking/chat proxy, cập nhật quản trị/auth và toàn bộ các trang Frontend vệ tinh. Loại trừ tuyệt đối 27 tệp thuộc la-so-tu-vi, luan-giai-ai và astrology để bảo toàn engine an sao và giao diện AI cục bộ, đồng thời sửa lỗi cú pháp chuỗi trong starArticlesData.js.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều / Bói Quẻ Kiều (/boi-kieu) - BoiKieu.jsx, BoiKieu.css, boi-que-kieu.html
+4. Nội dung chỉnh sửa: Khôi phục giao diện gốc dạng React Component thuần không dùng iframe, loại bỏ khung đen và thanh cuộn kép. Bảo toàn nguyên vẹn vòng quay ngẫu nhiên, modal khấn xin quẻ, modal chi tiết FHD và bộ chọn 18 chủ đề quẻ chi tiết (mỗi chủ đề 15 quẻ) cùng 210 quẻ tự do.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều / Bói Quẻ Kiều (/boi-kieu) - BoiKieu.jsx, BoiKieu.css
+4. Nội dung chỉnh sửa: Tinh gọn tiêu đề (BẢNG QUẺ: ...) và phụ đề vai trò quẻ trên giao diện Mobile để hiển thị trọn vẹn trên đúng 1 dòng duy nhất. Bổ sung class riêng cho Desktop/Mobile kết hợp white-space: nowrap, text-overflow: ellipsis và clamp() co giãn phông chữ tự động.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W6.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - controls.css, board.css, ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Tối ưu hiển thị Mobile cho lá số Tử Vi bằng cách ẩn nút "Lập lá số" trùng lặp ngoài bảng điều khiển và di chuyển cụm nút "Luận giải", "Lưu lá số" xuống dưới tờ lá số (#mobileAuxContainer). Cố định kích thước gốc 737x1013px khi scale để sửa lỗi co rút lưới lá số tạo vùng đen thừa bên phải.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W7.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su) - LichVanSu.css
+4. Nội dung chỉnh sửa: Bổ sung text-align: justify cho 6 khối nội dung diễn giải (Tuổi xung ngày, Khổng Minh Lục Diệu, Thập Nhị Kiến Trừ, Nhị Thập Bát Tú, Hệ thống Thần Sát và Giờ Xuất Hành Lý Thuần Phong). Đảm bảo văn bản căn đều hai bên trên cả Desktop và Mobile, đã xác thực qua Playwright.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W8.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - AiInterpretationGeminiView.jsx, AiInterpretationGeminiView.css
+4. Nội dung chỉnh sửa: Gỡ bỏ select-none ở container gốc trang Luận giải AI và bổ sung user-select: text !important cho vùng bài luận .gemini-reading-body và .gemini-ai-bubble để người dùng bôi đen, sao chép văn bản bình thường. Đồng thời tùy biến màu ::selection theo tông vàng kem - đỏ chu sa Á Đông.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W9.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Thanh Header toàn trang & Lá số Tử Vi (/la-so-tu-vi) - App.css, AstrologyChartView.jsx, chartEventBridge.js, board.css, controls.css, ui-controller.js, laso-tuvi.html
+4. Nội dung chỉnh sửa: Sửa lỗi cú pháp thiếu backtick trong ui-controller.js, đổi transform-origin sang top left, dùng ResizeObserver đo chính xác chiều rộng container iframe và hạ ngưỡng mobile mode xuống <= 580px để giữ vững bố cục 2 cột scale mượt trên tablet/laptop. Bổ sung white-space: nowrap và các breakpoint responsive cho Header để logo và cụm nút không bị vỡ dòng.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W10.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều / Bói Quẻ Kiều (/boi-kieu) - BoiKieu.jsx, BoiKieu.css
+4. Nội dung chỉnh sửa: Chuyển toàn bộ 18 ghi chú vai trò (role) của 18 bộ quẻ Kiều từ dạng câu hỏi sang cụm khẳng định súc tích (dưới 36 ký tự). Tái thiết kế menu xổ danh sách .boikieu-dropdown-panel thành lưới 2 cột cân đối trên Desktop (chống rớt dòng) và 1 cột trên Mobile.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W11.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều / Bói Quẻ Kiều (/boi-kieu) - BoiKieu.jsx, BoiKieu.css
+4. Nội dung chỉnh sửa: Loại bỏ chuỗi số lượng quẻ (15 quẻ / Bộ gồm 15 quẻ) ở dòng phụ đề bảng quẻ, chỉ giữ lại mô tả vai trò khẳng định. Đổi kiểu chữ .cards-sub-title từ in nghiêng (italic) sang chữ đứng (normal, font-weight: 500).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W13.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su) - lich-van-su/LichVanSu.css, lunar-calendar/LichVanSu.css, DayDeitiesAndStars.jsx, nhiThapBatTu.js
+4. Nội dung chỉnh sửa: Căn lề justify cho cả tiêu đề và nội dung khối "TUỔI XUNG NGÀY", đồng thời căn giữa theo trục dọc các huy hiệu đánh giá cạnh cụm tiêu đề hai tầng của Thập Nhị Kiến Trừ và Nhị Thập Bát Tú. Thay thế dấu "/" bằng ngắt dòng \n cho thơ phú 28 vì sao Nhị Thập Bát Tú.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W14.md
+2. Phân loại chỉnh sửa: Deployment, Backend, Frontend
+3. Trang/Thành phần ảnh hưởng: Script khởi động phát triển - deployment/scripts/start.py
+4. Nội dung chỉnh sửa: Tái cấu trúc start.py để phục vụ trực tiếp Vite Dev Server (port 5173, --host 0.0.0.0) kèm HMR và proxy /api về Flask Backend (port 8080), khắc phục lỗi các thiết bị LAN bị đóng băng ở bản build cũ releases/dist. Loại bỏ cơ chế phục vụ port 8443, SSL tự ký, rate limiter in-memory, đồng thời tự động mở tường lửa và copy link LAN vào clipboard.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W15.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su) - lich-van-su/LichVanSu.css, lunar-calendar/LichVanSu.css
+4. Nội dung chỉnh sửa: Chuyển thanh điều hướng 3 tab (Ngày, Tháng toàn cảnh, Ngày tốt) trên Mobile từ xếp chồng 3 tầng dọc sang dạng hàng ngang phân đoạn 3 cột đều nhau (grid-template-columns: repeat(3, 1fr)). Giúp tiết kiệm hơn 120px chiều cao để bộ chuyển đổi Âm - Dương hiển thị ngay trong màn hình đầu tiên.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W16.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Widget Chat nổi toàn trang - ChatWidget.jsx, ChatWidget.css
+4. Nội dung chỉnh sửa: Xóa bỏ nhãn chữ "Chat với chúng tôi" trên nút launcher chat nổi, chuyển thành nút tròn tinh gọn (52px trên Desktop, 48px trên Mobile) chỉ giữ lại icon và thuộc tính title tooltip.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W17.md
+2. Phân loại chỉnh sửa: Deployment
+3. Trang/Thành phần ảnh hưởng: Script khởi động phát triển - deployment/scripts/start.py
+4. Nội dung chỉnh sửa: Cấu hình cố định URL truy cập mặc định trong start.py là http://127.0.0.1:5173 cho việc hiển thị thông báo console, tự động mở trình duyệt và sao chép vào Windows Clipboard.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W18.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su) - lucDieu.js và LichVanSu.css (tại cả lich-van-su/ và lunar-calendar/)
+4. Nội dung chỉnh sửa: Khắc phục lỗi tiêu đề "Khổng Minh Lục Diệu" bị ngắt dòng và rớt huy hiệu trên Mobile bằng flex-direction: row và white-space: nowrap. Thay toàn bộ dấu "/" trong dữ liệu thơ phú Lục Diệu bằng \n kết hợp white-space: pre-line để hiển thị 4 câu thơ tách dòng rõ ràng.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W19.md
+2. Phân loại chỉnh sửa: Deployment
+3. Trang/Thành phần ảnh hưởng: Script khởi động phát triển - deployment/scripts/start.py
+4. Nội dung chỉnh sửa: Tối ưu hóa cơ chế kết nối LAN đa thiết bị trong cùng mạng Wi-Fi bằng cách tự động nhận diện IP LAN (192.168.x.x) thay cho loopback 127.0.0.1 khi sao chép link vào Clipboard. Bổ sung cấu hình mở tường lửa Windows với profile=any cho cả mạng Public và Private.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W20.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Thanh điều hướng Navbar (Desktop) - App.css
+4. Nội dung chỉnh sửa: Thu gọn độ rộng dropdown menu "CÔNG CỤ" trên thanh Navbar bằng cách giảm min-width của .dropdown-menu từ 175px xuống 135px cùng padding, font-size (12.5px) và gap gọn gàng hơn.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W21.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Hộp thoại đăng nhập (AuthModal) - AuthModal.jsx, AuthModal.css
+4. Nội dung chỉnh sửa: Phóng to logo Google trong AuthModal lên 84x84 căn giữa trọng tâm, đồng thời đổi .auth-modal sang overflow: visible và bỏ min-height cứng để khắc phục triệt để lỗi cắt mép dưới nút Google OAuth iframe.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W22.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Hộp thoại đăng nhập (AuthModal) - AuthModal.jsx, AuthModal.css
+4. Nội dung chỉnh sửa: Sử dụng React Portal (createPortal) đưa AuthModal ra trực tiếp document.body để khắc phục lỗi lệch vị trí trên Mobile do container cha có transform/sticky. Bổ sung padding an toàn cho .google-btn-wrapper và media query @media (max-width: 520px) để nút Google không bị khuyết góc dưới.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W23.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Widget Chat nổi toàn trang - ChatWidget.jsx, ChatWidget.css
+4. Nội dung chỉnh sửa: Thiết kế lại toàn diện giao diện bảng chat theo phong cách Á Đông cổ điển với header đỏ chu sa viền vàng kim, đèn trạng thái xanh, nền giấy dó #faf7f2, thanh báo lỗi có nút đóng và ô nhập liệu bo góc. Tối ưu hiển thị responsive cho màn hình Mobile.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W24.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - board.css, controls.css
+4. Nội dung chỉnh sửa: Loại bỏ toàn bộ đổ bóng (box-shadow: none) cho khung lá số, bảng điều khiển và hai thẻ dịch vụ luận giải để đồng bộ phong cách tối giản. Sửa lỗi cắt mất viền khi hover/active hai thẻ "Luận giải AI" và "Luận giải trực tiếp" bằng overflow: visible và thêm padding: 6px 0.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W25.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Widget Chat nổi toàn trang - ChatWidget.jsx, ChatWidget.css
+4. Nội dung chỉnh sửa: Tinh giản tối đa header bảng chat (bỏ nút đóng, reload, icon, trạng thái online) và đổi chu kỳ tự động làm mới tin nhắn nền sang 30 giây. Xóa placeholder ô nhập, đồng bộ chiều cao ô chat và nút gửi (38px) và đổi phím Enter thành xuống dòng tự nhiên.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W26.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Widget Chat nổi toàn trang - ChatWidget.jsx, ChatWidget.css
+4. Nội dung chỉnh sửa: Gỡ bỏ hoàn toàn phần <header> bên trong bảng chat để tối giản giao diện. Thay quầng sáng đỏ quanh nút launcher bằng bóng đổ mềm tự nhiên và thêm hiệu ứng nhấc/lún khi hover/active cùng xoay dấu X khi mở.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W27.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Widget Chat nổi toàn trang - ChatWidget.css
+4. Nội dung chỉnh sửa: Thiết kế lại animation cho nút launcher chat với hiệu ứng nhịp thở êm dịu chu kỳ 4.5s (launcherGentleBreathe) và rung lắc chuông nhẹ (launcherWiggle), loại bỏ hoàn toàn quầng sáng chói. Bổ sung phản hồi nảy vật lý đàn hồi khi hover, active và chuyển trạng thái mở.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W28.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - app.js, ui-controller.js, controls.css, LaSoTuViContainer.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi không hiện nút "Luận giải lá số" và cụm nút "Lưu lá số" (PDF Màu, Đen Trắng, Ảnh) sau khi lập lá số bằng cách ưu tiên nhận diện thao tác nhấn nút chuyển sang trạng thái 'generated'. Loại bỏ hành vi tự động cuộn lên đầu trang khi lập lá số/luận giải và gỡ bỏ triệt để box-shadow khỏi các nút hành động.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W29.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/css/controls.css
+4. Nội dung chỉnh sửa: Cải tiến keyframe @keyframes actionBtnAppear với đường cong cubic-bezier(0.16, 1, 0.3, 1) và thời lượng dài hơn cho nút Lập lá số, Luận giải lá số và khối Lưu lá số. Thêm hiệu ứng xuất hiện nối tiếp (staggered animation) cho 3 nút xuất file PDF Màu, PDF Đen Trắng và Ảnh để chuyển động mượt mà, không giật cục.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W30.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su), frontend/src/features/lich-van-su/LichVanSu.css, frontend/src/features/lunar-calendar/LichVanSu.css
+4. Nội dung chỉnh sửa: Bổ sung quy tắc CSS .con-side-col .dep-header h4 để căn lề trái (text-align: left) cho tiêu đề "TUỔI XUNG NGÀY" trên cả Desktop và Mobile. Đã chụp ảnh màn hình xác nhận bằng Playwright ở độ phân giải Desktop (1280px) và Mobile (390px).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W31.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Widget Chat toàn trang (frontend/src/shared/ui/ChatWidget.jsx, frontend/src/shared/ui/ChatWidget.css)
+4. Nội dung chỉnh sửa: Bổ sung state panelMounted và isClosing trong ChatWidget.jsx để giữ phần tử trong DOM suốt 240ms trước khi gỡ hẳn khi đóng. Thêm keyframe chatPanelEnter và chatPanelExit với transform-origin: bottom right cùng pointer-events: none giúp bảng chat đóng/mở mượt mà từ góc nút launcher.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W32.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Thiên Bàn (#thien-ban, .menh-tai-quan-svg), frontend/public/astrology-engine/css/board.css
+4. Nội dung chỉnh sửa: Nâng z-index của lớp SVG .menh-tai-quan-svg từ 1 lên 5 và giữ nguyên pointer-events: none trong board.css. Khắc phục triệt để lỗi các đường nối Tam Hợp, Xung Chiếu, Nhị Hợp và tam giác nét đứt Mệnh - Tài - Quan bị các khối thông tin trung tâm Thiên Bàn (z-index: 2) che khuất.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W33.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su), frontend/src/features/lich-van-su/LichVanSu.css, frontend/src/features/lunar-calendar/LichVanSu.css
+4. Nội dung chỉnh sửa: Áp dụng thuộc tính text-align: justify; text-justify: inter-word; hyphens: auto; vào các selector cơ sở toàn cục (.lucdieu-desc, .lucdieu-poem, .tructu-desc, .tu-poem-quote, .star-card .star-desc, .ltp-desc-text) thay vì chỉ đặt trong media query mobile. Đã xác minh Computed Style trên Desktop (1280px) bằng Playwright đều đạt chuẩn justify.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W34.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều (/boi-kieu), frontend/src/features/tarot-kieu/BoiKieu.jsx, frontend/src/features/tarot-kieu/BoiKieu.css, frontend/src/app/App.css
+4. Nội dung chỉnh sửa: Bỏ kiểu in nghiêng ở chú thích quẻ và bộ đếm tải quẻ, đồng bộ toàn trang về font Be Vietnam Pro, đồng thời chuẩn hóa nội dung và căn lề justify cho bảng Khấn Xin Quẻ. Gắn class tarot-kieu-active vào body để tự động ẩn header và thanh điều hướng khi mở modal quẻ Kiều, và bỏ dòng thông báo "Đang rút/bốc quẻ thiêng" lúc quay bánh xe.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W35.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều (/boi-kieu), frontend/src/features/tarot-kieu/BoiKieu.jsx
+4. Nội dung chỉnh sửa: Loại bỏ nút đóng tròn "x" ở góc trên bên phải của modal xem quẻ Kiều chi tiết để bức tranh và nội dung quẻ hiển thị liền mạch, không bị che góc. Người dùng đóng modal bằng cách bấm ra nền mờ bên ngoài hoặc nhấn phím Escape.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W36.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su), LichVanSu.css, DayDeitiesAndStars.jsx, lucDieu.js, nhiThapBatTu.js (trong features/lich-van-su/ và features/lunar-calendar/)
+4. Nội dung chỉnh sửa: Tổng hợp và xác minh bằng Playwright bộ tinh chỉnh Lịch Vạn Sự trên Desktop và Mobile: chuyển thanh chọn tab mobile sang lưới 3 cột ngang, căn trái "TUỔI XUNG NGÀY", đồng bộ text-align: justify toàn diện. Đồng thời loại bỏ dấu "/" trong thơ Nhị Thập Bát Tú và Khổng Minh Lục Diệu, căn giữa huy hiệu đánh giá và cố định tiêu đề Lục Diệu trên 1 dòng ở mobile.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W37.md
+2. Phân loại chỉnh sửa: Backend, Database, API, Frontend
+3. Trang/Thành phần ảnh hưởng: Quản trị (/admin, /quan-ly), Lá số Tử Vi (/la-so-tu-vi), config.py, db.py, firebase_db.py, auth.py, developer_auth.py, routes_charts.py, routes_ai.py, node_api_proxy.py, ui-controller.js, các endpoint /api/user/charts, /api/user/charts/<chart_id>/reading, /api/admin/customer-logs/charts, /api/admin/customer-accounts
+4. Nội dung chỉnh sửa: Cấu hình cố định email nhà phát triển tranngocxuanbach7@gmail.com với quyền developer (admin_level = 1, is_unlimited = True, miễn trừ credit). Sửa lỗi TypeError khi lưu lá số, bổ sung cột reading_markdown và cơ chế tự động lưu/khôi phục bài luận giải AI từ database (REST & SSE), đồng thời thêm fallback SQLite cho endpoint admin khách hàng khi dịch vụ Node 3001 ngoại tuyến.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W38.md
+2. Phân loại chỉnh sửa: Backend, Database, Frontend, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Modal Thanh toán (PaymentModal.jsx, Billing.css), Lá số Tử Vi (/la-so-tu-vi, laso-tuvi.html), routes_ai.py, firebase_db.py, tuvi.db
+4. Nội dung chỉnh sửa: Chuyển hạn mức mặc định của tài khoản khách hàng thường từ 3 lượt về 0 lượt AI và 0 lượt tư vấn trực tiếp trong SQLite, Firestore và get_user_quota(). Trên PaymentModal, rút gọn nhãn thành "Số dư:", bỏ tag "GÓI DỊCH VỤ" và nút "Đóng" ở footer, ẩn nút thanh toán thay bằng "Vào luận giải ngay" khi còn số dư AI, đồng thời giữ mỗi quyền lợi gói trên 1 dòng và chỉnh câu quyền lợi trong laso-tuvi.html.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W39.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Trang chủ (/ - Home.jsx, Home.css), index.css, Modal Thanh toán (PaymentModal.jsx, Billing.css)
+4. Nội dung chỉnh sửa: Đổi tên gói trên Trang chủ từ "Luận giải đầy đủ" thành "Luận giải AI" kèm mô tả chi tiết, bỏ trường nhập SĐT tại khối gói này và đồng bộ font toàn website sang Be Vietnam Pro. Cập nhật màn hình thanh toán thành công (status === 'PAID') với pop-up hướng dẫn 4 bước sử dụng, lưu ý áp dụng cho 01 lá số duy nhất và nút "Lập Lá Số Ngay" dẫn tới /la-so-tu-vi.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W40.md
+2. Phân loại chỉnh sửa: Testing, UI/UX
+3. Trang/Thành phần ảnh hưởng: Modal Thanh toán thành công (PaymentModal.jsx), modal_success_desktop.png, modal_success_mobile.png
+4. Nội dung chỉnh sửa: Thực hiện kiểm tra thị giác (Visual Verification) và chụp ảnh màn hình giao diện pop-up "Thanh toán thành công" của gói Luận giải AI trên cả Desktop (1280x820) và Mobile (390x844). Xác nhận bố cục, màu sắc, nút hành động và font Be Vietnam Pro hiển thị rõ nét, cân đối trên cả hai kích thước màn hình.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W41.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing
+3. Trang/Thành phần ảnh hưởng: Modal Thanh toán (PaymentModal.jsx, Billing.css), scratch/preview_modal_success.html
+4. Nội dung chỉnh sửa: Tinh chỉnh pop-up Thanh toán thành công: bỏ nút "Đóng" chỉ giữ lại nút "Lập Lá Số Ngay" căn giữa, rút gọn câu xác nhận đơn hàng, bỏ cụm "(ngày, tháng, năm, giờ sinh)" và căn lề justify cho khối Lưu ý. Căn chỉnh tâm số thứ tự 1-4 trong vòng tròn vàng, tối ưu ngắt dòng trên mobile và thống nhất viết hoa các cụm từ trong ngoặc kép.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W42.md
+2. Phân loại chỉnh sửa: Backend, Frontend, API, Testing
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (AiInterpretationGeminiView.jsx), app.js, ui-controller.js, laso-tuvi.html, các endpoint /api/calculate, /api/user/charts, /api/user/charts/reading
+4. Nội dung chỉnh sửa: Bật use_reloader=True cho Flask backend, đồng bộ thuộc tính id_code/idCode và cho phép lưu tự động khi bấm vào lớp phủ tuviStaleOverlay. Đồng bộ token đa tầng giữa iframe và React app cha, sửa hiển thị trạng thái rỗng ở tab Lịch sử, và tự động lưu/khôi phục bài luận giải AI (reading_markdown) vào cơ sở dữ liệu ngay sau khi sinh xong.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W43.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Thanh điều hướng (Navbar.jsx), Chân trang toàn hệ thống (Footer.css, App.css), Modal Thanh toán (PaymentModal)
+4. Nội dung chỉnh sửa: Sắp xếp lại 6 nút chuyển trang nhanh trong Navbar.jsx, xóa 2 mục CỬA HÀNG và LIÊN HỆ, rút gọn cụm thành "TƯ VẤN & LUẬN GIẢI" và đồng bộ font Be Vietnam Pro toàn hệ thống. Loại trừ .site-footer khỏi bộ reset .app :where(*) và tách Footer.css để sửa lỗi vỡ bố cục Footer 4 cột ở các trang con, bỏ dòng bản quyền đáy footer, đồng thời tô màu đỏ chu sa cho tiêu đề "Quyền lợi:" và ngắt dòng thông báo số dư trong PaymentModal.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W44.md
+2. Phân loại chỉnh sửa: Frontend, Testing
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/js/ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Xóa bỏ khối hàm thừa lỗi cú pháp dummy_catch_anchor gây SyntaxError trong ui-controller.js khiến giao diện trang /la-so-tu-vi bị treo/đơ khi tải. Tăng query cache-busting từ v=2426 lên v=2427 và kiểm tra cú pháp toàn bộ thư mục JS engine bằng node -c đạt 0 lỗi.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W45.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi - mobile và tab Lịch sử), ui-controller.js, controls.css, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Ẩn triệt để #mobileAuxContainer và các cụm nút tab Lập lá số trên mobile khi người dùng chuyển sang tab "Lịch sử lá số & luận giải". Bổ sung nút "LUẬN GIẢI LÁ SỐ" và kịch bản mở rộng accordion ngay trong từng ô lịch sử chưa luận giải (!hasAi) để chọn nhanh Gói AI (199k) hoặc Gói Trực tiếp (500k), đồng thời nâng cache-busting lên v=2428.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W46.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), ui-controller.js, app.js, controls.css, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Phát triển tính năng tự động phát hiện lá số trùng khớp 100% với lịch sử người dùng qua toàn bộ thông số form và tải trước lịch sử (prefetchUserChartHistory). Khi trùng, nút "LẬP LÁ SỐ" và overlay đổi sang màu vàng hổ phách với nhãn "Lá số trùng khớp với lịch sử"; khi bấm sẽ không gọi API tạo mới mà chuyển sang tab Lịch sử, dựng lại lá số, cuộn tới đúng ô và nhấp nháy viền vàng (v=2429).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W47.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), ui-controller.js, controls.css, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi mất nút thao tác #actionSection và #btnGenerateTuVi khi chuyển từ tab Lịch sử về tab Lập lá số, đồng thời tự động gọi checkFormDuplicateWithHistory() để hiển thị đúng trạng thái nút mới hoặc trùng khớp. Thêm display: flex; flex-direction: column; gap: 16px; cho .history-items-wrapper để tạo khoảng cách thoáng đãng giữa các ô lá số lịch sử (v=2430).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W48.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), controls.css, ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi bảng chọn 2 gói dịch vụ #luanGiaiOptions tự động bung ra khi chuyển tab và lỗi nút trùng khớp ép hiển thị khi lá số đang ở trạng thái đã lập (generated). Thiết lập ràng buộc ẩn mặc định cho #luanGiaiOptions trong CSS/JS (chỉ mở khi bấm nút Luận giải) và chặn kiểm tra trùng lặp khi ở trạng thái generated (v=2431).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W49.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi - tab Lịch sử lá số & luận giải), controls.css, ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Đồng bộ giao diện thẻ dịch vụ trong ô lịch sử khớp 100% với tab Lập lá số, xóa khối viền bọc ngoài .history-list-container và bỏ giới hạn max-height để loại bỏ thanh cuộn dọc, đồng thời cập nhật notifyParentHeight() co giãn iframe theo nội dung. Nâng cấp hiệu ứng mở dịch vụ bằng CSS Grid accordion và animation trồi dần so le (@keyframes serviceCardBounceUp) (v=2432).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W50.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), controls.css, laso-tuvi.html, ui-controller.js, astrologyConfig.js, ServiceConsultationModal.jsx, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Khắc phục lỗi vệt viền/padding thừa lộ ra dưới nút "LUẬN GIẢI LÁ SỐ" khi accordion đóng ở tab Lịch sử bằng overflow: hidden; opacity: 0; visibility: hidden. Tinh gọn văn bản và nút CTA của 2 gói dịch vụ luận giải trên cả HTML tĩnh, JS lịch sử và SERVICES_CONFIG (bổ sung "Tư vấn phong thủy", "Hóa giải sao xấu" cho gói AI và cập nhật mô tả mới cho gói Trực tiếp) (v=2433).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W51.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), controls.css, laso-tuvi.html, ui-controller.js, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Vô hiệu hóa hiệu ứng nổi lên (transform: none) và đổ bóng mạnh khi hover/focus vào các thẻ dịch vụ .history-sub-card trong tab Lịch sử. Xóa bỏ hoàn toàn icon ngôi sao 4 cánh SVG bên trong các nút "LUẬN GIẢI LÁ SỐ" ở cả tab Lập lá số và tab Lịch sử (v=2434).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W52.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), controls.css, ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Tối ưu micro-interaction nhấn nút (lún nhẹ 90ms) cho nút "LUẬN GIẢI LÁ SỐ" và nút Quay lại/Thu gọn trên cả 2 tab. Thay thế hiệu ứng cũ bằng @keyframes serviceCardSlideUpIn (500ms, cubic-bezier(0.16, 1, 0.3, 1)) với độ trễ so le 70ms giữa các thẻ và đồng bộ hiệu ứng thu gọn mượt mà @keyframes serviceCardFadeOutDown kết hợp chuyển động accordion (v=2435).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W53.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/css/controls.css, js/ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Cập nhật hiệu ứng accordion expand/collapse bằng CSS Grid (0fr <-> 1fr) và CSS transitions cho các thẻ trong danh sách "LÁ SỐ ĐÃ LẬP". Bổ sung phản hồi tap/click, hover desktop, đồng bộ chiều cao iframe qua notifyParentHeight() và nâng cache-buster lên v=2436.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W54.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Triển khai cơ chế Animate View Transition (exit/enter song song) và tự động animate chiều cao (300ms) khi chuyển giữa form thông tin và danh sách gói dịch vụ ở tab "Lập lá số", triệt tiêu giật khựng và layout shift. Cập nhật relocateAuxiliaryActions cho responsive và nâng cache-buster lên v=2437.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W55.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/css/controls.css, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Khôi phục class flexbox .history-item-top bị thiếu trong controls.css để đưa nút xóa lá số (icon thùng rác .btn-item-delete) về đúng góc trên bên phải mỗi thẻ tại tab "Lịch sử lá số & luận giải". Nâng cache-buster lên v=2438.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W56.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/css/controls.css, js/ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Khắc phục 6 lỗi animation UI/UX (chồng hình ghosting, trễ/nhảy pop-in nút CTA và Lưu lá số, nhấp nháy flicker) bằng cơ chế chuyển cảnh tuần tự exitBeforeEnter, loại bỏ keyframes trùng lặp và hợp nhất khối form view. Nâng cache-buster lên v=2439.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W57.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Thay thế cơ chế tuần tự (gây khoảng trắng ~130ms) bằng hệ thống Carousel Track trượt ngang liên tục 2 chiều (#createViewTrack, width: 200%, translateX(0% <-> -50%)) kết hợp animate chiều cao đồng nhịp trong 380ms. Nâng cache-buster lên v=2440.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W58.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi biến mất bảng dịch vụ luận giải do #luanGiaiOptions { display: none !important; } và lỗi vỡ layout Mobile từ createViewTrack bằng cách khôi phục DOM gốc, tách luồng Mobile riêng và triển khai Opaque Slide Overlay nền đục #fcfaf7 trên Desktop. Nâng cache-buster lên v=2441.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W59.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, DevSecOps
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js, js/dpop.js, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi không chuyển về tab "Lập lá số" do khai báo trùng biến const luanGiaiOptions gây lỗi TDZ, đồng thời đồng bộ hiệu ứng Opaque Slide Overlay cho Mobile qua #mobileActionPane. Loại bỏ export trong dpop.js để sửa SyntaxError và nâng cache-buster lên v=2442.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W60.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/css/board.css, css/controls.css, js/ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi lẹm viền đen bo cong tờ lá số bằng overflow: visible, clip-path: inset(0 round 8px) và đồng bộ bán kính 4 ô góc (7px). Khắc phục lỗi xuyên thấu ghosting (giữ opacity: 1 !important trên overlay) và lỗi khoảng trắng thừa trên Mobile bằng cách tái cấu trúc notifyParentHeight(), nâng cache-buster lên v=2443.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W61.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Lá số Tử Vi (/la-so-tu-vi) - AiInterpretationGeminiView.css, AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Chuẩn hóa ký tự xuống dòng (loại bỏ \r\r\n và \r thừa) trên AiInterpretationGeminiView.css và AiInterpretationGeminiView.jsx để khắc phục triệt để lỗi biên dịch Tailwind CSS v4 / Vite [plugin:@tailwindcss/vite:generate:serve] Invalid declaration: ''.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/08_11_2026_W62.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Lá số Tử Vi (/la-so-tu-vi) - AiInterpretationGeminiView.css, AiInterpretationGeminiView.jsx, xóa frontend/public/gemini-star-pattern.svg
+4. Nội dung chỉnh sửa: Gỡ bỏ toàn bộ hiệu ứng chờ thử nghiệm (ambient aurora, lưới sao Gemini, skeleton shimmer đa sắc, chỉ báo chờ Q&A) và xóa tệp gemini-star-pattern.svg. Khôi phục giao diện Luận Giải AI về phiên bản ban đầu với spinner đỏ #8b1d1d và skeleton xám chuẩn.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W1.md
+2. Phân loại chỉnh sửa: Testing, Documentation, Backend
+3. Trang/Thành phần ảnh hưởng: Bộ xuất bản PDF (Luan_Giai_Tu_Vi_Hong_An_Vo_Han.pdf, Luan_Giai_Tu_Vi_Hong_An_Moi_Nhat.pdf)
+4. Nội dung chỉnh sửa: Kiểm chứng và làm rõ nguyên nhân Microsoft Edge hiển thị bản PDF cũ do cơ chế In-Memory PDF Cache giữa các tab, đồng thời đo đạc tệp PDF thực tế xác nhận đã áp dụng 100% typography mới (Lora-Bold cho H1-H4, Be Vietnam Pro 14pt cho thân bài và thơ phú, không còn Times New Roman).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, Backend, UI/UX, API
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - AiInterpretationGeminiView.jsx, AiInterpretationGeminiView.css, frontend/index.html, backend/src/server.py, endpoint POST /api/ai/export-pdf
+4. Nội dung chỉnh sửa: Đồng bộ 100% giao diện web /luan-giai-ai với định dạng PDF (WYSIWYG): chuẩn hóa phân cấp H1-H4 dùng font Lora Serif, lời thoại TVHA (.brand-dialogue), danh sách bullet chấm đỏ #8b1d1d, thơ phú căn giữa không nền/viền/in nghiêng. Khởi chạy ổn định backend tại cổng 8080 phục vụ xuất PDF qua POST /api/ai/export-pdf.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W3.md
+2. Phân loại chỉnh sửa: Frontend, Backend, UI/UX, Database
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - AiInterpretationGeminiView.jsx, AiInterpretationGeminiView.css, backend/src/modules/astrology/exporter/export_pdf.py, backend/src/data/tuvi.db
+4. Nội dung chỉnh sửa: Thiết kế Card Mục Lục (.toc-box) phân cấp 3 level đồng bộ giữa Web và PDF, sửa lỗi các tiêu đề niên vận bắt đầu bằng "Năm..." bị gán nhầm màu đỏ về màu đen than #1E293B, và tự động ngắt dòng sau dấu hai chấm ở các bullet points. Cập nhật reading_markdown cho lá số 9523 trong tuvi.db.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - AiInterpretationGeminiView.jsx (AiConfirmChartCard)
+4. Nội dung chỉnh sửa: Căn giữa chính xác bảng xác nhận thông tin đương số (AiConfirmChartCard) tại trung điểm chiều cao màn hình Desktop bằng md:justify-center và md:my-auto. Xóa bỏ toàn bộ hiệu ứng đổ bóng trên ảnh lá số và skeleton preview ở cả Desktop lẫn Mobile (shadow-none).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - AiInterpretationGeminiView.jsx, AiConfirmChartCard.css
+4. Nội dung chỉnh sửa: Nâng cấp micro-interactions cho các nút bấm (thu gọn/mở rộng cột lá số, nút Quay lại, nút Xác nhận shimmer gradient đỏ chu sa, nút Thay đổi, nút Gửi chat và Gợi ý). Tái cấu trúc header giữ nguyên vẹn tiêu đề LUẬN GIẢI AI - TỬ VI HỒNG ÂN và chuyển động đóng/mở sidebar mượt mà chống méo ảnh lá số.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W6.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/js/ui-controller.js
+4. Nội dung chỉnh sửa: Loại bỏ thẻ <div class="history-ai-desc">Xem chi tiết 12 cung, bản mệnh và vận hạn.</div> tại khối .history-item-ai-section trong danh sách Lịch sử lá số để làm gọn giao diện, tập trung vào nút CTA "Xem bài luận giải".
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W7.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi
+3. Trang/Thành phần ảnh hưởng: Trang chủ (/), Lá số Tử Vi (/la-so-tu-vi) - Home.jsx, laso-tuvi.html, js/ui-controller.js, astrologyConfig.js, AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Cập nhật đồng bộ mô tả và quyền lợi gói dịch vụ Luận giải AI từ "14-15 trang" / "15-20 trang" sang "Bài luận giải 7000-8000 từ" trên Trang chủ, tab Lập lá số, tab Lịch sử lá số và cấu hình SERVICES_CONFIG. Nâng cache-buster lên v=2444.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W8.md
+2. Phân loại chỉnh sửa: Backend, Frontend, Testing
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Bộ xuất bản PDF - backend/src/modules/astrology/exporter/export_pdf.py, AiInterpretationGeminiView.jsx, scripts/export_tuvi_pdf.py
+4. Nội dung chỉnh sửa: Khắc phục triệt để lỗi lề trên PDF bằng 0mm bằng cách áp dụng padding vật lý 20mm bốn phía vào .page-container, chuẩn hóa đồng bộ parser heading (H1, H2, H4 niên vận) và bullet points giữa Web và PDF. Tối ưu giải mã ảnh Base64 và khởi động lại backend Flask trên cổng 8080.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/09_11_2026_W9.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai) - index.css, theme.css, AiInterpretationGeminiView.css, AiConfirmChartCard.css, controls.css, board.css, ui-controller.js, AiInterpretationGeminiView.jsx, chartDataBridge.js
+4. Nội dung chỉnh sửa: Kiểm toán trực quan bằng headless Chrome và xây dựng hệ biến Global Motion Tokens cho cả React SPA lẫn Astrology Engine, nâng cấp hiệu ứng tương tác cho thẻ xác nhận, bảng điều khiển an sao và 12 ô cung. Bổ sung cơ chế Interruptible Retargeting khi click dồn dập, batching SSE qua requestAnimationFrame, startViewTransition(), sửa dính hover mobile và hỗ trợ prefers-reduced-motion.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/11_11_2026_W1.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai) - tests/e2e/*, board-renderer.js, geometry.js, ui-controller.js, board.css, AiInterpretationGeminiView.jsx, AiReadingPodcastView.jsx, AiConfirmChartModal.css, AiReadingModal.css, ServiceConsultationModal.css, TEST_INFRA.md, TEST_READY.md
+4. Nội dung chỉnh sửa: Xây dựng hạ tầng kiểm thử E2E Playwright kèm pipeline video telemetry 60/120 FPS (248 test cases) và triển khai bản vá tối ưu chuyển động cho cả hai tuyến trang: FastDOM 3-phase batching, SVG line pooling, GPU micro-elevation 12 cung, pinch-to-zoom/pan mobile, modal exit animations, audio scrubber scaleX qua rAF và SSE token batching trong khi bảo toàn nguyên vẹn thuật toán an sao backend.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/11_11_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Lá số Tử Vi (/la-so-tu-vi), Đăng nhập (AuthModal.css), Thanh toán (Billing.css), tests/e2e/test_laso_tuvi_interactions.py
+4. Nội dung chỉnh sửa: Khắc phục 2 test cases E2E thất bại cuối cùng để đạt 248/248 passed: sửa thứ tự chụp cdp.snapshot_metrics() sau khi tải trang và hỗ trợ gọi showTuViLoading() trong iframe; thay mã màu cyan #38bdf8 ở AuthModal.css (sang #c5a059) và Billing.css (sang #0284c7).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/11_11_2026_W3.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/js/board-renderer.js, css/board.css
+4. Nội dung chỉnh sửa: Gỡ bỏ hoàn toàn tính năng micro-tooltip giải nghĩa sao khi hover/touch trên lá số Tử Vi (xóa STAR_TOOLTIP_DATA, setupBoardStarTooltips trong board-renderer.js và các lớp .tuvi-star-tooltip trong board.css), trả lại giao diện tờ lá số thông thoáng nguyên bản.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W1.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/css/theme.css, board.css, controls.css, js/geometry.js, js/ui-controller.js, js/app.js, laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx, frontend/src/features/billing/Billing.css, PaymentModal.jsx
+4. Nội dung chỉnh sửa: Khắc phục 9 nhóm lỗi giao diện/viền/chuyển động trên /la-so-tu-vi và các tinh chỉnh tiếp theo: đồng nhất nền trắng và gỡ box-shadow bảng dịch vụ; xử lý lẹm viền trái và layout shift; kéo giãn thời lượng chuyển cảnh thu gọn bảng dịch vụ lên 640ms; bổ sung hiệu ứng xuất hiện/biến mất 2 chiều cho dòng Tháng nhuận; tăng độ dày viền đen 2px cho bảng điều khiển và tờ lá số; thu ngắn chiều rộng và thêm hiệu ứng co giãn không khuyết viền cho nút Luận giải lá số và các nút tương ứng. Nâng cache-buster lên v=2448.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, Backend, DevSecOps, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn bộ workspace (tạo backup tại D:\Backup_TuViHongAn_Cleanup_20261112\; xóa scratch/, reports/, __pycache__, .vite, lunar-calendar/, feng-shui/, baiviet/, articles/, buddhism/, booking/, các tệp test/nháp/tài nguyên dư thừa)
+4. Nội dung chỉnh sửa: Quét toàn bộ thư mục dự án lập danh sách 6 nhóm cần dọn dẹp, sao lưu toàn bộ dự án và 947 tệp mục tiêu sang ổ D:\Backup_TuViHongAn_Cleanup_20261112\ trước khi xóa sạch 947 tệp (34,29 MB) cùng 73 thư mục rỗng/dư thừa. Đã kiểm tra lại Frontend import graph (122/122 hợp lệ), oxlint (0 lỗi), node --check và Backend create_app() đều hoạt động ổn định.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W3.md
+2. Phân loại chỉnh sửa: Backend, Database, API, Documentation
+3. Trang/Thành phần ảnh hưởng: backend/src/core/ (config.py, db.py, customer_store.py), backend/src/modules/ (admin/routes_admin.py, articles/*, auth/*, chat/routes_chat.py, astrology/api/routes_charts.py), backend/src/server.py, backend/.env.example, super_tree.md (xóa backend-node/ và core/node_api_proxy.py)
+4. Nội dung chỉnh sửa: Thống nhất toàn bộ chức năng từ dịch vụ phụ backend-node/ (tài khoản khách Google, nhật ký & ảnh lá số, chat hỗ trợ khách hàng, bài viết CMS Phật pháp/Khóa học & ảnh bài viết) vào trực tiếp Python Flask backend trên SQLite tuvi.db và thư mục backend/src/data/storage/. Đã sao lưu backend-node/ và node_api_proxy.py sang ổ D trước khi gỡ bỏ, đồng thời kiểm thử toàn bộ endpoint qua Flask test_client() đạt 100%.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/src/features/astrology/LaSoTuViContainer.jsx, LaSoTuVi.css, components/AstrologyChartView.jsx, frontend/public/astrology-engine/js/app.js, js/ui-controller.js, css/controls.css, css/theme.css, laso-tuvi.html
+4. Nội dung chỉnh sửa: Khắc phục hiện tượng giật trang và tự động cuộn khi người dùng lập lá số: tách window.scrollTo(0, 0) về mount-only trong LaSoTuViContainer.jsx (dùng ref tránh re-run khi nhận TUVI_MARKDOWN_GENERATED); chặn ResizeObserver/notifyParentHeight phát resize từng nấc khi đang animate chiều cao; blur nút trước khi ẩn/khóa; cố định min-height cho .action-section; bật overflow-anchor: none và thay scrollIntoView() ở duplicate history sang cuộn nội bộ danh sách. Nâng cache-buster lên v=2454.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn website & Lá số Tử Vi (/la-so-tu-vi) - frontend/src/app/index.css, frontend/src/features/astrology/components/AstrologyChartView.jsx, frontend/public/astrology-engine/css/theme.css, css/board.css, css/controls.css, js/ui-controller.js, laso-tuvi.html
+4. Nội dung chỉnh sửa: Khắc phục hiện tượng trình duyệt hiện hit-box/focus màu xanh khi chạm/thao tác bằng -webkit-tap-highlight-color: transparent, :focus:not(:focus-visible) { outline: none; } và chặn hover xanh trên Mobile/pointer:coarse trong board.css. Đồng thời tách dòng "các mối tương quan trong lá số." qua helper setPanelFooterNote() + .panel-footer-line (display: block trên Mobile), nâng cache-buster lên v=2455.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W3.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Tarot Kiều / Bói Quẻ Kiều (/boi-kieu) - frontend/public/tarot-kieu/ (nen-tarot-kieu.png, wheel.png, cards*/, 205 tệp PNG)
+4. Nội dung chỉnh sửa: Kiểm tra toàn bộ 482 ảnh PNG trong frontend/public/tarot-kieu (500,66 MiB) và nén 205 ảnh vượt 500.000 byte (gồm 81 ảnh thẻ bài gốc 1350x2400, nen-tarot-kieu.png, wheel.png và 122 ảnh thẻ 500.001–511.989 byte) xuống <= 500.000 byte mà vẫn giữ nguyên định dạng .png và kênh trong suốt của wheel.png. Tổng dung lượng giảm còn 222,17 MiB (tiết kiệm 278,50 MiB / 55,6%), 0 tệp lỗi hoặc vượt ngưỡng.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi trên Mobile) - frontend/public/astrology-engine/laso-tuvi.html, css/board.css, css/controls.css, js/ui-controller.js, js/export-engine.js, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Tối ưu giao diện Mobile cho trang /la-so-tu-vi: loại bỏ hoàn toàn bảng chọn ngày sinh custom (#mobileDatePickerModal), ẩn hoàn toàn nút "Luận giải lá số" tại tab Lập lá số và nút "Quay lại thông tin lá số", hiển thị trực tiếp 2 thẻ dịch vụ luận giải bên dưới tờ lá số với nền trong suốt và chiều rộng khớp chính xác chiều rộng tờ lá số. Khắc phục triệt để lỗi khuyết viền/cắt góc lá số trên Mobile bằng cách bỏ wrapper overflow clip khi chưa zoom và bù trừ toán học độ dày viền, rãnh lưới và bán kính bo góc theo tỷ lệ scaleBoard (v=2453).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W6.md
+2. Phân loại chỉnh sửa: Frontend, Backend, Database, API, DevSecOps, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Cửa sổ đăng nhập (AuthModal.jsx, AuthModal.css), ServiceConsultationModal, Navbar, AdminDashboard, aiReadingClient.js, AiInterpretationGeminiView.jsx, astrology-engine (app.js, ui-controller.js), security/developer_mode.txt (đã xóa), backend/src/modules/auth/* (xóa developer_auth.py), core/* (config.py, db.py, firebase_db.py, customer_store.py), routes_ai.py, courses/routes.py, backend/src/data/tuvi.db, super_tree.md
+4. Nội dung chỉnh sửa: Loại bỏ hoàn toàn tính năng đăng nhập Developer ẩn: xóa listener phím tắt Ctrl+Shift+Y, Alt+Shift+G, stealth 5-click logo Google và modal nhập passcode; xóa vĩnh viễn tệp security/developer_mode.txt và backend/src/modules/auth/developer_auth.py cùng các route /api/auth/developer/*, cơ chế nhận diện token dev_* và cờ role='developer'/developer_mode; thu hồi toàn bộ phiên dev_* và dọn tài khoản ảo developer_super_account khỏi SQLite tuvi.db.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi trên Mobile) - frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js, js/export-engine.js, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Tinh gọn câu thông báo đăng nhập tab Lịch sử thành "Đăng nhập để lưu trữ và xem lại lịch sử lá số.". Khắc phục thiếu hiệu ứng chuyển tab 2 chiều trên Mobile bằng cách toggle đúng class .active kết hợp animation trượt ngang đối xứng (tabPaneEnterFromRight/Left), chuyển tiếp mượt chiều cao .input-panel (340ms) và hiệu ứng vào #mobileAuxContainer. Tái cấu trúc export-engine.js sang mô hình runDeferredExport() ưu tiên phát hiệu ứng nhấn nút + spinner tức thì ở frame 0, nhường UI hoàn tất animation trước khi chạy html2canvas và chia nhỏ vòng lặp pixel CMYK/Grayscale theo lô 250.000 pixel kèm yieldToMainThread(). Rút gọn nhãn nút lớp phủ lá số trên Mobile thành "Lập lá số" và "Đã lập trước đó" qua syncStaleNoticeLabel() (v=2457).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W6.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi trên Mobile) - frontend/public/astrology-engine/css/controls.css, js/ui-controller.js, laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Khắc phục triệt để lỗi hiển thị bảng 2 dịch vụ luận giải khi lá số đang ở dữ liệu mẫu (preview) hoặc chờ lập lá số (input-changed) bằng cách gắn class trạng thái body.tuvi-state-* và chỉ mở #luanGiaiOptions khi trạng thái là generated. Bổ sung chuyển tiếp chiều cao mượt cho #mobileAuxContainer (animateMobileAuxHeight 460ms), hiệu ứng xuất hiện nối tiếp mobileCardReveal cho khối Lưu lá số và 2 thẻ dịch vụ, cùng hiệu ứng chuyển đổi dòng chú thích setPanelFooterNote() (v=2458).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W7.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Thẻ/Modal Chi Tiết Gói Dịch Vụ - frontend/src/features/billing/components/PaymentModal.jsx, frontend/src/features/billing/Billing.css
+4. Nội dung chỉnh sửa: Loại bỏ khối "Chưa đăng nhập tài khoản." (.auth-inline-notice) trong thẻ Chi Tiết Gói Dịch Vụ và bọc .quota-pill-label; thiết kế lại hoàn chỉnh bố cục riêng cho thiết bị di động (@media max-width: 640px) gồm lưới số dư 2 cột cân xứng, tiêu đề + huy hiệu giá xếp dọc nổi bật, tối ưu ngắt dòng quyền lợi và cụm nút thanh toán full-width 44px ở chân thẻ.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W8.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Engine Tử Vi, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi trên Mobile) - frontend/public/astrology-engine/css/controls.css, js/ui-controller.js, laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Khắc phục triệt để lỗi khuất chữ số cuối năm sinh (#txtYear) trong khối Thời gian trên Mobile bằng việc cân chỉnh padding/tỷ lệ cột ngày-tháng-năm (vừa vặn trên cả 360px và 390px) và giữ nhãn "Năm xem hạn" trên 1 dòng; thay thế popup toàn màn hình mặc định của Chrome Android cho 6 trường Ngày/Tháng/Năm/Giờ/Phút/Năm xem hạn bằng bảng chọn thả xuống gọn nhẹ (#mobileSelectPopover max-height 212px) neo ngay tại ô nhập liệu và đồng bộ 2 chiều với thẻ select gốc (v=2460).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W8.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - xóa ServiceConsultationModal.jsx, ServiceConsultationModal.css; cập nhật LaSoTuViContainer.jsx, LaSoTuVi.css, astrologyConfig.js, chartEventBridge.js, AstrologyChartView.jsx, laso-tuvi.html, ui-controller.js, super_tree.md
+4. Nội dung chỉnh sửa: Loại bỏ toàn bộ mã nguồn modal "Luận giải trực tiếp 1-1" cũ (ServiceConsultationModal, CSS .laso-service-*, SERVICES_CONFIG, TUVI_OPEN_SERVICE_MODAL) và chuyển thao tác bấm thẻ LUẬN GIẢI TRỰC TIẾP sang mở trực tiếp PaymentModal mới cho gói 500.000 VNĐ (v=2459).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W9.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Thẻ/Modal Chi Tiết Gói Dịch Vụ - frontend/src/features/billing/components/PaymentModal.jsx, frontend/src/features/billing/Billing.css
+4. Nội dung chỉnh sửa: Chuẩn hóa hiển thị giá tiền trong thẻ Chi Tiết Gói Dịch Vụ theo định dạng "<Số tiền> VNĐ / Lá số" cho cả 2 gói (199.000 VNĐ / Lá số và 500.000 VNĐ / Lá số), bổ sung dòng giá gốc gạch ngang kèm tỷ lệ tiết kiệm ("499.000 - Tiết kiệm 60% so với giá gốc") cho riêng gói Luận giải AI, và căn thẳng hàng đồng nhất Tên gói / Giá / Giá gốc trên giao diện Mobile.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W10.md
+2. Phân loại chỉnh sửa: Frontend, Backend, AI/Prompting, API, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - .env, backend/.env, backend/.env.example, backend/src/modules/astrology/interpreter/config.py, service.py, routes_ai.py, AiInterpretationGeminiView.jsx, aiReadingClient.js
+4. Nội dung chỉnh sửa: Đồng bộ hạn mức hỏi đáp AI (Q&A) sau luận giải về 10.000 output tokens trên cả Frontend (MAX_QA_TOKENS = 10000) và Backend (QA_MAX_OUTPUT_TOKENS=10000), đồng thời điều chỉnh prompt trả lời trong khoảng 200 - 500 từ/câu với model gemini-3.8-flash (Thinking: LOW).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W10.md
+2. Phân loại chỉnh sửa: Frontend, Backend, DevSecOps, UI/UX, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Quản lý (/quan-ly, /quan-ly/*), Thanh điều hướng (Navbar.jsx), App.jsx, AuthModal.jsx, ManagementGuard.jsx, QuanLy.jsx, QuanLy.css, UserManagement.jsx, ArticleManager.jsx, authRoles.js, backend/src/modules/auth/auth.py, super_tree.md
+4. Nội dung chỉnh sửa: Chặn truy cập trang /quan-ly và các tuyến con /quan-ly/* bằng ManagementGuard xác thực qua /api/auth/me khi chưa đăng nhập hoặc không thuộc nhóm Nhà phát triển, Quản trị viên, Cộng tác viên (đồng thời gỡ bỏ nút đăng nhập quản lý thử nghiệm). Hiển thị mục QUẢN LÝ trên thanh điều hướng Desktop và Mobile khi tài khoản đăng nhập có quyền truy cập, và bổ sung giao diện Khu vực Cộng tác viên trên /quan-ly.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W11.md
+2. Phân loại chỉnh sửa: Frontend, Engine Tử Vi, UI/UX, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai) - frontend/public/astrology-engine/js/export-engine.js, laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx, frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Khắc phục triệt để lỗi xuất PDF Màu, PDF Đen Trắng và Ảnh 4K không khớp 100% với website bằng bộ kết xuất SVG foreignObject nhúng CSS/WOFF2 trực tiếp từ engine trình duyệt (kèm bản vá dự phòng html2canvas cho box-shadow: inset và tọa độ Tuần/Triệt), giữ đúng tỷ lệ gốc trong generatePdfDocument(), và nâng cache-buster lên v=2461.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W12.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Trang chủ (/ - Home.jsx)
+4. Nội dung chỉnh sửa: Tái cấu trúc toàn diện Trang chủ (Home.jsx): loại bỏ khối Dịch vụ nổi bật, form đặt lịch, số Zalo, đường phân cách bố cục, và các chuỗi thừa ("Dịch Vụ Cao Cấp • www.tuvihongan.com", "Gemini 3.8 Flash", "Tiện ích trọng tâm", "100%"); bổ sung ô Lịch vạn sự (/lich-van-su) và thiết kế lưới 1 ô lớn bên trái (LẬP LÁ SỐ TỬ VI viền đỏ, chuẩn Tân Biên 1956, tiêu đề ngang hàng icon) + 4 ô nhỏ bên phải có nhãn MIỄN PHÍ căn lề phải thẳng hàng tuyệt đối; thiết kế lại 2 gói dịch vụ (LUẬN GIẢI AI viền đỏ & LUẬN GIẢI TRỰC TIẾP 1-1 viền đen Premium) tối giản với giá tiền nổi bật, "/ Lá số" tỷ lệ 2/3, quyền lợi ngắt dòng phân cấp rõ nét và nút CTA viết hoa không kèm giá.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/12_11_2026_W13.md
+2. Phân loại chỉnh sửa: Database, Backend, DevSecOps, Architecture, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn bộ Backend & CSDL (backend/src/core/config.py, db.py, db_manager.py, customer_store.py; các modules billing, articles, courses, forum, shop, contact, admin; backend/src/scripts/migrate_modular_databases.py, super_tree.md, backend/.env.example, docker-compose.yml)
+4. Nội dung chỉnh sửa: Phân rã hoàn chỉnh CSDL nguyên khối tuvi.db thành 10 CSDL module hóa độc lập theo Domain-Driven Design trong backend/src/data/databases/: auth_staff.db, customers_pii.db, cskh_chat.db, billing.db, charts.db, ai_readings.db, articles_academic.db, buddhism.db, courses.db, community_forum.db. Xây dựng DatabaseManager cung cấp kết nối chuyên biệt và get_unified_connection qua SQLite ATTACH DATABASE cho báo cáo liên bảng. Tách biệt dữ liệu lá số cốt lõi và bài luận dài (7.000-8.000 từ), hỗ trợ Dual-Mode (modular/monolithic), di trú và đối soát thành công 100% dữ liệu (17/17 bảng) với zero data loss.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W1.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Footer (frontend/src/shared/ui/Footer.jsx), Định tuyến (frontend/src/app/App.jsx)
+4. Nội dung chỉnh sửa: Xóa bỏ các nhãn "(Miễn phí)" ở cột Dịch Vụ Miễn Phí và bổ sung khu vực Chính Sách & Điều Khoản bên dưới cột Dịch Vụ Thương Mại để điều hướng đến /chinh-sach và /dieu-khoan.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Trang chủ (/ - Home.jsx, HomeScrollytelling.css, ScrollyThienBan.jsx), super_tree.md
+4. Nội dung chỉnh sửa: Thiết kế lại Trang chủ theo phong cách Scrollytelling 5 chương liền mạch: thanh tiến trình đọc & mục lục nổi, Hero parallax Bát Quái, Sticky Thiên Bàn 12 cung tự động vẽ vector Tam Hợp/Xung Chiếu theo cuộn chuột, biểu đồ Ngũ Hành Tương Sinh/Tương Khắc tương tác, cụm 5 tiện ích miễn phí kèm ảnh Cửu Diệu và 2 gói dịch vụ luận giải (#service).
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W3.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Trang chủ (/ - Home.jsx), Modal Thanh Toán (PaymentModal.jsx, Billing.css)
+4. Nội dung chỉnh sửa: Chuẩn hóa màn hình xác nhận thanh toán thành công (biểu tượng dấu tích xanh lá lớn, tiêu đề "THANH TOÁN THÀNH CÔNG", thông báo động "+N lượt sử dụng dịch vụ <tên dịch vụ> vào tài khoản", nút đóng Xác nhận) và phát sự kiện tuvi:quota-updated đồng bộ tức thì; cập nhật nút gói LUẬN GIẢI AI trên Trang chủ tự động chuyển sang "Lập lá số & Luận giải ngay" điều hướng đến /la-so-tu-vi khi có số dư > 0.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W2.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Header (frontend/src/shared/ui/Navbar.jsx), Footer (frontend/src/shared/ui/Footer.jsx)
+4. Nội dung chỉnh sửa: Loại bỏ khối số điện thoại TƯ VẤN & LUẬN GIẢI trên cả Desktop và Mobile của Navbar và xóa cột Đặt Lịch Riêng Với Thầy (2 số Zalo) trên Footer, đồng thời điều chỉnh lưới Footer thành 3 cột cân đối.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn website (frontend/src/shared/utils/viewportScale.js, frontend/src/main.jsx, frontend/src/app/index.css, App.css, Footer.css, HomeScrollytelling.css, Navbar.jsx, Home.jsx, ScrollyThienBan.jsx, AdminDashboard.jsx, AstrologyChartView.jsx và các tệp .css trong features/, pages/)
+4. Nội dung chỉnh sửa: Áp dụng logic scale giao diện Desktop (> 580px, chuẩn 1280px, min 0.3) và Mobile (<= 580px) của /la-so-tu-vi cho toàn bộ website; khóa breakpoint Tailwind v4 và CSS @media về ngưỡng 580px giúp giữ nguyên bố cục và ngắt dòng khi người dùng Desktop thay đổi kích thước cửa sổ, đồng thời tránh double-scale trên iframe /la-so-tu-vi.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W4.md
+2. Phân loại chỉnh sửa: Frontend, Architecture, UI/UX, DevSecOps, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn bộ website - frontend/src/shared/persistence/*, frontend/src/app/App.jsx, frontend/src/shared/ui/Navbar.jsx, frontend/src/features/lich-van-su/hooks/useLichVanSu.js, super_tree.md
+4. Nội dung chỉnh sửa: Thiết kế và triển khai hệ thống Scroll Restoration & Session State Persistence (useScrollRestoration, useContainerScrollPersistence, usePersistedState, useFormDraft, useUrlQueryState) hỗ trợ khôi phục cuộn bất đồng bộ (ResizeObserver/MutationObserver), lọc dữ liệu nhạy cảm, cơ chế TTL/LRU chống QuotaExceededError, dọn dẹp khi đăng xuất và đồng bộ trạng thái Lịch Vạn Sự (?tab=...).
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, Backend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai), Lá số Tử Vi (/la-so-tu-vi) - frontend/src/features/astrology/AiInterpretationGeminiView.jsx, frontend/src/features/astrology/AiInterpretationGeminiView.css, frontend/src/features/astrology/components/AstrologyChartView.jsx, frontend/public/astrology-engine/js/app.js, frontend/public/astrology-engine/laso-tuvi.html, backend/src/modules/astrology/exporter/export_pdf.py
+4. Nội dung chỉnh sửa: Khắc phục triệt để lỗi lặp Mục lục do formatMarkdownToHtml() tự động sinh lại TOC ở các block sau block[0] bằng cờ allowAutoToc; xử lý đường kẻ Markdown --- thành <hr class='section-divider' /> trong export_pdf.py; nâng ảnh lá số xuất từ captureTuviBoard(2) lên captureTuviBoard(4) (2948x4052 px) và thay compress_image_to_fhd_base64 bằng preserve_highres_image_base64 giữ chuẩn PNG 4K >= 300 DPI (v=2462). Đồng thời thêm khối nền Đỏ Chu Sa cho nút tải PDF và tối ưu kích thước chữ bằng clamp() + nowrap/ellipsis trong @media (max-width: 580px) để các đề mục, heading và mục lục luôn nằm gọn trên 1 dòng trên di động.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W5.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Trang chủ Mobile (/ <= 580px) - frontend/src/pages/home/HomeMobile.jsx, HomeMobile.css, homeData.js, Home.jsx, ScrollyThienBan.jsx, super_tree.md
+4. Nội dung chỉnh sửa: Thiết kế giao diện Trang chủ riêng tối ưu cho thiết bị di động (<= 580px) qua HomeMobile.jsx/HomeMobile.css và tách dữ liệu dùng chung sang homeData.js: Hero vừa khít màn hình đầu tiên với CTA chuẩn chạm ngón cái, Thiên Bàn 12 cung tương tác hỗ trợ vuốt ngang/chạm 4 bước ngay dưới lá số, Ngũ Hành 5 tab trên 1 hàng, cụm tiện ích miễn phí không cắt chữ mô tả và 2 gói dịch vụ luận giải đồng bộ quota.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W3.md
+2. Phân loại chỉnh sửa: Frontend, Bugfix, Documentation
+3. Trang/Thành phần ảnh hưởng: Lịch Vạn Sự (/lich-van-su - frontend/src/features/lich-van-su/hooks/useLichVanSu.js)
+4. Nội dung chỉnh sửa: Khắc phục lỗi TypeError trắng màn hình khi selectedDate từ usePersistedState bị null bằng cách kiểm tra tính hợp lệ và fallback về today.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W6.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - frontend/src/features/astrology/AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Loại bỏ hoàn toàn đường viền xám bao ngoài (border border-slate-300/80) và bo góc (rounded-md) trên thẻ ảnh lá số Tử Vi (img) cũng như khung skeleton chờ tải lá số ở đầu trang trên giao diện mobile (md:hidden), giúp hình ảnh tờ lá số hiển thị liền mạch, thuần khiết và thanh thoát trên nền trắng.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W7.md
+2. Phân loại chỉnh sửa: Frontend, Backend, UI/UX, Auth, Documentation
+3. Trang/Thành phần ảnh hưởng: Thẻ thông tin tài khoản (AuthModal.jsx, AuthModal.css, authRoles.js), Backend Auth (backend/src/modules/auth/auth.py, backend/src/modules/astrology/api/routes_ai.py)
+4. Nội dung chỉnh sửa: Cập nhật bố cục AuthModal đưa nhãn vai trò (NHÀ PHÁT TRIỂN, QUẢN TRỊ VIÊN, CỘNG TÁC VIÊN, KHÁCH HÀNG) xuống dưới Email; bổ sung khu vực Số dư dịch vụ (Luận giải Tử Vi AI, Luận giải Trực Tiếp 1-1) ngay trên nút Đăng xuất đồng bộ từ /api/ai/user-quota; áp dụng white-space: nowrap và clamp() chống rớt dòng/tràn ngang trên mobile; cấu hình cố định vai trò NHÀ PHÁT TRIỂN cho tranngocxuanbach7@gmail.com.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W8.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Architecture, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn website & Thanh điều hướng (frontend/src/shared/motion/pageTransition.js, useGlobalPageTransitions.js, frontend/src/shared/ui/Navbar.jsx, frontend/src/app/App.jsx, frontend/src/app/App.css, frontend/src/app/index.css)
+4. Nội dung chỉnh sửa: Thiết kế và triển khai hệ thống chuyển động toàn diện cho Thanh điều hướng Desktop (Sliding Ink Indicator bằng transform scaleX/translate3d, micro-delay 25ms, magnetic hover ±3px cho quick buttons, scroll compact/frosted glass + auto-hide qua rAF, dropdown stagger 30ms/mục với hover-intent) và hệ thống chuyển trang đồng bộ Desktop & Mobile bằng Native View Transitions API (peer-next/prev, drill-down/up, neo site-navbar, tối ưu 260ms/10px cho Mobile <= 580px, fallback CSS và prefers-reduced-motion calm cross-fade 120ms).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W9.md
+2. Phân loại chỉnh sửa: Backend, Frontend, Database, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn dự án (backend/src/**/__pycache__, backend/src/data/tuvi.db.backup_20261112_032646, frontend/src/features/qimen-dunjia/qimenArticles.js, frontend/src/features/phong-thuy/README.md, Home.jsx, HomeMobile.jsx, super_tree.md)
+4. Nội dung chỉnh sửa: Quét rà soát toàn bộ dự án và dọn dẹp 20 thư mục __pycache__ (~867.2 KB), bản sao lưu thủ công tuvi.db.backup_20261112_032646 (1.1 MB), tệp trùng lặp qimen-dunjia/qimenArticles.js (hợp nhất import trong Home.jsx và HomeMobile.jsx về ky-mon/qimenArticles) và tài liệu dư thừa phong-thuy/README.md, đồng thời cập nhật super_tree.md.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W10.md
+2. Phân loại chỉnh sửa: DevSecOps, Backend, Frontend, Database, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn dự án (Kiểm toán 5 giai đoạn: SAST, DAST, Stress Test 100.000 khách hàng / 1.000 CCU, Ma trận Checklist Bảo mật & Pháp lý NĐ 13/2023/NĐ-CP & NĐ 52/2013, Kế hoạch Khắc phục P0/P1/P2)
+4. Nội dung chỉnh sửa: Thực hiện kiểm toán bảo mật tĩnh/động toàn diện, kiểm thử chịu tải thực tế 100.000 bản ghi khách hàng (550.000 dòng trên 10 CSDL SQLite, 162.11 MB) và 1.000 CCU (12.000 HTTP requests, 379.73 RPS, 0% lỗi), phát hiện 6 lỗ hổng P0 Blocker cùng các điểm nghẽn SQLite/N+1 và lập kế hoạch khắc phục chi tiết chờ xác nhận triển khai.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W11.md
+2. Phân loại chỉnh sửa: DevSecOps, Backend, Frontend, Database, API, UI/UX, Deployment, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn dự án (Auth/RBAC, AI/PDF Exporter, SePay Billing, Contact/Articles Upload, SQLite Modular DBs, Policy & Footer & AuthModal & /admin Guard, Dockerfile/Compose/Nginx/backup_sqlite.py)
+4. Nội dung chỉnh sửa: Thực thi toàn bộ kế hoạch khắc phục P0/P1: đóng bypass admin_/test_admin_ và dev-login, bảo vệ endpoint PII/AI/PDF, chặn LFI/SSRF, bắt buộc xác thực SePay webhook và giá chuẩn máy chủ, cô lập chart_readings theo user_id, kiểm tra Magic Bytes upload, bổ sung 4 DB index + CTE phân trang + khử N+1 (1000 CCU đạt 0% lỗi, 344.3 RPS; 21/21 kiểm thử bảo mật PASS), hoàn thiện giao diện NĐ 13/2023 & NĐ 52/2013 (Footer, AuthModal Consent, Policy.jsx, ManagementGuard /admin), và cập nhật Dockerfile/Nginx/backup_sqlite.py.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W12.md
+2. Phân loại chỉnh sửa: Documentation, Deployment, DevSecOps
+3. Trang/Thành phần ảnh hưởng: deployment/HUONG_DAN_TRIEN_KHAI_VA_CAP_NHAT.md, security/policies/Deployment_Security_Guide.md, security/devsecops/{README.md, generate_csp.py, csp_headers.conf, package_wasm.py, vault_secrets.py}, super_tree.md
+4. Nội dung chỉnh sửa: Tạo tài liệu hướng dẫn chi tiết toàn bộ quy trình triển khai (deploy) hệ thống lên máy chủ Linux và cập nhật UI/UX, Backend, bảng giá (HUONG_DAN_TRIEN_KHAI_VA_CAP_NHAT.md); đồng thời nâng cấp toàn bộ phân hệ security/ (Deployment_Security_Guide.md, generate_csp.py, csp_headers.conf, package_wasm.py, vault_secrets.py, README.md Tiếng Việt) đồng bộ với kiến trúc bảo mật Defense-in-Depth và Nghị định 13/2023/NĐ-CP mới nhất.
+--------------------------------------------------------------------------------
+
+
+1. Tên tệp: walkthroughs/13_11_2026_W13.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi) - frontend/public/astrology-engine/laso-tuvi.html, css/controls.css, js/ui-controller.js
+4. Nội dung chỉnh sửa: Thiết kế luồng xử lý nhận diện lá số đã được luận giải (getCurrentChartAiSession), ẩn nút "LUẬN GIẢI LÁ SỐ" (Desktop) và khối chọn gói dịch vụ (Mobile), thay thế bằng nút trạng thái "ĐÃ LUẬN GIẢI" (#btnAlreadyInterpreted) cho phép bấm xem lại bài luận giải.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W14.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai) - app.js, ui-controller.js, laso-tuvi.html, AstrologyChartView.jsx, AiInterpretationGeminiView.jsx
+4. Nội dung chỉnh sửa: Loại bỏ hoàn toàn tính năng tự động điền lại (refill) thông tin lá số từ localStorage/sessionStorage (tuvi_user_form_inputs, tuvi_chart_data) khi mở hoặc tải lại trang /la-so-tu-vi, luôn khởi tạo ở trạng thái xem trước mặc định và nâng cache-buster lên v=2465.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W15.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Bugfix, Documentation
+3. Trang/Thành phần ảnh hưởng: Luận giải AI (/luan-giai-ai) - AiInterpretationGeminiView.jsx, AiInterpretationGeminiView.css
+4. Nội dung chỉnh sửa: Sửa lỗi xuất hiện khoảng nền trắng trống cao 380px ở dưới câu trả lời AI Q&A bằng cách bổ sung class gemini-qa-body (min-height: 0) tách khỏi min-height: 380px của bài luận giải chính.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W16.md
+2. Phân loại chỉnh sửa: Frontend, Engine Tử Vi, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/src/features/astrology/LaSoTuViContainer.jsx, frontend/src/features/astrology/components/AstrologyChartView.jsx, frontend/public/astrology-engine/js/ui-controller.js, frontend/public/astrology-engine/js/app.js, frontend/public/astrology-engine/laso-tuvi.html
+4. Nội dung chỉnh sửa: Lưu và khôi phục vị trí trang, tab Lịch sử lá số & luận giải, lá số đang chọn và vị trí cuộn qua sessionStorage (tuvi_page_position) khi điều hướng sang /luan-giai-ai rồi quay lại hoặc tải lại trang (không khôi phục refill form Tab 1); gỡ bỏ window.scrollTo(0, 0) cưỡng bức trong LaSoTuViContainer để useScrollRestoration hoạt động đúng, và chặn TUVI_AUTH_CHANGED reset khi token không đổi (v=2466).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W17.md
+2. Phân loại chỉnh sửa: Frontend, Engine Tử Vi, UI/UX, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Luận giải AI (/luan-giai-ai), frontend/public/astrology-engine/js/ui-controller.js, frontend/src/features/astrology/AiInterpretationGeminiView.jsx, frontend/src/features/astrology/LaSoTuViContainer.jsx, frontend/src/features/astrology/components/AstrologyChartView.jsx, frontend/public/astrology-engine/laso-tuvi.html
+4. Nội dung chỉnh sửa: Sửa lỗi ghi đè needsBoardRestore/selectedIndex khi khôi phục tab Lịch sử khiến lá số đang chọn không hiển thị và bị kẹt loading; bổ sung fallback generateTuVi(false) khi danh sách trống/chưa chọn; bổ sung lưu và khôi phục vị trí cuộn khi bấm nút Quay lại trên màn hình Luận giải AI (v=2467).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W18.md
+2. Phân loại chỉnh sửa: Backend, Frontend, Database, API, UI/UX, DevSecOps, Testing, Documentation
+3. Trang/Thành phần ảnh hưởng: Thẻ thông tin tài khoản (AuthModal.jsx, AuthModal.css), Thanh điều hướng (Navbar.jsx), Thanh toán (PaymentModal.jsx, Billing.css, billingApi.js), authRoles.js, backend/src/core/{db.py, db_manager.py}, backend/src/modules/auth/{auth.py, routes_auth.py}, backend/src/modules/astrology/api/routes_ai.py, backend/src/modules/billing/{models.py, repository.py, service.py, routes.py}
+4. Nội dung chỉnh sửa: Bổ sung tính năng Giả lập người dùng (Sandbox Mode) dành riêng cho tài khoản Nhà phát triển với nút bật/tắt trong AuthModal, badge nhận diện Sandbox Mode toàn trang, khởi tạo số dư dịch vụ bằng 0 kèm luồng thanh toán giả lập đếm ngược 5 giây tự động xác nhận, bảo vệ RBAC backend và cô lập hoàn toàn giao dịch qua cờ is_sandbox theo phiên làm việc.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W18.md
+2. Phân loại chỉnh sửa: Frontend, Backend, UI/UX, API, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), Trang chủ (/ - Home.jsx, HomeMobile.jsx), PaymentModal.jsx, Billing.css, AuthModal.jsx, LaSoTuViContainer.jsx, AstrologyChartView.jsx, chartEventBridge.js, frontend/public/astrology-engine/js/{app.js, ui-controller.js}, laso-tuvi.html, backend/src/modules/astrology/api/routes_ai.py, backend/src/modules/auth/auth.py, backend/src/modules/billing/service.py
+4. Nội dung chỉnh sửa: Xóa bỏ hoàn toàn hệ thống thanh toán, hệ thống số lượt (consultation_credits) và các thẻ UI liên quan cho dịch vụ Luận giải trực tiếp trên cả Frontend lẫn Backend (gỡ DirectConsultationSuccessModal, số dư trong AuthModal/PaymentModal, badge đã mua trên Trang chủ, /api/ai/user-quota và webhook cộng lượt). Khi bấm đặt lịch chỉ mở bảng Chi Tiết Gói Dịch Vụ với ghi chú "Giao dịch qua Zalo chính thức (Có thể thương lượng giá cả)" bên trái và nút icon Zalo + số điện thoại bên phải (đồng bộ số trên lá số tại /la-so-tu-vi, ngẫu nhiên 1 trong 2 số chính thức tại Trang chủ, v=2470).
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W19.md
+2. Phân loại chỉnh sửa: Frontend, UI/UX, Bugfix, Documentation
+3. Trang/Thành phần ảnh hưởng: Toàn website & Trang chủ (frontend/src/shared/utils/scrollLock.js, frontend/src/pages/home/Home.jsx, frontend/src/features/billing/components/PaymentModal.jsx, Billing.css, frontend/src/features/auth/AuthModal.jsx, AuthModal.css, super_tree.md)
+4. Nội dung chỉnh sửa: Xây dựng tiện ích useBodyScrollLock/isScrollLocked (khóa overflow !important & overscroll-behavior trên html/body, lắng nghe wheel/touchmove/keydown ở pha capture kèm stopPropagation) và chặn Discrete Step-Scroll Engine trong Home.jsx để khóa cuộn trang nền tuyệt đối trên Desktop & Mobile khi hiển thị các thẻ Chi Tiết Gói Dịch Vụ, Tài khoản, Xác nhận thanh toán, QR thanh toán và Đăng nhập.
+--------------------------------------------------------------------------------
+
+1. Tên tệp: walkthroughs/13_11_2026_W20.md
+2. Phân loại chỉnh sửa: Frontend, Engine Tử Vi, Bugfix, Documentation
+3. Trang/Thành phần ảnh hưởng: Lá số Tử Vi (/la-so-tu-vi), frontend/public/astrology-engine/js/ui-controller.js, frontend/public/astrology-engine/laso-tuvi.html, frontend/src/features/astrology/components/AstrologyChartView.jsx
+4. Nội dung chỉnh sửa: Sửa lỗi không hiển thị lá số mẫu và kẹt vòng xoay loading khi chưa đăng nhập ở tab Lịch sử lá số & luận giải hoặc khi chuyển sang tab Lập lá số mà chưa có dữ liệu lá số trên bảng (v=2469/v=2471).
+--------------------------------------------------------------------------------

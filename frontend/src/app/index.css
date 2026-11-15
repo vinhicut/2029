@@ -1,0 +1,372 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --breakpoint-sm: 581px;
+  --breakpoint-md: 581px;
+  --breakpoint-lg: 581px;
+  --breakpoint-xl: 581px;
+  --breakpoint-2xl: 581px;
+}
+
+/* Giữ nguyên bố cục Desktop (> 580px) khi thay đổi kích thước cửa sổ */
+html.viewport-desktop {
+  overflow-x: clip;
+}
+
+html.viewport-desktop .w-screen {
+  width: 100%;
+}
+
+html.viewport-desktop .h-screen {
+  height: calc(100vh / var(--viewport-scale, 1));
+}
+
+html.viewport-desktop .min-h-screen,
+html.viewport-desktop .lg\:min-h-screen {
+  min-height: calc(100vh / var(--viewport-scale, 1));
+}
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  html,
+  body {
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    background-color: #fcfaf7;
+    color: #292524;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button,
+  input,
+  select,
+  textarea,
+  .font-display,
+  .font-playfair,
+  .font-cinzel,
+  .font-serif-heading {
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+
+  code, pre, kbd, samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+}
+
+.font-playfair {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+}
+
+.font-serif-heading {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+}
+
+/* ẨN TOÀN BỘ THANH CUỘN TOÀN CỤC (ZERO SCROLLBARS) NHƯNG VẪN CUỘN BÌNH THƯỜNG */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+:root {
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #213547;
+  background-color: #fcfaf7;
+
+  /* =========================================================================
+     GLOBAL MOTION TOKENS - TỬ VI HỒNG ÂN MOTION DESIGN SYSTEM
+     Á Đông Cổ Điển Giao Hòa Hiện Đại (Modern Oriental Elegance)
+     ========================================================================= */
+
+  /* 1. Easing & Spring Curves */
+  --ease-spring-micro: cubic-bezier(0.22, 1.25, 0.36, 1);
+  --ease-spring-snappy: cubic-bezier(0.34, 1.42, 0.64, 1);
+  --ease-spring-gentle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring-sheet: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-exit-clean: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* 2. Duration Scale */
+  --dur-instant: 80ms;
+  --dur-micro: 180ms;
+  --dur-blur-pulse: 140ms;
+  --dur-macro-in: 340ms;
+  --dur-macro-out: 240ms;
+  --dur-layout: 420ms;
+  --dur-page: 450ms;
+
+  /* 3. Scale & Float Ratios */
+  --scale-press-sm: 0.96;
+  --scale-press-md: 0.982;
+  --scale-hover-sm: 1.02;
+  --scale-hover-icon: 1.12;
+  --float-y-sm: -1.5px;
+  --float-y-md: -3px;
+  --float-y-lg: -5px;
+
+  /* 4. Elevation & Depth Shadows (Tông Chu Sa & Mặc Thư) */
+  --elev-idle: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(139, 29, 29, 0.03);
+  --elev-float-sm: 0 6px 16px -3px rgba(139, 29, 29, 0.10), 0 2px 6px -1px rgba(15, 23, 42, 0.05);
+  --elev-float-md: 0 14px 32px -6px rgba(139, 29, 29, 0.15), 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.92) inset;
+  --elev-float-lg: 0 24px 48px -12px rgba(15, 23, 42, 0.22), 0 8px 20px -4px rgba(139, 29, 29, 0.14), 0 0 0 1px rgba(253, 230, 138, 0.45) inset;
+  --elev-gold-halo: 0 0 16px rgba(197, 160, 89, 0.38), 0 6px 20px -2px rgba(139, 29, 29, 0.35);
+
+  /* 5. Glassmorphism Surfaces (Á Đông Cổ Điển) */
+  --glass-bg-light: rgba(255, 255, 255, 0.86);
+  --glass-bg-warm: rgba(252, 250, 247, 0.88);
+  --glass-bg-vermilion: rgba(139, 29, 29, 0.92);
+  --glass-blur-sm: blur(10px) saturate(140%);
+  --glass-blur-md: blur(18px) saturate(160%);
+  --glass-blur-lg: blur(24px) saturate(180%);
+  --glass-border-specular: 1px solid rgba(255, 255, 255, 0.78);
+  --glass-border-gold: 1px solid rgba(253, 230, 138, 0.65);
+
+  /* 6. Ultra-short Motion Blur Radius */
+  --motion-blur-micro: 2px;
+  --motion-blur-macro: 3.5px;
+  --motion-blur-page: 5px;
+}
+
+/* =========================================================================
+   PAGE TRANSITIONS (VIEW TRANSITIONS API + GPU FALLBACK)
+   ========================================================================= */
+.top-navigation-wrapper {
+  view-transition-name: site-navbar;
+}
+
+::view-transition-group(site-navbar) {
+  animation-duration: 180ms;
+  animation-timing-function: var(--ease-exit-clean);
+}
+
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes vt-peer-next-out {
+  from { opacity: 1; transform: translate3d(0, 0, 0); }
+  to { opacity: 0; transform: translate3d(-16px, 0, 0); }
+}
+
+@keyframes vt-peer-next-in {
+  from { opacity: 0; transform: translate3d(16px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes vt-peer-prev-out {
+  from { opacity: 1; transform: translate3d(0, 0, 0); }
+  to { opacity: 0; transform: translate3d(16px, 0, 0); }
+}
+
+@keyframes vt-peer-prev-in {
+  from { opacity: 0; transform: translate3d(-16px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes vt-drill-down-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.985); }
+}
+
+@keyframes vt-drill-down-in {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes vt-drill-up-out {
+  from { opacity: 1; transform: translate3d(0, 0, 0); }
+  to { opacity: 0; transform: translate3d(0, 12px, 0); }
+}
+
+@keyframes vt-drill-up-in {
+  from { opacity: 0; transform: scale(0.988); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+::view-transition-old(root) {
+  animation: 180ms var(--ease-exit-clean) both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 320ms var(--ease-spring-gentle) 40ms both vt-fade-in;
+}
+
+html[data-nav-transition="peer-next"]::view-transition-old(root) {
+  animation: 180ms var(--ease-exit-clean) both vt-peer-next-out;
+}
+
+html[data-nav-transition="peer-next"]::view-transition-new(root) {
+  animation: 320ms var(--ease-spring-gentle) 40ms both vt-peer-next-in;
+}
+
+html[data-nav-transition="peer-prev"]::view-transition-old(root) {
+  animation: 180ms var(--ease-exit-clean) both vt-peer-prev-out;
+}
+
+html[data-nav-transition="peer-prev"]::view-transition-new(root) {
+  animation: 320ms var(--ease-spring-gentle) 40ms both vt-peer-prev-in;
+}
+
+html[data-nav-transition="drill-down"]::view-transition-old(root) {
+  animation: 200ms var(--ease-exit-clean) both vt-drill-down-out;
+}
+
+html[data-nav-transition="drill-down"]::view-transition-new(root) {
+  animation: 340ms var(--ease-spring-sheet) 45ms both vt-drill-down-in;
+}
+
+html[data-nav-transition="drill-up"]::view-transition-old(root) {
+  animation: 180ms var(--ease-exit-clean) both vt-drill-up-out;
+}
+
+html[data-nav-transition="drill-up"]::view-transition-new(root) {
+  animation: 300ms var(--ease-spring-gentle) 35ms both vt-drill-up-in;
+}
+
+html[data-nav-transition="pop"]::view-transition-old(root) {
+  animation: 140ms var(--ease-exit-clean) both vt-fade-out;
+}
+
+html[data-nav-transition="pop"]::view-transition-new(root) {
+  animation: 220ms var(--ease-spring-gentle) both vt-fade-in;
+}
+
+/* Fallback CSS enter animation for browsers without View Transitions API */
+.page-transition-fallback-enter {
+  animation: 280ms var(--ease-spring-gentle) both vt-drill-down-in;
+}
+
+/* Mobile Page Transition Optimization (<= 580px): shorter & tighter amplitude */
+@media (max-width: 580px) {
+  @keyframes vt-peer-next-out {
+    from { opacity: 1; transform: translate3d(0, 0, 0); }
+    to { opacity: 0; transform: translate3d(-10px, 0, 0); }
+  }
+  @keyframes vt-peer-next-in {
+    from { opacity: 0; transform: translate3d(10px, 0, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes vt-peer-prev-out {
+    from { opacity: 1; transform: translate3d(0, 0, 0); }
+    to { opacity: 0; transform: translate3d(10px, 0, 0); }
+  }
+  @keyframes vt-peer-prev-in {
+    from { opacity: 0; transform: translate3d(-10px, 0, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes vt-drill-down-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @keyframes vt-drill-down-in {
+    from { opacity: 0; transform: translate3d(0, 10px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes vt-drill-up-out {
+    from { opacity: 1; transform: translate3d(0, 0, 0); }
+    to { opacity: 0; transform: translate3d(0, 8px, 0); }
+  }
+  @keyframes vt-drill-up-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  ::view-transition-old(root),
+  html[data-nav-transition]::view-transition-old(root) {
+    animation-duration: 140ms;
+  }
+
+  ::view-transition-new(root),
+  html[data-nav-transition]::view-transition-new(root) {
+    animation-duration: 260ms;
+    animation-delay: 20ms;
+  }
+
+  html[data-nav-transition="pop"]::view-transition-old(root),
+  html[data-nav-transition="pop"]::view-transition-new(root) {
+    animation-duration: 120ms;
+    animation-delay: 0ms;
+  }
+}
+
+/* =========================================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION (CALM CROSS-FADE DISCIPLINE)
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 120ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 120ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-old(root),
+  html[data-nav-transition]::view-transition-old(root) {
+    animation: 120ms var(--ease-exit-clean) both vt-fade-out !important;
+  }
+
+  ::view-transition-new(root),
+  html[data-nav-transition]::view-transition-new(root) {
+    animation: 120ms var(--ease-exit-clean) both vt-fade-in !important;
+  }
+
+  .gemini-page-enter,
+  .gemini-page-exit,
+  .ai-preview-slide-in,
+  .ai-card-slide-in,
+  .gemini-popover-panel,
+  .luan-giai-card,
+  .tuvi-history-item,
+  .tuvi-tab-btn,
+  .tab-sliding-pill,
+  .nav-sliding-indicator,
+  .dropdown-menu,
+  .dropdown-menu li,
+  .caret,
+  .header-quick-btn,
+  .page-transition-fallback-enter {
+    transform: none !important;
+    filter: none !important;
+    transition-delay: 0ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+
+#root {
+  width: 100%;
+}

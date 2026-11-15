@@ -1,0 +1,119 @@
+:root {
+    --font-main: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Noto Serif', 'Times New Roman', Georgia, serif;
+
+    /* 5 SẮC TỐ CỐT LÕI (STRICT 5-PIGMENT SYSTEM) */
+    --c-ink: #1c1917;         /* Mặc Thủy - Mực tàu / Than đen */
+    --c-vermilion: #8b1d1d;   /* Chu Sa - Đỏ son ấn quyết */
+    --c-ochre: #9a6b26;       /* Hoàng Thổ - Vàng hoàng kim / Đồng cổ */
+    --c-pine: #1e5631;        /* Trầm Mộc - Xanh tùng bách trầm */
+    --c-paper: #ffffff;       /* Giấy Trắng - Bắt buộc trắng tinh khiết thanh nhã */
+
+    /* NGŨ HÀNH QUY CHUẨN TỪ 5 SẮC TỐ */
+    --kim: #57534e;           /* Hành Kim: Mặc khói / Chì than */
+    --moc: #1e5631;           /* Hành Mộc: Trầm Mộc */
+    --thuy: #1c1917;          /* Hành Thủy: Mặc Thủy */
+    --hoa: #8b1d1d;           /* Hành Hỏa: Chu Sa */
+    --tho: #9a6b26;           /* Hành Thổ: Hoàng Thổ */
+
+    /* ĐỊNH DANH HỆ THỐNG - MỀM MẠI THANH LỊCH */
+    --blue-title: #1c1917;
+    --border-color: #e5e7eb;
+    --border-grid: #e5e7eb;
+    --border-light: #f1f5f9;
+    --bg-body: transparent;
+    --bg-card: #ffffff;
+
+    /* =========================================================================
+       GLOBAL MOTION TOKENS - ASTROLOGY ENGINE
+       Á Đông Cổ Điển Giao Hòa Hiện Đại (Modern Oriental Elegance)
+       ========================================================================= */
+    --ease-spring-micro: cubic-bezier(0.22, 1.25, 0.36, 1);
+    --ease-spring-snappy: cubic-bezier(0.34, 1.42, 0.64, 1);
+    --ease-spring-gentle: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring-sheet: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-exit-clean: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --dur-instant: 80ms;
+    --dur-micro: 180ms;
+    --dur-blur-pulse: 140ms;
+    --dur-macro-in: 340ms;
+    --dur-macro-out: 240ms;
+    --dur-layout: 420ms;
+    --dur-page: 450ms;
+
+    --scale-press-sm: 0.96;
+    --scale-press-md: 0.982;
+    --scale-hover-sm: 1.02;
+    --scale-hover-icon: 1.12;
+    --float-y-sm: -1.5px;
+    --float-y-md: -3px;
+
+    --elev-idle: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(139, 29, 29, 0.03);
+    --elev-float-sm: 0 6px 16px -3px rgba(139, 29, 29, 0.10), 0 2px 6px -1px rgba(15, 23, 42, 0.05);
+    --elev-float-md: 0 14px 32px -6px rgba(139, 29, 29, 0.15), 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.92) inset;
+    --elev-gold-halo: 0 0 16px rgba(197, 160, 89, 0.38), 0 6px 20px -2px rgba(139, 29, 29, 0.35);
+
+    --glass-bg-light: rgba(255, 255, 255, 0.86);
+    --glass-blur-sm: blur(10px) saturate(140%);
+    --glass-blur-md: blur(18px) saturate(160%);
+    --motion-blur-micro: 2px;
+    --motion-blur-macro: 3.5px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-style: normal !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-anchor: none;
+    background-color: transparent;
+    font-family: var(--font-main);
+    color: var(--c-ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+    background: transparent !important;
+}
+
+html.is-embedded,
+html.is-embedded body {
+    overflow: hidden !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Ngũ hành màu sắc */
+.kim { color: var(--kim) !important; }
+.moc { color: var(--moc) !important; }
+.thuy { color: var(--thuy) !important; }
+.hoa { color: var(--hoa) !important; }
+.tho { color: var(--tho) !important; }
