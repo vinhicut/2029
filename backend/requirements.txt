@@ -4,6 +4,8 @@ Flask>=3.0.0
 Werkzeug>=3.0.0
 gunicorn>=22.0.0
 firebase-admin>=6.0.0
+# Google GenAI SDK used by the astrology interpreter (from google import genai).
+google-genai>=1.0.0
 Pillow>=10.3.0
 pypdf>=4.2.0
 playwright>=1.44.0
