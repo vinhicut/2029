@@ -856,20 +856,25 @@ export default function AiInterpretationGeminiView() {
         .replace(/\s+/g, '_');
       const safeFileName = `Luan_Giai_Tu_Vi_Hong_An_${rawName || 'Huu_Duyen'}.pdf`;
 
-      // Nếu chartImageUrl là blob URL, chuyển sang Base64 Data URL để backend tiếp nhận trọn vẹn
-      let imagePayload = chartImageUrl;
-      if (chartImageUrl && chartImageUrl.startsWith('blob:')) {
+      // Nếu chartImageUrl không phải Data URL (ví dụ blob:, http:, /api/...), chuyển sang Base64 Data URL để backend tiếp nhận
+      let imagePayload = chartImageUrl && chartImageUrl.startsWith('data:image/') ? chartImageUrl : null;
+      if (chartImageUrl && !imagePayload) {
         try {
           const imgResp = await fetch(chartImageUrl);
-          const imgBlob = await imgResp.blob();
-          imagePayload = await new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => resolve(reader.result);
-            reader.onerror = () => resolve(null);
-            reader.readAsDataURL(imgBlob);
-          });
+          if (imgResp.ok) {
+            const imgBlob = await imgResp.blob();
+            const dataUrl = await new Promise((resolve) => {
+              const reader = new FileReader();
+              reader.onloadend = () => resolve(typeof reader.result === 'string' ? reader.result : null);
+              reader.onerror = () => resolve(null);
+              reader.readAsDataURL(imgBlob);
+            });
+            if (dataUrl && dataUrl.startsWith('data:image/')) {
+              imagePayload = dataUrl;
+            }
+          }
         } catch (_blobErr) {
-          console.warn('[TuVi] Không thể chuyển đổi blob URL sang base64 data URL:', _blobErr);
+          console.warn('[TuVi] Không thể chuyển đổi ảnh lá số sang base64 data URL:', _blobErr);
         }
       }
 
@@ -892,8 +897,13 @@ export default function AiInterpretationGeminiView() {
         let errMessage = 'Máy chủ backend (cổng 8080) hiện chưa phản hồi hoặc gặp sự cố.';
         try {
           const errJson = await response.json();
-          if (errJson?.error) errMessage = errJson.error;
+          if (errJson?.error || errJson?.message) {
+            errMessage = errJson.error || errJson.message;
+          }
         } catch (_jsonErr) {}
+        if (response.status === 401) {
+          setAuthOpen(true);
+        }
         throw new Error(errMessage);
       }
 
@@ -902,10 +912,16 @@ export default function AiInterpretationGeminiView() {
       const a = document.createElement('a');
       a.href = blobUrl;
       a.download = safeFileName;
+      a.rel = 'noopener';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      window.URL.revokeObjectURL(blobUrl);
+      // Trì hoãn thu hồi Object URL để trình duyệt Apple Safari kịp khởi tạo luồng tải tệp
+      setTimeout(() => {
+        try {
+          window.URL.revokeObjectURL(blobUrl);
+        } catch (_e) {}
+      }, 5000);
     } catch (err) {
       console.error('[TuVi] Lỗi khi tải PDF:', err);
       alert(`Tải bản PDF không thành công: ${err.message}`);
@@ -1315,13 +1331,13 @@ export default function AiInterpretationGeminiView() {
     }
   };
   return (
-    <div className={`relative w-screen h-screen flex flex-col overflow-hidden bg-white text-slate-800 gemini-page-enter ${isExiting ? 'gemini-page-exit' : ''}`}>
+    <div className={`relative w-screen h-screen h-[100dvh] flex flex-col overflow-hidden bg-white text-slate-800 gemini-page-enter ${isExiting ? 'gemini-page-exit' : ''}`}>
       
       {/* Quầng sáng trung tâm Ambient Radial Halo thở co giãn */}
       <div className="gemini-ambient-halo" />
       {/* ==================== 1. THANH HEADER ĐIỀU HƯỚNG ĐỎ THƯƠNG HIỆU (Mobile compact h-10, Desktop h-12) ==================== */}
-            <header
-        className="fixed top-0 left-0 w-full h-10 md:h-12 z-40 bg-[#8b1d1d] text-white flex items-center justify-between md:justify-start shadow-md shadow-[#8b1d1d]/20 border-b border-red-950/40 rounded-none md:rounded-br-2xl md:w-auto md:max-w-max md:border-r px-2.5 md:px-3.5 gap-2 md:gap-2.5 transition-all duration-350 ease-[cubic-bezier(0.16,1,0.3,1)]"
+      <header
+        className="fixed top-0 left-0 w-full h-10 md:h-12 z-40 bg-[#8b1d1d] text-white flex items-center justify-between md:justify-start shadow-md shadow-[#8b1d1d]/20 border-b border-red-950/40 rounded-none md:rounded-br-2xl md:w-auto md:max-w-max md:border-r px-2.5 md:px-2.5 gap-2 md:gap-0"
       >
         {/* Cụm nút hành động bên trái: Back & Toggle Lá số (Ẩn toggle trên mobile) */}
         <div className="flex items-center gap-1.5 md:gap-2 shrink-0 z-10">
@@ -1357,32 +1373,38 @@ export default function AiInterpretationGeminiView() {
             <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-colors pointer-events-none" />
           </button>
         </div>
-        {/* Tiêu đề: Luôn hiển thị trọn vẹn, không bao giờ bị cắt chữ hay giấu đi khi đóng mở cột lá số */}
+        {/* Tiêu đề: Giữ căn giữa trên Mobile, tự động thu gọn mượt mà bằng CSS Grid 1fr -> 0fr trên Desktop khi tắt lá số */}
         <div
-          className="flex-1 flex items-center justify-center md:justify-start overflow-hidden ml-1 md:ml-1.5 transition-all duration-300"
+          className={`flex-1 md:flex-none grid transition-[grid-template-columns,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            isSidebarOpen
+              ? 'md:grid-cols-[1fr] md:opacity-100'
+              : 'md:grid-cols-[0fr] md:opacity-0 md:pointer-events-none'
+          }`}
         >
-          {/* Đường vạch phân cách nhẹ trên Desktop */}
-          <div className="hidden md:block h-4 w-px bg-white/25 shrink-0 mx-1 md:mx-1.5" />
-          {/* Tiêu đề in hoa nổi bật màu trắng: Căn giữa trên Mobile, hiển thị trọn vẹn không truncate trên Desktop */}
-          <h1 className="text-xs md:text-sm font-bold tracking-wider uppercase select-none text-white text-center md:text-left whitespace-nowrap px-1">
-            LUẬN GIẢI AI - TỬ VI HỒNG ÂN
-          </h1>
+          <div className="min-w-0 overflow-hidden flex items-center justify-center md:justify-start">
+            {/* Đường vạch phân cách nhẹ trên Desktop */}
+            <div className="hidden md:block h-4 w-px bg-white/25 shrink-0 ml-2.5 mr-2" />
+            {/* Tiêu đề in hoa nổi bật màu trắng: Căn giữa trên Mobile, hiển thị trọn vẹn không truncate trên Desktop */}
+            <h1 className="text-xs md:text-sm font-bold tracking-wider uppercase select-none text-white text-center md:text-left whitespace-nowrap px-1 md:px-0 md:pr-1.5">
+              LUẬN GIẢI AI - TỬ VI HỒNG ÂN
+            </h1>
+          </div>
         </div>
         {/* Spacer giữ cân đối trên Mobile để tiêu đề căn giữa chính xác 100% */}
         <div className="w-7 h-7 shrink-0 md:hidden pointer-events-none" aria-hidden="true" />
       </header>
       {/* ==================== 2. KHU VỰC CHÍNH: RESPONSIVE SPLIT VIEW & MOBILE VERTICAL FLOW ==================== */}
-      <main className="relative z-10 flex-1 pt-10 md:pt-0 flex flex-col md:flex-row w-full h-full overflow-hidden px-2 sm:px-4 md:px-6">
+      <main className={`relative z-10 flex-1 pt-10 md:pt-0 flex flex-col md:flex-row w-full h-full overflow-hidden px-2 sm:px-4 transition-[padding] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${isSidebarOpen ? 'md:px-6' : 'md:px-8'}`}>
         
         {/* ---------- CỘT TRÁI (DESKTOP): PREVIEW LÁ SỐ CHUẨN MỰC BÊN CẠNH ---------- */}
         <aside
           style={{
             pointerEvents: isSidebarOpen ? 'auto' : 'none',
           }}
-          className={`hidden md:flex shrink-0 h-full md:pt-12 py-2.5 md:py-3.5 items-center justify-start z-10 overflow-hidden transition-[width,transform,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[width,transform,opacity] ${
+          className={`hidden md:flex shrink-0 h-full md:pt-12 py-2.5 md:py-3.5 items-center justify-start z-10 overflow-hidden transition-[width,transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[width,transform,opacity] ${
             isSidebarOpen
-              ? 'w-[400px] lg:w-[440px] xl:w-[480px] 2xl:w-[520px] max-w-[44vw] pr-4 md:pr-6 opacity-100 translate-x-0'
-              : 'w-0 max-w-0 pr-0 opacity-0 -translate-x-8 pointer-events-none'
+              ? 'w-[min(44vw,400px)] lg:w-[min(44vw,440px)] xl:w-[min(44vw,480px)] 2xl:w-[min(44vw,520px)] opacity-100 translate-x-0'
+              : 'w-0 opacity-0 -translate-x-6 pointer-events-none'
           }`}
         >
           {chartImageUrl ? (

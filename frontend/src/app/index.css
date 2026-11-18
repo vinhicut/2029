@@ -16,17 +16,33 @@ html.viewport-desktop {
   overflow-x: clip;
 }
 
+html.is-safari.viewport-desktop {
+  overflow-x: hidden;
+}
+
 html.viewport-desktop .w-screen {
   width: 100%;
 }
 
 html.viewport-desktop .h-screen {
   height: calc(100vh / var(--viewport-scale, 1));
+  height: calc(100dvh / var(--viewport-scale, 1));
 }
 
 html.viewport-desktop .min-h-screen,
 html.viewport-desktop .lg\:min-h-screen {
   min-height: calc(100vh / var(--viewport-scale, 1));
+  min-height: calc(100dvh / var(--viewport-scale, 1));
+}
+
+html.viewport-mobile .h-screen {
+  height: 100vh;
+  height: 100dvh;
+}
+
+html.viewport-mobile .min-h-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 @layer base {
@@ -45,6 +61,8 @@ html.viewport-desktop .lg\:min-h-screen {
     background-color: #fcfaf7;
     color: #292524;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   h1,

@@ -84,6 +84,30 @@ button:not(:where(.feng-shui-widget button)) {
 
 html.viewport-desktop .app {
   min-height: calc(100vh / var(--viewport-scale, 1));
+  min-height: calc(100dvh / var(--viewport-scale, 1));
+}
+
+/* Tối ưu bố cục thanh điều hướng trên Apple Safari ở màn hình vừa (iPad / cửa sổ hẹp 581px-1180px) */
+@media (min-width: 581px) and (max-width: 1180px) {
+  html.is-safari.viewport-desktop .header-container,
+  html.is-safari.viewport-desktop .navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  html.is-safari.viewport-desktop .nav-menu {
+    flex-wrap: wrap;
+    gap: 2px 4px;
+  }
+
+  html.is-safari.viewport-desktop .nav-item:first-child {
+    margin-left: 0;
+  }
+
+  html.is-safari.viewport-desktop .nav-item > a {
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
 }
 
 .top-navigation-wrapper {

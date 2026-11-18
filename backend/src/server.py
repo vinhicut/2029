@@ -91,7 +91,7 @@ from modules.chat.routes_chat import chat_bp
 # Cấu hình mặc định
 CONFIG = {
     "HOST": os.getenv("HOST", "0.0.0.0"),
-    "PORT": int(os.getenv("PORT", "2026")),
+    "PORT": int(os.getenv("PORT", "8080")),
     "CORS_ORIGIN": os.getenv("CORS_ORIGIN", "*"),
 }
 
@@ -110,7 +110,7 @@ def create_app():
         static_url_path=""
     )
     app.config["SECRET_KEY"] = SECRET_KEY
-    app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # Giới hạn 10 MB chống DoS tràn RAM
+    app.config["MAX_CONTENT_LENGTH"] = 20 * 1024 * 1024  # Giới hạn 20 MB (hỗ trợ ảnh lá số 4K xuất PDF)
 
     @app.before_request
     def enforce_rate_limits():
@@ -265,7 +265,7 @@ def create_app():
         return jsonify({
             "status": "error",
             "code": "PAYLOAD_TOO_LARGE",
-            "message": "Dung lượng dữ liệu gửi lên vượt quá giới hạn 10 MB."
+            "message": "Dung lượng dữ liệu gửi lên vượt quá giới hạn 20 MB."
         }), 413
 
     @app.errorhandler(Exception)

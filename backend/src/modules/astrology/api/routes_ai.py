@@ -404,7 +404,7 @@ def export_pdf_endpoint():
     if chart_image is not None:
         if not isinstance(chart_image, str) or not chart_image.strip().startswith("data:image/"):
             return jsonify({"success": False, "error": "Định dạng ảnh lá số phải là Base64 Data URL hợp lệ."}), 400
-        if len(chart_image) > 12 * 1024 * 1024:
+        if len(chart_image) > 16 * 1024 * 1024:
             return jsonify({"success": False, "error": "Dung lượng ảnh lá số vượt quá giới hạn cho phép."}), 413
 
     title = str(data.get("title") or "Luận Giải Tử Vi Hồng Ân")[:150]

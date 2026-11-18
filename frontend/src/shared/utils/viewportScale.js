@@ -10,9 +10,17 @@ export const VIEWPORT_MOBILE_MAX_WIDTH = 580;
 export const VIEWPORT_DESKTOP_BASE_WIDTH = 1280;
 export const VIEWPORT_MIN_SCALE = 0.3;
 
+export function isSafariBrowser() {
+  if (typeof navigator === 'undefined') return false;
+  const ua = navigator.userAgent || '';
+  const isAppleWebKit = /AppleWebKit/i.test(ua) && !/Chrome|Chromium|Edg|OPR|Android/i.test(ua);
+  const isIOSWebKit = /iP(ad|hone|od)/i.test(ua);
+  return isAppleWebKit || isIOSWebKit;
+}
+
 export function getViewportWidth() {
   if (typeof window === 'undefined') return VIEWPORT_DESKTOP_BASE_WIDTH;
-  return window.innerWidth || document.documentElement?.clientWidth || VIEWPORT_DESKTOP_BASE_WIDTH;
+  return document.documentElement?.clientWidth || window.innerWidth || VIEWPORT_DESKTOP_BASE_WIDTH;
 }
 
 export function isMobileViewport(width = getViewportWidth()) {
@@ -34,6 +42,10 @@ export function applyGlobalViewportScale() {
 
   const width = getViewportWidth();
   const mobile = isMobileViewport(width);
+  const safari = isSafariBrowser();
+
+  htmlEl.classList.toggle('is-safari', safari);
+  bodyEl.classList.toggle('is-safari', safari);
 
   if (mobile) {
     htmlEl.classList.remove('viewport-desktop');
@@ -53,6 +65,14 @@ export function applyGlobalViewportScale() {
   htmlEl.classList.add('viewport-desktop');
   bodyEl.classList.remove('viewport-mobile');
   bodyEl.classList.add('viewport-desktop');
+
+  // Trên Apple Safari (macOS/iPadOS/iOS WebKit), CSS zoom trên :root làm sai lệch vh/vw, position: fixed và iframe
+  if (safari) {
+    htmlEl.style.zoom = '';
+    htmlEl.style.setProperty('--viewport-scale', '1');
+    bodyEl.style.minWidth = '';
+    return;
+  }
 
   if (scale < 1) {
     htmlEl.style.zoom = String(scale);

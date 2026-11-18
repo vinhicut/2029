@@ -77,9 +77,9 @@ GOOGLE_REDIRECT_URIS = [
     "https://www.tuvihongan.com/",
     "http://tuvihongan.com/",
     "http://localhost:5173/",
-    "http://localhost:2026/",
+    "http://localhost:8080/",
     "http://127.0.0.1:5173/",
-    "http://127.0.0.1:2026/"
+    "http://127.0.0.1:8080/"
 ]
 
 GOOGLE_JAVASCRIPT_ORIGINS = [
@@ -87,9 +87,9 @@ GOOGLE_JAVASCRIPT_ORIGINS = [
     "https://www.tuvihongan.com",
     "http://tuvihongan.com",
     "http://localhost:5173",
-    "http://localhost:2026",
+    "http://localhost:8080",
     "http://127.0.0.1:5173",
-    "http://127.0.0.1:2026"
+    "http://127.0.0.1:8080"
 ]
 
 # Manager / Admin email list (comma-separated in env)
@@ -108,7 +108,7 @@ if "tranngocxuanbach7@gmail.com" not in SUPER_ADMIN_EMAILS:
 
 # Server configuration
 HOST = os.getenv("HOST", "0.0.0.0")
-PORT = int(os.getenv("PORT", "2026"))
+PORT = int(os.getenv("PORT", "8080"))
 _raw_cors = os.getenv("CORS_ORIGIN", "").strip()
 _env_origins = [o.strip().rstrip("/") for o in _raw_cors.split(",") if o.strip() and o.strip() != "*"]
 ALLOWED_ORIGINS = list(dict.fromkeys([*GOOGLE_JAVASCRIPT_ORIGINS, *_env_origins]))

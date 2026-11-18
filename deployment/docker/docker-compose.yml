@@ -6,13 +6,12 @@ services:
     container_name: tuvi_hongan_app
     restart: unless-stopped
     ports:
-      # Host port 2028 -> container port 2026.
-      - "127.0.0.1:2028:2026"
+      - "127.0.0.1:8080:8080"
     env_file:
       - ../../backend/.env
     environment:
       - HOST=0.0.0.0
-      - PORT=2026
+      - PORT=8080
       - DATABASE_MODE=modular
       - CORS_ORIGIN=https://tuvihongan.com,https://www.tuvihongan.com
       - ALLOWED_ORIGINS=https://tuvihongan.com,https://www.tuvihongan.com

@@ -18,7 +18,7 @@ WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PORT=2026 \
+    PORT=8080 \
     HOST=0.0.0.0 \
     PYTHONPATH=/app/backend:/app/backend/src
 
@@ -62,9 +62,9 @@ RUN mkdir -p /app/backend/src/data/databases \
 USER appuser
 WORKDIR /app/backend
 
-EXPOSE 2026
+EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:2026/api/health')" || exit 1
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/api/health')" || exit 1
 
-CMD ["gunicorn", "--workers", "4", "--threads", "4", "--timeout", "180", "-b", "0.0.0.0:2026", "src.server:create_app()"]
+CMD ["gunicorn", "--workers", "4", "--threads", "4", "--timeout", "180", "-b", "0.0.0.0:8080", "src.server:create_app()"]
